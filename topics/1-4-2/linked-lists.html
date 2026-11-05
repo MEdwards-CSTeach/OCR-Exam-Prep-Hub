@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lists and linked lists (1.4.2) – OCR A Level CS Revision</title>
+  <meta name="description" content="OCR A Level Computer Science 1.4.2: Lists and linked lists. Revision notes, quiz and exam questions.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html" aria-current="page">Paper 1</a></li>
+          <li><a href="../../paper2.html">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../course-content.html#t1-4-2">Course content</a> › <a href="index.html">1.4.2 Data structures</a> › Lists and linked lists</p>
+          <p class="eyebrow">1.4.2 Data structures • Paper 1 (and Paper 2)</p>
+          <h1>Lists and linked lists</h1>
+          <hr class="rule">
+          <p class="lead">A chain of nodes joined by pointers that can grow and shrink.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">Key terms</h2><ul style="margin:0"><li>Node, data, pointer (next)</li><li>Head, tail</li><li>Null / None</li><li>Traverse</li><li>Dynamic vs static</li></ul></div>
+      </div>
+    </div>
+    <div class="wrap" style="padding-top:1.25rem">
+      <nav class="toc" aria-label="On this page"><ul>
+        <li><a href="#notes">Revision notes</a></li><li><a href="#links">Links and slides</a></li>
+        <li><a href="#quiz">Quick quiz</a></li><li><a href="#exam">Exam questions</a></li><li><a href="#revise">How to revise it</a></li>
+      </ul></nav>
+    </div>
+
+    <section id="notes">
+      <div class="wrap">
+        <h2 class="mt-2">Lists and linked lists</h2>
+        <div class="grid">
+          <div><ul>
+            <li>A <strong>list</strong> stores items in order. Unlike a fixed array, a list can usually grow and shrink.</li>
+            <li>A <strong>linked list</strong> is a <strong>dynamic</strong> list made of <strong>nodes</strong>.</li>
+            <li>Each node holds <strong>data</strong> and a <strong>pointer</strong> (next) to the next node.</li>
+            <li>The <strong>head</strong> points to the first node – your only way in.</li>
+            <li>The last node’s pointer is <strong>null</strong> (None), marking the end.</li>
+            <li>Nodes can be anywhere in memory – no shuffling when inserting.</li>
+          </ul></div>
+          <div><figure class="diagram"><svg viewBox="0 0 680 165" role="img" aria-labelledby="t7af22dd5 t7af22dd5d"><title id="t7af22dd5">A linked list</title><desc id="t7af22dd5d">head points to the node holding 10, which points to 20, which points to 30. 30&#x27;s next pointer is null, marking the end.</desc><defs><marker id="aht7af22dd5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><text x="60" y="46" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#B25C00"><tspan x="60" dy="0">head</tspan></text><line x1="60" y1="52" x2="108" y2="90" stroke="#B25C00" stroke-width="2.5" marker-end="url(#aht7af22dd5)"/><rect x="110" y="70" width="70" height="50" fill="#fff" stroke="#0B6E75" stroke-width="2"/><rect x="180" y="70" width="40" height="50" fill="#EEF3F6" stroke="#0B6E75" stroke-width="2"/><text x="145" y="101" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="145" dy="0">10</tspan></text><circle cx="200" cy="95" r="4" fill="#3D4451"/><line x1="200" y1="95" x2="296" y2="95" stroke="#3D4451" stroke-width="2.5" marker-end="url(#aht7af22dd5)"/><rect x="300" y="70" width="70" height="50" fill="#fff" stroke="#0B6E75" stroke-width="2"/><rect x="370" y="70" width="40" height="50" fill="#EEF3F6" stroke="#0B6E75" stroke-width="2"/><text x="335" y="101" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="335" dy="0">20</tspan></text><circle cx="390" cy="95" r="4" fill="#3D4451"/><line x1="390" y1="95" x2="486" y2="95" stroke="#3D4451" stroke-width="2.5" marker-end="url(#aht7af22dd5)"/><rect x="490" y="70" width="70" height="50" fill="#fff" stroke="#0B6E75" stroke-width="2"/><rect x="560" y="70" width="40" height="50" fill="#EEF3F6" stroke="#0B6E75" stroke-width="2"/><text x="525" y="101" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="525" dy="0">30</tspan></text><text x="580" y="100" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" fill="#3D4451"><tspan x="580" dy="0">null</tspan></text><text x="165" y="150" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" fill="#3D4451"><tspan x="165" dy="0">data</tspan></text><text x="200" y="150" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" fill="#3D4451"><tspan x="200" dy="0">next</tspan></text><text x="545" y="150" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" fill="#3D4451"><tspan x="545" dy="0">tail: next = null</tspan></text></svg><figcaption>head → 10 → 20 → 30 → null</figcaption></figure></div>
+        </div>        <h2 class="mt-2">Operations</h2>
+        <div class="table-scroll"><table><thead><tr><th scope="col">Operation</th><th scope="col">Steps</th><th scope="col">Pseudocode</th></tr></thead><tbody><tr><th scope="row">Traverse</th><td>Start at head. Visit each node, then follow its pointer. Stop at null.</td><td><code>current = head<br>while current != null<br>  print(current.data)<br>  current = current.next<br>endwhile</code></td></tr><tr><th scope="row">Add at start</th><td>Create node. Point it at the old first node. Move head to it.</td><td><code>new.next = head<br>head = new</code></td></tr><tr><th scope="row">Add in middle</th><td>Traverse to the node before the gap. New node points to the next node FIRST, then the previous node points to the new node.</td><td><code>new.next = current.next<br>current.next = new</code></td></tr><tr><th scope="row">Add at end</th><td>Traverse to the last node (next is null). Point it at the new node.</td><td><code>current.next = new</code></td></tr><tr><th scope="row">Delete</th><td>Traverse to the node before the target. Point it past the target.</td><td><code>current.next = current.next.next</code></td></tr></tbody></table></div>
+        <figure class="diagram"><svg viewBox="0 0 700 250" role="img" aria-labelledby="t513dbbaa t513dbbaad"><title id="t513dbbaa">Inserting a node in the middle of a linked list</title><desc id="t513dbbaad">Step 1: the new node 15 points to 20. Step 2: node 10 points to the new node. The order matters, or the rest of the list is lost.</desc><defs><marker id="aht513dbbaa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><text x="20" y="36" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#1A1A2E"><tspan x="20" dy="0">Insert 15 between 10 and 20</tspan></text><rect x="60" y="60" width="70" height="50" fill="#fff" stroke="#0B6E75" stroke-width="2"/><rect x="130" y="60" width="40" height="50" fill="#EEF3F6" stroke="#0B6E75" stroke-width="2"/><text x="95" y="91" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="95" dy="0">10</tspan></text><circle cx="150" cy="85" r="4" fill="#3D4451"/><rect x="420" y="60" width="70" height="50" fill="#fff" stroke="#0B6E75" stroke-width="2"/><rect x="490" y="60" width="40" height="50" fill="#EEF3F6" stroke="#0B6E75" stroke-width="2"/><text x="455" y="91" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="455" dy="0">20</tspan></text><circle cx="510" cy="85" r="4" fill="#3D4451"/><rect x="240" y="170" width="70" height="50" fill="#FFF4E0" stroke="#B25C00" stroke-width="2"/><rect x="310" y="170" width="40" height="50" fill="#EEF3F6" stroke="#B25C00" stroke-width="2"/><text x="275" y="201" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="275" dy="0">15</tspan></text><circle cx="330" cy="195" r="4" fill="#3D4451"/><line x1="150" y1="85" x2="416" y2="85" stroke="#9AA6B2" stroke-width="2" stroke-dasharray="6 5"/><text x="285" y="77" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" fill="#5E6B78"><tspan x="285" dy="0">old link is replaced</tspan></text><path d="M330,195 C390,195 420,160 440,114" fill="none" stroke="#0B6E75" stroke-width="3" marker-end="url(#aht513dbbaa)"/><text x="470" y="180" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#0B6E75"><tspan x="470" dy="0">① new.next = current.next</tspan></text><path d="M130,110 C140,170 190,195 236,195" fill="none" stroke="#B25C00" stroke-width="3" marker-end="url(#aht513dbbaa)"/><text x="110" y="230" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#B25C00"><tspan x="110" dy="0">② current.next = new</tspan></text></svg><figcaption>Order matters: link the new node in first, then break the old link – or the rest of the list is lost.</figcaption></figure>        <h2 class="mt-2">Linked list or array?</h2>
+        <div class="grid grid-2">
+          <div class="card"><h3>Linked list ✓</h3><ul><li>Dynamic – grows and shrinks while running</li><li>Insert and delete by changing pointers – no shuffling</li></ul></div>
+          <div class="card"><h3>Linked list ✗</h3><ul><li>No direct access by index – must traverse from the head: O(n)</li><li>Extra memory for each pointer</li></ul></div>
+        </div>
+        <p class="mt-1"><strong>Uses:</strong> music playlists, undo history, browser back/forward (a <em>doubly</em> linked list points both ways).</p>
+        <div class="callout callout-amber mt-1"><p><strong>Watch out for:</strong></p><ul><li>Moving head (or the previous pointer) first when inserting – the rest of the list is lost.</li><li>Saying you can “go straight to” an item – you must traverse from the head.</li><li>Deleting the data but not changing the previous node’s pointer.</li><li>Writing a blank or 0 for null in a table – use null or −1.</li></ul></div>
+      </div>
+    </section>
+
+    <section id="links" class="section-alt">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>Links to other topics</h2><ul class="link-list"><li><strong>1.4.2 Arrays</strong> – the static alternative; fast access by index but slow insertion.</li><li><strong>1.4.2 Hash tables</strong> – chaining stores collisions in a linked list.</li><li><strong>1.4.2 Stacks and queues</strong> – can be built from a linked list instead of an array.</li><li><strong>2.2.1 / 1.2.4 OOP</strong> – a node is an object; next is a reference to another object.</li><li><strong>2.3.1 Algorithms</strong> – linked list traversal is an algorithm for a main data structure.</li></ul></div>
+          <div><h2>Lesson slides</h2>
+            <p>Go back over the lesson for the full worked examples and tasks.</p>
+            <p><a class="btn" href="../../slides/1-4-2/linked-lists.pptx">Download the lesson slides</a></p>
+            <p class="small">Lists and linked lists – including the predict-the-steps slides and the spot-the-bug task.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <div class="wrap">
+        <h2>Check your understanding</h2>
+        <p>Answer, then press <strong>Check my answers</strong>. Each question explains the answer so you can fix any mistakes.</p>
+        <div class="quiz-block">
+          <h3>Quick quiz – marked for you</h3>
+          <div class="q" data-answer="b"><p class="q-text">1. What two things does every node in a linked list hold? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q6" value="a"> <span>An index and a value</span></label><label><input type="radio" name="q6" value="b"> <span>Data and a pointer to the next node</span></label><label><input type="radio" name="q6" value="c"> <span>A key and a hash value</span></label><label><input type="radio" name="q6" value="d"> <span>Two pointers only</span></label></div><div class="explain" hidden><p><span class="verdict"></span>A node holds its data and a pointer (next) to the next node. A doubly linked list adds a second pointer to the previous node.</p></div></div><div class="q" data-answer=""><p class="q-text">2. What value is stored in the pointer of the last node? <span class="tag tag-soft">AO1</span></p><input type="text" aria-label="Answer to question 2" data-answer="null|none|-1|nil" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>The last node’s pointer is null (None in Python). In an array-based table, −1 is often used. It marks the end of the list.</p></div></div><div class="q" data-answer="b"><p class="q-text">3. To insert 15 between 10 and 20 (current is the node holding 10), which line must run first? <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q8" value="a"> <span>current.next = new</span></label><label><input type="radio" name="q8" value="b"> <span>new.next = current.next</span></label><label><input type="radio" name="q8" value="c"> <span>head = new</span></label><label><input type="radio" name="q8" value="d"> <span>current = current.next</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Point the new node at 20 first. If 10 points to the new node first, nothing remembers where 20 is and the rest of the list is lost.</p></div></div><div class="q" data-answer="b"><p class="q-text">4. Why can’t you go straight to the 5th node of a linked list? <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q9" value="a"> <span>Nodes are stored in a fixed order in memory</span></label><label><input type="radio" name="q9" value="b"> <span>You must start at the head and follow 4 pointers</span></label><label><input type="radio" name="q9" value="c"> <span>Linked lists can only store 4 items</span></label><label><input type="radio" name="q9" value="d"> <span>The 5th node is always null</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Nodes can be anywhere in memory, so there is no index to calculate. You must traverse from the head, following each pointer: O(n).</p></div></div><div class="q" data-answer="b"><p class="q-text">5. This code should add a node to the end: <code>while current != null: current = current.next</code> then <code>current.next = new</code>. What is wrong? <span class="tag tag-soft">AO3</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q10" value="a"> <span>Nothing is wrong</span></label><label><input type="radio" name="q10" value="b"> <span>The loop stops when current is null, so current.next fails</span></label><label><input type="radio" name="q10" value="c"> <span>It should start at the tail</span></label><label><input type="radio" name="q10" value="d"> <span>It adds the node to the start</span></label></div><div class="explain" hidden><p><span class="verdict"></span>The loop runs past the last node. Fix: <code>while current.next != null</code>, so it stops ON the last node.</p></div></div>
+          <button type="button" class="btn quiz-check">Check my answers</button>
+          <button type="button" class="btn btn-ghost quiz-reset">Start again</button>
+          <p class="quiz-score mt-1" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="exam" class="section-alt">
+      <div class="wrap">
+        <h2>Exam-style questions – mark them yourself</h2>
+        <p>Write your answer, then open <strong>Mark your answer</strong>. Tick the mark points you hit, read the model answer and use the tips to improve. See the <a href="exam-tips.html">1.4.2 exam tips</a> for more help.</p>
+<article class="exam-q">
+          <header><span class="tag">AO1</span><span class="marks">[2 marks]</span></header>
+          <p>State what is meant by a <strong>node</strong> and by the <strong>head</strong> of a linked list.</p>
+          <label for="es4t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es4t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es4"><li><label><input type="checkbox"> <span>A node holds an item of data and a pointer to the next node (1)</span></label></li><li><label><input type="checkbox"> <span>The head points to the first node in the list (1)</span></label></li></ul>
+            <p id="es4" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> A node is one item in the list, holding the data and a pointer to the next node. The head is a pointer to the first node in the list.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>“State” needs a short, precise answer – use the key terms data and pointer.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[3 marks]</span></header>
+          <p>A linked list holds 10 → 20 → 30. Describe how the node containing 20 is removed.</p>
+          <label for="es5t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es5t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es5"><li><label><input type="checkbox"> <span>Start at the head and traverse to the node before the target, the node holding 10 (1)</span></label></li><li><label><input type="checkbox"> <span>Change 10’s pointer to point to the node 20 points to, i.e. 30 (1)</span></label></li><li><label><input type="checkbox"> <span>20 is no longer reachable, so it is removed / its memory can be freed (1)</span></label></li></ul>
+            <p id="es5" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> Start at the head and follow the pointers to the node holding 10, the node before 20. Change 10’s pointer so it points to 30 (the node that 20 pointed to). Nothing points to 20 any more, so it is no longer part of the list.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Use the values from the question (10, 20, 30) in every step.</li><li>Say which pointer changes and what it now points to – “delete 20” alone gets no marks.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO3</span><span class="marks">[4 marks]</span></header>
+          <p>A games leaderboard is read thousands of times a minute but changes rarely. Discuss whether it should be stored as an array or a linked list.</p>
+          <label for="es6t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es6t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es6"><li><label><input type="checkbox"> <span>An array allows direct access by index: O(1) (1)</span></label></li><li><label><input type="checkbox"> <span>A linked list must be traversed from the head to reach an item: O(n) (1)</span></label></li><li><label><input type="checkbox"> <span>A linked list is better for frequent insertions as no shuffling is needed (1)</span></label></li><li><label><input type="checkbox"> <span>Conclusion: array, because reads far outnumber changes (1)</span></label></li></ul>
+            <p id="es6" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> An array lets the program go straight to any position using its index, which is O(1), whereas a linked list must be traversed from the head, which is O(n). A linked list would be better if scores were inserted often, because new nodes can be linked in without shuffling. However, the leaderboard is read constantly and rarely changed, so an array is the better choice.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Weigh both options, then decide – a “discuss” answer needs a conclusion.</li><li>Back up “faster” with Big O.</li><li>Link the conclusion to the scenario: read often, changed rarely.</li></ul></div>
+          </div></details>
+        </article>
+      </div>
+    </section>
+
+    <section id="revise">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>How to revise this</h2><ul><li><a href="../../techniques/teach-it.html">Teach it</a> – explain insert and delete out loud, drawing the arrows</li><li><a href="../../techniques/flowcharts.html">Flowcharts and process diagrams</a> – draw before-and-after diagrams for each operation</li><li><a href="../../techniques/trace-tables.html">Trace tables</a> – trace a traversal loop node by node</li></ul>
+        <p class="small">These are the best fit for this part of the topic, but you can use any <a href="../../revision-techniques.html">revision technique</a> that works for you.</p></div>
+          <div><h2>Watch and read more</h2><ul><li><a href="https://visualgo.net/en/list">VisuAlgo – linked list</a> – animated insert and delete on a linked list.</li><li><a href="https://pythontutor.com">Python Tutor</a> – paste your Node class and watch the pointers appear.</li></ul></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 1.4.2 pages"><a href="arrays-records-tuples.html"><span class="dir">← Previous</span>Arrays, records and tuples</a><a class="next" href="stacks.html"><span class="dir">Next →</span>Stacks</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>

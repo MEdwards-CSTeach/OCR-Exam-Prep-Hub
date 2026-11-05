@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>1.1 Exam Tips – OCR A Level CS Revision</title>
+  <meta name="description" content="Exam tips for OCR A Level Computer Science 1.1 components of a computer, with weak and good answers.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html" aria-current="page">Paper 1</a></li>
+          <li><a href="../../paper2.html">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../paper1.html">Paper 1</a> › <a href="index.html">1.1 Components of a computer</a> › Exam tips</p>
+          <p class="eyebrow">1.1 Components of a computer • Exam tips</p>
+          <h1>1.1 exam tips</h1>
+          <hr class="rule">
+          <p class="lead">What examiners look for in questions on processors, devices and storage, with weak and good answers for each type of question.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">Where it comes up</h2><p style="margin:0">All of 1.1 is on <strong>Paper 1</strong>. Device questions are short and always set in a scenario. Storage and architecture often appear as <strong>9-mark</strong> discuss questions, and CISC/RISC as a <strong>12-mark</strong> question.</p></div>
+      </div>
+    </div>
+
+    <section>
+      <div class="wrap">
+        <h2>What the examiner looks for</h2>
+        <div class="grid grid-2">
+          <div class="card"><h3>Rewarded</h3><ul>
+            <li>Registers named correctly, in the right <strong>order</strong> (PC → MAR → MDR → CIR).</li>
+            <li>A <strong>named hardware device</strong> with a reason from the scenario (N-U-J).</li>
+            <li>A <strong>property, then its use</strong>: “ROM is non-volatile and stores the bootstrap.”</li>
+            <li><strong>Comparisons in pairs</strong>: “CISC has…, whereas RISC has…”.</li>
+            <li>“Lower cost per GB”, “no moving parts”, “volatile”.</li>
+            <li>A <strong>justified conclusion</strong> in 9 and 12-mark answers.</li></ul></div>
+          <div class="card"><h3>Loses marks</h3><ul>
+            <li>Software instead of hardware: “a scanning app”.</li>
+            <li>Brand names: “an iPad”, “Intel”.</li>
+            <li>Two devices in one answer – only the first is marked.</li>
+            <li>“Temporary / permanent”, “faster”, “cheaper” with no detail.</li>
+            <li>Virtual memory when the question asks about virtual storage.</li>
+            <li>A graphical GPU use when a non-graphical one is asked for.</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="wrap">
+        <h2>Question types and how to approach them</h2>
+        <div class="table-scroll"><table><thead><tr><th scope="col">Type</th><th scope="col">Example</th><th scope="col">How to approach it</th></tr></thead><tbody><tr><th scope="row">State / describe</th><td>Describe the purpose of the MAR. [1]</td><td>Precise term, one point per mark.</td></tr><tr><th scope="row">Describe a process</th><td>Describe the fetch stage. [4]</td><td>Steps in order, naming each register and bus.</td></tr><tr><th scope="row">Calculate</th><td>Memory size with a 24-line address bus and 32-bit words. [2]</td><td>2<sup>n</sup> addresses × bytes per word. Show working.</td></tr><tr><th scope="row">Name and justify a device</th><td>Identify two input devices for a self-service till. [4]</td><td>N-U-J: device (1) + reason from the scenario (1), on separate lines.</td></tr><tr><th scope="row">Compare</th><td>One difference between CISC and RISC. [2]</td><td>Both sides of the same feature, with “whereas”.</td></tr><tr><th scope="row">Discuss (9 marks)</th><td>Flash or magnetic storage for video editing. [9]</td><td>Know → apply → weigh up → conclude. Plan with a grid first.</td></tr><tr><th scope="row">Discuss (12 marks)</th><td>CISC or RISC for a charity’s mobile devices. [12]</td><td>Cover every difference, apply each to the scenario, end with a justified recommendation.</td></tr></tbody></table></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>Weak and good answers</h2>
+        <article class="example">
+          <p class="callout"><strong>Question:</strong> Describe what is meant by the term ‘Von Neumann architecture’. [2]</p>
+          <div class="grid grid-2">
+            <div class="card" style="border-color:#A12A2A"><p><span class="tag" style="background:#FDE8E8;color:#A12A2A">Weak answer</span> <span class="small">0 marks</span></p><p>It is a type of computer that uses the fetch-execute cycle.</p></div>
+            <div class="card" style="border-color:#0B6E75"><p><span class="tag">Good answer</span> <span class="small">2 marks</span></p><p>Data and instructions are stored in the same memory, and are transferred using one shared bus.</p></div>
+          </div>
+          <div class="mt-1"><p><strong>How to turn the weak answer into a good one:</strong></p><ul><li>Describe the feature that makes it von Neumann: <em>one memory for both</em>.</li><li>Add the second feature for the second mark: the single shared bus.</li><li>Every architecture uses fetch-execute, so that earns nothing.</li></ul></div>
+        </article>
+        <article class="example">
+          <p class="callout"><strong>Question:</strong> Explain the difference between RAM and ROM, including how these are used by the computer system. [4]</p>
+          <div class="grid grid-2">
+            <div class="card" style="border-color:#A12A2A"><p><span class="tag" style="background:#FDE8E8;color:#A12A2A">Weak answer</span> <span class="small">1 mark at most</span></p><p>RAM is temporary and ROM is permanent. RAM is faster and bigger.</p></div>
+            <div class="card" style="border-color:#0B6E75"><p><span class="tag">Good answer</span> <span class="small">4 marks</span></p><p>RAM is volatile, so its contents are lost when the power is off. It stores the programs, data and parts of the OS in use. ROM is non-volatile and stores the bootstrap that starts the computer.</p></div>
+          </div>
+          <div class="mt-1"><p><strong>How to turn the weak answer into a good one:</strong></p><ul><li>Swap “temporary/permanent” for volatile/non-volatile, with what that means.</li><li>Add a use for each – the question asks how they are used.</li><li>Drop “faster and bigger”: it is not on the mark scheme.</li></ul></div>
+        </article>
+        <article class="example">
+          <p class="callout"><strong>Question:</strong> A home assistant listens for “Hey Bertie”, then answers the question. Name one input and one output device, with a reason for each. [4]</p>
+          <div class="grid grid-2">
+            <div class="card" style="border-color:#A12A2A"><p><span class="tag" style="background:#FDE8E8;color:#A12A2A">Weak answer</span> <span class="small">1 mark</span></p><p>Input: keyboard, to type questions. Output: printer, to output the answer.</p></div>
+            <div class="card" style="border-color:#0B6E75"><p><span class="tag">Good answer</span> <span class="small">4 marks</span></p><p>Input: a microphone, so it can hear the spoken question. Output: a speaker, so it can play its spoken answer.</p></div>
+          </div>
+          <div class="mt-1"><p><strong>How to turn the weak answer into a good one:</strong></p><ul><li>Read the scenario: Bertie <em>listens</em>, so a keyboard doesn’t fit.</li><li>“To output the answer” is true of any device – say how <em>this</em> device is used.</li></ul></div>
+        </article>
+        <article class="example">
+          <p class="callout"><strong>Question:</strong> Describe one non-graphical use an insurance company may have for a GPU. [2]</p>
+          <div class="grid grid-2">
+            <div class="card" style="border-color:#A12A2A"><p><span class="tag" style="background:#FDE8E8;color:#A12A2A">Weak answer</span> <span class="small">0 marks</span></p><p>Running the website faster.</p></div>
+            <div class="card" style="border-color:#0B6E75"><p><span class="tag">Good answer</span> <span class="small">2 marks</span></p><p>Modelling risk for millions of customers, because the same complex calculation is carried out on lots of data at the same time.</p></div>
+          </div>
+          <div class="mt-1"><p><strong>How to turn the weak answer into a good one:</strong></p><ul><li>Displaying a website is graphical, and “faster” alone gets nothing.</li><li>Name a numerical task and link it to the same calculation on lots of data.</li></ul></div>
+        </article>
+        <article class="example">
+          <p class="callout"><strong>Question:</strong> Why is a quad-core processor not always four times faster than a single-core processor? [2]</p>
+          <div class="grid grid-2">
+            <div class="card" style="border-color:#A12A2A"><p><span class="tag" style="background:#FDE8E8;color:#A12A2A">Weak answer</span> <span class="small">0 marks</span></p><p>Because the cores are slower.</p></div>
+            <div class="card" style="border-color:#0B6E75"><p><span class="tag">Good answer</span> <span class="small">2 marks</span></p><p>Some parts of a task need the result of the step before, so they can’t run in parallel. The software may also not be written to use all four cores.</p></div>
+          </div>
+          <div class="mt-1"><p><strong>How to turn the weak answer into a good one:</strong></p><ul><li>Explain the limits of parallel processing: sequential steps and software.</li><li>Two separate reasons for two marks.</li></ul></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="wrap">
+        <h2>Planning a 9-mark storage answer</h2>
+        <div class="table-scroll"><table><thead><tr><th scope="col">Part</th><th scope="col">Choose</th><th scope="col">Because (scenario)</th><th scope="col">But</th></tr></thead><tbody><tr><th scope="row">Servers</th><td>SSD + HDD</td><td>Fast access to customer records for many users</td><td>SSD write limit: plan to replace</td></tr><tr><th scope="row">Client PCs</th><td>SSD</td><td>Quick start-up and program loading</td><td>Smaller capacity: data is on the server</td></tr><tr><th scope="row">Backup</th><td>HDD or tape</td><td>Huge and cheap per GB; speed matters less</td><td>Tape is slow to restore</td></tr></tbody></table></div>
+        <p class="mt-1"><strong>Conclusion:</strong> both are suitable, but for different jobs in this company. <span class="small">(Worked example from October 2021: an insurance company.)</span></p>
+        <p>Practise with the 9-mark questions on the <a href="storage.html#exam">storage</a> and <a href="architecture.html#exam">architecture</a> pages, and the 12-mark question on <a href="types-of-processor.html#exam">types of processor</a>.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 1.1 pages"><a href="storage.html"><span class="dir">← Previous</span>Storage and memory</a><a class="next" href="index.html"><span class="dir">Back to →</span>1.1 overview</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>

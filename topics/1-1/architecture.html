@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Von Neumann, Harvard and contemporary architecture (1.1.1 (e)) – OCR A Level CS Revision</title>
+  <meta name="description" content="OCR A Level Computer Science 1.1.1 (e): Von Neumann, Harvard and contemporary architecture. Revision notes, quiz and exam questions.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html" aria-current="page">Paper 1</a></li>
+          <li><a href="../../paper2.html">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../paper1.html">Paper 1</a> › <a href="index.html">1.1 Components of a computer</a> › Von Neumann, Harvard and contemporary architecture</p>
+          <p class="eyebrow">1.1.1 (e) • Paper 1</p>
+          <h1>Von Neumann, Harvard and contemporary architecture</h1>
+          <hr class="rule">
+          <p class="lead">How a processor gets its instructions and data, and why one shared bus can slow everything down.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">Key terms</h2><ul style="margin:0"><li>Stored program concept</li><li>Von Neumann</li><li>Harvard</li><li>Von Neumann bottleneck</li><li>Contemporary (modified Harvard)</li><li>Embedded system, DSP</li></ul></div>
+      </div>
+    </div>
+    <div class="wrap" style="padding-top:1.25rem">
+      <nav class="toc" aria-label="On this page"><ul>
+        <li><a href="#notes">Revision notes</a></li><li><a href="#links">Links and slides</a></li>
+        <li><a href="#quiz">Quick quiz</a></li><li><a href="#exam">Exam questions</a></li><li><a href="#revise">How to revise it</a></li>
+      </ul></nav>
+    </div>
+
+    <section id="notes">
+      <div class="wrap">
+        <h2 class="mt-2">The stored program concept</h2>
+        <ul>
+          <li>Programs are held in <strong>main memory alongside the data</strong>, and loaded to be run.</li>
+          <li>Instructions are fetched, decoded and executed one at a time; the order only changes with a jump.</li>
+          <li>Before this (ENIAC, 1945) a new job meant rewiring. The Manchester Baby (1948) was the first to run a program held in its own memory.</li>
+        </ul>        <h2 class="mt-2">Von Neumann and Harvard</h2>
+        <figure class="diagram"><svg viewBox="0 0 900 315" role="img" aria-labelledby="t82663abb t82663abbd"><title id="t82663abb">Von Neumann and Harvard architectures</title><desc id="t82663abbd">Von Neumann: one processor connected by one bus to one main memory holding instructions and data. Harvard: the processor has two buses, one to an instruction memory and one to a separate data memory.</desc><defs><marker id="aht82663abb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><text x="200" y="32" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#0B6E75"><tspan x="200" dy="0">Von Neumann</tspan></text><rect x="130" y="45" width="140" height="60" rx="8" fill="#1A1A2E" stroke="#1A1A2E" stroke-width="2"/><text x="200" y="81" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#fff"><tspan x="200" dy="0">Processor</tspan></text><line x1="200" y1="108" x2="200" y2="172" stroke="#0B6E75" stroke-width="4" marker-start="url(#aht82663abb)" marker-end="url(#aht82663abb)"/><text x="250" y="145" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#0B6E75"><tspan x="250" dy="0">one bus</tspan></text><rect x="90" y="178" width="220" height="100" rx="8" fill="#fff" stroke="#1A1A2E" stroke-width="2"/><text x="200" y="224" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="200" dy="0">Main memory</tspan><tspan x="200" dy="19">instructions + data</tspan></text><text x="200" y="305" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#3D4451"><tspan x="200" dy="0">Only one fetch at a time: the bottleneck</tspan></text><text x="660" y="32" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#B25C00"><tspan x="660" dy="0">Harvard</tspan></text><rect x="590" y="45" width="140" height="60" rx="8" fill="#1A1A2E" stroke="#1A1A2E" stroke-width="2"/><text x="660" y="81" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#fff"><tspan x="660" dy="0">Processor</tspan></text><line x1="620" y1="108" x2="540" y2="172" stroke="#0B6E75" stroke-width="4" marker-start="url(#aht82663abb)" marker-end="url(#aht82663abb)"/><text x="535" y="137" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#0B6E75"><tspan x="535" dy="0">bus 1</tspan></text><line x1="700" y1="108" x2="780" y2="172" stroke="#B25C00" stroke-width="4" marker-start="url(#aht82663abb)" marker-end="url(#aht82663abb)"/><text x="788" y="137" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#B25C00"><tspan x="788" dy="0">bus 2</tspan></text><rect x="440" y="178" width="200" height="100" rx="8" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="540" y="224" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="540" dy="0">Instruction</tspan><tspan x="540" dy="19">memory</tspan></text><rect x="680" y="178" width="200" height="100" rx="8" fill="#FFF4E0" stroke="#B25C00" stroke-width="2"/><text x="780" y="224" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#B25C00"><tspan x="780" dy="0">Data</tspan><tspan x="780" dy="19">memory</tspan></text><text x="660" y="305" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#3D4451"><tspan x="660" dy="0">Instruction and data fetched at the same time</tspan></text><line x1="420" y1="20" x2="420" y2="300" stroke="#C9D3D9" stroke-width="2" stroke-dasharray="6 6"/></svg><figcaption>In the Bus Race, the one-bus round took 12 ticks; with two buses it took 7.</figcaption></figure>
+        <div class="table-scroll"><table><thead><tr><th scope="col"></th><th scope="col">Von Neumann</th><th scope="col">Harvard</th></tr></thead><tbody><tr><th scope="row">Memory</th><td>One memory for instructions and data</td><td>Separate memories for instructions and data</td></tr><tr><th scope="row">Buses</th><td>One shared bus</td><td>Separate buses for each memory</td></tr><tr><th scope="row">Fetching</th><td>One fetch at a time: the <strong>von Neumann bottleneck</strong></td><td>Instruction and data fetched at the same time</td></tr><tr><th scope="row">Cost</th><td>Simpler, cheaper control unit</td><td>More buses, more pins, more cost</td></tr><tr><th scope="row">Flexibility</th><td>Free memory can hold code or data</td><td>Memories can have different sizes and word lengths</td></tr><tr><th scope="row">Used in</th><td>PCs, laptops, servers (general purpose)</td><td>Embedded systems and DSP: microwaves, watches</td></tr></tbody></table></div>        <h2 class="mt-2">Contemporary architecture</h2>
+        <div class="grid">
+          <div><ul>
+            <li>Modern CPUs combine both ideas – often called <strong>modified Harvard</strong>.</li>
+            <li>One main memory holds instructions and data (von Neumann).</li>
+            <li>Inside the CPU, the L1 cache is split into an instruction cache and a data cache (Harvard).</li>
+          </ul></div>
+          <div><figure class="diagram"><svg viewBox="0 0 680 345" role="img" aria-labelledby="t854e7ec8 t854e7ec8d"><title id="t854e7ec8">Contemporary processor architecture</title><desc id="t854e7ec8d">One main memory and shared L2 and L3 caches, as in von Neumann. Close to the core, the L1 cache is split into an instruction cache and a data cache, as in Harvard. This is often called modified Harvard.</desc><defs><marker id="aht854e7ec8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><rect x="150" y="15" width="300" height="54" rx="8" fill="#fff" stroke="#1A1A2E" stroke-width="2"/><text x="300" y="48" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#1A1A2E"><tspan x="300" dy="0">Main memory (RAM)</tspan></text><text x="470" y="47" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" fill="#0B6E75"><tspan x="470" dy="0">one memory: von Neumann</tspan></text><line x1="300" y1="69" x2="300" y2="104" stroke="#3D4451" stroke-width="3"/><rect x="150" y="104" width="300" height="50" rx="8" fill="#EEF3F6" stroke="#3D4451" stroke-width="2"/><text x="300" y="134" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="300" dy="0">Shared L2 and L3 cache</tspan></text><line x1="240" y1="154" x2="240" y2="192" stroke="#3D4451" stroke-width="3"/><line x1="360" y1="154" x2="360" y2="192" stroke="#3D4451" stroke-width="3"/><rect x="150" y="192" width="140" height="54" rx="8" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="220" y="215" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#1A1A2E"><tspan x="220" dy="0">L1</tspan><tspan x="220" dy="18">instruction</tspan></text><rect x="310" y="192" width="140" height="54" rx="8" fill="#FFF4E0" stroke="#B25C00" stroke-width="2"/><text x="380" y="215" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#B25C00"><tspan x="380" dy="0">L1</tspan><tspan x="380" dy="18">data</tspan></text><text x="470" y="224" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" fill="#B25C00"><tspan x="470" dy="0">split cache: Harvard</tspan></text><line x1="220" y1="249" x2="260" y2="278" stroke="#3D4451" stroke-width="3" marker-end="url(#aht854e7ec8)"/><line x1="380" y1="249" x2="340" y2="278" stroke="#3D4451" stroke-width="3" marker-end="url(#aht854e7ec8)"/><rect x="220" y="282" width="160" height="50" rx="8" fill="#1A1A2E" stroke="#1A1A2E" stroke-width="2"/><text x="300" y="313" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#fff"><tspan x="300" dy="0">Processor core</tspan></text></svg><figcaption>One RAM feeding split L1 caches.</figcaption></figure></div>
+        </div>
+        <div class="callout callout-amber mt-1"><p><strong>Watch out for:</strong></p><ul><li>Saying Harvard has “two processors” – it has two memories and two buses.</li><li>Describing von Neumann without saying the one memory holds <em>both</em> data and instructions.</li><li>Forgetting the bottleneck is caused by the single shared bus.</li><li>A 9-mark answer with no justified conclusion in context.</li></ul></div>
+      </div>
+    </section>
+
+    <section id="links" class="section-alt">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>Links to other topics</h2><ul class="link-list"><li><strong>1.1.1 Processor performance</strong> – the split L1 cache is part of contemporary architecture.</li><li><strong>1.1.1 FDE cycle</strong> – the stored program concept relies on fetch-decode-execute.</li><li><strong>1.2.1 Embedded systems</strong> – Harvard architecture suits embedded operating systems.</li><li><strong>1.1.3 Storage</strong> – main memory (RAM) holds the stored program.</li><li><strong>1.3.3 Network security</strong> – shared memory lets data be run as code – a security risk.</li></ul></div>
+          <div><h2>Lesson slides</h2>
+            <p>Go back over the lesson for the full worked examples and tasks.</p>
+            <p><a class="btn" href="../../slides/1-1/von-neumann-harvard.pptx">Download the lesson slides</a></p>
+            <p class="small">1.1.1C Von Neumann and Harvard – including the Bus Race, Sort it and the Architecture Showdown.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <div class="wrap">
+        <h2>Check your understanding</h2>
+        <p>Answer, then press <strong>Check my answers</strong>. Each question explains the answer so you can fix any mistakes.</p>
+        <div class="quiz-block">
+          <h3>Quick quiz – marked for you</h3>
+          <div class="q" data-answer="b"><p class="q-text">1. What is the stored program concept? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q13" value="a"> <span>Programs are wired into the hardware</span></label><label><input type="radio" name="q13" value="b"> <span>Programs are held in main memory with the data</span></label><label><input type="radio" name="q13" value="c"> <span>Programs are stored on optical discs</span></label><label><input type="radio" name="q13" value="d"> <span>Programs are kept in the ALU</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Instructions and data are both just binary held in main memory, so a new job only needs a new program loading.</p></div></div><div class="q" data-answer="b"><p class="q-text">2. What causes the von Neumann bottleneck? <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q14" value="a"> <span>Too many cores</span></label><label><input type="radio" name="q14" value="b"> <span>One shared bus, so only one fetch can happen at a time</span></label><label><input type="radio" name="q14" value="c"> <span>Separate instruction and data memories</span></label><label><input type="radio" name="q14" value="d"> <span>A slow clock</span></label></div><div class="explain" hidden><p><span class="verdict"></span>The processor has to wait while one bus carries both instructions and data, one item at a time.</p></div></div><div class="q" data-answer="b"><p class="q-text">3. A microwave oven’s controller runs one fixed program for life and must react instantly. Which architecture? <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q15" value="a"> <span>Von Neumann</span></label><label><input type="radio" name="q15" value="b"> <span>Harvard</span></label><label><input type="radio" name="q15" value="c"> <span>Contemporary</span></label></div><div class="explain" hidden><p><span class="verdict"></span>An embedded system where speed matters more than flexibility: Harvard fetches instruction and data together.</p></div></div><div class="q" data-answer="a"><p class="q-text">4. A laptop switches between a browser, a game and a word processor all day. Which architecture? <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q16" value="a"> <span>Von Neumann</span></label><label><input type="radio" name="q16" value="b"> <span>Harvard</span></label><label><input type="radio" name="q16" value="c"> <span>Contemporary</span></label></div><div class="explain" hidden><p><span class="verdict"></span>General purpose: programs of any size load into one main memory. (A modern laptop CPU is contemporary inside, but its memory model is von Neumann.)</p></div></div><div class="q" data-answer="c"><p class="q-text">5. A desktop CPU has one RAM but separate L1 instruction and data caches. Which architecture? <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q17" value="a"> <span>Von Neumann</span></label><label><input type="radio" name="q17" value="b"> <span>Harvard</span></label><label><input type="radio" name="q17" value="c"> <span>Contemporary</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Von Neumann main memory plus a Harvard-style split cache: contemporary (modified Harvard).</p></div></div><div class="q" data-answer="a"><p class="q-text">6. A program is too big for its instruction memory, but the data memory is half empty. Which architecture could use the free space? <span class="tag tag-soft">AO3</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q18" value="a"> <span>Von Neumann</span></label><label><input type="radio" name="q18" value="b"> <span>Harvard</span></label><label><input type="radio" name="q18" value="c"> <span>Neither</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Only a shared memory lets free space hold either code or data.</p></div></div>
+          <button type="button" class="btn quiz-check">Check my answers</button>
+          <button type="button" class="btn btn-ghost quiz-reset">Start again</button>
+          <p class="quiz-score mt-1" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="exam" class="section-alt">
+      <div class="wrap">
+        <h2>Exam-style questions – mark them yourself</h2>
+        <p>Write your answer, then open <strong>Mark your answer</strong>. Tick the mark points you hit, read the model answer and use the tips to improve. See the <a href="exam-tips.html">1.1 exam tips</a> for more help.</p>
+<article class="exam-q">
+          <header><span class="tag">AO1</span><span class="marks">[2 marks]</span></header>
+          <p>Describe what is meant by the term ‘Von Neumann architecture’. <span class="small">(October 2021)</span></p>
+          <label for="es7t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es7t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es7"><li><label><input type="checkbox"> <span>Data and instructions are stored in the same memory (1)</span></label></li><li><label><input type="checkbox"> <span>They are transferred using the same, single shared bus (1)</span></label></li></ul>
+            <p id="es7" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> In von Neumann architecture, data and instructions are stored together in the same main memory, and they are transferred to the processor along one shared bus.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Say what the one memory holds: <em>both</em> data and instructions.</li><li>Mention the single shared bus for the second mark.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO1</span><span class="marks">[1 mark]</span></header>
+          <p>Give one way that the Harvard architecture differs from the Von Neumann architecture. <span class="small">(October 2021)</span></p>
+          <label for="es8t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es8t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es8"><li><label><input type="checkbox"> <span>Harvard uses separate memories (and separate buses) for data and instructions (1)</span></label></li></ul>
+            <p id="es8" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> Harvard architecture stores instructions and data in separate memories, with separate buses.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>For a 1-mark difference, describe Harvard clearly – the comparison with von Neumann is implied.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO3</span><span class="marks">[9 marks]</span></header>
+          <p>Discuss the difference between Von Neumann and Harvard architecture. Refer to how each stores instructions and data, and the benefits of each. <span class="small">(June 2024 style)</span></p>
+          <label for="es9t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es9t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es9"><li><label><input type="checkbox"> <span>Von Neumann: one memory for data and instructions (1)</span></label></li><li><label><input type="checkbox"> <span>Harvard: separate memories for data and instructions (1)</span></label></li><li><label><input type="checkbox"> <span>Von Neumann has one shared bus; Harvard has separate buses (1)</span></label></li><li><label><input type="checkbox"> <span>Harvard can fetch an instruction and data at the same time; von Neumann cannot – the bottleneck (1)</span></label></li><li><label><input type="checkbox"> <span>Von Neumann is simpler and cheaper to build (1)</span></label></li><li><label><input type="checkbox"> <span>Von Neumann memory can be shared as needed between code and data (1)</span></label></li><li><label><input type="checkbox"> <span>Harvard memories can have different sizes / word lengths (1)</span></label></li><li><label><input type="checkbox"> <span>Applied examples: PCs use von Neumann; microwaves / DSP use Harvard (1)</span></label></li><li><label><input type="checkbox"> <span>A justified conclusion in context, e.g. contemporary CPUs combine both (1)</span></label></li></ul>
+            <p id="es9" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> Von Neumann stores instructions and data in one main memory and moves them along one shared bus, whereas Harvard keeps them in separate memories with separate buses. Because Harvard has two buses, it can fetch an instruction and its data at the same time, while von Neumann must fetch them one after another, creating a bottleneck. However, von Neumann is simpler and cheaper, and its single memory can be shared between large programs or large amounts of data. Harvard’s memories can be different sizes and word lengths, which suits embedded systems such as a microwave controller or a DSP chip, where a fixed program must run quickly. A general-purpose games PC benefits from von Neumann’s flexibility. In practice modern CPUs use both: one RAM, with a split L1 cache.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Plan with know → apply → weigh up → conclude.</li><li>Use examples of devices for the application marks.</li><li>7–9 marks needs a justified conclusion, e.g. comparing a games PC and a microwave.</li></ul></div>
+          </div></details>
+        </article>
+      </div>
+    </section>
+
+    <section id="revise">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>How to revise this</h2><ul><li><a href="../../techniques/comparison-tables.html">Comparison tables</a> – von Neumann vs Harvard vs contemporary</li><li><a href="../../techniques/extended-answers.html">Planning extended answers</a> – the 9-mark discuss question</li><li><a href="../../techniques/flashcards.html">Flashcards</a> – stored program concept, bottleneck, DSP, embedded system</li></ul>
+        <p class="small">These are the best fit for this part of the topic, but you can use any <a href="../../revision-techniques.html">revision technique</a> that works for you.</p></div>
+          <div><h2>Watch and read more</h2><ul><li><a href="https://www.youtube.com/@Computerphile">Computerphile (YouTube)</a> – short videos by computer scientists on CPUs, caches and memory.</li><li><a href="https://isaaccomputerscience.org">Isaac Computer Science</a> – free topic notes and questions on computer systems.</li></ul></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 1.1 pages"><a href="processor-performance.html"><span class="dir">← Previous</span>Processor performance</a><a class="next" href="types-of-processor.html"><span class="dir">Next →</span>Types of processor</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>

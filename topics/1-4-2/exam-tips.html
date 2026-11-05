@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>1.4.2 Exam Tips – OCR A Level CS Revision</title>
+  <meta name="description" content="Exam tips for OCR A Level Computer Science 1.4.2 data structures, with weak and good answers.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html" aria-current="page">Paper 1</a></li>
+          <li><a href="../../paper2.html">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../course-content.html#t1-4-2">Course content</a> › <a href="index.html">1.4.2 Data structures</a> › Exam tips</p>
+          <p class="eyebrow">1.4.2 Data structures • Exam tips</p>
+          <h1>1.4.2 exam tips</h1>
+          <hr class="rule">
+          <p class="lead">What examiners look for in data structure questions, with weak and good answers for each type of question.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">Where it comes up</h2><p style="margin:0">Data structures appear on <strong>Paper 1</strong>, and again on <strong>Paper 2</strong> through algorithms (2.3.1). Trees alone appeared in every series from 2018 to 2022.</p></div>
+      </div>
+    </div>
+
+    <section>
+      <div class="wrap">
+        <h2>What the examiner looks for</h2>
+        <div class="grid grid-2">
+          <div class="card"><h3>Rewarded</h3><ul>
+            <li><strong>Precise key terms</strong>: LIFO, FIFO, pointer, null, collision, vertex, edge.</li>
+            <li><strong>Steps in order</strong> for operations, with the check first (full / empty).</li>
+            <li><strong>Using the diagram or data in the question</strong> – name the actual nodes and values.</li>
+            <li><strong>Comparisons as pairs</strong>: “a tree has a root, whereas a graph does not”.</li>
+            <li><strong>Big O</strong> to back up “faster” or “more efficient”.</li>
+            <li><strong>A judgement</strong> at the end of discuss/evaluate questions.</li></ul></div>
+          <div class="card"><h3>Loses marks</h3><ul>
+            <li>Describing operations without saying which pointer changes.</li>
+            <li>A blank or 0 for a null pointer – write −1 or null.</li>
+            <li>Mixing up stack/queue, overflow/underflow, BFS/DFS.</li>
+            <li>Giving in-order when post-order is asked.</li>
+            <li>General answers with no link to the scenario.</li>
+            <li>“Faster” or “better” with no reason.</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="wrap">
+        <h2>Question types and how to approach them</h2>
+        <div class="table-scroll"><table>
+          <thead><tr><th scope="col">Type</th><th scope="col">Example</th><th scope="col">How to approach it</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">State / define</th><td>State what is meant by a graph. [2]</td><td>Short and precise. One key term per mark.</td></tr>
+            <tr><th scope="row">Describe an operation</th><td>Describe how an item is pushed onto a stack. [3]</td><td>Steps in order. Start with the check (full/empty). Say which pointer changes.</td></tr>
+            <tr><th scope="row">Show / trace</th><td>Show the breadth-first traversal of the tree. [3]</td><td>Write every value in order. Count the nodes so none are missed. Often 1 mark per level.</td></tr>
+            <tr><th scope="row">Add / remove from a diagram</th><td>Add these names to the BST. [3]</td><td>Follow the rule at every node. New items go in as leaves. For removal, name the case first.</td></tr>
+            <tr><th scope="row">Write / complete pseudocode</th><td>Complete the enqueue procedure. [4]</td><td>Check → update pointer → store → update count. Use clear names.</td></tr>
+            <tr><th scope="row">Compare</th><td>Compare a stack and a queue. [4]</td><td>Points about <em>both</em>, using “whereas”.</td></tr>
+            <tr><th scope="row">Choose / justify</th><td>Justify a structure for a print system. [3]</td><td>Name the structure, then link its behaviour to the scenario with “because”.</td></tr>
+            <tr><th scope="row">Discuss / evaluate (6–9 marks)</th><td>Compare BFS and DFS on this tree. [9]</td><td>Know → apply (use the data) → evaluate → conclude with a reason.</td></tr>
+          </tbody></table></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>Weak and good answers</h2>
+        <article class="example">
+          <p class="callout"><strong>Question:</strong> Describe how an item is added to a stack. [3]</p>
+          <div class="grid grid-2">
+            <div class="card" style="border-color:#A12A2A"><p><span class="tag" style="background:#FDE8E8;color:#A12A2A">Weak answer</span> <span class="small">1 mark</span></p><p>You put the item on the top of the stack.</p></div>
+            <div class="card" style="border-color:#0B6E75"><p><span class="tag">Good answer</span> <span class="small">3 marks</span></p><p>First check whether the stack is full (top = size − 1); if it is, report overflow. Otherwise add 1 to the top pointer, then store the item at stack[top].</p></div>
+          </div>
+          <div class="mt-1"><p><strong>How to turn the weak answer into a good one:</strong></p><ul><li>Start with the check for a full stack.</li><li>Say what happens to the <strong>pointer</strong>, not just the item.</li><li>Give the steps in the right order: move top, then store.</li></ul></div>
+        </article>
+        <article class="example">
+          <p class="callout"><strong>Question:</strong> Explain why a queue is suitable for storing jobs sent to a shared printer. [2]</p>
+          <div class="grid grid-2">
+            <div class="card" style="border-color:#A12A2A"><p><span class="tag" style="background:#FDE8E8;color:#A12A2A">Weak answer</span> <span class="small">1 mark</span></p><p>A queue is FIFO.</p></div>
+            <div class="card" style="border-color:#0B6E75"><p><span class="tag">Good answer</span> <span class="small">2 marks</span></p><p>A queue is FIFO, so jobs are printed in the order they were sent, which is fair to every user of the printer.</p></div>
+          </div>
+          <div class="mt-1"><p><strong>How to turn the weak answer into a good one:</strong></p><ul><li>Don’t stop at the key term – explain what it means <em>for this scenario</em>.</li><li>Use “so” to link the property to the printer.</li></ul></div>
+        </article>
+        <article class="example">
+          <p class="callout"><strong>Question:</strong> Give two similarities and two differences between a tree and a graph. [4]</p>
+          <div class="grid grid-2">
+            <div class="card" style="border-color:#A12A2A"><p><span class="tag" style="background:#FDE8E8;color:#A12A2A">Weak answer</span> <span class="small">1 mark</span></p><p>Both have nodes. A tree looks like a family tree and a graph is like a chart.</p></div>
+            <div class="card" style="border-color:#0B6E75"><p><span class="tag">Good answer</span> <span class="small">4 marks</span></p><p>Both are made of nodes joined by edges, and both are non-linear. A tree has a root, whereas a graph does not. A graph can contain cycles, whereas a tree cannot.</p></div>
+          </div>
+          <div class="mt-1"><p><strong>How to turn the weak answer into a good one:</strong></p><ul><li>Each difference needs both structures in one sentence – use “whereas”.</li><li>Avoid descriptions like “looks like a chart” – use structural features.</li></ul></div>
+        </article>
+        <article class="example">
+          <p class="callout"><strong>Question:</strong> Explain why searching a balanced binary search tree is more efficient than searching a linked list. [2]</p>
+          <div class="grid grid-2">
+            <div class="card" style="border-color:#A12A2A"><p><span class="tag" style="background:#FDE8E8;color:#A12A2A">Weak answer</span> <span class="small">0–1 mark</span></p><p>A BST is faster because it is sorted.</p></div>
+            <div class="card" style="border-color:#0B6E75"><p><span class="tag">Good answer</span> <span class="small">2 marks</span></p><p>Each comparison in a BST discards about half of the remaining nodes, so search is O(log n), whereas a linked list must be checked node by node from the head, which is O(n).</p></div>
+          </div>
+          <div class="mt-1"><p><strong>How to turn the weak answer into a good one:</strong></p><ul><li>Say <em>why</em> it is faster: half the tree is discarded each step.</li><li>Back it up with Big O for both structures.</li></ul></div>
+        </article>
+        <article class="example">
+          <p class="callout"><strong>Question:</strong> A hash table uses linear probing. Explain why removing an item should not simply empty its slot. [2]</p>
+          <div class="grid grid-2">
+            <div class="card" style="border-color:#A12A2A"><p><span class="tag" style="background:#FDE8E8;color:#A12A2A">Weak answer</span> <span class="small">0 marks</span></p><p>Because the item would be lost.</p></div>
+            <div class="card" style="border-color:#0B6E75"><p><span class="tag">Good answer</span> <span class="small">2 marks</span></p><p>A search for a key that was probed past this slot would stop at the empty slot and wrongly report the key as missing. Marking the slot DELETED makes searches continue past it.</p></div>
+          </div>
+          <div class="mt-1"><p><strong>How to turn the weak answer into a good one:</strong></p><ul><li>Explain the consequence for later searches.</li><li>Give the fix: a DELETED marker.</li></ul></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="wrap">
+        <h2>Planning a long answer (6–9 marks)</h2>
+        <ol class="steps">
+          <li><strong>Know (AO1):</strong> explain how each structure or method works, using key terms (queue, stack, level, backtrack).</li>
+          <li><strong>Apply (AO2):</strong> use the data in the question – write out traversal orders, calculate matrix sizes.</li>
+          <li><strong>Evaluate (AO3):</strong> weigh up memory, speed and suitability for <em>this</em> scenario.</li>
+          <li><strong>Conclude:</strong> make a judgement and give the reason. Answers with no evaluation are capped in the lower bands.</li>
+        </ol>
+        <p>Practise with the 9-mark question on the <a href="trees.html#exam">trees page</a> and the 6-mark question on the <a href="graphs.html#exam">graphs page</a>. See also <a href="../../techniques/extended-answers.html">planning extended answers</a>.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 1.4.2 pages"><a href="trees.html"><span class="dir">← Previous</span>Trees and binary search trees</a><a class="next" href="index.html"><span class="dir">Back to →</span>1.4.2 overview</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>

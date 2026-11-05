@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Storage and memory (1.1.3 (b), (c) and (d)) – OCR A Level CS Revision</title>
+  <meta name="description" content="OCR A Level Computer Science 1.1.3 (b), (c) and (d): Storage and memory. Revision notes, quiz and exam questions.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html" aria-current="page">Paper 1</a></li>
+          <li><a href="../../paper2.html">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../paper1.html">Paper 1</a> › <a href="index.html">1.1 Components of a computer</a> › Storage and memory</p>
+          <p class="eyebrow">1.1.3 (b), (c) and (d) • Paper 1</p>
+          <h1>Storage and memory</h1>
+          <hr class="rule">
+          <p class="lead">Magnetic, flash and optical storage, RAM and ROM, and virtual storage: choose the right one and justify it.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">Key terms</h2><ul style="margin:0"><li>Primary, secondary storage</li><li>Volatile, non-volatile</li><li>Magnetic, flash, optical</li><li>RAM, ROM, bootstrap</li><li>Virtual memory</li><li>Virtual storage</li></ul></div>
+      </div>
+    </div>
+    <div class="wrap" style="padding-top:1.25rem">
+      <nav class="toc" aria-label="On this page"><ul>
+        <li><a href="#notes">Revision notes</a></li><li><a href="#links">Links and slides</a></li>
+        <li><a href="#quiz">Quick quiz</a></li><li><a href="#exam">Exam questions</a></li><li><a href="#revise">How to revise it</a></li>
+      </ul></nav>
+    </div>
+
+    <section id="notes">
+      <div class="wrap">
+        <h2 class="mt-2">Primary and secondary storage</h2>
+        <div class="grid">
+          <div><ul>
+            <li><strong>RAM</strong> holds programs and data in use now: very fast, but <strong>volatile</strong> (lost when the power goes off).</li>
+            <li><strong>Secondary storage</strong> keeps files long term: <strong>non-volatile</strong>, much larger and cheaper per GB, but slower – programs are loaded into RAM to run.</li>
+            <li><strong>Six ways to compare:</strong> capacity, cost (per GB), speed, portability, durability, reliability.<br><em>Can Cats Swim Past Dogs Running?</em></li>
+          </ul></div>
+          <div><figure class="diagram"><svg viewBox="0 0 820 370" role="img" aria-labelledby="t92e44588 t92e44588d"><title id="t92e44588">Levels of memory and storage</title><desc id="t92e44588d">The CPU uses primary memory, RAM and ROM, directly. Below that is secondary storage: magnetic, flash and optical. Virtual storage looks local but is on a network or in the cloud.</desc><defs><marker id="aht92e44588" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><rect x="260" y="10" width="180" height="50" rx="8" fill="#1A1A2E" stroke="#1A1A2E" stroke-width="2"/><text x="350" y="41" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#fff"><tspan x="350" dy="0">CPU</tspan></text><line x1="350" y1="60" x2="350" y2="94" stroke="#3D4451" stroke-width="3"/><rect x="200" y="94" width="300" height="54" rx="8" fill="#0B6E75" stroke="#0B6E75" stroke-width="2"/><text x="350" y="127" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#fff"><tspan x="350" dy="0">RAM and ROM</tspan></text><text x="520" y="126" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" fill="#0B6E75"><tspan x="520" dy="0">primary: fast, CPU uses directly</tspan></text><line x1="350" y1="148" x2="350" y2="182" stroke="#3D4451" stroke-width="3"/><rect x="110" y="182" width="150" height="62" rx="8" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="185" y="209" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#1A1A2E"><tspan x="185" dy="0">Magnetic</tspan><tspan x="185" dy="18">HDD, tape</tspan></text><rect x="275" y="182" width="150" height="62" rx="8" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="350" y="209" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#1A1A2E"><tspan x="350" dy="0">Flash</tspan><tspan x="350" dy="18">SSD, USB, SD</tspan></text><rect x="440" y="182" width="150" height="62" rx="8" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="515" y="209" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#1A1A2E"><tspan x="515" dy="0">Optical</tspan><tspan x="515" dy="18">CD, DVD, Blu-ray</tspan></text><text x="350" y="271" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" fill="#1A1A2E"><tspan x="350" dy="0">secondary storage: non-volatile, large, long term</tspan></text><line x1="350" y1="276" x2="350" y2="304" stroke="#3D4451" stroke-width="3"/><rect x="220" y="304" width="260" height="54" rx="8" fill="#FFF4E0" stroke="#B25C00" stroke-width="2"/><text x="350" y="327" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#B25C00"><tspan x="350" dy="0">Virtual storage</tspan><tspan x="350" dy="18">looks local, is somewhere else</tspan></text></svg><figcaption>Primary, secondary and virtual storage.</figcaption></figure></div>
+        </div>        <h2 class="mt-2">Magnetic, flash and optical</h2>
+        <div class="grid grid-3">
+          <div class="card"><h3>Magnetic</h3><p class="small">Areas magnetised one way or the other; a read/write head over a spinning disk. HDD, tape.</p><ul><li>✓ Huge capacity, lowest cost per GB</li><li>✗ Moving parts, slower, noisy</li><li>Uses: PCs, servers, backups; tape for archives</li></ul></div>
+          <div class="card"><h3>Flash (solid state)</h3><p class="small">Charge trapped in memory cells; no moving parts. SSD, USB, SD card.</p><ul><li>✓ Fastest, tough, light, low power</li><li>✗ Higher cost per GB; limited writes</li><li>Uses: laptops, phones, cameras</li></ul></div>
+          <div class="card"><h3>Optical</h3><p class="small">A laser reads pits and lands. CD 700 MB, DVD 4.7 GB, Blu-ray 25–100 GB.</p><ul><li>✓ Very cheap to make and post</li><li>✗ Low capacity, slowest, scratches</li><li>Uses: films and games for sale; archives</li></ul></div>
+        </div>        <h2 class="mt-2">RAM and ROM</h2>
+        <div class="grid grid-2"><div><div class="table-scroll"><table><thead><tr><th scope="col"></th><th scope="col">RAM</th><th scope="col">ROM</th></tr></thead><tbody><tr><th scope="row">Stands for</th><td>Random access memory</td><td>Read only memory</td></tr><tr><th scope="row">Power off</th><td>Volatile: contents lost</td><td>Non-volatile: contents kept</td></tr><tr><th scope="row">Read / write</th><td>Read and write</td><td>Read only</td></tr><tr><th scope="row">Stores</th><td>OS, programs and data in use now</td><td>Firmware (BIOS/UEFI): POST and bootstrap loader</td></tr><tr><th scope="row">Size</th><td>Large: 8–32 GB in a PC</td><td>Small: a few MB</td></tr></tbody></table></div></div>
+          <div><ol class="steps">
+            <li><strong>Power on:</strong> the CPU runs the firmware in ROM.</li>
+            <li><strong>POST:</strong> the power-on self-test checks the hardware.</li>
+            <li><strong>Bootstrap:</strong> the loader finds the OS on secondary storage and loads it into RAM.</li>
+            <li><strong>Run:</strong> the OS loads each program into RAM when opened.</li>
+          </ol><p class="small">Embedded systems (a washing machine) keep their fixed program in ROM.</p></div></div>        <h2 class="mt-2">Virtual memory and virtual storage</h2>
+        <div class="grid grid-2">
+          <div class="card"><h3>Virtual memory <span class="small">(1.2.1)</span></h3><ul>
+            <li>Used when <strong>RAM is full</strong>.</li><li>Part of secondary storage acts as extra RAM.</li>
+            <li>Pages not in use are moved out to the disk, and swapped back when needed.</li>
+            <li>✓ More programs can run. ✗ Much slower than RAM.</li></ul></div>
+          <div class="card"><h3>Virtual storage <span class="small">(1.1.3)</span></h3><ul>
+            <li>Storage that <strong>appears local but is physically elsewhere</strong>: a network drive or the cloud.</li>
+            <li>✓ Access anywhere, easy sharing, more space without new hardware, provider backs it up.</li>
+            <li>✗ Needs a connection, slower, ongoing cost, data held by another company.</li></ul></div>
+        </div>
+        <p class="mt-1"><strong>Read the question:</strong> “my H: drive is on the school server” is virtual <em>storage</em>; “the OS moves pages to disk when RAM is full” is virtual <em>memory</em>.</p>
+        <div class="callout callout-amber mt-1"><p><strong>Watch out for:</strong></p><ul><li>“Temporary” and “permanent” with no detail – say volatile / non-volatile.</li><li>“Cheaper” with no comparison – say lower cost per GB.</li><li>Confusing virtual memory with virtual storage.</li><li>Giving a DVD when told “other than DVDs”.</li><li>No conclusion in a 9-mark discuss question.</li></ul></div>
+      </div>
+    </section>
+
+    <section id="links" class="section-alt">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>Links to other topics</h2><ul class="link-list"><li><strong>1.2.1 Memory management</strong> – virtual memory, paging and disk thrashing.</li><li><strong>1.2.1 BIOS</strong> – stored in ROM; runs POST and the bootstrap.</li><li><strong>1.1.1 Cache</strong> – SRAM is used for cache, DRAM for main memory.</li><li><strong>1.3.3 Networks</strong> – network drives and cloud storage.</li><li><strong>1.5.1 Data Protection Act</strong> – data stored in the cloud by another company.</li></ul></div>
+          <div><h2>Lesson slides</h2>
+            <p>Go back over the lesson for the full worked examples and tasks.</p>
+            <p><a class="btn" href="../../slides/1-1/storage.pptx">Download the lesson slides</a></p>
+            <p class="small">1.1.3C Storage and memory – including Why not the others?, the insurance company plan and the XPX cloud task.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <div class="wrap">
+        <h2>Check your understanding</h2>
+        <p>Answer, then press <strong>Check my answers</strong>. Each question explains the answer so you can fix any mistakes.</p>
+        <div class="quiz-block">
+          <h3>Quick quiz – marked for you</h3>
+          <div class="q" data-answer="b"><p class="q-text">1. A helmet camera for mountain biking. <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q36" value="a"> <span>Magnetic</span></label><label><input type="radio" name="q36" value="b"> <span>Flash</span></label><label><input type="radio" name="q36" value="c"> <span>Optical</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Flash (an SD card) is tough, light and small, with no moving parts to break.</p></div></div><div class="q" data-answer="a"><p class="q-text">2. A travel agent backs up 800 GB every night. <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q37" value="a"> <span>Magnetic</span></label><label><input type="radio" name="q37" value="b"> <span>Flash</span></label><label><input type="radio" name="q37" value="c"> <span>Optical</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Magnetic storage has the lowest cost per GB, and backup speed matters less overnight.</p></div></div><div class="q" data-answer="c"><p class="q-text">3. A new game sold in shops. <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q38" value="a"> <span>Magnetic</span></label><label><input type="radio" name="q38" value="b"> <span>Flash</span></label><label><input type="radio" name="q38" value="c"> <span>Optical</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Optical discs are very cheap to press in bulk and to post.</p></div></div><div class="q" data-answer="b"><p class="q-text">4. Where are a washing machine’s wash programs stored? <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q39" value="a"> <span>RAM</span></label><label><input type="radio" name="q39" value="b"> <span>ROM</span></label></div><div class="explain" hidden><p><span class="verdict"></span>They are fixed and must survive power off: non-volatile, read-only ROM.</p></div></div><div class="q" data-answer="b"><p class="q-text">5. “My H: drive is on the school server.” This is an example of… <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q40" value="a"> <span>Virtual memory</span></label><label><input type="radio" name="q40" value="b"> <span>Virtual storage</span></label><label><input type="radio" name="q40" value="c"> <span>Cache</span></label><label><input type="radio" name="q40" value="d"> <span>ROM</span></label></div><div class="explain" hidden><p><span class="verdict"></span>It looks like a local drive but is physically somewhere else: virtual storage.</p></div></div><div class="q" data-answer="b"><p class="q-text">6. What does volatile mean? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q41" value="a"> <span>Read only</span></label><label><input type="radio" name="q41" value="b"> <span>Contents are lost when the power is off</span></label><label><input type="radio" name="q41" value="c"> <span>Very fast</span></label><label><input type="radio" name="q41" value="d"> <span>Stored in the cloud</span></label></div><div class="explain" hidden><p><span class="verdict"></span>RAM is volatile. ROM and secondary storage are non-volatile.</p></div></div>
+          <button type="button" class="btn quiz-check">Check my answers</button>
+          <button type="button" class="btn btn-ghost quiz-reset">Start again</button>
+          <p class="quiz-score mt-1" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="exam" class="section-alt">
+      <div class="wrap">
+        <h2>Exam-style questions – mark them yourself</h2>
+        <p>Write your answer, then open <strong>Mark your answer</strong>. Tick the mark points you hit, read the model answer and use the tips to improve. See the <a href="exam-tips.html">1.1 exam tips</a> for more help.</p>
+<article class="exam-q">
+          <header><span class="tag">AO1</span><span class="marks">[4 marks]</span></header>
+          <p>Explain the difference between RAM and ROM, including how these are used by the computer system. <span class="small">(October 2021)</span></p>
+          <label for="es20t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es20t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es20"><li><label><input type="checkbox"> <span>RAM is volatile: contents lost when the power is off (1)</span></label></li><li><label><input type="checkbox"> <span>RAM stores programs, data and parts of the OS in use (1)</span></label></li><li><label><input type="checkbox"> <span>ROM is non-volatile (1)</span></label></li><li><label><input type="checkbox"> <span>ROM stores the bootstrap / BIOS that starts the computer (1)</span></label></li></ul>
+            <p id="es20" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> RAM is volatile, so its contents are lost when the power is off. It stores the programs, data and parts of the operating system currently in use. ROM is non-volatile and stores the bootstrap program that starts the computer.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Two parts each: a property, then what it is used for.</li><li>“RAM is temporary, ROM is permanent” scores at most 1 mark.</li><li>“Faster and bigger” is not on the mark scheme.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[2 marks]</span></header>
+          <p>Amaya edits photographs on an old computer with 1 GB of RAM. Explain what is meant by ‘virtual memory’ and why it may be needed when Amaya is editing her photographs. <span class="small">(June 2023)</span></p>
+          <label for="es21t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es21t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es21"><li><label><input type="checkbox"> <span>When there is not enough RAM, part of secondary storage is used to store instructions and data (1)</span></label></li><li><label><input type="checkbox"> <span>Large image files or the editing program may exceed her 1 GB of RAM (1)</span></label></li></ul>
+            <p id="es21" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> Virtual memory is an area of secondary storage used as extra RAM when RAM is full. Amaya may need it because her large photo files and the editing software could need more than her 1 GB of RAM.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Define it, then apply it: link to the 1 GB RAM and large images.</li><li>Don’t confuse it with virtual storage.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO3</span><span class="marks">[9 marks]</span></header>
+          <p>Video elements are captured in different locations and then edited. Discuss the suitability of a flash storage device and a magnetic storage device for storing the video elements while they are collected and edited. <span class="small">(June 2023)</span></p>
+          <label for="es22t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es22t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es22"><li><label><input type="checkbox"> <span>Flash: fast read/write – less loading time, smoother playback when editing (1)</span></label></li><li><label><input type="checkbox"> <span>Flash: no moving parts – safer when carried between locations (1)</span></label></li><li><label><input type="checkbox"> <span>Flash: higher cost per GB, rising at high capacities (1)</span></label></li><li><label><input type="checkbox"> <span>Magnetic: low cost per GB – video files are very large (1)</span></label></li><li><label><input type="checkbox"> <span>Magnetic: good for archiving elements after editing (1)</span></label></li><li><label><input type="checkbox"> <span>Magnetic: moving parts could be damaged in transport; slower to load (1)</span></label></li><li><label><input type="checkbox"> <span>Points applied to collecting on location and to editing (2)</span></label></li><li><label><input type="checkbox"> <span>A justified conclusion (1)</span></label></li></ul>
+            <p id="es22" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> Flash storage has no moving parts, so it is safe to carry between filming locations and won’t be damaged by knocks. It also has fast read and write speeds, so large video files load quickly and play smoothly during editing. However, flash has a higher cost per GB, which matters because video files are very large. Magnetic storage has a much lower cost per GB, so it can store all the footage cheaply, but its moving parts could be damaged in transport and it is slower to load clips when editing. Overall, flash is best for collecting on location and for editing, and magnetic storage is best for archiving the footage afterwards.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Use the grid: part (collecting, editing) → choose → because → but.</li><li>Every point must link to video, locations or editing.</li><li>Top band needs a conclusion justified by your points.</li></ul></div>
+          </div></details>
+        </article>
+      </div>
+    </section>
+
+    <section id="revise">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>How to revise this</h2><ul><li><a href="../../techniques/comparison-tables.html">Comparison tables</a> – magnetic vs flash vs optical; RAM vs ROM</li><li><a href="../../techniques/extended-answers.html">Planning extended answers</a> – the 9-mark storage discuss question</li><li><a href="../../techniques/mnemonics.html">Mnemonics</a> – “Can Cats Swim Past Dogs Running?” for the six comparison points</li></ul>
+        <p class="small">These are the best fit for this part of the topic, but you can use any <a href="../../revision-techniques.html">revision technique</a> that works for you.</p></div>
+          <div><h2>Watch and read more</h2><ul><li><a href="https://isaaccomputerscience.org">Isaac Computer Science</a> – free topic notes and questions on computer systems.</li><li><a href="https://www.youtube.com/@Computerphile">Computerphile (YouTube)</a> – short videos by computer scientists on CPUs, caches and memory.</li></ul></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 1.1 pages"><a href="output-devices.html"><span class="dir">← Previous</span>Output devices</a><a class="next" href="exam-tips.html"><span class="dir">Next →</span>1.1 exam tips</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>

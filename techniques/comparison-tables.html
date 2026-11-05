@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Comparison tables – OCR A Level CS Revision</title>
+  <meta name="description" content="Revision technique: Comparison tables. Compare similar things point by point for “compare” questions.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../course-content.html">Course content</a></li>
+          <li><a href="../paper1.html">Paper 1</a></li>
+          <li><a href="../paper2.html">Paper 2</a></li>
+          <li><a href="../revision-techniques.html" aria-current="page">Revision techniques</a></li>
+          <li><a href="../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../revision-techniques.html">Revision techniques</a> › See it</p>
+          <p class="eyebrow">Revision technique</p>
+          <h1>Comparison tables</h1>
+          <hr class="rule">
+          <p class="lead">Put two or three similar things side by side and compare them point by point.</p>
+        </div>
+        <div class="card">
+          <h2 class="h3" style="font-size:1.1rem">At a glance</h2>
+          <ul style="margin:0"><li><strong>Time:</strong> 15–20 minutes</li><li><strong>Best for:</strong> Topics with pairs or groups of similar things</li><li><strong>You need:</strong> Ruled paper or a spreadsheet</li></ul>
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <div class="wrap">
+        <div class="why"><h2>Why it works</h2><p>Exams love “compare”, “differences between” and “which is more suitable” questions. A table makes you <strong>match each point on one side with its opposite on the other</strong>, so your answers are balanced and you don’t only write about one side.</p></div>
+        <div class="grid grid-2 mt-2">
+          <div>
+            <h2>How to do it</h2>
+            <ol class="steps"><li><strong>Choose the things to compare</strong>, e.g. CISC and RISC. Put them as column headings.</li><li><strong>Choose the comparison points</strong> as rows: speed, cost, complexity, typical use.</li><li><strong>Fill in every cell.</strong> Each row should show a clear difference.</li><li><strong>Add a “typical use” row</strong> – it helps with “justify your choice” questions.</li><li><strong>Cover one column</strong> and try to recall it from the other.</li></ol>
+          </div>
+          <div>
+            <h2>Best topics for this technique</h2>
+            <ul><li><a href="../course-content.html#t1-1-2">1.1.2</a> CISC vs RISC</li><li><a href="../course-content.html#t1-1-3">1.1.3</a> Magnetic vs flash vs optical, RAM vs ROM</li><li><a href="../course-content.html#t1-2-2">1.2.2</a> Translators, open vs closed source</li><li><a href="../course-content.html#t1-2-3">1.2.3</a> Development methodologies</li><li><a href="../course-content.html#t1-3-1">1.3.1</a> Lossy vs lossless, symmetric vs asymmetric</li><li><a href="../course-content.html#t2-3-1">2.3.1</a> Sorting algorithms and their Big O</li></ul>
+            <p class="small">These topics suit this technique well, but you can use it for any topic.</p>
+            <div class="callout callout-amber"><p><strong>Tip:</strong> In the exam, turn each row into a sentence that uses a comparative word: “RISC instructions are <strong>simpler than</strong> CISC instructions, <strong>so</strong> they usually take one clock cycle.”</p></div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="wrap">
+        <h2>Examples</h2>
+        <article class="example">
+          <header><span class="tag">Example 1</span><h3>CISC vs RISC</h3><span class="tag tag-soft">1.1.2</span></header>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th scope="col">Point</th><th scope="col">CISC</th><th scope="col">RISC</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Instruction set</th><td>Large set of complex instructions</td><td>Small set of simple instructions</td></tr>
+                <tr><th scope="row">Clock cycles per instruction</th><td>Often several</td><td>Usually one</td></tr>
+                <tr><th scope="row">Instruction length</th><td>Varies</td><td>Fixed</td></tr>
+                <tr><th scope="row">Program length</th><td>Shorter – fewer instructions needed</td><td>Longer – more instructions needed</td></tr>
+                <tr><th scope="row">Work for the compiler</th><td>Less</td><td>More</td></tr>
+                <tr><th scope="row">Pipelining</th><td>Harder</td><td>Easier – instructions are the same length</td></tr>
+                <tr><th scope="row">Power and heat</th><td>Higher</td><td>Lower</td></tr>
+                <tr><th scope="row">Typical use</th><td>Desktop and laptop PCs</td><td>Phones, tablets, embedded systems</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>        <article class="example">
+          <header><span class="tag">Example 2</span><h3>Compiler vs interpreter vs assembler</h3><span class="tag tag-soft">1.2.2</span></header>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th scope="col">Point</th><th scope="col">Compiler</th><th scope="col">Interpreter</th><th scope="col">Assembler</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Translates</th><td>High-level code</td><td>High-level code</td><td>Assembly language</td></tr>
+                <tr><th scope="row">How</th><td>Whole program at once</td><td>One line at a time, running each line</td><td>Each mnemonic into one machine code instruction</td></tr>
+                <tr><th scope="row">Output</th><td>Executable file</td><td>No executable file</td><td>Machine (object) code</td></tr>
+                <tr><th scope="row">Errors</th><td>Reported together after compiling</td><td>Stops at the first error</td><td>Reported after assembling</td></tr>
+                <tr><th scope="row">Running speed</th><td>Fast – translated once</td><td>Slower – translated every time it runs</td><td>Fast</td></tr>
+                <tr><th scope="row">User needs the source code?</th><td>No – code stays hidden</td><td>Yes, plus the interpreter</td><td>No</td></tr>
+                <tr><th scope="row">Portability</th><td>Executable only runs on one platform</td><td>Runs anywhere with an interpreter</td><td>Only for one processor type</td></tr>
+                <tr><th scope="row">Typical use</th><td>Selling finished software</td><td>Developing and debugging</td><td>Low-level hardware control</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        
+        <div class="mt-2"><nav class="pager" aria-label="Other techniques"><a href="flowcharts.html"><span class="dir">← Previous technique</span>Flowcharts and process diagrams</a><a class="next" href="condensing-notes.html"><span class="dir">Next technique →</span>Condensing notes</a></nav></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+</body>
+</html>

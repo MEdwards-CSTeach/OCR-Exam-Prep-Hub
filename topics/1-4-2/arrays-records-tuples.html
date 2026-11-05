@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Arrays, records and tuples (1.4.2) – OCR A Level CS Revision</title>
+  <meta name="description" content="OCR A Level Computer Science 1.4.2: Arrays, records and tuples. Revision notes, quiz and exam questions.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html" aria-current="page">Paper 1</a></li>
+          <li><a href="../../paper2.html">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../course-content.html#t1-4-2">Course content</a> › <a href="index.html">1.4.2 Data structures</a> › Arrays, records and tuples</p>
+          <p class="eyebrow">1.4.2 Data structures • Paper 1 (and Paper 2)</p>
+          <h1>Arrays, records and tuples</h1>
+          <hr class="rule">
+          <p class="lead">Store many items by position, fixed data, or related fields by name.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">Key terms</h2><ul style="margin:0"><li>Array, element, index</li><li>Dimension (1D, 2D, 3D)</li><li>Record, field</li><li>Tuple, immutable</li><li>Static</li></ul></div>
+      </div>
+    </div>
+    <div class="wrap" style="padding-top:1.25rem">
+      <nav class="toc" aria-label="On this page"><ul>
+        <li><a href="#notes">Revision notes</a></li><li><a href="#links">Links and slides</a></li>
+        <li><a href="#quiz">Quick quiz</a></li><li><a href="#exam">Exam questions</a></li><li><a href="#revise">How to revise it</a></li>
+      </ul></nav>
+    </div>
+
+    <section id="notes">
+      <div class="wrap">
+        <h2 class="mt-2">Arrays</h2>
+        <div class="grid">
+          <div><ul>
+            <li>An <strong>ordered, fixed-size</strong> collection of elements of the <strong>same data type</strong>.</li>
+            <li>Each <strong>element</strong> is accessed by its <strong>index</strong>. Indexing usually starts at 0 – <em>check the question</em>.</li>
+            <li>Access by index is instant: no searching needed.</li>
+            <li><strong>Traverse</strong> by looping through every index from first to last.</li>
+            <li>Arrays are <strong>static</strong>: the size is set when created.</li>
+          </ul></div>
+          <div><figure class="diagram"><svg viewBox="0 0 700 205" role="img" aria-labelledby="t7e4ac0ce t7e4ac0ced"><title id="t7e4ac0ce">A one-dimensional array</title><desc id="t7e4ac0ced">An array called scores holding 12, 45, 7, 30 and 18 at indexes 0 to 4. scores[2] is 7.</desc><defs><marker id="aht7e4ac0ce" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><rect x="150" y="50" width="90" height="64" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="195" y="88" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="195" dy="0">12</tspan></text><text x="195" y="141" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" fill="#3D4451"><tspan x="195" dy="0">index 0</tspan></text><rect x="240" y="50" width="90" height="64" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="285" y="88" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="285" dy="0">45</tspan></text><text x="285" y="141" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" fill="#3D4451"><tspan x="285" dy="0">index 1</tspan></text><rect x="330" y="50" width="90" height="64" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="375" y="88" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="375" dy="0">7</tspan></text><text x="375" y="141" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" fill="#3D4451"><tspan x="375" dy="0">index 2</tspan></text><rect x="420" y="50" width="90" height="64" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="465" y="88" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="465" dy="0">30</tspan></text><text x="465" y="141" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" fill="#3D4451"><tspan x="465" dy="0">index 3</tspan></text><rect x="510" y="50" width="90" height="64" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="555" y="88" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="555" dy="0">18</tspan></text><text x="555" y="141" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" fill="#3D4451"><tspan x="555" dy="0">index 4</tspan></text><text x="70" y="88" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#1A1A2E"><tspan x="70" dy="0">scores</tspan></text><line x1="375" y1="175" x2="375" y2="150" stroke="#B25C00" stroke-width="2.5" marker-end="url(#aht7e4ac0ce)"/><text x="375" y="196" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#B25C00"><tspan x="375" dy="0">scores[2] = 7</tspan></text></svg><figcaption>Access any element directly by its index.</figcaption></figure></div>
+        </div>        <h2 class="mt-2">2D and 3D arrays</h2>
+        <div class="grid grid-2">
+          <div><ul>
+            <li>A <strong>2D array</strong> is a table: an array of arrays. Access with <code>[row][col]</code> or <code>[row, col]</code>.</li>
+            <li>Track the <strong>row first, then the column</strong>.</li>
+            <li>A <strong>3D array</strong> adds another dimension, e.g. <code>[day][hour][sensor]</code>. The spec includes up to 3 dimensions.</li>
+            <li>The <strong>dimension</strong> is how many indexes you need to find one item.</li>
+          </ul>
+          <pre class="code"><code>array letters[2,3]
+for i = 0 to 1
+    for j = 0 to 2
+        letters[i, j] = input()
+    next j
+next i</code></pre></div>
+          <div><div class="table-scroll"><table class="grid-table">
+            <caption class="small" style="caption-side:bottom;padding-top:.4rem">marks[1][2] = 77 (row 1, column 2)</caption>
+            <thead><tr><th></th><th scope="col">col 0</th><th scope="col">col 1</th><th scope="col">col 2</th><th scope="col">col 3</th></tr></thead>
+            <tbody><tr><th scope="row">row 0</th><td>56</td><td>72</td><td>88</td><td>61</td></tr>
+            <tr><th scope="row">row 1</th><td>90</td><td>45</td><td><span class="hl">77</span></td><td>82</td></tr>
+            <tr><th scope="row">row 2</th><td>64</td><td>58</td><td>95</td><td>70</td></tr></tbody></table></div></div>
+        </div>        <h2 class="mt-2">Records and tuples</h2>
+        <div class="grid grid-2">
+          <div class="card"><h3>Record</h3><ul>
+            <li>A collection of related <strong>fields</strong>, which can be <strong>different data types</strong>.</li>
+            <li>Accessed by <strong>field name</strong>: <code>student.name</code>, not <code>student[0]</code>.</li>
+            <li>Several different things about <strong>one</strong> item.</li></ul>
+            <pre class="code"><code>name : "Amelia Khan"   // string
+age : 16               // integer
+average_score : 78.5   // real</code></pre></div>
+          <div class="card"><h3>Tuple</h3><ul>
+            <li>An ordered collection that <strong>cannot be changed</strong> once created: <strong>immutable</strong>.</li>
+            <li>Can hold <strong>different data types</strong>.</li>
+            <li>Used for fixed data: coordinates <code>(150, 300)</code>, RGB colours <code>(255, 128, 0)</code>, returning several values.</li></ul></div>
+        </div>        <h2 class="mt-2">Which one?</h2>
+        <div class="table-scroll"><table>
+          <thead><tr><th scope="col"></th><th scope="col">Array</th><th scope="col">Tuple</th><th scope="col">Record</th></tr></thead>
+          <tbody><tr><th scope="row">Stores</th><td>Many items, same type</td><td>Fixed items, any type</td><td>Related fields, any type</td></tr>
+          <tr><th scope="row">Can change?</th><td>Yes</td><td>No (immutable)</td><td>Usually yes</td></tr>
+          <tr><th scope="row">Accessed by</th><td>Index</td><td>Index</td><td>Field name</td></tr>
+          <tr><th scope="row">Best for</th><td>Many similar items</td><td>Data that must never change</td><td>One thing with many attributes</td></tr></tbody></table></div>
+        <p class="mt-1"><strong>One-line test:</strong> same type, by position = array. Fixed, never changes = tuple. Different types, by name = record. An <strong>array of records</strong> stores many items, each with several fields.</p>
+        <div class="callout callout-amber mt-1"><p><strong>Watch out for:</strong></p><ul><li>Check whether indexes start at 0 or 1 in the question.</li><li>Mixing up row and column in a 2D array – row first.</li><li>Saying a tuple holds only one data type – it can mix types; an array can’t.</li></ul></div>
+      </div>
+    </section>
+
+    <section id="links" class="section-alt">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>Links to other topics</h2><ul class="link-list"><li><strong>1.4.1 Data types</strong> – every element in an array has one data type.</li><li><strong>1.4.2 Stacks and queues</strong> – both are usually built on an array with pointers.</li><li><strong>2.2.1 Programming techniques</strong> – iteration (for loops) is used to traverse arrays.</li><li><strong>2.3.1 Algorithms</strong> – searching and sorting algorithms work on arrays.</li><li><strong>1.3.2 Databases</strong> – a record is like one row in a database table.</li></ul></div>
+          <div><h2>Lesson slides</h2>
+            <p>Go back over the lesson for the full worked examples and tasks.</p>
+            <p><a class="btn" href="../../slides/1-4-2/arrays-tuples-records.pptx">Download the lesson slides</a></p>
+            <p class="small">Arrays, tuples and records – including the 2D array trace table and the Student class.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <div class="wrap">
+        <h2>Check your understanding</h2>
+        <p>Answer, then press <strong>Check my answers</strong>. Each question explains the answer so you can fix any mistakes.</p>
+        <div class="quiz-block">
+          <h3>Quick quiz – marked for you</h3>
+          <div class="q" data-answer="b"><p class="q-text">1. Which structure is immutable and can hold different data types? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q1" value="a"> <span>Array</span></label><label><input type="radio" name="q1" value="b"> <span>Tuple</span></label><label><input type="radio" name="q1" value="c"> <span>Record</span></label><label><input type="radio" name="q1" value="d"> <span>2D array</span></label></div><div class="explain" hidden><p><span class="verdict"></span>A tuple cannot be changed once created and can mix types. An array holds one type; a record is usually changeable.</p></div></div><div class="q" data-answer=""><p class="q-text">2. Using the marks table above, what is <code>marks[2][1]</code>? <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 2" data-answer="58" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>Row 2 is the third row (64, 58, 95, 70). Column 1 is the second value: 58. Remember: row first, then column, both starting at 0.</p></div></div><div class="q" data-answer=""><p class="q-text">3. The nested loop above fills <code>letters</code> with inputs a, b, c, x, y, z. What is stored in <code>letters[1,0]</code>? <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 3" data-answer="x" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>The inner loop fills row 0 first (a, b, c), then row 1 (x, y, z). letters[1,0] is the first cell of row 1: x.</p></div></div><div class="q" data-answer="b"><p class="q-text">4. How is data in a record accessed? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q4" value="a"> <span>By index only</span></label><label><input type="radio" name="q4" value="b"> <span>By field name</span></label><label><input type="radio" name="q4" value="c"> <span>By a hash function</span></label><label><input type="radio" name="q4" value="d"> <span>By following pointers</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Each field in a record has its own name, e.g. student.name. This makes code more readable than student[0].</p></div></div><div class="q" data-answer="c"><p class="q-text">5. A program must store the (x, y) start position of a game level, which must never change. Which structure fits best? <span class="tag tag-soft">AO3</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q5" value="a"> <span>Array</span></label><label><input type="radio" name="q5" value="b"> <span>Record</span></label><label><input type="radio" name="q5" value="c"> <span>Tuple</span></label><label><input type="radio" name="q5" value="d"> <span>Queue</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Fixed data that must never change is a tuple. Immutability stops it being changed by accident elsewhere in the program.</p></div></div>
+          <button type="button" class="btn quiz-check">Check my answers</button>
+          <button type="button" class="btn btn-ghost quiz-reset">Start again</button>
+          <p class="quiz-score mt-1" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="exam" class="section-alt">
+      <div class="wrap">
+        <h2>Exam-style questions – mark them yourself</h2>
+        <p>Write your answer, then open <strong>Mark your answer</strong>. Tick the mark points you hit, read the model answer and use the tips to improve. See the <a href="exam-tips.html">1.4.2 exam tips</a> for more help.</p>
+<article class="exam-q">
+          <header><span class="tag">AO1</span><span class="marks">[2 marks]</span></header>
+          <p>Describe <strong>two</strong> differences between an array and a record.</p>
+          <label for="es1t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es1t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es1"><li><label><input type="checkbox"> <span>An array holds items of the same data type, whereas a record’s fields can be different data types (1)</span></label></li><li><label><input type="checkbox"> <span>An array is accessed by index, whereas a record is accessed by field name (1)</span></label></li></ul>
+            <p id="es1" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> An array stores elements that are all the same data type, whereas a record can hold fields of different data types. Elements of an array are accessed by their index, whereas fields of a record are accessed by name.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Write each difference as a pair using “whereas” – describing only one structure loses the mark.</li><li>Use the key terms: data type, index, field name.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[3 marks]</span></header>
+          <p>A teacher stores the scores for 30 students in 4 tests. Explain why a 2D array is suitable, and write the expression for the score of the 5th student in the 3rd test. Indexes start at 0.</p>
+          <label for="es2t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es2t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es2"><li><label><input type="checkbox"> <span>All the scores are the same data type (integers) (1)</span></label></li><li><label><input type="checkbox"> <span>The data forms a table: one row per student, one column per test (1)</span></label></li><li><label><input type="checkbox"> <span><code>scores[4][2]</code> or <code>scores[4,2]</code> (1)</span></label></li></ul>
+            <p id="es2" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> A 2D array suits this because every score is an integer, and the data is naturally a grid with a row for each of the 30 students and a column for each of the 4 tests. The score is <code>scores[4][2]</code>.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Link each reason to the data in the question (30 students, 4 tests).</li><li>Indexes start at 0, so the 5th student is row 4 and the 3rd test is column 2 – a very common slip.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO3</span><span class="marks">[4 marks]</span></header>
+          <p>A school library stores the title, author, year published and whether it is on loan, for 5,000 books. Justify a suitable data structure.</p>
+          <label for="es3t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es3t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es3"><li><label><input type="checkbox"> <span>Use a record for each book (1)</span></label></li><li><label><input type="checkbox"> <span>because the fields are different data types, e.g. string, integer, Boolean (1)</span></label></li><li><label><input type="checkbox"> <span>Store the records in an array / an array of records (1)</span></label></li><li><label><input type="checkbox"> <span>because there are many books with the same structure, so they can be traversed or searched (1)</span></label></li></ul>
+            <p id="es3" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> Each book should be a record with fields title (string), author (string), year (integer) and onLoan (Boolean), because the fields have different data types. The 5,000 records should be stored in an array of records, because every book has the same structure, so the program can loop through them to search or display them.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>“Justify” means give a reason for every choice – use “because”.</li><li>Name the data types of the fields to show the record is the right choice.</li><li>Say how the many books are stored, not just one book.</li></ul></div>
+          </div></details>
+        </article>
+      </div>
+    </section>
+
+    <section id="revise">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>How to revise this</h2><ul><li><a href="../../techniques/comparison-tables.html">Comparison tables</a> – array vs tuple vs record</li><li><a href="../../techniques/trace-tables.html">Trace tables</a> – practise filling 2D arrays with nested loops</li><li><a href="../../techniques/flashcards.html">Flashcards</a> – key terms: index, element, dimension, field, immutable</li></ul>
+        <p class="small">These are the best fit for this part of the topic, but you can use any <a href="../../revision-techniques.html">revision technique</a> that works for you.</p></div>
+          <div><h2>Watch and read more</h2><ul><li><a href="https://pythontutor.com">Python Tutor</a> – step through array and 2D list code and watch the values change.</li><li><a href="https://isaaccomputerscience.org">Isaac Computer Science</a> – topic notes and questions on data structures.</li></ul></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 1.4.2 pages"><a href="index.html"><span class="dir">← Back to</span>1.4.2 overview</a><a class="next" href="linked-lists.html"><span class="dir">Next →</span>Lists and linked lists</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Processor performance (1.1.1 (c) and (d)) – OCR A Level CS Revision</title>
+  <meta name="description" content="OCR A Level Computer Science 1.1.1 (c) and (d): Processor performance. Revision notes, quiz and exam questions.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html" aria-current="page">Paper 1</a></li>
+          <li><a href="../../paper2.html">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../paper1.html">Paper 1</a> › <a href="index.html">1.1 Components of a computer</a> › Processor performance</p>
+          <p class="eyebrow">1.1.1 (c) and (d) • Paper 1</p>
+          <h1>Processor performance</h1>
+          <hr class="rule">
+          <p class="lead">What makes one processor faster than another: clock speed, cores, cache and pipelining.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">Key terms</h2><ul style="margin:0"><li>Clock speed (GHz)</li><li>Core, multicore</li><li>Cache, L1, L2</li><li>Pipelining, flush</li><li>Address bus width</li><li>Word</li></ul></div>
+      </div>
+    </div>
+    <div class="wrap" style="padding-top:1.25rem">
+      <nav class="toc" aria-label="On this page"><ul>
+        <li><a href="#notes">Revision notes</a></li><li><a href="#links">Links and slides</a></li>
+        <li><a href="#quiz">Quick quiz</a></li><li><a href="#exam">Exam questions</a></li><li><a href="#revise">How to revise it</a></li>
+      </ul></nav>
+    </div>
+
+    <section id="notes">
+      <div class="wrap">
+        <h2 class="mt-2">Three factors that affect performance</h2>
+        <div class="grid grid-3">
+          <div class="card"><h3>Clock speed</h3><ul><li>The system clock sends regular pulses that trigger each step of the FDE cycle.</li><li>Measured in hertz: 4 GHz = 4 billion cycles per second.</li><li>Faster clock = more instructions per second.</li><li>✗ More heat and power.</li></ul></div>
+          <div class="card"><h3>Number of cores</h3><ul><li>Each core runs its own FDE cycle.</li><li>A quad-core can process four instructions at once.</li><li>✗ Not four times faster: software may not use all cores, and some tasks must run in order.</li></ul></div>
+          <div class="card"><h3>Cache</h3><ul><li>Small, very fast, expensive memory on the CPU chip.</li><li>Holds recently used data and instructions, so fewer slow trips to RAM.</li><li>L1: smallest, fastest, split into instruction and data cache. L2: larger, slower.</li><li>More cache = more “cache hits”.</li></ul></div>
+        </div>        <h2 class="mt-2">Pipelining</h2>
+        <ul>
+          <li>Overlaps the stages of the FDE cycle: while one instruction is executed, the next is decoded and another is fetched.</li>
+          <li>Components are not left idle, so more instructions are completed per second.</li>
+          <li>✗ If a branch (jump) instruction changes the order, the pipeline is <strong>flushed</strong> and refilled.</li>
+        </ul>
+        <figure class="diagram"><svg viewBox="0 0 880 270" role="img" aria-labelledby="tdcc42c4f tdcc42c4fd"><title id="tdcc42c4f">Pipelining the fetch-decode-execute cycle</title><desc id="tdcc42c4fd">Instruction 1 is fetched in cycle 1, decoded in cycle 2 and executed in cycle 3. Instruction 2 starts one cycle later and instruction 3 one cycle after that, so in cycle 3 all three are being worked on. Three instructions finish in 5 cycles instead of 9.</desc><defs><marker id="ahtdcc42c4f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><text x="110" y="35" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#1A1A2E"><tspan x="110" dy="0">Clock cycle →</tspan></text><text x="250" y="35" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="250" dy="0">1</tspan></text><text x="380" y="35" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="380" dy="0">2</tspan></text><text x="510" y="35" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="510" dy="0">3</tspan></text><text x="640" y="35" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="640" dy="0">4</tspan></text><text x="770" y="35" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="770" dy="0">5</tspan></text><text x="110" y="80" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="110" dy="0">Instruction 1</tspan></text><rect x="190" y="50" width="120" height="50" rx="8" fill="#0B6E75" stroke="#0B6E75" stroke-width="2"/><text x="250" y="80" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#fff"><tspan x="250" dy="0">Fetch</tspan></text><rect x="320" y="50" width="120" height="50" rx="8" fill="#1A1A2E" stroke="#1A1A2E" stroke-width="2"/><text x="380" y="80" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#fff"><tspan x="380" dy="0">Decode</tspan></text><rect x="450" y="50" width="120" height="50" rx="8" fill="#FFF4E0" stroke="#B25C00" stroke-width="2"/><text x="510" y="80" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#B25C00"><tspan x="510" dy="0">Execute</tspan></text><text x="110" y="142" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="110" dy="0">Instruction 2</tspan></text><rect x="320" y="112" width="120" height="50" rx="8" fill="#0B6E75" stroke="#0B6E75" stroke-width="2"/><text x="380" y="142" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#fff"><tspan x="380" dy="0">Fetch</tspan></text><rect x="450" y="112" width="120" height="50" rx="8" fill="#1A1A2E" stroke="#1A1A2E" stroke-width="2"/><text x="510" y="142" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#fff"><tspan x="510" dy="0">Decode</tspan></text><rect x="580" y="112" width="120" height="50" rx="8" fill="#FFF4E0" stroke="#B25C00" stroke-width="2"/><text x="640" y="142" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#B25C00"><tspan x="640" dy="0">Execute</tspan></text><text x="110" y="204" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="110" dy="0">Instruction 3</tspan></text><rect x="450" y="174" width="120" height="50" rx="8" fill="#0B6E75" stroke="#0B6E75" stroke-width="2"/><text x="510" y="204" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#fff"><tspan x="510" dy="0">Fetch</tspan></text><rect x="580" y="174" width="120" height="50" rx="8" fill="#1A1A2E" stroke="#1A1A2E" stroke-width="2"/><text x="640" y="204" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#fff"><tspan x="640" dy="0">Decode</tspan></text><rect x="710" y="174" width="120" height="50" rx="8" fill="#FFF4E0" stroke="#B25C00" stroke-width="2"/><text x="770" y="204" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#B25C00"><tspan x="770" dy="0">Execute</tspan></text><rect x="447" y="44" width="126" height="182" rx="8" fill="none" stroke="#B25C00" stroke-width="3" stroke-dasharray="7 5"/><text x="510" y="255" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#B25C00"><tspan x="510" dy="0">Cycle 3: three instructions at different stages at once</tspan></text></svg><figcaption>Without pipelining, 3 instructions take 9 cycles. With pipelining they take 5.</figcaption></figure>        <h2 class="mt-2">Bus widths and memory size</h2>
+        <div class="grid grid-2">
+          <div><ul>
+            <li>The <strong>address bus</strong> width sets the maximum number of memory addresses: <strong>2<sup>n</sup></strong> for n lines.</li>
+            <li>Memory is divided into <strong>words</strong>; each word has its own address.</li>
+            <li><strong>Memory size</strong> = number of addresses × word length in bytes.</li>
+            <li>The <strong>data bus</strong> width: if it matches the word length, a word moves in one operation.</li>
+          </ul></div>
+          <div class="callout"><p><strong>Worked example:</strong> 8-line address bus, 16-bit words.<br>Addresses = 2<sup>8</sup> = 256<br>Word = 16 bits = 2 bytes<br>Memory = 256 × 2 = <strong>512 bytes</strong></p>
+          <p class="small">Units: 1 KB = 1,000 bytes; 1 KiB = 1,024 bytes. KB (bytes) is not Kb (bits).</p></div>
+        </div>
+        <div class="callout callout-amber mt-1"><p><strong>Watch out for:</strong></p><ul><li>Saying more cores makes a computer “twice as fast” – it depends on the software and the task.</li><li>Calling cache “fast storage” – it is memory, on the CPU chip.</li><li>Saying clock speed is how fast the CPU “thinks” – say cycles (FDE) per second.</li><li>Forgetting the drawback of pipelining: branches flush the pipeline.</li></ul></div>
+      </div>
+    </section>
+
+    <section id="links" class="section-alt">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>Links to other topics</h2><ul class="link-list"><li><strong>1.1.1 FDE cycle</strong> – every factor here speeds up the fetch-decode-execute cycle.</li><li><strong>1.1.2 Multicore and parallel</strong> – more on cores and parallel processing.</li><li><strong>2.1.2 Thinking ahead: caching</strong> – the same idea as cache memory, in software.</li><li><strong>2.2.2 Pipelining</strong> – used as a problem-solving method in Paper 2.</li><li><strong>1.4.1 Data types</strong> – binary and powers of 2 for address bus calculations.</li></ul></div>
+          <div><h2>Lesson slides</h2>
+            <p>Go back over the lesson for the full worked examples and tasks.</p>
+            <p><a class="btn" href="../../slides/1-1/processor-performance.pptx">Download the lesson slides</a></p>
+            <p class="small">1.1.1B Processor performance – including the address bus calculations, the system clock and pipelining diagrams.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <div class="wrap">
+        <h2>Check your understanding</h2>
+        <p>Answer, then press <strong>Check my answers</strong>. Each question explains the answer so you can fix any mistakes.</p>
+        <div class="quiz-block">
+          <h3>Quick quiz – marked for you</h3>
+          <div class="q" data-answer=""><p class="q-text">1. How many different memory addresses can an 8-line address bus carry? <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 1" data-answer="256|2^8" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>Each line is a 0 or 1, so 8 lines give 2<sup>8</sup> = 256 different addresses.</p></div></div><div class="q" data-answer=""><p class="q-text">2. A computer has an 8-line address bus and a 16-bit word. What is its maximum memory size in bytes? <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 2" data-answer="512|512 bytes" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>2<sup>8</sup> = 256 addresses × 2 bytes per word = 512 bytes.</p></div></div><div class="q" data-answer="b"><p class="q-text">3. A processor runs at 4 GHz. What does this mean? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q9" value="a"> <span>It has 4 cores</span></label><label><input type="radio" name="q9" value="b"> <span>Its clock ticks 4 billion times per second</span></label><label><input type="radio" name="q9" value="c"> <span>It has 4 GB of cache</span></label><label><input type="radio" name="q9" value="d"> <span>It can hold 4 billion instructions</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Giga = billion and hertz = cycles per second: 4 billion clock cycles each second.</p></div></div><div class="q" data-answer="b"><p class="q-text">4. Why is a quad-core processor not always four times faster than a single core? <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q10" value="a"> <span>Each core is slower</span></label><label><input type="radio" name="q10" value="b"> <span>Some tasks must be done in order, and software may not use all cores</span></label><label><input type="radio" name="q10" value="c"> <span>Cores share one clock</span></label><label><input type="radio" name="q10" value="d"> <span>Cache gets smaller</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Parallel processing only helps when a task can be split into independent parts, and the software must be written to do it.</p></div></div><div class="q" data-answer="b"><p class="q-text">5. Level 1 cache is split into… <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q11" value="a"> <span>RAM and ROM</span></label><label><input type="radio" name="q11" value="b"> <span>an instruction cache and a data cache</span></label><label><input type="radio" name="q11" value="c"> <span>L2 and L3</span></label><label><input type="radio" name="q11" value="d"> <span>fast and slow halves</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Splitting L1 lets an instruction and data be fetched at the same time – a Harvard idea inside a modern CPU.</p></div></div><div class="q" data-answer=""><p class="q-text">6. With a 3-stage pipeline (fetch, decode, execute), how many clock cycles do 3 instructions take? <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 6" data-answer="5" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>The first takes 3 cycles; each new instruction finishes one cycle later: 3 + 1 + 1 = 5 (without pipelining, 9).</p></div></div>
+          <button type="button" class="btn quiz-check">Check my answers</button>
+          <button type="button" class="btn btn-ghost quiz-reset">Start again</button>
+          <p class="quiz-score mt-1" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="exam" class="section-alt">
+      <div class="wrap">
+        <h2>Exam-style questions – mark them yourself</h2>
+        <p>Write your answer, then open <strong>Mark your answer</strong>. Tick the mark points you hit, read the model answer and use the tips to improve. See the <a href="exam-tips.html">1.1 exam tips</a> for more help.</p>
+<article class="exam-q">
+          <header><span class="tag">AO1</span><span class="marks">[3 marks]</span></header>
+          <p>Describe <strong>three</strong> factors that affect the performance of a CPU.</p>
+          <label for="es4t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es4t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es4"><li><label><input type="checkbox"> <span>Clock speed: more FDE cycles / instructions per second (1)</span></label></li><li><label><input type="checkbox"> <span>Number of cores: each core can process instructions at the same time (1)</span></label></li><li><label><input type="checkbox"> <span>Cache: more cache means fewer slower fetches from RAM (1)</span></label></li></ul>
+            <p id="es4" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> A higher clock speed means more fetch-decode-execute cycles each second. More cores allow several instructions to be processed at the same time. A larger cache stores more frequently used data and instructions close to the CPU, so fewer have to be fetched from slower RAM.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Don’t just name the factor – say <em>how</em> it improves performance.</li><li>Use precise terms: cycles per second, cache hits, RAM.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[3 marks]</span></header>
+          <p>Explain how pipelining improves the performance of a processor.</p>
+          <label for="es5t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es5t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es5"><li><label><input type="checkbox"> <span>The next instruction is fetched while the current one is decoded / executed (1)</span></label></li><li><label><input type="checkbox"> <span>The stages overlap so parts of the processor are not idle (1)</span></label></li><li><label><input type="checkbox"> <span>More instructions are completed in a given time (1)</span></label></li></ul>
+            <p id="es5" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> With pipelining, while one instruction is being executed the next is being decoded and the one after that is being fetched. Because the stages overlap, no part of the processor sits idle, so more instructions are completed in the same time.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Explain what overlaps, not just that it is “faster”.</li><li>For extra depth, mention that a branch instruction flushes the pipeline.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO3</span><span class="marks">[4 marks]</span></header>
+          <p>A student’s computer is slow when exporting large videos. Discuss whether a processor with a faster clock speed or one with more cores would help more.</p>
+          <label for="es6t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es6t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es6"><li><label><input type="checkbox"> <span>More cores help because video export can be split into parts / frames processed at the same time (1)</span></label></li><li><label><input type="checkbox"> <span>A faster clock speeds up every FDE cycle, including tasks that can’t be split (1)</span></label></li><li><label><input type="checkbox"> <span>Extra cores only help if the software is written for parallel processing (1)</span></label></li><li><label><input type="checkbox"> <span>A justified conclusion linked to video export (1)</span></label></li></ul>
+            <p id="es6" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> Exporting video can be split into separate frames, so more cores could each work on different frames at the same time. A faster clock speeds up every instruction, which also helps parts of the task that must run in order. However, extra cores only help if the editing software is written to use them. As video export is easy to split and most editing software is multi-threaded, more cores would help most here.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Weigh both options against the scenario: video export.</li><li>Finish with a clear judgement and a reason.</li></ul></div>
+          </div></details>
+        </article>
+      </div>
+    </section>
+
+    <section id="revise">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>How to revise this</h2><ul><li><a href="../../techniques/worked-examples.html">Worked examples</a> – address bus and memory size calculations</li><li><a href="../../techniques/concept-maps.html">Concept maps</a> – link each factor to performance and its limit</li><li><a href="../../techniques/teach-it.html">Teach it</a> – explain pipelining with the diagram</li></ul>
+        <p class="small">These are the best fit for this part of the topic, but you can use any <a href="../../revision-techniques.html">revision technique</a> that works for you.</p></div>
+          <div><h2>Watch and read more</h2><ul><li><a href="https://www.youtube.com/@Computerphile">Computerphile (YouTube)</a> – short videos by computer scientists on CPUs, caches and memory.</li><li><a href="https://isaaccomputerscience.org">Isaac Computer Science</a> – free topic notes and questions on computer systems.</li></ul></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 1.1 pages"><a href="processor-components.html"><span class="dir">← Previous</span>Processor components and the FDE cycle</a><a class="next" href="architecture.html"><span class="dir">Next →</span>Von Neumann, Harvard and contemporary architecture</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>

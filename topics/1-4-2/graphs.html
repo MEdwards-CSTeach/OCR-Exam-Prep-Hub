@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Graphs (1.4.2) – OCR A Level CS Revision</title>
+  <meta name="description" content="OCR A Level Computer Science 1.4.2: Graphs. Revision notes, quiz and exam questions.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html" aria-current="page">Paper 1</a></li>
+          <li><a href="../../paper2.html">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../course-content.html#t1-4-2">Course content</a> › <a href="index.html">1.4.2 Data structures</a> › Graphs</p>
+          <p class="eyebrow">1.4.2 Data structures • Paper 1 (and Paper 2)</p>
+          <h1>Graphs</h1>
+          <hr class="rule">
+          <p class="lead">Vertices joined by edges. Stored as a matrix or list; searched by BFS or DFS.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">Key terms</h2><ul style="margin:0"><li>Vertex (node), edge (arc)</li><li>Directed / undirected</li><li>Weighted / unweighted</li><li>Adjacency matrix, adjacency list</li><li>Sparse, dense</li><li>BFS (queue), DFS (stack)</li></ul></div>
+      </div>
+    </div>
+    <div class="wrap" style="padding-top:1.25rem">
+      <nav class="toc" aria-label="On this page"><ul>
+        <li><a href="#notes">Revision notes</a></li><li><a href="#links">Links and slides</a></li>
+        <li><a href="#quiz">Quick quiz</a></li><li><a href="#exam">Exam questions</a></li><li><a href="#revise">How to revise it</a></li>
+      </ul></nav>
+    </div>
+
+    <section id="notes">
+      <div class="wrap">
+        <h2 class="mt-2">What is a graph?</h2>
+        <div class="grid">
+          <div><ul>
+            <li>A set of <strong>vertices</strong> (nodes) joined by <strong>edges</strong> (arcs).</li>
+            <li>Stores <strong>relationships</strong>: who knows who, which places connect.</li>
+            <li><strong>Directed</strong>: edges have a direction (P follows Q). <strong>Undirected</strong>: both ways.</li>
+            <li><strong>Weighted</strong>: edges carry a value (distance, time, cost). <strong>Unweighted</strong>: just connected or not.</li>
+            <li>Two vertices joined by one edge are <strong>adjacent</strong>.</li>
+          </ul></div>
+          <div><figure class="diagram"><svg viewBox="0 0 640 260" role="img" aria-labelledby="td6eab29a td6eab29ad"><title id="td6eab29a">An undirected graph</title><desc id="td6eab29ad">Vertices A, B, C, D and E. Edges: A–B, A–C, B–D, C–D and D–E.</desc><defs><marker id="ahtd6eab29a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><line x1="90" y1="125" x2="240" y2="50" stroke="#3D4451" stroke-width="3"/><line x1="90" y1="125" x2="240" y2="200" stroke="#3D4451" stroke-width="3"/><line x1="240" y1="50" x2="400" y2="125" stroke="#3D4451" stroke-width="3"/><line x1="240" y1="200" x2="400" y2="125" stroke="#3D4451" stroke-width="3"/><line x1="400" y1="125" x2="550" y2="125" stroke="#3D4451" stroke-width="3"/><circle cx="90" cy="125" r="26" fill="#0B6E75"/><text x="90" y="132" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#fff"><tspan x="90" dy="0">A</tspan></text><circle cx="240" cy="50" r="26" fill="#0B6E75"/><text x="240" y="57" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#fff"><tspan x="240" dy="0">B</tspan></text><circle cx="240" cy="200" r="26" fill="#0B6E75"/><text x="240" y="207" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#fff"><tspan x="240" dy="0">C</tspan></text><circle cx="400" cy="125" r="26" fill="#0B6E75"/><text x="400" y="132" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#fff"><tspan x="400" dy="0">D</tspan></text><circle cx="550" cy="125" r="26" fill="#0B6E75"/><text x="550" y="132" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#fff"><tspan x="550" dy="0">E</tspan></text><text x="330" y="253" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" fill="#3D4451"><tspan x="330" dy="0">Vertices A to E, joined by 5 undirected, unweighted edges</tspan></text></svg><figcaption>The same example graph is used for the matrix, list and searches below.</figcaption></figure></div>
+        </div>        <h2 class="mt-2">Storing a graph</h2>
+        <div class="grid grid-2">
+          <div><h3>Adjacency matrix</h3>
+            <div class="table-scroll"><table class="grid-table"><thead><tr><th></th><th scope="col">A</th><th scope="col">B</th><th scope="col">C</th><th scope="col">D</th><th scope="col">E</th></tr></thead>
+            <tbody><tr><th scope="row">A</th><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td></tr><tr><th scope="row">B</th><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+            <tr><th scope="row">C</th><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr><tr><th scope="row">D</th><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+            <tr><th scope="row">E</th><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td></tr></tbody></table></div>
+            <p class="small">Row = from, column = to. Undirected graphs give a symmetric matrix. A weighted graph stores the weight instead of 1.</p></div>
+          <div><h3>Adjacency list</h3>
+            <pre class="code"><code>A : [B, C]
+B : [A, D]
+C : [A, D]
+D : [B, C, E]
+E : [D]</code></pre>
+            <p class="small">Each vertex lists its neighbours. Weighted: store pairs, e.g. <code>H : [(F, 4), (L, 12)]</code>.</p></div>
+        </div>
+        <div class="table-scroll mt-1"><table><thead><tr><th scope="col"></th><th scope="col">Adjacency matrix</th><th scope="col">Adjacency list</th></tr></thead>
+          <tbody><tr><th scope="row">Space</th><td>Vertices × vertices, always</td><td>Only the edges that exist</td></tr>
+          <tr><th scope="row">Best for</th><td><strong>Dense</strong> graphs (many edges)</td><td><strong>Sparse</strong> graphs (few edges)</td></tr>
+          <tr><th scope="row">Is there an edge?</th><td>Fast: one lookup</td><td>Slower: search the list</td></tr>
+          <tr><th scope="row">All neighbours</th><td>Slower: scan a whole row</td><td>Fast: it is the list</td></tr></tbody></table></div>        <h2 class="mt-2">Traversing a graph</h2>
+        <div class="grid grid-2">
+          <div class="card"><h3>Breadth-first (BFS)</h3><ul>
+            <li>Visit all neighbours first, then their neighbours – level by level.</li>
+            <li>Uses a <strong>queue</strong>.</li>
+            <li>Finds the <strong>shortest path</strong> (fewest edges) in an unweighted graph.</li>
+            <li>From A: <strong>A, B, C, D, E</strong></li></ul></div>
+          <div class="card"><h3>Depth-first (DFS)</h3><ul>
+            <li>Go as deep as possible along one path, then <strong>backtrack</strong>.</li>
+            <li>Uses a <strong>stack</strong> (or recursion).</li>
+            <li>Shortest path not guaranteed; usually uses less memory.</li>
+            <li>From A: <strong>A, B, D, C, E</strong></li></ul></div>
+        </div>
+        <p class="mt-1">Both need a <strong>visited</strong> list, or a graph with a cycle loops forever. For <strong>weighted</strong> shortest paths, use Dijkstra’s or A* (2.3.1). <strong>Uses:</strong> social networks, sat-navs, web crawlers.</p>
+        <div class="callout callout-amber mt-1"><p><strong>Watch out for:</strong></p><ul><li>Saying BFS finds the quickest route in a weighted graph – it finds the fewest edges, ignoring weights.</li><li>Mixing up which uses a queue (BFS) and which uses a stack (DFS).</li><li>Saying an adjacency list <em>always</em> uses less memory – not for dense graphs.</li><li>Forgetting an undirected edge must appear in both vertices’ lists.</li></ul></div>
+      </div>
+    </section>
+
+    <section id="links" class="section-alt">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>Links to other topics</h2><ul class="link-list"><li><strong>1.4.2 Trees</strong> – a tree is a connected graph with no cycles.</li><li><strong>1.4.2 Stacks and queues</strong> – DFS uses a stack, BFS uses a queue.</li><li><strong>2.3.1 Algorithms</strong> – BFS, DFS, Dijkstra’s and A* all work on graphs.</li><li><strong>1.3.3 Networks</strong> – routers and links form a graph.</li><li><strong>1.3.4 PageRank</strong> – web pages and links form a directed graph.</li></ul></div>
+          <div><h2>Lesson slides</h2>
+            <p>Go back over the lesson for the full worked examples and tasks.</p>
+            <p><a class="btn" href="../../slides/1-4-2/graphs.pptx">Download the lesson slides</a></p>
+            <p class="small">Graphs – including the drone delivery network, theme park BFS/DFS traces and exam-style questions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <div class="wrap">
+        <h2>Check your understanding</h2>
+        <p>Answer, then press <strong>Check my answers</strong>. Each question explains the answer so you can fix any mistakes.</p>
+        <div class="quiz-block">
+          <h3>Quick quiz – marked for you</h3>
+          <div class="q" data-answer="b"><p class="q-text">1. Flights between airports, labelled with ticket prices. What type of graph is this? <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q26" value="a"> <span>Undirected, unweighted</span></label><label><input type="radio" name="q26" value="b"> <span>Directed, weighted</span></label><label><input type="radio" name="q26" value="c"> <span>Undirected, weighted</span></label><label><input type="radio" name="q26" value="d"> <span>Directed, unweighted</span></label></div><div class="explain" hidden><p><span class="verdict"></span>A flight from X to Y doesn’t guarantee one back (directed), and each edge has a price (weighted).</p></div></div><div class="q" data-answer="b"><p class="q-text">2. A road network has 40,000 junctions, each joined to 3 or 4 roads. Which representation is better? <span class="tag tag-soft">AO3</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q27" value="a"> <span>Adjacency matrix</span></label><label><input type="radio" name="q27" value="b"> <span>Adjacency list</span></label></div><div class="explain" hidden><p><span class="verdict"></span>The graph is sparse: a matrix needs 1.6 billion cells, almost all 0. A list stores only the roads that exist.</p></div></div><div class="q" data-answer=""><p class="q-text">3. Give the breadth-first order from A for the example graph. Take neighbours in alphabetical order. <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 3" data-answer="ABCDE|A B C D E" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>Visit A, then its neighbours B and C, then their unvisited neighbour D, then E. Order: A, B, C, D, E.</p></div></div><div class="q" data-answer=""><p class="q-text">4. Give the depth-first order from A for the example graph (alphabetical order). <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 4" data-answer="ABDCE|A B D C E" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>A → B → D (go deep) → C (D’s next unvisited neighbour) → backtrack to D → E. Order: A, B, D, C, E.</p></div></div><div class="q" data-answer="b"><p class="q-text">5. Which data structure does breadth-first search use? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q30" value="a"> <span>Stack</span></label><label><input type="radio" name="q30" value="b"> <span>Queue</span></label><label><input type="radio" name="q30" value="c"> <span>Hash table</span></label><label><input type="radio" name="q30" value="d"> <span>Tree</span></label></div><div class="explain" hidden><p><span class="verdict"></span>BFS enqueues neighbours as they are discovered and dequeues them in order (FIFO), so it works level by level.</p></div></div>
+          <button type="button" class="btn quiz-check">Check my answers</button>
+          <button type="button" class="btn btn-ghost quiz-reset">Start again</button>
+          <p class="quiz-score mt-1" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="exam" class="section-alt">
+      <div class="wrap">
+        <h2>Exam-style questions – mark them yourself</h2>
+        <p>Write your answer, then open <strong>Mark your answer</strong>. Tick the mark points you hit, read the model answer and use the tips to improve. See the <a href="exam-tips.html">1.4.2 exam tips</a> for more help.</p>
+<article class="exam-q">
+          <header><span class="tag">AO1</span><span class="marks">[2 marks]</span></header>
+          <p>State what is meant by a graph.</p>
+          <label for="es16t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es16t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es16"><li><label><input type="checkbox"> <span>A set of vertices / nodes (1)</span></label></li><li><label><input type="checkbox"> <span>connected by edges / arcs (1)</span></label></li></ul>
+            <p id="es16" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> A graph is a set of vertices (nodes) connected by edges (arcs).</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Two marks = two key terms. Use both vertices and edges.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[3 marks]</span></header>
+          <p>Explain why a breadth-first search finds the shortest route in an unweighted graph, but may not find the quickest route in a weighted graph.</p>
+          <label for="es17t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es17t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es17"><li><label><input type="checkbox"> <span>BFS explores level by level, so the first time it reaches a vertex is by the fewest edges (1)</span></label></li><li><label><input type="checkbox"> <span>It ignores the weights on the edges (1)</span></label></li><li><label><input type="checkbox"> <span>A route with more edges can have a lower total weight, so Dijkstra’s / A* is needed (1)</span></label></li></ul>
+            <p id="es17" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> BFS visits all vertices one edge away, then two edges away, and so on, so it reaches each vertex by the path with the fewest edges. However, it ignores edge weights, so a path with more edges but smaller weights could be quicker. An algorithm such as Dijkstra’s, which uses the weights, is needed for weighted graphs.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Explain <em>why</em> BFS gives fewest edges (level by level).</li><li>Give the reason it fails for weighted graphs – it ignores the weights.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO3</span><span class="marks">[6 marks]</span></header>
+          <p>A sat-nav company stores a road network of 40,000 junctions. Each junction connects to 3 or 4 roads, and each road has a travel time. Discuss how the company should store this graph and how it could be searched to find routes.</p>
+          <label for="es18t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es18t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es18"><li><label><input type="checkbox"> <span>Matrix: 40,000 × 40,000 = 1.6 billion cells, almost all empty (1)</span></label></li><li><label><input type="checkbox"> <span>The graph is sparse, so an adjacency list uses far less memory (1)</span></label></li><li><label><input type="checkbox"> <span>Weights stored as (neighbour, time) pairs (1)</span></label></li><li><label><input type="checkbox"> <span>BFS gives fewest junctions but ignores travel time (1)</span></label></li><li><label><input type="checkbox"> <span>DFS does not find the shortest path, but could check a route exists (1)</span></label></li><li><label><input type="checkbox"> <span>Conclusion: adjacency list plus a weighted algorithm such as Dijkstra’s or A* (1)</span></label></li></ul>
+            <p id="es18" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> An adjacency matrix would need 40,000 × 40,000 = 1.6 billion cells, but with only around 70,000 roads almost all would be empty, because the graph is sparse. An adjacency list stores only the roads that exist, using far less memory, and each entry can store a (neighbour, travel time) pair. BFS would find the route through the fewest junctions but ignores travel time, and DFS doesn’t guarantee the shortest path at all, though it could check whether any route exists. The company should use an adjacency list with a weighted shortest-path algorithm such as Dijkstra’s or A*.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Use the numbers in the question – work out the matrix size.</li><li>Cover both structures and both searches, as the question asks.</li><li>End with a judgement: which structure and which algorithm, and why. No conclusion caps your mark.</li></ul></div>
+          </div></details>
+        </article>
+      </div>
+    </section>
+
+    <section id="revise">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>How to revise this</h2><ul><li><a href="../../techniques/trace-tables.html">Trace tables</a> – trace BFS with the queue and DFS with the stack</li><li><a href="../../techniques/comparison-tables.html">Comparison tables</a> – matrix vs list; BFS vs DFS</li><li><a href="../../techniques/concept-maps.html">Concept maps</a> – link graphs to stacks, queues and 2.3.1 algorithms</li></ul>
+        <p class="small">These are the best fit for this part of the topic, but you can use any <a href="../../revision-techniques.html">revision technique</a> that works for you.</p></div>
+          <div><h2>Watch and read more</h2><ul><li><a href="https://visualgo.net/en/graphds">VisuAlgo – graph structures</a> – matrix and list views side by side.</li><li><a href="https://visualgo.net/en/dfsbfs">VisuAlgo – graph traversal</a> – animated BFS and DFS.</li></ul></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 1.4.2 pages"><a href="hash-tables.html"><span class="dir">← Previous</span>Hash tables</a><a class="next" href="trees.html"><span class="dir">Next →</span>Trees and binary search trees</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>

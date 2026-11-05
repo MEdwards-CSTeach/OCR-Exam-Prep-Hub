@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Queues (1.4.2) – OCR A Level CS Revision</title>
+  <meta name="description" content="OCR A Level Computer Science 1.4.2: Queues. Revision notes, quiz and exam questions.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html" aria-current="page">Paper 1</a></li>
+          <li><a href="../../paper2.html">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../course-content.html#t1-4-2">Course content</a> › <a href="index.html">1.4.2 Data structures</a> › Queues</p>
+          <p class="eyebrow">1.4.2 Data structures • Paper 1 (and Paper 2)</p>
+          <h1>Queues</h1>
+          <hr class="rule">
+          <p class="lead">First in, first out. Enqueue at the rear, dequeue at the front.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">Key terms</h2><ul style="margin:0"><li>FIFO</li><li>Front, rear, count</li><li>Enqueue, dequeue</li><li>Linear, circular, priority queue</li><li>MOD (wrap-around)</li></ul></div>
+      </div>
+    </div>
+    <div class="wrap" style="padding-top:1.25rem">
+      <nav class="toc" aria-label="On this page"><ul>
+        <li><a href="#notes">Revision notes</a></li><li><a href="#links">Links and slides</a></li>
+        <li><a href="#quiz">Quick quiz</a></li><li><a href="#exam">Exam questions</a></li><li><a href="#revise">How to revise it</a></li>
+      </ul></nav>
+    </div>
+
+    <section id="notes">
+      <div class="wrap">
+        <h2 class="mt-2">What is a queue?</h2>
+        <ul>
+          <li><strong>FIFO</strong>: first in, first out. Items leave in the order they joined.</li>
+          <li><strong>Enqueue</strong> adds at the <strong>rear</strong>. <strong>Dequeue</strong> removes from the <strong>front</strong>.</li>
+          <li>Two pointers: front and rear. A <strong>count</strong> of items is often kept too.</li>
+        </ul>
+        <figure class="diagram"><svg viewBox="0 0 880 265" role="img" aria-labelledby="td620a70d td620a70dd"><title id="td620a70d">Linear and circular queues</title><desc id="td620a70dd">Left: a linear queue where cells 0 and 1 are empty but unusable because rear has reached the end. Right: a circular queue of 6 cells; rear wraps from 5 to 0 using MOD, so 7 is stored in cell 0.</desc><defs><marker id="ahtd620a70d" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><text x="20" y="30" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="20" dy="0">Linear queue after two dequeues: cells 0 and 1 are wasted</tspan></text><rect x="80" y="45" width="90" height="54" fill="#EEF3F6" stroke="#0B6E75" stroke-width="2"/><text x="125" y="78" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="125" dy="0"></tspan></text><text x="125" y="120" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" fill="#3D4451"><tspan x="125" dy="0">0</tspan></text><rect x="170" y="45" width="90" height="54" fill="#EEF3F6" stroke="#0B6E75" stroke-width="2"/><text x="215" y="78" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="215" dy="0"></tspan></text><text x="215" y="120" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" fill="#3D4451"><tspan x="215" dy="0">1</tspan></text><rect x="260" y="45" width="90" height="54" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="305" y="78" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="305" dy="0">5</tspan></text><text x="305" y="120" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" fill="#3D4451"><tspan x="305" dy="0">2</tspan></text><rect x="350" y="45" width="90" height="54" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="395" y="78" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="395" dy="0">9</tspan></text><text x="395" y="120" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" fill="#3D4451"><tspan x="395" dy="0">3</tspan></text><rect x="440" y="45" width="90" height="54" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="485" y="78" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="485" dy="0"></tspan></text><text x="485" y="120" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" fill="#3D4451"><tspan x="485" dy="0">4</tspan></text><line x1="305" y1="160" x2="260" y2="104" stroke="#B25C00" stroke-width="2.5" marker-end="url(#ahtd620a70d)"/><text x="305" y="177" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#B25C00"><tspan x="305" dy="0">front</tspan></text><line x1="395" y1="160" x2="350" y2="104" stroke="#0B6E75" stroke-width="2.5" marker-end="url(#ahtd620a70d)"/><text x="400" y="177" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#0B6E75"><tspan x="400" dy="0">rear</tspan></text><path d="M700.0,25.0 A95,95 0 0 1 782.3,72.5 L743.3,95.0 A50,50 0 0 0 700.0,70.0 Z" fill="#FFF4E0" stroke="#0B6E75" stroke-width="2"/><text x="736" y="64" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#1A1A2E"><tspan x="736" dy="0">7</tspan></text><text x="756" y="28" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" fill="#3D4451"><tspan x="756" dy="0">0</tspan></text><path d="M782.3,72.5 A95,95 0 0 1 782.3,167.5 L743.3,145.0 A50,50 0 0 0 743.3,95.0 Z" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="772" y="126" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#1A1A2E"><tspan x="772" dy="0"></tspan></text><text x="812" y="125" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" fill="#3D4451"><tspan x="812" dy="0">1</tspan></text><path d="M782.3,167.5 A95,95 0 0 1 700.0,215.0 L700.0,170.0 A50,50 0 0 0 743.3,145.0 Z" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="736" y="188" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#1A1A2E"><tspan x="736" dy="0">4</tspan></text><text x="756" y="222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" fill="#3D4451"><tspan x="756" dy="0">2</tspan></text><path d="M700.0,215.0 A95,95 0 0 1 617.7,167.5 L656.7,145.0 A50,50 0 0 0 700.0,170.0 Z" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="664" y="188" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#1A1A2E"><tspan x="664" dy="0">1</tspan></text><text x="644" y="222" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" fill="#3D4451"><tspan x="644" dy="0">3</tspan></text><path d="M617.7,167.5 A95,95 0 0 1 617.7,72.5 L656.7,95.0 A50,50 0 0 0 656.7,145.0 Z" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="628" y="126" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#1A1A2E"><tspan x="628" dy="0">9</tspan></text><text x="588" y="125" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" fill="#3D4451"><tspan x="588" dy="0">4</tspan></text><path d="M617.7,72.5 A95,95 0 0 1 700.0,25.0 L700.0,70.0 A50,50 0 0 0 656.7,95.0 Z" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="664" y="64" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#1A1A2E"><tspan x="664" dy="0">2</tspan></text><text x="644" y="28" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" fill="#3D4451"><tspan x="644" dy="0">5</tspan></text><text x="700" y="125" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#3D4451"><tspan x="700" dy="0">ring</tspan></text><text x="700" y="255" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#B25C00"><tspan x="700" dy="0">Circular: rear = (5 + 1) MOD 6 = 0, so 7 reuses cell 0</tspan></text></svg><figcaption>A linear queue wastes space after dequeues. A circular queue wraps round with MOD.</figcaption></figure>        <h2 class="mt-2">Operations (circular queue)</h2>
+        <div class="table-scroll"><table><thead><tr><th scope="col">Operation</th><th scope="col">Steps</th><th scope="col">Pseudocode</th></tr></thead><tbody><tr><th scope="row">enqueue(item)</th><td>Check not full. Move rear on by one, wrapping round. Store the item. Add 1 to count.</td><td><code>if count == size then error<br>rear = (rear + 1) MOD size<br>queue[rear] = item<br>count = count + 1</code></td></tr><tr><th scope="row">dequeue()</th><td>Check not empty. Read the item at front. Move front on, wrapping round. Subtract 1 from count.</td><td><code>if count == 0 then error<br>item = queue[front]<br>front = (front + 1) MOD size<br>count = count − 1</code></td></tr><tr><th scope="row">isEmpty()</th><td>True when count = 0.</td><td><code>return count == 0</code></td></tr><tr><th scope="row">isFull()</th><td>True when count = size.</td><td><code>return count == size</code></td></tr></tbody></table></div>        <h2 class="mt-2">Linear, circular and priority queues</h2>
+        <div class="grid grid-3">
+          <div class="card"><h3>Linear</h3><p>Front moves along as items leave. Cells behind it are wasted, so the queue can say “full” when it isn’t.</p></div>
+          <div class="card"><h3>Circular</h3><p>Treats the array as a ring. <code>(pointer + 1) MOD size</code> wraps back to 0 so freed cells are reused. Use a count to tell full from empty.</p></div>
+          <div class="card"><h3>Priority</h3><p>Items with higher priority are dequeued first. Equal priority: FIFO. Used in A&amp;E triage, scheduling and Dijkstra’s.</p></div>
+        </div>
+        <p class="mt-1"><strong>Uses:</strong> print jobs, keyboard buffers, packets waiting at a router, process scheduling, breadth-first search. <strong>Quick test:</strong> “in the order they arrived” = queue.</p>
+        <div class="callout callout-amber mt-1"><p><strong>Watch out for:</strong></p><ul><li>Enqueueing at the front or dequeuing from the rear.</li><li>Forgetting the MOD so the pointer runs off the end of the array.</li><li>Not explaining how full and empty are told apart in a circular queue.</li><li>Calling a priority queue “not a queue” – it is still FIFO within a priority.</li></ul></div>
+      </div>
+    </section>
+
+    <section id="links" class="section-alt">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>Links to other topics</h2><ul class="link-list"><li><strong>1.2.1 Scheduling</strong> – round robin and multi-level feedback queues use queues.</li><li><strong>1.3.3 Networks</strong> – packets and print jobs are buffered in queues.</li><li><strong>2.3.1 Breadth-first traversal</strong> – uses a queue to visit vertices level by level.</li><li><strong>2.3.1 Dijkstra’s algorithm</strong> – uses a priority queue.</li><li><strong>1.4.2 Stacks</strong> – the LIFO opposite.</li></ul></div>
+          <div><h2>Lesson slides</h2>
+            <p>Go back over the lesson for the full worked examples and tasks.</p>
+            <p><a class="btn" href="../../slides/1-4-2/queues.pptx">Download the lesson slides</a></p>
+            <p class="small">Queues – including the circular queue trace and the priority queue A&amp;E example.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <div class="wrap">
+        <h2>Check your understanding</h2>
+        <p>Answer, then press <strong>Check my answers</strong>. Each question explains the answer so you can fix any mistakes.</p>
+        <div class="quiz-block">
+          <h3>Quick quiz – marked for you</h3>
+          <div class="q" data-answer=""><p class="q-text">1. A circular queue has 6 cells (0–5). rear is 5. After one enqueue, what is rear? <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 1" data-answer="0" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>rear = (5 + 1) MOD 6 = 0. The pointer wraps back to the start to reuse the freed cell.</p></div></div><div class="q" data-answer="b"><p class="q-text">2. What is the main problem with a linear queue? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q17" value="a"> <span>It can only store integers</span></label><label><input type="radio" name="q17" value="b"> <span>After dequeues, cells at the front are wasted</span></label><label><input type="radio" name="q17" value="c"> <span>It is LIFO</span></label><label><input type="radio" name="q17" value="d"> <span>It needs no pointers</span></label></div><div class="explain" hidden><p><span class="verdict"></span>As front moves along, the cells behind it can’t be reused. The queue can report full while cells are empty. A circular queue fixes this.</p></div></div><div class="q" data-answer=""><p class="q-text">3. Queue(4) starts with front = 0, rear = −1, count = 0. Run enqueue(5), enqueue(2), dequeue(). What is front? <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 3" data-answer="1" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>Both enqueues move rear to 0 then 1. dequeue() returns 5 and moves front from 0 to 1. count is now 1.</p></div></div><div class="q" data-answer="b"><p class="q-text">4. In a circular queue, front and rear can be in the same place when it is full or empty. How is this usually solved? <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q19" value="a"> <span>Use a stack instead</span></label><label><input type="radio" name="q19" value="b"> <span>Keep a count of the items</span></label><label><input type="radio" name="q19" value="c"> <span>Make the array bigger</span></label><label><input type="radio" name="q19" value="d"> <span>Reset both pointers to 0</span></label></div><div class="explain" hidden><p><span class="verdict"></span>count == 0 means empty; count == size means full. (Another method is to always leave one cell empty.)</p></div></div><div class="q" data-answer="b"><p class="q-text">5. In a priority queue, two items have the same priority. Which is dequeued first? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q20" value="a"> <span>The one added last</span></label><label><input type="radio" name="q20" value="b"> <span>The one added first</span></label><label><input type="radio" name="q20" value="c"> <span>A random one</span></label><label><input type="radio" name="q20" value="d"> <span>The smaller value</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Within the same priority, a priority queue is still FIFO: the one that arrived first leaves first.</p></div></div>
+          <button type="button" class="btn quiz-check">Check my answers</button>
+          <button type="button" class="btn btn-ghost quiz-reset">Start again</button>
+          <p class="quiz-score mt-1" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="exam" class="section-alt">
+      <div class="wrap">
+        <h2>Exam-style questions – mark them yourself</h2>
+        <p>Write your answer, then open <strong>Mark your answer</strong>. Tick the mark points you hit, read the model answer and use the tips to improve. See the <a href="exam-tips.html">1.4.2 exam tips</a> for more help.</p>
+<article class="exam-q">
+          <header><span class="tag">AO1</span><span class="marks">[2 marks]</span></header>
+          <p>State what is meant by <strong>enqueue</strong> and <strong>dequeue</strong>.</p>
+          <label for="es10t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es10t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es10"><li><label><input type="checkbox"> <span>Enqueue: add an item to the rear of the queue (1)</span></label></li><li><label><input type="checkbox"> <span>Dequeue: remove (and return) the item at the front of the queue (1)</span></label></li></ul>
+            <p id="es10" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> Enqueue adds an item to the rear of the queue. Dequeue removes the item at the front of the queue and returns it.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Say <em>where</em> each operation happens – front or rear.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[3 marks]</span></header>
+          <p>Explain why a circular queue makes better use of memory than a linear queue.</p>
+          <label for="es11t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es11t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es11"><li><label><input type="checkbox"> <span>In a linear queue, cells before front cannot be reused after dequeuing (1)</span></label></li><li><label><input type="checkbox"> <span>So it can report full even though there are empty cells (1)</span></label></li><li><label><input type="checkbox"> <span>A circular queue wraps the pointer back to the start using MOD, reusing freed cells (1)</span></label></li></ul>
+            <p id="es11" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> In a linear queue, the front pointer moves along each time an item is dequeued, and the cells behind it can never be used again, so the queue can report that it is full while empty cells remain. A circular queue uses rear = (rear + 1) MOD size, so when the pointer reaches the end it wraps round to the start and reuses the freed cells.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Explain the problem first, then how the circular queue solves it.</li><li>Mention MOD and wrapping round – that is the key idea.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[4 marks]</span></header>
+          <p>A circular queue uses the array <code>queue</code> of size <code>size</code>, with pointers <code>front</code> and <code>rear</code> and a variable <code>count</code>. Write pseudocode for <code>enqueue(item)</code>.</p>
+          <label for="es12t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es12t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es12"><li><label><input type="checkbox"> <span>Checks if count == size (full) and reports an error (1)</span></label></li><li><label><input type="checkbox"> <span>rear = (rear + 1) MOD size (1)</span></label></li><li><label><input type="checkbox"> <span>queue[rear] = item (1)</span></label></li><li><label><input type="checkbox"> <span>count = count + 1 (1)</span></label></li></ul>
+            <p id="es12" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> <code>procedure enqueue(item)<br>&nbsp;&nbsp;if count == size then<br>&nbsp;&nbsp;&nbsp;&nbsp;print("Queue full")<br>&nbsp;&nbsp;else<br>&nbsp;&nbsp;&nbsp;&nbsp;rear = (rear + 1) MOD size<br>&nbsp;&nbsp;&nbsp;&nbsp;queue[rear] = item<br>&nbsp;&nbsp;&nbsp;&nbsp;count = count + 1<br>&nbsp;&nbsp;endif<br>endprocedure</code></p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Check for full before adding.</li><li>Move rear before storing the item.</li><li>Don’t forget to update count.</li></ul></div>
+          </div></details>
+        </article>
+      </div>
+    </section>
+
+    <section id="revise">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>How to revise this</h2><ul><li><a href="../../techniques/trace-tables.html">Trace tables</a> – track front, rear and count through enqueue/dequeue</li><li><a href="../../techniques/comparison-tables.html">Comparison tables</a> – linear vs circular vs priority; stack vs queue</li><li><a href="../../techniques/worked-examples.html">Worked examples</a> – MOD wrap-around calculations</li></ul>
+        <p class="small">These are the best fit for this part of the topic, but you can use any <a href="../../revision-techniques.html">revision technique</a> that works for you.</p></div>
+          <div><h2>Watch and read more</h2><ul><li><a href="https://visualgo.net/en/list">VisuAlgo – stacks and queues</a> – choose Queue to animate enqueue and dequeue.</li><li><a href="https://pythontutor.com">Python Tutor</a> – step through your Queue class and watch the pointers.</li></ul></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 1.4.2 pages"><a href="stacks.html"><span class="dir">← Previous</span>Stacks</a><a class="next" href="hash-tables.html"><span class="dir">Next →</span>Hash tables</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>

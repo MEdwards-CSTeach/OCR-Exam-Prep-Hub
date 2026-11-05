@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trees and binary search trees (1.4.2) – OCR A Level CS Revision</title>
+  <meta name="description" content="OCR A Level Computer Science 1.4.2: Trees and binary search trees. Revision notes, quiz and exam questions.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html" aria-current="page">Paper 1</a></li>
+          <li><a href="../../paper2.html">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../course-content.html#t1-4-2">Course content</a> › <a href="index.html">1.4.2 Data structures</a> › Trees and binary search trees</p>
+          <p class="eyebrow">1.4.2 Data structures • Paper 1 (and Paper 2)</p>
+          <h1>Trees and binary search trees</h1>
+          <hr class="rule">
+          <p class="lead">A hierarchy with no cycles. BSTs keep data in order for fast search.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">Key terms</h2><ul style="margin:0"><li>Root, parent, child, leaf</li><li>Edge, subtree, height</li><li>Binary tree, BST</li><li>Pre-, in-, post-order</li><li>Breadth-first</li><li>In-order successor</li></ul></div>
+      </div>
+    </div>
+    <div class="wrap" style="padding-top:1.25rem">
+      <nav class="toc" aria-label="On this page"><ul>
+        <li><a href="#notes">Revision notes</a></li><li><a href="#links">Links and slides</a></li>
+        <li><a href="#quiz">Quick quiz</a></li><li><a href="#exam">Exam questions</a></li><li><a href="#revise">How to revise it</a></li>
+      </ul></nav>
+    </div>
+
+    <section id="notes">
+      <div class="wrap">
+        <h2 class="mt-2">What is a tree?</h2>
+        <ul>
+          <li>A <strong>connected graph with no cycles</strong>. A rooted tree has one <strong>root</strong>; every other node has exactly one <strong>parent</strong>.</li>
+          <li><strong>Leaf</strong>: a node with no children. <strong>Subtree</strong>: a node and everything below it.</li>
+          <li><strong>Height</strong>: edges on the longest root-to-leaf path (say whether you count edges or levels).</li>
+          <li>n nodes → n − 1 edges. Only one route from the root to any node.</li>
+          <li>A <strong>binary tree</strong>: each node has at most two children (left and right).</li>
+        </ul>        <h2 class="mt-2">Binary search trees (BST)</h2>
+        <div class="grid">
+          <div><ul>
+            <li>A binary tree kept in order: <strong>left subtree smaller, right subtree larger</strong> – at every node.</li>
+            <li><strong>Add:</strong> start at the root; go left if smaller, right if larger; add as a new leaf at the first empty space.</li>
+            <li><strong>Search:</strong> compare, go left or right, repeat; stop when found or you reach a null pointer.</li>
+            <li>Balanced: <strong>O(log n)</strong>. Data added in sorted order makes a chain: <strong>O(n)</strong>.</li>
+          </ul></div>
+          <div><figure class="diagram"><svg viewBox="0 0 800 300" role="img" aria-labelledby="t4271d0ad t4271d0add"><title id="t4271d0ad">A binary search tree</title><desc id="t4271d0add">Root 50. Left child 30 with children 20 and 40. Right child 70 with children 60 and 80. Everything left of a node is smaller, everything right is larger.</desc><defs><marker id="aht4271d0ad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><line x1="400" y1="45" x2="230" y2="135" stroke="#3D4451" stroke-width="3"/><line x1="400" y1="45" x2="570" y2="135" stroke="#3D4451" stroke-width="3"/><line x1="230" y1="135" x2="140" y2="225" stroke="#3D4451" stroke-width="3"/><line x1="230" y1="135" x2="320" y2="225" stroke="#3D4451" stroke-width="3"/><line x1="570" y1="135" x2="480" y2="225" stroke="#3D4451" stroke-width="3"/><line x1="570" y1="135" x2="660" y2="225" stroke="#3D4451" stroke-width="3"/><circle cx="400" cy="45" r="27" fill="#B25C00" stroke="#0B6E75" stroke-width="2"/><text x="400" y="51" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#fff"><tspan x="400" dy="0">50</tspan></text><circle cx="230" cy="135" r="27" fill="#0B6E75" stroke="#0B6E75" stroke-width="2"/><text x="230" y="141" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#fff"><tspan x="230" dy="0">30</tspan></text><circle cx="570" cy="135" r="27" fill="#0B6E75" stroke="#0B6E75" stroke-width="2"/><text x="570" y="141" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#fff"><tspan x="570" dy="0">70</tspan></text><circle cx="140" cy="225" r="27" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="140" y="231" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="140" dy="0">20</tspan></text><circle cx="320" cy="225" r="27" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="320" y="231" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="320" dy="0">40</tspan></text><circle cx="480" cy="225" r="27" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="480" y="231" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="480" dy="0">60</tspan></text><circle cx="660" cy="225" r="27" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="660" y="231" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="660" dy="0">80</tspan></text><text x="510" y="45" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#B25C00"><tspan x="510" dy="0">root</tspan></text><text x="400" y="290" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#0B6E75"><tspan x="400" dy="0">leaves (no children)</tspan></text><text x="230" y="100" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" fill="#3D4451"><tspan x="230" dy="0">all &lt; 50</tspan></text><text x="570" y="100" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" fill="#3D4451"><tspan x="570" dy="0">all &gt; 50</tspan></text></svg><figcaption>Inserted in the order 50, 30, 70, 20, 40, 60, 80.</figcaption></figure></div>
+        </div>        <h2 class="mt-2">Traversals</h2>
+        <div class="table-scroll"><table>
+          <thead><tr><th scope="col">Traversal</th><th scope="col">Rule</th><th scope="col">Result on the tree above</th><th scope="col">Used for</th></tr></thead>
+          <tbody><tr><th scope="row">Pre-order</th><td>Node, left, right</td><td class="mono">50 30 20 40 70 60 80</td><td>Copying a tree</td></tr>
+          <tr><th scope="row">In-order</th><td>Left, node, right</td><td class="mono">20 30 40 50 60 70 80</td><td>Sorted output from a BST</td></tr>
+          <tr><th scope="row">Post-order</th><td>Left, right, node</td><td class="mono">20 40 30 60 80 70 50</td><td>Deleting a tree; evaluating expressions</td></tr>
+          <tr><th scope="row">Breadth-first</th><td>Level by level, left to right</td><td class="mono">50 30 70 20 40 60 80</td><td>Shallowest match first</td></tr></tbody></table></div>
+        <p class="mt-1">Depth-first (pre, in, post-order) uses a <strong>stack</strong> or recursion. Breadth-first uses a <strong>queue</strong>. OCR often asks for <strong>depth-first (post-order)</strong>.</p>        <h2 class="mt-2">Removing a node, and storing a tree in arrays</h2>
+        <div class="grid grid-2">
+          <div class="card"><h3>Three cases for removal</h3><ol>
+            <li><strong>Leaf:</strong> set the parent’s pointer to null.</li>
+            <li><strong>One child:</strong> point the parent at the child.</li>
+            <li><strong>Two children:</strong> replace with the <strong>in-order successor</strong> (go right once, then left as far as possible), then remove the successor.</li></ol></div>
+          <div class="card"><h3>Arrays with pointers</h3>
+            <div class="table-scroll"><table class="grid-table"><thead><tr><th scope="col">Index</th><th scope="col">Data</th><th scope="col">Left</th><th scope="col">Right</th></tr></thead>
+            <tbody><tr><td>0</td><td>50</td><td>1</td><td>2</td></tr><tr><td>1</td><td>30</td><td>3</td><td>4</td></tr><tr><td>2</td><td>70</td><td>−1</td><td>−1</td></tr><tr><td>3</td><td>20</td><td>−1</td><td>−1</td></tr><tr><td>4</td><td>40</td><td>−1</td><td>−1</td></tr></tbody></table></div>
+            <p class="small">rootPointer = 0. Use −1 or null for “no child” – never a blank or 0, because 0 is a real index.</p></div>
+        </div>
+        <p class="mt-1"><strong>Uses:</strong> file systems, the HTML DOM, abstract syntax trees in compilers (1.2.2), database indexes, decision trees, game AI.</p>
+        <div class="callout callout-amber mt-1"><p><strong>Watch out for:</strong></p><ul><li>Saying a tree has “at most two children” – that is a binary tree.</li><li>Giving in-order when post-order is asked for. Read the question carefully.</li><li>Using a blank or 0 for a null pointer.</li><li>Saying a BST is “faster” with no reason – say half the remaining tree is discarded each step: O(log n).</li><li>Describing a traversal without using the nodes in the question (max 2 of 4 marks).</li></ul></div>
+      </div>
+    </section>
+
+    <section id="links" class="section-alt">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>Links to other topics</h2><ul class="link-list"><li><strong>1.4.2 Graphs</strong> – a tree is a special graph: connected, no cycles.</li><li><strong>1.4.2 Stacks and queues</strong> – depth-first uses a stack; breadth-first uses a queue.</li><li><strong>2.3.1 Algorithms</strong> – depth-first (post-order) and breadth-first traversal; binary search.</li><li><strong>2.2.1 Recursion</strong> – insert, search and traversals are often recursive.</li><li><strong>1.2.2 Compilers</strong> – syntax analysis builds an abstract syntax tree.</li></ul></div>
+          <div><h2>Lesson slides</h2>
+            <p>Go back over the lesson for the full worked examples and tasks.</p>
+            <p><a class="btn" href="../../slides/1-4-2/trees.pptx">Download the lesson slides</a></p>
+            <p class="small">Trees including BSTs – with past paper examples from 2018–2022 and model 9-mark answers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <div class="wrap">
+        <h2>Check your understanding</h2>
+        <p>Answer, then press <strong>Check my answers</strong>. Each question explains the answer so you can fix any mistakes.</p>
+        <div class="quiz-block">
+          <h3>Quick quiz – marked for you</h3>
+          <div class="q" data-answer=""><p class="q-text">1. Give the in-order traversal of the BST above. <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 1" data-answer="20 30 40 50 60 70 80" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>Left, node, right. On a BST this always gives the values in sorted order: 20, 30, 40, 50, 60, 70, 80.</p></div></div><div class="q" data-answer=""><p class="q-text">2. Give the depth-first (post-order) traversal of the BST above. <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 2" data-answer="20 40 30 60 80 70 50" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>Left, right, then node. 20, 40, then their parent 30; 60, 80, then 70; finally the root 50.</p></div></div><div class="q" data-answer=""><p class="q-text">3. Give the breadth-first traversal of the BST above. <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 3" data-answer="50 30 70 20 40 60 80" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>Level by level, left to right: 50; then 30, 70; then 20, 40, 60, 80.</p></div></div><div class="q" data-answer=""><p class="q-text">4. 45 is added to the BST above. Which node becomes its parent? <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 4" data-answer="40" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>45 < 50: go left. 45 > 30: go right. 45 > 40: go right – empty, so 45 becomes 40’s right child.</p></div></div><div class="q" data-answer="c"><p class="q-text">5. A node with two children is removed from a BST. What replaces it? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q35" value="a"> <span>Its left child</span></label><label><input type="radio" name="q35" value="b"> <span>The root</span></label><label><input type="radio" name="q35" value="c"> <span>Its in-order successor</span></label><label><input type="radio" name="q35" value="d"> <span>Null</span></label></div><div class="explain" hidden><p><span class="verdict"></span>The in-order successor (smallest value in the right subtree) is the next value in sorted order, so the BST rule still holds.</p></div></div><div class="q" data-answer="b"><p class="q-text">6. The values 10, 20, 30, 40, 50 are added to an empty BST in that order. What is the result? <span class="tag tag-soft">AO3</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q36" value="a"> <span>A balanced tree, O(log n) search</span></label><label><input type="radio" name="q36" value="b"> <span>A chain going right, O(n) search</span></label><label><input type="radio" name="q36" value="c"> <span>A chain going left, O(1) search</span></label><label><input type="radio" name="q36" value="d"> <span>An error</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Each value is larger than the last, so each goes to the right: a chain. Searching becomes like a linked list: O(n).</p></div></div>
+          <button type="button" class="btn quiz-check">Check my answers</button>
+          <button type="button" class="btn btn-ghost quiz-reset">Start again</button>
+          <p class="quiz-score mt-1" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="exam" class="section-alt">
+      <div class="wrap">
+        <h2>Exam-style questions – mark them yourself</h2>
+        <p>Write your answer, then open <strong>Mark your answer</strong>. Tick the mark points you hit, read the model answer and use the tips to improve. See the <a href="exam-tips.html">1.4.2 exam tips</a> for more help.</p>
+<article class="exam-q">
+          <header><span class="tag">AO1</span><span class="marks">[4 marks]</span></header>
+          <p>Give <strong>two</strong> similarities and <strong>two</strong> differences between a tree and a graph.</p>
+          <label for="es19t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es19t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es19"><li><label><input type="checkbox"> <span>Both are made of nodes joined by edges (1)</span></label></li><li><label><input type="checkbox"> <span>Both are non-linear (1)</span></label></li><li><label><input type="checkbox"> <span>A tree has a root, whereas a graph does not (1)</span></label></li><li><label><input type="checkbox"> <span>A graph can contain cycles, whereas a tree cannot (1)</span></label></li></ul>
+            <p id="es19" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> Both are made of nodes joined by edges, and both are non-linear structures. A tree has a root, whereas a graph does not. A graph can contain cycles, whereas a tree cannot.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Write each difference as a pair: “a tree…, whereas a graph…”.</li><li>“A tree has at most two children” is wrong – that is a <em>binary</em> tree.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[3 marks]</span></header>
+          <p>Describe how the BST above is searched for the value 45.</p>
+          <label for="es20t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es20t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es20"><li><label><input type="checkbox"> <span>Compare 45 with the root 50; it is smaller, so go left to 30 (1)</span></label></li><li><label><input type="checkbox"> <span>45 is larger than 30, so go right to 40; larger again, so go right (1)</span></label></li><li><label><input type="checkbox"> <span>The right pointer is null, so stop: 45 is not in the tree (1)</span></label></li></ul>
+            <p id="es20" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> Compare 45 with the root, 50. It is smaller, so follow the left pointer to 30. 45 is larger than 30, so go right to 40. 45 is larger than 40, so go right, but 40’s right pointer is null, so the search stops: 45 is not in the tree.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Use compare → direction → repeat, then say when you stop.</li><li>Use the actual nodes from the tree in every step.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO3</span><span class="marks">[9 marks]</span></header>
+          <p>Compare the use of a breadth-first traversal and a depth-first (post-order) traversal on the BST above. Include how each works and the order of the values returned.</p>
+          <label for="es21t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es21t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es21"><li><label><input type="checkbox"> <span>Breadth-first: visits level by level, left to right (1)</span></label></li><li><label><input type="checkbox"> <span>Breadth-first uses a queue (1)</span></label></li><li><label><input type="checkbox"> <span>Breadth-first order: 50 30 70 20 40 60 80 (1)</span></label></li><li><label><input type="checkbox"> <span>Depth-first: goes down the left branch as far as possible, then the right, visiting a node after both subtrees, backtracking at leaves (1)</span></label></li><li><label><input type="checkbox"> <span>Depth-first uses a stack / recursion (1)</span></label></li><li><label><input type="checkbox"> <span>Post-order: 20 40 30 60 80 70 50 (1)</span></label></li><li><label><input type="checkbox"> <span>Breadth-first reaches nodes near the root first, but its queue can hold a whole level – more memory in a wide tree (1)</span></label></li><li><label><input type="checkbox"> <span>Depth-first stores only the current path – less memory, and reaches deep nodes sooner (1)</span></label></li><li><label><input type="checkbox"> <span>A justified conclusion linked to the tree / purpose (1)</span></label></li></ul>
+            <p id="es21" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> Breadth-first starts at the root and visits every node on a level, left to right, before moving down, using a queue: 50, 30, 70, 20, 40, 60, 80. Depth-first (post-order) follows the left branch as far as it can, then the right, outputting a node only after both of its subtrees, using a stack and backtracking at each leaf: 20, 40, 30, 60, 80, 70, 50. Breadth-first reaches nodes near the root sooner, but its queue may hold a whole level, so it needs more memory in a wide tree. Depth-first stores only the current path, so it uses less memory and reaches the leaves sooner. If every node must be visited, depth-first is better here because it uses less memory; if the target is likely to be near the root, breadth-first would find it sooner.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Structure it: know (how each works) → apply (write both orders) → evaluate → conclude.</li><li>Write out both orders in full – those are the application marks.</li><li>Without an evaluation and conclusion the answer is limited to the lower bands.</li></ul></div>
+          </div></details>
+        </article>
+      </div>
+    </section>
+
+    <section id="revise">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>How to revise this</h2><ul><li><a href="../../techniques/trace-tables.html">Trace tables</a> – trace traversals, especially the BFS queue</li><li><a href="../../techniques/worked-examples.html">Worked examples</a> – add, search and remove step by step</li><li><a href="../../techniques/extended-answers.html">Planning extended answers</a> – the 9-mark traversal comparison</li></ul>
+        <p class="small">These are the best fit for this part of the topic, but you can use any <a href="../../revision-techniques.html">revision technique</a> that works for you.</p></div>
+          <div><h2>Watch and read more</h2><ul><li><a href="https://visualgo.net/en/bst">VisuAlgo – binary search trees</a> – step through insert, search and remove.</li><li><a href="https://www.cs.usfca.edu/~galles/visualization/Algorithms.html">USFCA data structure visualisations</a> – BST and AVL tree animations.</li></ul></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 1.4.2 pages"><a href="graphs.html"><span class="dir">← Previous</span>Graphs</a><a class="next" href="exam-tips.html"><span class="dir">Next →</span>1.4.2 exam tips</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>

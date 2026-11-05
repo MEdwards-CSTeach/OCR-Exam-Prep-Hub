@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stacks (1.4.2) – OCR A Level CS Revision</title>
+  <meta name="description" content="OCR A Level Computer Science 1.4.2: Stacks. Revision notes, quiz and exam questions.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html" aria-current="page">Paper 1</a></li>
+          <li><a href="../../paper2.html">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../course-content.html#t1-4-2">Course content</a> › <a href="index.html">1.4.2 Data structures</a> › Stacks</p>
+          <p class="eyebrow">1.4.2 Data structures • Paper 1 (and Paper 2)</p>
+          <h1>Stacks</h1>
+          <hr class="rule">
+          <p class="lead">Last in, first out. Push and pop at the top.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">Key terms</h2><ul style="margin:0"><li>LIFO</li><li>Top pointer</li><li>Push, pop, peek</li><li>isEmpty, isFull</li><li>Overflow, underflow</li><li>Call stack, stack frame</li></ul></div>
+      </div>
+    </div>
+    <div class="wrap" style="padding-top:1.25rem">
+      <nav class="toc" aria-label="On this page"><ul>
+        <li><a href="#notes">Revision notes</a></li><li><a href="#links">Links and slides</a></li>
+        <li><a href="#quiz">Quick quiz</a></li><li><a href="#exam">Exam questions</a></li><li><a href="#revise">How to revise it</a></li>
+      </ul></nav>
+    </div>
+
+    <section id="notes">
+      <div class="wrap">
+        <h2 class="mt-2">What is a stack?</h2>
+        <ul>
+          <li><strong>LIFO</strong>: last in, first out. The last item added is the first removed.</li>
+          <li>Everything happens at one end: the <strong>top</strong>. One pointer is needed.</li>
+          <li>Often built on a fixed-size array. <code>top = −1</code> means the stack is empty.</li>
+        </ul>
+        <figure class="diagram"><svg viewBox="0 0 920 260" role="img" aria-labelledby="t6c8f8e13 t6c8f8e13d"><title id="t6c8f8e13">Push and pop on a stack</title><desc id="t6c8f8e13d">A stack holding 3 and 8 with top at index 1. After push(5), 5 is at index 2 and top is 2. After pop, 5 is returned and top goes back to 1.</desc><defs><marker id="aht6c8f8e13" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><text x="120" y="30" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="120" dy="0">Before</tspan></text><rect x="60" y="174" width="120" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="120" y="203" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="120" dy="0">3</tspan></text><text x="42" y="202" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" fill="#3D4451"><tspan x="42" dy="0">0</tspan></text><rect x="60" y="128" width="120" height="46" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="120" y="157" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="120" dy="0">8</tspan></text><text x="42" y="156" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" fill="#3D4451"><tspan x="42" dy="0">1</tspan></text><rect x="60" y="82" width="120" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="120" y="111" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="120" dy="0"></tspan></text><text x="42" y="110" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" fill="#3D4451"><tspan x="42" dy="0">2</tspan></text><rect x="60" y="36" width="120" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="120" y="65" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="120" dy="0"></tspan></text><text x="42" y="64" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" fill="#3D4451"><tspan x="42" dy="0">3</tspan></text><line x1="250" y1="151" x2="186" y2="151" stroke="#B25C00" stroke-width="2.5" marker-end="url(#aht6c8f8e13)"/><text x="280" y="156" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#B25C00"><tspan x="280" dy="0">top</tspan></text><text x="410" y="30" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="410" dy="0">After push(5)</tspan></text><rect x="350" y="174" width="120" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="410" y="203" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="410" dy="0">3</tspan></text><text x="332" y="202" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" fill="#3D4451"><tspan x="332" dy="0">0</tspan></text><rect x="350" y="128" width="120" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="410" y="157" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="410" dy="0">8</tspan></text><text x="332" y="156" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" fill="#3D4451"><tspan x="332" dy="0">1</tspan></text><rect x="350" y="82" width="120" height="46" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="410" y="111" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="410" dy="0">5</tspan></text><text x="332" y="110" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" fill="#3D4451"><tspan x="332" dy="0">2</tspan></text><rect x="350" y="36" width="120" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="410" y="65" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="410" dy="0"></tspan></text><text x="332" y="64" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" fill="#3D4451"><tspan x="332" dy="0">3</tspan></text><line x1="540" y1="105" x2="476" y2="105" stroke="#B25C00" stroke-width="2.5" marker-end="url(#aht6c8f8e13)"/><text x="570" y="110" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#B25C00"><tspan x="570" dy="0">top</tspan></text><text x="700" y="30" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="700" dy="0">After pop()</tspan></text><rect x="640" y="174" width="120" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="700" y="203" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="700" dy="0">3</tspan></text><text x="622" y="202" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" fill="#3D4451"><tspan x="622" dy="0">0</tspan></text><rect x="640" y="128" width="120" height="46" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="700" y="157" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="700" dy="0">8</tspan></text><text x="622" y="156" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" fill="#3D4451"><tspan x="622" dy="0">1</tspan></text><rect x="640" y="82" width="120" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="700" y="111" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="700" dy="0"></tspan></text><text x="622" y="110" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" fill="#3D4451"><tspan x="622" dy="0">2</tspan></text><rect x="640" y="36" width="120" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="700" y="65" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="700" dy="0"></tspan></text><text x="622" y="64" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" fill="#3D4451"><tspan x="622" dy="0">3</tspan></text><line x1="830" y1="151" x2="766" y2="151" stroke="#B25C00" stroke-width="2.5" marker-end="url(#aht6c8f8e13)"/><text x="860" y="156" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#B25C00"><tspan x="860" dy="0">top</tspan></text><text x="410" y="250" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" fill="#3D4451"><tspan x="410" dy="0">top = top + 1, then stack[top] = 5</tspan></text><text x="700" y="250" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" fill="#3D4451"><tspan x="700" dy="0">5 is returned, top = top − 1</tspan></text></svg><figcaption>push adds at the top; pop removes from the top.</figcaption></figure>        <h2 class="mt-2">Operations</h2>
+        <div class="table-scroll"><table><thead><tr><th scope="col">Operation</th><th scope="col">Steps</th><th scope="col">Pseudocode</th></tr></thead><tbody><tr><th scope="row">push(item)</th><td>Check not full. Move top up by one. Store the item at top.</td><td><code>if top == size − 1 then error<br>top = top + 1<br>stack[top] = item</code></td></tr><tr><th scope="row">pop()</th><td>Check not empty. Read the item at top. Move top down by one.</td><td><code>if top == −1 then error<br>item = stack[top]<br>top = top − 1</code></td></tr><tr><th scope="row">peek()</th><td>Return the item at top without removing it.</td><td><code>return stack[top]</code></td></tr><tr><th scope="row">isEmpty()</th><td>True when top = −1.</td><td><code>return top == −1</code></td></tr><tr><th scope="row">isFull()</th><td>True when top = size − 1.</td><td><code>return top == size − 1</code></td></tr></tbody></table></div>        <h2 class="mt-2">Overflow, underflow and the call stack</h2>
+        <div class="grid grid-2">
+          <div class="card"><h3>Overflow and underflow</h3><ul>
+            <li><strong>Stack overflow</strong> = push onto a <em>full</em> stack. Prevented by checking isFull.</li>
+            <li><strong>Stack underflow</strong> = pop from an <em>empty</em> stack. Prevented by checking isEmpty.</li></ul></div>
+          <div class="card"><h3>The call stack</h3><ul>
+            <li>Calling a subroutine <strong>pushes a stack frame</strong>: return address, parameters, local variables.</li>
+            <li>Returning <strong>pops</strong> the frame and jumps to the return address.</li>
+            <li>This is what makes <strong>recursion</strong> work. No base case = stack overflow.</li></ul></div>
+        </div>
+        <p class="mt-1"><strong>Uses:</strong> undo, browser back button, the call stack, checking balanced brackets, depth-first search. <strong>Quick test:</strong> “most recent first” = stack.</p>
+        <div class="callout callout-amber mt-1"><p><strong>Watch out for:</strong></p><ul><li>Mixing up overflow (push when full) and underflow (pop when empty).</li><li>Forgetting the check before push or pop in pseudocode.</li><li>Updating top in the wrong order: push moves top <em>then</em> stores; pop reads <em>then</em> moves top.</li><li>Saying pop deletes the data – it just moves the pointer; the old value is overwritten later.</li></ul></div>
+      </div>
+    </section>
+
+    <section id="links" class="section-alt">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>Links to other topics</h2><ul class="link-list"><li><strong>1.2.1 Interrupts</strong> – registers are saved on a stack before the ISR runs.</li><li><strong>2.2.1 Recursion</strong> – each call gets its own stack frame on the call stack.</li><li><strong>2.3.1 Depth-first traversal</strong> – uses a stack to backtrack.</li><li><strong>1.4.2 Queues</strong> – the FIFO opposite; compare them.</li><li><strong>1.2.2 Compilers</strong> – stacks evaluate expressions (Reverse Polish Notation).</li></ul></div>
+          <div><h2>Lesson slides</h2>
+            <p>Go back over the lesson for the full worked examples and tasks.</p>
+            <p><a class="btn" href="../../slides/1-4-2/stacks.pptx">Download the lesson slides</a></p>
+            <p class="small">Stacks – including the call stack worked examples and the stack-or-queue scenarios.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <div class="wrap">
+        <h2>Check your understanding</h2>
+        <p>Answer, then press <strong>Check my answers</strong>. Each question explains the answer so you can fix any mistakes.</p>
+        <div class="quiz-block">
+          <h3>Quick quiz – marked for you</h3>
+          <div class="q" data-answer=""><p class="q-text">1. A stack of size 3 starts empty (top = −1). Run: push(4), push(7), pop(), push(2). What is the value of <code>top</code>? <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 1" data-answer="1" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>push(4) → top 0, push(7) → top 1, pop() → top 0, push(2) → top 1. The stack holds 4, 2 with 2 on top.</p></div></div><div class="q" data-answer="b"><p class="q-text">2. Stack overflow happens when… <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q12" value="a"> <span>you pop from an empty stack</span></label><label><input type="radio" name="q12" value="b"> <span>you push onto a full stack</span></label><label><input type="radio" name="q12" value="c"> <span>top equals −1</span></label><label><input type="radio" name="q12" value="d"> <span>you peek at the top item</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Overflow = push when full. Underflow = pop when empty. Both are prevented by checking isFull / isEmpty first.</p></div></div><div class="q" data-answer="c"><p class="q-text">3. Which of these is best modelled by a stack? <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q13" value="a"> <span>Print jobs on a shared printer</span></label><label><input type="radio" name="q13" value="b"> <span>Customers at a checkout</span></label><label><input type="radio" name="q13" value="c"> <span>The undo history in a word processor</span></label><label><input type="radio" name="q13" value="d"> <span>Packets arriving at a router</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Undo reverses the most recent action first: last in, first out. The others are served in arrival order, so they are queues.</p></div></div><div class="q" data-answer=""><p class="q-text">4. Function A calls B, and B calls C. Which stack frame is on top of the call stack while C runs? <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 4" data-answer="c" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>The most recent call is always on top. C’s frame is popped first when it returns, then B’s, then A’s.</p></div></div><div class="q" data-answer="b"><p class="q-text">5. Why can a recursive function with no base case crash? <span class="tag tag-soft">AO3</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q15" value="a"> <span>It causes stack underflow</span></label><label><input type="radio" name="q15" value="b"> <span>Each call pushes a frame that is never popped, so the call stack overflows</span></label><label><input type="radio" name="q15" value="c"> <span>The stack is reset after each call</span></label><label><input type="radio" name="q15" value="d"> <span>Recursion doesn’t use a stack</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Without a base case the calls never return, so frames keep being pushed until the call stack runs out of memory: stack overflow.</p></div></div>
+          <button type="button" class="btn quiz-check">Check my answers</button>
+          <button type="button" class="btn btn-ghost quiz-reset">Start again</button>
+          <p class="quiz-score mt-1" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="exam" class="section-alt">
+      <div class="wrap">
+        <h2>Exam-style questions – mark them yourself</h2>
+        <p>Write your answer, then open <strong>Mark your answer</strong>. Tick the mark points you hit, read the model answer and use the tips to improve. See the <a href="exam-tips.html">1.4.2 exam tips</a> for more help.</p>
+<article class="exam-q">
+          <header><span class="tag">AO1</span><span class="marks">[2 marks]</span></header>
+          <p>Explain what is meant by LIFO, using an example.</p>
+          <label for="es7t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es7t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es7"><li><label><input type="checkbox"> <span>Last in, first out: the last item added is the first to be removed (1)</span></label></li><li><label><input type="checkbox"> <span>A suitable example, e.g. undo – the most recent action is undone first (1)</span></label></li></ul>
+            <p id="es7" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> LIFO means last in, first out: the most recently added item is the first to be removed. For example, in an undo feature the last action carried out is the first one undone.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Don’t just expand the acronym – explain what it means.</li><li>Make the example show the LIFO behaviour, not just name a use.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[4 marks]</span></header>
+          <p>A stack is stored in the array <code>stack</code> with a pointer <code>top</code>, which is −1 when empty. Write pseudocode for a function <code>pop()</code> that returns the top item, or reports an error if the stack is empty.</p>
+          <label for="es8t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es8t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es8"><li><label><input type="checkbox"> <span>Checks whether top == −1 (1)</span></label></li><li><label><input type="checkbox"> <span>Reports an error / returns a suitable value if empty (1)</span></label></li><li><label><input type="checkbox"> <span>Reads the item at stack[top] (1)</span></label></li><li><label><input type="checkbox"> <span>Decrements top AND returns the item (1)</span></label></li></ul>
+            <p id="es8" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> <code>function pop()<br>&nbsp;&nbsp;if top == -1 then<br>&nbsp;&nbsp;&nbsp;&nbsp;print("Stack empty")<br>&nbsp;&nbsp;&nbsp;&nbsp;return null<br>&nbsp;&nbsp;else<br>&nbsp;&nbsp;&nbsp;&nbsp;item = stack[top]<br>&nbsp;&nbsp;&nbsp;&nbsp;top = top - 1<br>&nbsp;&nbsp;&nbsp;&nbsp;return item<br>&nbsp;&nbsp;endif<br>endfunction</code></p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Always check for underflow first.</li><li>Read the item <em>before</em> moving top, or you return the wrong item.</li><li>Make sure the item is returned – it is easy to forget.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO3</span><span class="marks">[3 marks]</span></header>
+          <p>Explain how a stack is used when subroutines are called and return.</p>
+          <label for="es9t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es9t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es9"><li><label><input type="checkbox"> <span>When a subroutine is called, a stack frame is pushed onto the call stack (1)</span></label></li><li><label><input type="checkbox"> <span>The frame holds the return address, parameters and local variables (1)</span></label></li><li><label><input type="checkbox"> <span>When it returns, the frame is popped and execution continues at the return address – LIFO means the most recent call returns first (1)</span></label></li></ul>
+            <p id="es9" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> Each time a subroutine is called, a stack frame holding its return address, parameters and local variables is pushed onto the call stack. When the subroutine finishes, its frame is popped and the program jumps to the return address. Because the stack is LIFO, the most recently called subroutine always returns first, so nested calls return in the right order.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Name what is in a stack frame.</li><li>Explain why LIFO is needed, not just that a stack is used.</li></ul></div>
+          </div></details>
+        </article>
+      </div>
+    </section>
+
+    <section id="revise">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>How to revise this</h2><ul><li><a href="../../techniques/trace-tables.html">Trace tables</a> – trace push and pop sequences, tracking top</li><li><a href="../../techniques/flashcards.html">Flashcards</a> – key terms: LIFO, push, pop, peek, overflow, underflow</li><li><a href="../../techniques/comparison-tables.html">Comparison tables</a> – stack vs queue</li></ul>
+        <p class="small">These are the best fit for this part of the topic, but you can use any <a href="../../revision-techniques.html">revision technique</a> that works for you.</p></div>
+          <div><h2>Watch and read more</h2><ul><li><a href="https://visualgo.net/en/list">VisuAlgo – stacks and queues</a> – choose Stack to animate push and pop.</li><li><a href="https://pythontutor.com">Python Tutor</a> – watch frames appear on the call stack as functions are called.</li></ul></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 1.4.2 pages"><a href="linked-lists.html"><span class="dir">← Previous</span>Lists and linked lists</a><a class="next" href="queues.html"><span class="dir">Next →</span>Queues</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Teach it (the Feynman technique) – OCR A Level CS Revision</title>
+  <meta name="description" content="Revision technique: Teach it (the Feynman technique). Explain it simply to find what you don’t really understand.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../course-content.html">Course content</a></li>
+          <li><a href="../paper1.html">Paper 1</a></li>
+          <li><a href="../paper2.html">Paper 2</a></li>
+          <li><a href="../revision-techniques.html" aria-current="page">Revision techniques</a></li>
+          <li><a href="../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../revision-techniques.html">Revision techniques</a> › Test it</p>
+          <p class="eyebrow">Revision technique</p>
+          <h1>Teach it (the Feynman technique)</h1>
+          <hr class="rule">
+          <p class="lead">Explain a topic in simple words, as if to someone younger. Where you get stuck is what you need to revise.</p>
+        </div>
+        <div class="card">
+          <h2 class="h3" style="font-size:1.1rem">At a glance</h2>
+          <ul style="margin:0"><li><strong>Time:</strong> 10–15 minutes</li><li><strong>Best for:</strong> Tricky concepts and “explain” questions</li><li><strong>You need:</strong> A friend, family member – or a rubber duck</li></ul>
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <div class="wrap">
+        <div class="why"><h2>Why it works</h2><p>If you can’t explain something simply, you don’t fully understand it yet. Explaining out loud <strong>finds the gaps that rereading hides</strong>. It also practises “explain” questions, which need clear reasons, not just facts.</p></div>
+        <div class="grid grid-2 mt-2">
+          <div>
+            <h2>How to do it</h2>
+            <ol class="steps"><li><strong>Pick one concept</strong>, e.g. recursion.</li><li><strong>Explain it in plain words</strong> as if to a Year 7 student – out loud or written down.</li><li><strong>Spot where you got stuck</strong> or used a word you couldn’t explain. That is your gap.</li><li><strong>Go back to your notes</strong> to fill the gap.</li><li><strong>Explain it again</strong>, more simply, and add an analogy or example.</li></ol>
+          </div>
+          <div>
+            <h2>Best topics for this technique</h2>
+            <ul><li><a href="../course-content.html#t1-2-1">1.2.1</a> Paging, segmentation, virtual memory</li><li><a href="../course-content.html#t1-2-4">1.2.4</a> Object-oriented programming</li><li><a href="../course-content.html#t1-3-1">1.3.1</a> Hashing and encryption</li><li><a href="../course-content.html#t2-1-1">2.1.1</a> Abstraction</li><li><a href="../course-content.html#t2-2-1">2.2.1</a> Recursion, passing by value and reference</li><li><a href="../course-content.html#t2-3-1">2.3.1</a> How each algorithm works</li></ul>
+            <p class="small">These topics suit this technique well, but you can use it for any topic.</p>
+            <div class="callout callout-amber"><p><strong>Tip:</strong> Record yourself on your phone. Listening back is a good way to hear where your explanation was vague.</p></div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="wrap">
+        <h2>Examples</h2>
+        <article class="example">
+          <header><span class="tag">Example 1</span><h3>Recursion</h3><span class="tag tag-soft">2.2.1</span></header>
+          <div class="grid grid-2">
+            <div class="callout callout-amber"><p><strong>First try:</strong> “Recursion is when a function calls itself.”</p>
+              <p><strong>Gaps found:</strong> When does it stop? What happens in memory? Why not just use a loop?</p></div>
+            <div class="callout"><p><strong>Better explanation:</strong> “A recursive function solves a problem by calling itself on a <em>smaller version</em> of the same problem. It needs a <strong>base case</strong> – a simple case it can answer without calling itself – or it would never stop. Each call goes on the <strong>call stack</strong> with its own variables and return address. When the base case is reached, the calls return one by one. Too many calls cause a <strong>stack overflow</strong>, and recursion usually uses more memory than a loop.”</p></div>
+          </div>
+          <p class="mt-1"><strong>Analogy:</strong> Russian dolls – open each doll (call) until you reach the smallest one (base case), then put them back together (return).</p>
+          <pre class="code"><code>function factorial(n)
+    if n == 0 then
+        return 1                     // base case
+    else
+        return n * factorial(n - 1)  // recursive call on a smaller problem
+    endif
+endfunction</code></pre>
+        </article>        <article class="example">
+          <header><span class="tag">Example 2</span><h3>Hashing</h3><span class="tag tag-soft">1.3.1 + 1.4.2</span></header>
+          <div class="grid grid-2">
+            <div class="callout callout-amber"><p><strong>First try:</strong> “Hashing scrambles a password so hackers can’t read it.”</p>
+              <p><strong>Gaps found:</strong> That sounds like encryption – what is the difference? What else is hashing used for?</p></div>
+            <div class="callout"><p><strong>Better explanation:</strong> “A <strong>hash function</strong> turns any input into a fixed-size value called a hash. It is <strong>one-way</strong> – unlike encryption, you can’t get the input back. The same input always gives the same hash. Websites store the hash of your password and compare hashes when you log in. <strong>Hash tables</strong> use a hash to work out where to store or find data, so look-ups are very fast. If two inputs give the same hash, that is a <strong>collision</strong>.”</p></div>
+          </div>
+          <p class="mt-1"><strong>Analogy:</strong> a fingerprint – it identifies the person, but you can’t rebuild the person from it.</p>
+          <p><strong>Self-check:</strong> did your explanation use these words correctly? <em>fixed size · one-way · same input, same hash · hash table · collision</em></p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2 class="mt-2">Watch and read more</h2><ul><li><a href="https://collegeinfogeek.com/feynman-technique/">The Feynman Technique – College Info Geek</a> – An article and video showing the technique step by step.</li></ul>
+        <div class="mt-2"><nav class="pager" aria-label="Other techniques"><a href="blurting.html"><span class="dir">← Previous technique</span>Blurting (brain dump)</a><a class="next" href="trace-tables.html"><span class="dir">Next technique →</span>Trace tables</a></nav></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+</body>
+</html>

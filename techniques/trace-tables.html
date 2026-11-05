@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trace tables – OCR A Level CS Revision</title>
+  <meta name="description" content="Revision technique: Trace tables. Follow algorithms line by line – a key Paper 2 skill.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../course-content.html">Course content</a></li>
+          <li><a href="../paper1.html">Paper 1</a></li>
+          <li><a href="../paper2.html">Paper 2</a></li>
+          <li><a href="../revision-techniques.html" aria-current="page">Revision techniques</a></li>
+          <li><a href="../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../revision-techniques.html">Revision techniques</a> › Do it</p>
+          <p class="eyebrow">Revision technique</p>
+          <h1>Trace tables</h1>
+          <hr class="rule">
+          <p class="lead">Follow an algorithm line by line, writing down the value of every variable as it changes.</p>
+        </div>
+        <div class="card">
+          <h2 class="h3" style="font-size:1.1rem">At a glance</h2>
+          <ul style="margin:0"><li><strong>Time:</strong> 10–20 minutes per algorithm</li><li><strong>Best for:</strong> Paper 2 algorithms and code</li><li><strong>You need:</strong> The algorithm, paper, pencil</li></ul>
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <div class="wrap">
+        <div class="why"><h2>Why it works</h2><p>Paper 2 asks you to <strong>follow, complete and correct</strong> algorithms. Tracing builds this skill and shows you exactly how an algorithm works. It also helps you <strong>find errors</strong> in code, which just reading the code does not.</p></div>
+        <div class="grid grid-2 mt-2">
+          <div>
+            <h2>How to do it</h2>
+            <ol class="steps"><li><strong>Make a column for every variable</strong>, plus one for output.</li><li><strong>Go through the code one line at a time.</strong> Don’t skip ahead.</li><li><strong>Write a new value only when it changes</strong>, on a new row.</li><li><strong>Check conditions carefully</strong> (&lt; or &lt;=?) and count loops exactly.</li><li><strong>Check the final result</strong> makes sense, e.g. is the list really sorted?</li></ol>
+          </div>
+          <div>
+            <h2>Best topics for this technique</h2>
+            <ul><li><a href="../course-content.html#t1-2-3">1.2.3</a> Writing and following algorithms</li><li><a href="../course-content.html#t1-2-4">1.2.4</a> Little Man Computer programs</li><li><a href="../course-content.html#t2-2-1">2.2.1</a> Iteration, recursion, parameters</li><li><a href="../course-content.html#t2-3-1">2.3.1</a> Searching, sorting, stacks, queues, traversals</li></ul>
+            <p class="small">These topics suit this technique well, but you can use it for any topic.</p>
+            <div class="callout callout-amber"><p><strong>Tip:</strong> Once you can trace an algorithm, try to <strong>write it from memory</strong> in pseudocode, then trace your own version to test it.</p></div>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="wrap">
+        <h2>Examples</h2>
+        <article class="example">
+          <header><span class="tag">Example 1</span><h3>Bubble sort on 5, 3, 8, 1</h3><span class="tag tag-soft">2.3.1</span></header>
+          <pre class="code"><code>procedure bubbleSort(items)
+    swapped = true
+    while swapped == true
+        swapped = false
+        for i = 0 to items.length - 2
+            if items[i] > items[i+1] then
+                temp = items[i]
+                items[i] = items[i+1]
+                items[i+1] = temp
+                swapped = true
+            endif
+        next i
+    endwhile
+endprocedure</code></pre>
+          <div class="table-scroll"><table class="trace">
+            <thead><tr><th scope="col">Pass</th><th scope="col">i</th><th scope="col">items[i]</th><th scope="col">items[i+1]</th><th scope="col">Swap?</th><th scope="col">items after</th></tr></thead>
+            <tbody><tr><td>1</td><td>0</td><td>5</td><td>3</td><td><strong>Yes</strong></td><td class="mono">3, 5, 8, 1</td></tr><tr><td>1</td><td>1</td><td>5</td><td>8</td><td>No</td><td class="mono">3, 5, 8, 1</td></tr><tr><td>1</td><td>2</td><td>8</td><td>1</td><td><strong>Yes</strong></td><td class="mono">3, 5, 1, 8</td></tr><tr><td>2</td><td>0</td><td>3</td><td>5</td><td>No</td><td class="mono">3, 5, 1, 8</td></tr><tr><td>2</td><td>1</td><td>5</td><td>1</td><td><strong>Yes</strong></td><td class="mono">3, 1, 5, 8</td></tr><tr><td>2</td><td>2</td><td>5</td><td>8</td><td>No</td><td class="mono">3, 1, 5, 8</td></tr><tr><td>3</td><td>0</td><td>3</td><td>1</td><td><strong>Yes</strong></td><td class="mono">1, 3, 5, 8</td></tr><tr><td>3</td><td>1</td><td>3</td><td>5</td><td>No</td><td class="mono">1, 3, 5, 8</td></tr><tr><td>3</td><td>2</td><td>5</td><td>8</td><td>No</td><td class="mono">1, 3, 5, 8</td></tr><tr><td>4</td><td>0</td><td>1</td><td>3</td><td>No</td><td class="mono">1, 3, 5, 8</td></tr><tr><td>4</td><td>1</td><td>3</td><td>5</td><td>No</td><td class="mono">1, 3, 5, 8</td></tr><tr><td>4</td><td>2</td><td>5</td><td>8</td><td>No</td><td class="mono">1, 3, 5, 8</td></tr></tbody></table></div>
+          <p class="mt-1"><strong>Notice:</strong> pass 4 makes no swaps, so <code>swapped</code> stays false and the loop ends. That extra pass is how bubble sort knows the list is sorted.</p>
+        </article>        <article class="example">
+          <header><span class="tag">Example 2</span><h3>Your turn: binary search</h3><span class="tag tag-soft">2.3.1</span></header>
+          <p>Trace the algorithm to find <strong>23</strong> in this list. Indexes start at 0. Then press <em>Check my answers</em>.</p>
+          <p class="mono"><strong>list =</strong> [3, 8, 12, 17, 23, 31, 40]</p>
+          <pre class="code"><code>function binarySearch(list, target)
+    low = 0
+    high = list.length - 1
+    while low &lt;= high
+        mid = (low + high) DIV 2
+        if list[mid] == target then
+            return mid
+        elseif list[mid] &lt; target then
+            low = mid + 1
+        else
+            high = mid - 1
+        endif
+    endwhile
+    return -1
+endfunction</code></pre>
+          <div class="check-block">
+            <div class="table-scroll"><table class="trace">
+              <thead><tr><th scope="col">low</th><th scope="col">high</th><th scope="col">mid</th><th scope="col">list[mid]</th></tr></thead>
+              <tbody><tr><td><input type="text" inputmode="numeric" aria-label="Row 1 low" data-answer="0"></td><td><input type="text" inputmode="numeric" aria-label="Row 1 high" data-answer="6"></td><td><input type="text" inputmode="numeric" aria-label="Row 1 mid" data-answer="3"></td><td><input type="text" inputmode="numeric" aria-label="Row 1 list[mid]" data-answer="17"></td></tr><tr><td><input type="text" inputmode="numeric" aria-label="Row 2 low" data-answer="4"></td><td><input type="text" inputmode="numeric" aria-label="Row 2 high" data-answer="6"></td><td><input type="text" inputmode="numeric" aria-label="Row 2 mid" data-answer="5"></td><td><input type="text" inputmode="numeric" aria-label="Row 2 list[mid]" data-answer="31"></td></tr><tr><td><input type="text" inputmode="numeric" aria-label="Row 3 low" data-answer="4"></td><td><input type="text" inputmode="numeric" aria-label="Row 3 high" data-answer="4"></td><td><input type="text" inputmode="numeric" aria-label="Row 3 mid" data-answer="4"></td><td><input type="text" inputmode="numeric" aria-label="Row 3 list[mid]" data-answer="23"></td></tr></tbody></table></div>
+            <div class="answer-line mt-1"><label for="bsOut">Value returned:</label><input type="text" id="bsOut" inputmode="numeric" data-answer="4"></div>
+            <button type="button" class="btn check-btn">Check my answers</button>
+            <button type="button" class="btn btn-ghost show-btn">Show answers</button>
+            <p class="feedback" aria-live="polite"></p>
+          </div>
+          <details class="reveal"><summary>Hint</summary><div><p>DIV is integer division, so (0 + 6) DIV 2 = 3. Compare list[3] with 23: is it smaller or bigger? That tells you whether <code>low</code> or <code>high</code> changes.</p></div></details>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2 class="mt-2">Watch and read more</h2><ul><li><a href="https://isaaccomputerscience.org">Isaac Computer Science</a> – Free questions on searching and sorting algorithms with feedback.</li></ul>
+        <div class="mt-2"><nav class="pager" aria-label="Other techniques"><a href="teach-it.html"><span class="dir">← Previous technique</span>Teach it (the Feynman technique)</a><a class="next" href="worked-examples.html"><span class="dir">Next technique →</span>Worked examples and faded practice</a></nav></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../js/techniques.js"></script>
+</body>
+</html>

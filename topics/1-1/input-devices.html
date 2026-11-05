@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Input devices (1.1.3 (a)) – OCR A Level CS Revision</title>
+  <meta name="description" content="OCR A Level Computer Science 1.1.3 (a): Input devices. Revision notes, quiz and exam questions.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html" aria-current="page">Paper 1</a></li>
+          <li><a href="../../paper2.html">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../paper1.html">Paper 1</a> › <a href="index.html">1.1 Components of a computer</a> › Input devices</p>
+          <p class="eyebrow">1.1.3 (a) • Paper 1</p>
+          <h1>Input devices</h1>
+          <hr class="rule">
+          <p class="lead">Choose the right device to capture data for a problem, and justify why it fits.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">Key terms</h2><ul style="margin:0"><li>Input device</li><li>Manual, automatic, sensor</li><li>Barcode, QR, RFID, NFC</li><li>OMR, OCR, ANPR</li><li>ADC</li><li>Monitoring, control</li></ul></div>
+      </div>
+    </div>
+    <div class="wrap" style="padding-top:1.25rem">
+      <nav class="toc" aria-label="On this page"><ul>
+        <li><a href="#notes">Revision notes</a></li><li><a href="#links">Links and slides</a></li>
+        <li><a href="#quiz">Quick quiz</a></li><li><a href="#exam">Exam questions</a></li><li><a href="#revise">How to revise it</a></li>
+      </ul></nav>
+    </div>
+
+    <section id="notes">
+      <div class="wrap">
+        <h2 class="mt-2">What is an input device?</h2>
+        <p>Hardware that <strong>captures data from outside</strong> and sends it into the computer. You don’t need to know how devices work – you need to <strong>choose one and justify it</strong>.</p>
+        <div class="grid grid-3">
+          <div class="card"><h3>Manual</h3><p class="small">A person enters the data</p><ul><li>Keyboard, keypad</li><li>Mouse, touchpad</li><li>Touchscreen</li><li>Microphone</li><li>Games controller</li></ul></div>
+          <div class="card"><h3>Automatic capture</h3><p class="small">Reads the data itself – faster, fewer errors</p><ul><li>Barcode, QR scanner</li><li>RFID, NFC reader</li><li>Camera, ANPR</li><li>OMR, OCR scanner</li><li>Fingerprint reader</li></ul></div>
+          <div class="card"><h3>Sensors</h3><p class="small">Measure the world</p><ul><li>Temperature, light</li><li>Pressure, moisture</li><li>Infra-red (motion)</li><li>Gas, pH, acoustic</li><li>Accelerometer, GPS</li></ul></div>
+        </div>        <h2 class="mt-2">How to choose: N-U-J</h2>
+        <div class="grid grid-2">
+          <div><ul>
+            <li><strong>Who?</strong> The user: age, training, disability, how many.</li>
+            <li><strong>Where?</strong> Dirty, wet, noisy, outdoors, must stay clean.</li>
+            <li><strong>What data?</strong> Text, sound, image, an ID code, a measurement.</li>
+            <li><strong>How much?</strong> Volume, speed, accuracy, cost.</li>
+          </ul></div>
+          <div class="callout"><p><strong>Worked example:</strong> a hospital must give each patient the right medicine.<br><strong>N</strong>ame: a handheld barcode scanner.<br><strong>U</strong>se: scan the wristband and the medicine.<br><strong>J</strong>ustify: faster than typing and avoids errors, so the wrong medicine is less likely; it can be wiped clean.</p></div>
+        </div>        <h2 class="mt-2">Barcode, QR, RFID or NFC?</h2>
+        <div class="table-scroll"><table><thead><tr><th scope="col"></th><th scope="col">Holds</th><th scope="col">Range</th><th scope="col">Good for</th></tr></thead><tbody><tr><th scope="row">Barcode</th><td>A short number</td><td>Line of sight, close</td><td>Shop products</td></tr><tr><th scope="row">QR code</th><td>Text or a web link</td><td>Line of sight, phone camera</td><td>Menus, tickets, posters</td></tr><tr><th scope="row">RFID tag</th><td>An ID, can be updated</td><td>Up to metres, no line of sight; many at once</td><td>Stock, pets, library books</td></tr><tr><th scope="row">NFC</th><td>An ID or payment data</td><td>A few centimetres</td><td>Contactless payment</td></tr></tbody></table></div>        <h2 class="mt-2">Sensors</h2>
+        <figure class="diagram"><svg viewBox="0 0 710 140" role="img" aria-labelledby="t09316bd7 t09316bd7d"><title id="t09316bd7">A sensor sends data to the processor through an ADC</title><desc id="t09316bd7d">A sensor produces an analogue signal. An analogue-to-digital converter turns it into digital data for the processor.</desc><defs><marker id="aht09316bd7" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><rect x="20" y="40" width="170" height="60" rx="8" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="105" y="76" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#1A1A2E"><tspan x="105" dy="0">Sensor</tspan></text><line x1="194" y1="70" x2="266" y2="70" stroke="#3D4451" stroke-width="3" marker-end="url(#aht09316bd7)"/><text x="230" y="57" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" fill="#3D4451"><tspan x="230" dy="0">analogue</tspan></text><rect x="270" y="40" width="170" height="60" rx="8" fill="#FFF4E0" stroke="#B25C00" stroke-width="2"/><text x="355" y="76" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#B25C00"><tspan x="355" dy="0">ADC</tspan></text><line x1="444" y1="70" x2="516" y2="70" stroke="#3D4451" stroke-width="3" marker-end="url(#aht09316bd7)"/><text x="480" y="57" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" fill="#3D4451"><tspan x="480" dy="0">digital</tspan></text><rect x="520" y="40" width="170" height="60" rx="8" fill="#1A1A2E" stroke="#1A1A2E" stroke-width="2"/><text x="605" y="76" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#fff"><tspan x="605" dy="0">Processor</tspan></text><text x="355" y="130" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="normal" fill="#3D4451"><tspan x="355" dy="0">analogue-to-digital converter</tspan></text></svg><figcaption>Most sensors are analogue, so an ADC converts the signal to digital.</figcaption></figure>
+        <ul><li>Sensors take readings automatically, again and again – never tired, can work in danger.</li>
+        <li><strong>Monitoring</strong> records or warns (heart rate on a ward). <strong>Control</strong> acts on the reading (air conditioning).</li>
+        <li><strong>Accessibility inputs:</strong> eye tracker, sip and puff switch, foot mouse, microphone with speech recognition, braille keyboard, large key keyboard.</li></ul>
+        <div class="callout callout-amber mt-1"><p><strong>Watch out for:</strong></p><ul><li>Software instead of hardware: “a scanning app” gets no mark.</li><li>Brand names: “an iPad” – say “a touchscreen tablet”.</li><li>Two devices in one answer – only the first is marked.</li><li>Describing how a device works when asked why it suits the scenario.</li></ul></div>
+      </div>
+    </section>
+
+    <section id="links" class="section-alt">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>Links to other topics</h2><ul class="link-list"><li><strong>1.1.3 Output devices</strong> – the same N-U-J method; touchscreens are both.</li><li><strong>1.2.1 Device drivers</strong> – software that lets the OS communicate with each device.</li><li><strong>1.4.1 Data types</strong> – analogue-to-digital conversion; ASCII and Unicode for typed text.</li><li><strong>1.5.2 Moral and ethical issues</strong> – ANPR and cameras raise privacy issues; accessibility.</li><li><strong>NEA 3.1.4</strong> – justify your hardware requirements from your stakeholders.</li></ul></div>
+          <div><h2>Lesson slides</h2>
+            <p>Go back over the lesson for the full worked examples and tasks.</p>
+            <p><a class="btn" href="../../slides/1-1/input-devices.pptx">Download the lesson slides</a></p>
+            <p class="small">1.1.3A Input devices – including the smart doorbell starter, device showdown and sensor match.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <div class="wrap">
+        <h2>Check your understanding</h2>
+        <p>Answer, then press <strong>Check my answers</strong>. Each question explains the answer so you can fix any mistakes.</p>
+        <div class="quiz-block">
+          <h3>Quick quiz – marked for you</h3>
+          <div class="q" data-answer="b"><p class="q-text">1. A school must mark 300 multiple-choice answer sheets. <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q25" value="a"> <span>Keyboard</span></label><label><input type="radio" name="q25" value="b"> <span>OMR scanner</span></label><label><input type="radio" name="q25" value="c"> <span>Camera</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Optical mark recognition reads marks in set places on a form: fast and accurate for multiple-choice sheets.</p></div></div><div class="q" data-answer="c"><p class="q-text">2. A surgeon needs to check scans mid-operation. <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q26" value="a"> <span>Mouse</span></label><label><input type="radio" name="q26" value="b"> <span>Touchscreen</span></label><label><input type="radio" name="q26" value="c"> <span>Microphone</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Speech recognition keeps the surgeon’s hands sterile. The theatre is quiet, so speech is recognised well.</p></div></div><div class="q" data-answer="b"><p class="q-text">3. A library wants to check out a pile of books in one go. <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q27" value="a"> <span>Barcode scanner</span></label><label><input type="radio" name="q27" value="b"> <span>RFID reader</span></label><label><input type="radio" name="q27" value="c"> <span>Keyboard</span></label></div><div class="explain" hidden><p><span class="verdict"></span>RFID needs no line of sight and reads many tags at once, so check-out is quick.</p></div></div><div class="q" data-answer="c"><p class="q-text">4. A user with very limited mobility in their hands and arms needs to send a signal. <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q28" value="a"> <span>Mouse</span></label><label><input type="radio" name="q28" value="b"> <span>Keyboard</span></label><label><input type="radio" name="q28" value="c"> <span>Sip and puff switch</span></label></div><div class="explain" hidden><p><span class="verdict"></span>The user blows into a tube to send the signal – no hands needed. A mouse or keyboard needs hands.</p></div></div><div class="q" data-answer="b"><p class="q-text">5. What does an ADC do? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q29" value="a"> <span>Adds data to the CPU</span></label><label><input type="radio" name="q29" value="b"> <span>Converts an analogue signal into digital data</span></label><label><input type="radio" name="q29" value="c"> <span>Displays sensor readings</span></label><label><input type="radio" name="q29" value="d"> <span>Stores readings</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Sensors usually give an analogue signal; an analogue-to-digital converter makes it digital for the processor.</p></div></div><div class="q" data-answer="b"><p class="q-text">6. Is “a barcode scanning app” credited as an input device? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q30" value="a"> <span>Yes</span></label><label><input type="radio" name="q30" value="b"> <span>No – the mark is for hardware</span></label></div><div class="explain" hidden><p><span class="verdict"></span>OCR mark schemes: the first mark must be hardware, not software. Say “a barcode scanner”.</p></div></div>
+          <button type="button" class="btn quiz-check">Check my answers</button>
+          <button type="button" class="btn btn-ghost quiz-reset">Start again</button>
+          <p class="quiz-score mt-1" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="exam" class="section-alt">
+      <div class="wrap">
+        <h2>Exam-style questions – mark them yourself</h2>
+        <p>Write your answer, then open <strong>Mark your answer</strong>. Tick the mark points you hit, read the model answer and use the tips to improve. See the <a href="exam-tips.html">1.1 exam tips</a> for more help.</p>
+<article class="exam-q">
+          <header><span class="tag">AO1</span><span class="marks">[1 mark]</span></header>
+          <p>Explain what is meant by an input device.</p>
+          <label for="es14t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es14t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es14"><li><label><input type="checkbox"> <span>Hardware that captures data and sends it into the computer (1)</span></label></li></ul>
+            <p id="es14" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> An input device is hardware that captures data from outside the computer and sends it into the computer.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Say <em>hardware</em>, and that it sends data <em>into</em> the computer.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[4 marks]</span></header>
+          <p>A supermarket is installing self-service tills. Identify two input devices the tills need and explain why each is needed.</p>
+          <label for="es15t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es15t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es15"><li><label><input type="checkbox"> <span>A suitable device, e.g. barcode scanner (1)</span></label></li><li><label><input type="checkbox"> <span>A reason, e.g. reads product codes quickly with no typing errors (1)</span></label></li><li><label><input type="checkbox"> <span>A second suitable device, e.g. weighing scales / touchscreen / NFC card reader (1)</span></label></li><li><label><input type="checkbox"> <span>A reason, e.g. weighs loose fruit and checks the bagging area (1)</span></label></li></ul>
+            <p id="es15" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> A barcode scanner is needed to read each product’s code quickly, without the customer typing it, which avoids errors. Scales are needed to weigh loose fruit and vegetables and to check that the item put in the bagging area matches what was scanned.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Device (1) + reason (1), twice. One device per answer line.</li><li>Make each reason fit a self-service till, not just any shop.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO3</span><span class="marks">[3 marks]</span></header>
+          <p>A farmer wants to water crops only when the soil is dry. Recommend a suitable input device and justify your choice.</p>
+          <label for="es16t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es16t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es16"><li><label><input type="checkbox"> <span>A moisture sensor in the soil (1)</span></label></li><li><label><input type="checkbox"> <span>Takes readings automatically, day and night (1)</span></label></li><li><label><input type="checkbox"> <span>Water is only turned on below a set level, so none is wasted (1)</span></label></li></ul>
+            <p id="es16" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> A moisture sensor placed in the soil. It takes readings automatically, day and night, without the farmer checking. The watering system is only switched on when the reading falls below a set level, so water isn’t wasted.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Name the sensor <em>and</em> what it measures in this scenario.</li><li>Justify: why a sensor is better than a person here.</li></ul></div>
+          </div></details>
+        </article>
+      </div>
+    </section>
+
+    <section id="revise">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>How to revise this</h2><ul><li><a href="../../techniques/comparison-tables.html">Comparison tables</a> – barcode vs QR vs RFID vs NFC</li><li><a href="../../techniques/flashcards.html">Flashcards</a> – device on the front, a scenario it suits on the back</li><li><a href="../../techniques/blurting.html">Blurting</a> – list every input device you can, by family</li></ul>
+        <p class="small">These are the best fit for this part of the topic, but you can use any <a href="../../revision-techniques.html">revision technique</a> that works for you.</p></div>
+          <div><h2>Watch and read more</h2><ul><li><a href="https://isaaccomputerscience.org">Isaac Computer Science</a> – free topic notes and questions on computer systems.</li><li><a href="https://www.youtube.com/@Computerphile">Computerphile (YouTube)</a> – short videos by computer scientists on CPUs, caches and memory.</li></ul></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 1.1 pages"><a href="types-of-processor.html"><span class="dir">← Previous</span>Types of processor</a><a class="next" href="output-devices.html"><span class="dir">Next →</span>Output devices</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>

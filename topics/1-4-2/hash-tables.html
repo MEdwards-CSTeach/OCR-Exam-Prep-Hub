@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hash tables (1.4.2) – OCR A Level CS Revision</title>
+  <meta name="description" content="OCR A Level Computer Science 1.4.2: Hash tables. Revision notes, quiz and exam questions.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html" aria-current="page">Paper 1</a></li>
+          <li><a href="../../paper2.html">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../course-content.html#t1-4-2">Course content</a> › <a href="index.html">1.4.2 Data structures</a> › Hash tables</p>
+          <p class="eyebrow">1.4.2 Data structures • Paper 1 (and Paper 2)</p>
+          <h1>Hash tables</h1>
+          <hr class="rule">
+          <p class="lead">A hash function turns a key into an index for fast lookup.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">Key terms</h2><ul style="margin:0"><li>Key–value pair</li><li>Hash function, hash value</li><li>Collision</li><li>Linear probing, chaining, clustering</li><li>Load factor</li><li>Rehashing</li></ul></div>
+      </div>
+    </div>
+    <div class="wrap" style="padding-top:1.25rem">
+      <nav class="toc" aria-label="On this page"><ul>
+        <li><a href="#notes">Revision notes</a></li><li><a href="#links">Links and slides</a></li>
+        <li><a href="#quiz">Quick quiz</a></li><li><a href="#exam">Exam questions</a></li><li><a href="#revise">How to revise it</a></li>
+      </ul></nav>
+    </div>
+
+    <section id="notes">
+      <div class="wrap">
+        <h2 class="mt-2">What is a hash table?</h2>
+        <div class="grid grid-2">
+          <div><ul>
+            <li>Stores <strong>key–value pairs</strong>.</li>
+            <li>A <strong>hash function</strong> turns a key into an array <strong>index</strong> (the hash value).</li>
+            <li>Go straight to the slot: average search, insert and delete are <strong>O(1)</strong>.</li>
+            <li>Simple hash: <code>key MOD tableSize</code>. For strings, add the ASCII codes then MOD.</li>
+            <li>A good hash function is quick, always gives the same index for a key, and spreads keys evenly.</li>
+          </ul></div>
+          <div class="callout"><p><strong>Example:</strong> table of 7 slots<br>hash(15) = 15 MOD 7 = <strong>1</strong><br>hash(23) = 23 MOD 7 = <strong>2</strong><br>hash("Jo") = (74 + 111) MOD 7 = 185 MOD 7 = <strong>3</strong></p></div>
+        </div>
+        <figure class="diagram"><svg viewBox="0 0 900 280" role="img" aria-labelledby="t7b0934d1 t7b0934d1d"><title id="t7b0934d1">Adding a key to a hash table with linear probing</title><desc id="t7b0934d1d">Key 31 goes into the hash function: 31 MOD 7 = 3. Index 3 already holds 10, a collision, so linear probing moves to index 4, which is empty, and stores 31 there.</desc><defs><marker id="aht7b0934d1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><rect x="30" y="110" width="110" height="54" fill="#fff" stroke="#1A1A2E" stroke-width="2"/><text x="85" y="143" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="85" dy="0">31</tspan></text><text x="85" y="100" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#3D4451"><tspan x="85" dy="0">key</tspan></text><line x1="142" y1="137" x2="196" y2="137" stroke="#3D4451" stroke-width="2.5" marker-end="url(#aht7b0934d1)"/><rect x="200" y="100" width="200" height="74" rx="10" fill="#1A1A2E"/><text x="300" y="130" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#fff"><tspan x="300" dy="0">hash function</tspan></text><text x="300" y="158" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#fff"><tspan x="300" dy="0">31 MOD 7 = 3</tspan></text><line x1="402" y1="137" x2="470" y2="168" stroke="#3D4451" stroke-width="2.5" marker-end="url(#aht7b0934d1)"/><rect x="520" y="20" width="120" height="36" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="580" y="44" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="16"><tspan x="580" dy="0"></tspan></text><text x="500" y="43" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" fill="#3D4451"><tspan x="500" dy="0">0</tspan></text><rect x="520" y="56" width="120" height="36" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="580" y="80" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="16"><tspan x="580" dy="0">15</tspan></text><text x="500" y="79" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" fill="#3D4451"><tspan x="500" dy="0">1</tspan></text><rect x="520" y="92" width="120" height="36" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="580" y="116" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="16"><tspan x="580" dy="0">23</tspan></text><text x="500" y="115" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" fill="#3D4451"><tspan x="500" dy="0">2</tspan></text><rect x="520" y="128" width="120" height="36" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="580" y="152" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="16"><tspan x="580" dy="0">10</tspan></text><text x="500" y="151" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" fill="#3D4451"><tspan x="500" dy="0">3</tspan></text><rect x="520" y="164" width="120" height="36" fill="#FFF4E0" stroke="#0B6E75" stroke-width="2"/><text x="580" y="188" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="16"><tspan x="580" dy="0">31</tspan></text><text x="500" y="187" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" fill="#3D4451"><tspan x="500" dy="0">4</tspan></text><rect x="520" y="200" width="120" height="36" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="580" y="224" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="16"><tspan x="580" dy="0"></tspan></text><text x="500" y="223" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" fill="#3D4451"><tspan x="500" dy="0">5</tspan></text><rect x="520" y="236" width="120" height="36" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="580" y="260" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="16"><tspan x="580" dy="0"></tspan></text><text x="500" y="259" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" fill="#3D4451"><tspan x="500" dy="0">6</tspan></text><path d="M645,146 C690,150 690,174 645,178" fill="none" stroke="#B25C00" stroke-width="2.5" marker-end="url(#aht7b0934d1)"/><text x="780" y="155" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#A12A2A"><tspan x="780" dy="0">3 is taken (collision)</tspan></text><text x="780" y="177" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#B25C00"><tspan x="780" dy="0">→ linear probing: try 4</tspan></text></svg><figcaption>A collision: 31 and 10 both hash to 3. Linear probing stores 31 in the next free slot.</figcaption></figure>        <h2 class="mt-2">Collisions</h2>
+        <div class="grid grid-2">
+          <div class="card"><h3>Linear probing</h3><ul>
+            <li>If the slot is taken, try the next one: <code>index = (index + 1) MOD size</code>.</li>
+            <li>All data stays in the array.</li>
+            <li>✗ <strong>Clustering</strong>: items bunch together, so searches get slower.</li>
+            <li>Searching must also probe on until it finds the key or an empty slot.</li></ul></div>
+          <div class="card"><h3>Chaining</h3><ul>
+            <li>Each slot holds a <strong>linked list</strong>; colliding items are added to it.</li>
+            <li>✓ No clustering; can hold more items than slots.</li>
+            <li>✗ Extra memory for pointers; long chains are slow to search.</li></ul></div>
+        </div>        <h2 class="mt-2">Adding, finding and removing</h2>
+        <div class="table-scroll"><table><thead><tr><th scope="col">Operation</th><th scope="col">Steps</th><th scope="col">Pseudocode</th></tr></thead><tbody><tr><th scope="row">Add</th><td>Hash the key. If the slot is taken, probe to the next free slot (wrapping round). Store the item.</td><td><code>index = hash(key)<br>while table[index] not empty<br>&nbsp;&nbsp;index = (index + 1) MOD size<br>table[index] = item</code></td></tr><tr><th scope="row">Find</th><td colspan="2">Hash the key and go to the slot. If it isn’t there, probe on until found or an empty slot is reached.</td></tr><tr><th scope="row">Remove</th><td>Find the item, then mark the slot <strong>DELETED</strong> – not empty – so later searches keep probing past it.</td><td><code>table[index] = DELETED</code></td></tr></tbody></table></div>        <h2 class="mt-2">Load factor and table size</h2>
+        <ul>
+          <li><strong>Load factor</strong> = items ÷ slots. 5 items in 7 slots = 0.71.</li>
+          <li>Higher load factor = more collisions. Keep it at or below about <strong>0.7</strong>.</li>
+          <li>Use a <strong>prime</strong> table size – it spreads keys that follow a pattern (e.g. 10, 20, 30…).</li>
+          <li>When too full, <strong>resize and rehash</strong>: make a bigger table and re-insert every item, because the index depends on the size.</li>
+        </ul>
+        <p><strong>Uses:</strong> Python dictionaries, database indexes, caches, compiler symbol tables, password storage. <strong>Quick test:</strong> “look up by a unique key” = hash table.</p>
+        <div class="callout callout-amber mt-1"><p><strong>Watch out for:</strong></p><ul><li>Emptying a slot on delete – searches would stop early and miss items. Use a DELETED marker.</li><li>Forgetting to wrap round with MOD when probing.</li><li>Saying a hash table keeps data in order – it doesn’t.</li><li>Forgetting that resizing means rehashing every item.</li></ul></div>
+      </div>
+    </section>
+
+    <section id="links" class="section-alt">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>Links to other topics</h2><ul class="link-list"><li><strong>1.3.1 Hashing</strong> – the same idea used for passwords and checking data hasn’t changed.</li><li><strong>1.4.2 Linked lists</strong> – used for chaining.</li><li><strong>1.3.2 Databases</strong> – indexing uses hashing for fast lookups.</li><li><strong>1.2.2 Compilers</strong> – the symbol table is often a hash table.</li><li><strong>1.4.1 Character sets</strong> – ASCII codes are used to hash strings.</li></ul></div>
+          <div><h2>Lesson slides</h2>
+            <p>Go back over the lesson for the full worked examples and tasks.</p>
+            <p><a class="btn" href="../../slides/1-4-2/hash-tables.pptx">Download the lesson slides</a></p>
+            <p class="small">Hash tables – including the theatre cloakroom, player IDs and spot-the-bug worksheet answers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <div class="wrap">
+        <h2>Check your understanding</h2>
+        <p>Answer, then press <strong>Check my answers</strong>. Each question explains the answer so you can fix any mistakes.</p>
+        <div class="quiz-block">
+          <h3>Quick quiz – marked for you</h3>
+          <div class="q" data-answer=""><p class="q-text">1. A hash table has 7 slots and uses <code>key MOD 7</code>. Which index does key 31 hash to? <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 1" data-answer="3" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>31 ÷ 7 = 4 remainder 3, so 31 MOD 7 = 3.</p></div></div><div class="q" data-answer=""><p class="q-text">2. Hash the string "CAT" by adding ASCII codes (C = 67, A = 65, T = 84) then MOD 11. What is the index? <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 2" data-answer="7" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>67 + 65 + 84 = 216. 11 × 19 = 209, so 216 MOD 11 = 7.</p></div></div><div class="q" data-answer=""><p class="q-text">3. A table has 8 slots and holds 5 items. What is the load factor? <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 3" data-answer="0.625|0.63|5/8|62.5%" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>Load factor = items ÷ slots = 5 ÷ 8 = 0.625 (62.5% full).</p></div></div><div class="q" data-answer="b"><p class="q-text">4. Slots 3 and 4 hold 10 and 31 (31 was probed from 3). Why must removing 10 mark slot 3 as DELETED, not empty? <span class="tag tag-soft">AO3</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q24" value="a"> <span>To save memory</span></label><label><input type="radio" name="q24" value="b"> <span>A search for 31 starts at 3; an empty slot would stop it, wrongly saying 31 is missing</span></label><label><input type="radio" name="q24" value="c"> <span>Empty slots can’t be reused</span></label><label><input type="radio" name="q24" value="d"> <span>To keep the table sorted</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Searches stop at an empty slot. A DELETED marker tells the search to keep probing, so 31 is still found.</p></div></div><div class="q" data-answer="b"><p class="q-text">5. Why is a prime number often chosen for the table size? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q25" value="a"> <span>Prime numbers are faster to divide by</span></label><label><input type="radio" name="q25" value="b"> <span>It reduces collisions when keys follow a pattern</span></label><label><input type="radio" name="q25" value="c"> <span>It makes the load factor 1</span></label><label><input type="radio" name="q25" value="d"> <span>It keeps keys in order</span></label></div><div class="explain" hidden><p><span class="verdict"></span>A prime shares no factors with patterns like 10, 20, 30…, so these keys spread across different slots instead of colliding.</p></div></div>
+          <button type="button" class="btn quiz-check">Check my answers</button>
+          <button type="button" class="btn btn-ghost quiz-reset">Start again</button>
+          <p class="quiz-score mt-1" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="exam" class="section-alt">
+      <div class="wrap">
+        <h2>Exam-style questions – mark them yourself</h2>
+        <p>Write your answer, then open <strong>Mark your answer</strong>. Tick the mark points you hit, read the model answer and use the tips to improve. See the <a href="exam-tips.html">1.4.2 exam tips</a> for more help.</p>
+<article class="exam-q">
+          <header><span class="tag">AO1</span><span class="marks">[2 marks]</span></header>
+          <p>State what is meant by a <strong>collision</strong> in a hash table and name one way to deal with it.</p>
+          <label for="es13t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es13t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es13"><li><label><input type="checkbox"> <span>When two different keys produce the same hash value / index (1)</span></label></li><li><label><input type="checkbox"> <span>Linear probing OR chaining (1)</span></label></li></ul>
+            <p id="es13" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> A collision is when two different keys hash to the same index. It can be dealt with by linear probing: storing the item in the next free slot.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Say <em>different keys</em> – the same key twice is an update, not a collision.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[4 marks]</span></header>
+          <p>A hash table has 7 slots (0–6), uses <code>key MOD 7</code> and linear probing. Show where the keys 14, 22, 8 and 29 are stored, inserted in that order.</p>
+          <label for="es14t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es14t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es14"><li><label><input type="checkbox"> <span>14 in slot 0 (1)</span></label></li><li><label><input type="checkbox"> <span>22 in slot 1 (1)</span></label></li><li><label><input type="checkbox"> <span>8 hashes to 1, which is taken, so slot 2 (1)</span></label></li><li><label><input type="checkbox"> <span>29 hashes to 1; slots 1 and 2 are taken, so slot 3 (1)</span></label></li></ul>
+            <p id="es14" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> 14 MOD 7 = 0, so 14 goes in slot 0. 22 MOD 7 = 1, so slot 1. 8 MOD 7 = 1, which is taken, so it probes to slot 2. 29 MOD 7 = 1; slots 1 and 2 are taken, so it goes in slot 3.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Show the calculation for each key – method marks.</li><li>When probing, say which slots were taken.</li><li>Notice that 22, 8 and 29 form a cluster.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO3</span><span class="marks">[4 marks]</span></header>
+          <p>Compare linear probing and chaining as ways of handling collisions.</p>
+          <label for="es15t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es15t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es15"><li><label><input type="checkbox"> <span>Linear probing stores the item in the next free slot; chaining adds it to a linked list at that index (1)</span></label></li><li><label><input type="checkbox"> <span>Linear probing causes clustering, making searches slower as the table fills (1)</span></label></li><li><label><input type="checkbox"> <span>Chaining can hold more items than there are slots; linear probing cannot exceed the table size (1)</span></label></li><li><label><input type="checkbox"> <span>Chaining uses extra memory for pointers / long chains are slow to search (1)</span></label></li></ul>
+            <p id="es15" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> With linear probing, a colliding item is stored in the next free slot, whereas with chaining it is added to a linked list at the same index. Linear probing causes clustering, so searches slow down as the table fills, while chaining avoids clustering. Chaining can store more items than there are slots, whereas linear probing is limited to the table size. However, chaining needs extra memory for the pointers, and long chains are slow to search.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>“Compare” needs both methods in each point – use “whereas”.</li><li>Give advantages <em>and</em> disadvantages of each.</li></ul></div>
+          </div></details>
+        </article>
+      </div>
+    </section>
+
+    <section id="revise">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>How to revise this</h2><ul><li><a href="../../techniques/worked-examples.html">Worked examples</a> – MOD calculations, string hashing, load factor</li><li><a href="../../techniques/trace-tables.html">Trace tables</a> – insert, find and remove with linear probing</li><li><a href="../../techniques/flashcards.html">Flashcards</a> – key terms: hash function, collision, load factor, clustering</li></ul>
+        <p class="small">These are the best fit for this part of the topic, but you can use any <a href="../../revision-techniques.html">revision technique</a> that works for you.</p></div>
+          <div><h2>Watch and read more</h2><ul><li><a href="https://visualgo.net/en/hashtable">VisuAlgo – hash tables</a> – animated hashing, linear probing and chaining.</li><li><a href="https://www.youtube.com/@Computerphile">Computerphile (YouTube)</a> – search “hash tables” for visual explanations.</li></ul></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 1.4.2 pages"><a href="queues.html"><span class="dir">← Previous</span>Queues</a><a class="next" href="graphs.html"><span class="dir">Next →</span>Graphs</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>
