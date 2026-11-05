@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bitwise manipulation and masks (1.4.1 (i)) – OCR A Level CS Revision</title>
+  <meta name="description" content="OCR A Level Computer Science 1.4.1 (i): Bitwise manipulation and masks. Revision notes, quiz and exam questions.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html" aria-current="page">Paper 1</a></li>
+          <li><a href="../../paper2.html">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../paper1.html">Paper 1</a> › <a href="index.html">1.4.1 Data types</a> › Bitwise manipulation and masks</p>
+          <p class="eyebrow">1.4.1 (i) • Paper 1</p>
+          <h1>Bitwise manipulation and masks</h1>
+          <hr class="rule">
+          <p class="lead">Using AND, OR and XOR with masks to change single bits, and logical, arithmetic and circular shifts.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">Key terms</h2><ul style="margin:0"><li>AND, OR, XOR</li><li>Mask</li><li>Set, clear, toggle</li><li>Logical shift</li><li>Arithmetic shift</li><li>Circular shift, carry</li></ul></div>
+      </div>
+    </div>
+    <div class="wrap" style="padding-top:1.25rem">
+      <nav class="toc" aria-label="On this page"><ul>
+        <li><a href="#notes">Revision notes</a></li><li><a href="#links">Links and slides</a></li>
+        <li><a href="#quiz">Quick quiz</a></li><li><a href="#exam">Exam questions</a></li><li><a href="#revise">How to revise it</a></li>
+      </ul></nav>
+    </div>
+
+    <section id="notes">
+      <div class="wrap">
+        <h2 class="mt-2">AND, OR and XOR</h2>
+        <div class="grid grid-2">
+          <div><div class="table-scroll"><table><thead><tr><th scope="col">A</th><th scope="col">B</th><th scope="col">AND</th><th scope="col">OR</th><th scope="col">XOR</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td></tr><tr><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td></tr></tbody></table></div></div>
+          <div><p>Applied bit by bit to a whole byte:</p><pre class="code"><code>     1010     1010     1010
+AND  1100  OR 1100  XOR 1100
+   = 1000   = 1110   = 0110</code></pre><p>The second value is a <strong>mask</strong>.</p></div>
+        </div>        <h2 class="mt-2">Using masks</h2>
+        <div class="table-scroll"><table><thead><tr><th scope="col">To…</th><th scope="col">Operator</th><th scope="col">Mask bit to change</th><th scope="col">Mask bit to keep</th></tr></thead><tbody><tr><th scope="row">Clear a bit (make it 0)</th><td>AND</td><td>0</td><td>1</td></tr><tr><th scope="row">Set a bit (make it 1)</th><td>OR</td><td>1</td><td>0</td></tr><tr><th scope="row">Toggle a bit (flip it)</th><td>XOR</td><td>1</td><td>0</td></tr><tr><th scope="row">Test a bit</th><td>AND</td><td>1</td><td>0 – result 0000 0000 means the bit was 0</td></tr></tbody></table></div>
+        <p class="mt-1"><strong>Memory hook:</strong> AND is the only one where the “keep” bit is 1. <strong>Example:</strong> a settings byte <span class="mono">1010 0110</span>; turn bit 6 (Alerts) off with AND <span class="mono">1111 1011</span> → <span class="mono">1010 0010</span>. XOR twice with the same mask gives the original back – the idea behind simple encryption.</p>        <h2 class="mt-2">Shifts</h2>
+        <figure class="diagram"><svg viewBox="0 0 920 396" role="img" aria-labelledby="tcf435f4b tcf435f4bd"><title id="tcf435f4b">Logical, arithmetic and circular shifts</title><desc id="tcf435f4bd">Starting with 1011 0100: a logical shift right gives 0101 1010, with a 0 coming in on the left. An arithmetic shift right gives 1101 1010, copying the sign bit. A circular shift right with carry on 0011 0110 with carry 1 gives 1001 1011 with carry 0: the carry goes into the most significant bit and the least significant bit goes into the carry.</desc><defs><marker id="ahtcf435f4b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><text x="20" y="49" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="20" dy="0">Start</tspan></text><rect x="230" y="20" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="253" y="49" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="253" dy="0">1</tspan></text><rect x="276" y="20" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="299" y="49" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="299" dy="0">0</tspan></text><rect x="322" y="20" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="345" y="49" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="345" dy="0">1</tspan></text><rect x="368" y="20" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="391" y="49" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="391" dy="0">1</tspan></text><rect x="414" y="20" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="437" y="49" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="437" dy="0">0</tspan></text><rect x="460" y="20" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="483" y="49" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="483" dy="0">1</tspan></text><rect x="506" y="20" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="529" y="49" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="529" dy="0">0</tspan></text><rect x="552" y="20" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="575" y="49" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="575" dy="0">0</tspan></text><text x="20" y="121" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="20" dy="0">Logical shift right</tspan></text><rect x="230" y="92" width="46" height="46" fill="#FFF4E0" stroke="#0B6E75" stroke-width="2"/><text x="253" y="121" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="253" dy="0">0</tspan></text><rect x="276" y="92" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="299" y="121" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="299" dy="0">1</tspan></text><rect x="322" y="92" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="345" y="121" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="345" dy="0">0</tspan></text><rect x="368" y="92" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="391" y="121" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="391" dy="0">1</tspan></text><rect x="414" y="92" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="437" y="121" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="437" dy="0">1</tspan></text><rect x="460" y="92" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="483" y="121" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="483" dy="0">0</tspan></text><rect x="506" y="92" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="529" y="121" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="529" dy="0">1</tspan></text><rect x="552" y="92" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="575" y="121" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="575" dy="0">0</tspan></text><text x="610" y="121" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" fill="#3D4451"><tspan x="610" dy="0">a 0 comes in on the left</tspan></text><text x="20" y="193" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="20" dy="0">Arithmetic shift right</tspan></text><rect x="230" y="164" width="46" height="46" fill="#FFF4E0" stroke="#0B6E75" stroke-width="2"/><text x="253" y="193" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="253" dy="0">1</tspan></text><rect x="276" y="164" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="299" y="193" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="299" dy="0">1</tspan></text><rect x="322" y="164" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="345" y="193" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="345" dy="0">0</tspan></text><rect x="368" y="164" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="391" y="193" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="391" dy="0">1</tspan></text><rect x="414" y="164" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="437" y="193" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="437" dy="0">1</tspan></text><rect x="460" y="164" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="483" y="193" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="483" dy="0">0</tspan></text><rect x="506" y="164" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="529" y="193" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="529" dy="0">1</tspan></text><rect x="552" y="164" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="575" y="193" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="575" dy="0">0</tspan></text><text x="610" y="193" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" fill="#3D4451"><tspan x="610" dy="0">the sign bit (1) is copied in</tspan></text><text x="20" y="275" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="20" dy="0">Circular right (carry 1)</tspan></text><rect x="230" y="246" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="253" y="275" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="253" dy="0">0</tspan></text><rect x="276" y="246" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="299" y="275" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="299" dy="0">0</tspan></text><rect x="322" y="246" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="345" y="275" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="345" dy="0">1</tspan></text><rect x="368" y="246" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="391" y="275" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="391" dy="0">1</tspan></text><rect x="414" y="246" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="437" y="275" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="437" dy="0">0</tspan></text><rect x="460" y="246" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="483" y="275" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="483" dy="0">1</tspan></text><rect x="506" y="246" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="529" y="275" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="529" dy="0">1</tspan></text><rect x="552" y="246" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="575" y="275" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="575" dy="0">0</tspan></text><rect x="610" y="246" width="46" height="46" fill="#FFF4E0" stroke="#0B6E75" stroke-width="2"/><text x="633" y="275" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="633" dy="0">1</tspan></text><text x="633" y="312" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" fill="#B25C00"><tspan x="633" dy="0">carry</tspan></text><text x="20" y="355" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="20" dy="0">→ after</tspan></text><rect x="230" y="326" width="46" height="46" fill="#FFF4E0" stroke="#0B6E75" stroke-width="2"/><text x="253" y="355" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="253" dy="0">1</tspan></text><rect x="276" y="326" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="299" y="355" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="299" dy="0">0</tspan></text><rect x="322" y="326" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="345" y="355" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="345" dy="0">0</tspan></text><rect x="368" y="326" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="391" y="355" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="391" dy="0">1</tspan></text><rect x="414" y="326" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="437" y="355" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="437" dy="0">1</tspan></text><rect x="460" y="326" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="483" y="355" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="483" dy="0">0</tspan></text><rect x="506" y="326" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="529" y="355" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="529" dy="0">1</tspan></text><rect x="552" y="326" width="46" height="46" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="575" y="355" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="575" dy="0">1</tspan></text><rect x="610" y="326" width="46" height="46" fill="#FFF4E0" stroke="#0B6E75" stroke-width="2"/><text x="633" y="355" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="633" dy="0">0</tspan></text><text x="690" y="355" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" fill="#3D4451"><tspan x="690" dy="0">carry → MSB, LSB → carry</tspan></text></svg><figcaption>What comes in on the left is what makes each shift different.</figcaption></figure>
+        <div class="table-scroll"><table><thead><tr><th scope="col">Shift</th><th scope="col">What happens</th><th scope="col">Used for</th></tr></thead><tbody><tr><th scope="row">Logical</th><td>Bits move; a 0 fills the gap. The bit that falls off goes into the carry.</td><td>Multiply / divide <em>positive</em> numbers by 2; testing the LSB</td></tr><tr><th scope="row">Arithmetic</th><td>Right: the sign bit (MSB) is copied in, so the sign is kept. Left: the sign bit is kept.</td><td>Multiply / divide two’s complement numbers</td></tr><tr><th scope="row">Circular (with carry)</th><td>The carry goes into the empty end; the bit that falls off goes into the carry. No bits are lost.</td><td>Rotating bits</td></tr></tbody></table></div>
+        <p class="mt-1">Shift left 1 = × 2. Shift right 1 = ÷ 2, rounding down (the carry holds the remainder). <strong>Multiply with shifts and adds:</strong> 13 × 10 = 13 × 8 + 13 × 2 = shift left 3 (104) + shift left 1 (26) = 130.</p>
+        <div class="callout callout-amber mt-1"><p><strong>Watch out for:</strong></p><ul><li>Giving only the operator or only the mask – a question usually wants both.</li><li>Using a logical shift right on a negative number – the 0 coming in makes it positive.</li><li>Getting the “keep” bit wrong for AND (it is 1).</li><li>Counting bits from the wrong end – check how the question numbers them.</li></ul></div>
+      </div>
+    </section>
+
+    <section id="links" class="section-alt">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>Links to other topics</h2><ul class="link-list"><li><strong>1.4.3 Boolean algebra</strong> – AND, OR and XOR truth tables and logic gates.</li><li><strong>1.4.1 Negative numbers</strong> – arithmetic shifts keep the two’s complement sign.</li><li><strong>1.4.1 Character sets</strong> – a mask changes the case of a letter.</li><li><strong>1.3.1 Encryption</strong> – XOR with a key encrypts and decrypts.</li><li><strong>1.2.4 Assembly language</strong> – shift and logic instructions work on single bits.</li></ul></div>
+          <div><h2>Lesson slides</h2>
+            <p>Go back over the lesson for the full worked examples and tasks.</p>
+            <p><a class="btn" href="../../slides/1-4-1/bitwise-and-masks.pptx">Download the lesson slides</a></p>
+            <p class="small">1.4.1C Bitwise manipulation and masks – including Mask detective, the settings byte and Human byte.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <div class="wrap">
+        <h2>Check your understanding</h2>
+        <p>Answer, then press <strong>Check my answers</strong>. Each question explains the answer so you can fix any mistakes.</p>
+        <div class="quiz-block">
+          <h3>Quick quiz – marked for you</h3>
+          <div class="q" data-answer=""><p class="q-text">1. What is 1010 AND 1100? <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 1" data-answer="1000" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>AND gives 1 only where both bits are 1: 1000.</p></div></div><div class="q" data-answer="b"><p class="q-text">2. Which operator should be used to set particular bits to 1? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q27" value="a"> <span>AND</span></label><label><input type="radio" name="q27" value="b"> <span>OR</span></label><label><input type="radio" name="q27" value="c"> <span>XOR</span></label><label><input type="radio" name="q27" value="d"> <span>NOT</span></label></div><div class="explain" hidden><p><span class="verdict"></span>OR with a mask bit of 1 sets that bit; a mask bit of 0 leaves the bit unchanged.</p></div></div><div class="q" data-answer=""><p class="q-text">3. What is 1010 1101 XOR 1111 0000? <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 3" data-answer="01011101" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>XOR with 1 flips the bit; with 0 it keeps it. The left nibble flips: 0101 1101.</p></div></div><div class="q" data-answer=""><p class="q-text">4. Logical shift 1011 0100 right one place. Give the 8 bits. <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 4" data-answer="01011010" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>Every bit moves right and a 0 comes in on the left: 0101 1010.</p></div></div><div class="q" data-answer=""><p class="q-text">5. Arithmetic shift 1011 0100 right one place. Give the 8 bits. <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 5" data-answer="11011010" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>The sign bit (1) is copied in on the left to keep the number negative: 1101 1010.</p></div></div><div class="q" data-answer=""><p class="q-text">6. A settings byte is 1010 0110. Give the AND mask that turns bit 6 (from the left) off and keeps the rest. <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 6" data-answer="11111011" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>AND with 0 clears a bit; 1 keeps it. A 0 only in position 6: 1111 1011.</p></div></div><div class="q" data-answer="b"><p class="q-text">7. Why should an arithmetic shift, not a logical shift, be used to halve a negative two’s complement number? <span class="tag tag-soft">AO3</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q32" value="a"> <span>It is faster</span></label><label><input type="radio" name="q32" value="b"> <span>It copies the sign bit in, so the number stays negative</span></label><label><input type="radio" name="q32" value="c"> <span>It doesn’t use the carry</span></label><label><input type="radio" name="q32" value="d"> <span>It rounds up</span></label></div><div class="explain" hidden><p><span class="verdict"></span>A logical shift puts a 0 in the MSB, turning the negative number positive.</p></div></div>
+          <button type="button" class="btn quiz-check">Check my answers</button>
+          <button type="button" class="btn btn-ghost quiz-reset">Start again</button>
+          <p class="quiz-score mt-1" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="exam" class="section-alt">
+      <div class="wrap">
+        <h2>Exam-style questions – mark them yourself</h2>
+        <p>Write your answer, then open <strong>Mark your answer</strong>. Tick the mark points you hit, read the model answer and use the tips to improve. See the <a href="exam-tips.html">1.4.1 exam tips</a> for more help.</p>
+<article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[2 marks]</span></header>
+          <p>An 8-bit register holds the two’s complement value 1001 0110. State the contents after (a) a logical shift right of 2 places and (b) an arithmetic shift right of 2 places.</p>
+          <label for="es13t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es13t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es13"><li><label><input type="checkbox"> <span>(a) 0010 0101 (1)</span></label></li><li><label><input type="checkbox"> <span>(b) 1110 0101 (1)</span></label></li></ul>
+            <p id="es13" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> (a) 0010 0101 – two 0s come in on the left. (b) 1110 0101 – the sign bit 1 is copied in twice.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Write all 8 bits.</li><li>Say (or think about) what fills the gap for each type of shift.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[2 marks]</span></header>
+          <p>State the operator and mask that would set the two most significant bits of a byte to 1, leaving the other bits unchanged.</p>
+          <label for="es14t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es14t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es14"><li><label><input type="checkbox"> <span>OR (1)</span></label></li><li><label><input type="checkbox"> <span>1100 0000 (1)</span></label></li></ul>
+            <p id="es14" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> OR with the mask 1100 0000.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Two marks: one for the operator, one for the mask.</li><li>Set = OR. A 1 where you want the change, 0 where you don’t.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO3</span><span class="marks">[2 marks]</span></header>
+          <p>Explain why an arithmetic shift, rather than a logical shift, should be used to divide the value 1001 0110 by 4.</p>
+          <label for="es15t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es15t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es15"><li><label><input type="checkbox"> <span>The value is negative / its MSB is 1 (1)</span></label></li><li><label><input type="checkbox"> <span>A logical shift puts 0 into the MSB, making it positive / wrong; an arithmetic shift copies the sign bit so the sign is kept (1)</span></label></li></ul>
+            <p id="es15" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> The value is negative because its most significant bit is 1. A logical shift would bring 0s in on the left, making the result positive and wrong, whereas an arithmetic shift copies the sign bit in, so the result stays negative.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Say the number is negative and why (MSB is 1).</li><li>Compare what each shift puts into the MSB.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[3 marks]</span></header>
+          <p>Show how 13 × 10 can be calculated using only shifts and addition.</p>
+          <label for="es16t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es16t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es16"><li><label><input type="checkbox"> <span>10 = 8 + 2 (1)</span></label></li><li><label><input type="checkbox"> <span>13 shifted left 3 = 0110 1000 (104) and 13 shifted left 1 = 0001 1010 (26) (1)</span></label></li><li><label><input type="checkbox"> <span>Added: 1000 0010 = 130 (1)</span></label></li></ul>
+            <p id="es16" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> 10 = 8 + 2. 13 × 8 = 13 shifted left 3 places = 0110 1000 (104). 13 × 2 = 13 shifted left 1 place = 0001 1010 (26). Add them: 1000 0010 = 130.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Split the multiplier into powers of 2.</li><li>Show each shifted value in binary, then the addition.</li></ul></div>
+          </div></details>
+        </article>
+      </div>
+    </section>
+
+    <section id="revise">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>How to revise this</h2><ul><li><a href="../../techniques/worked-examples.html">Worked examples</a> – masks and shifts step by step</li><li><a href="../../techniques/mnemonics.html">Mnemonics</a> – “AND keeps with 1”: clear = AND 0, set = OR 1, toggle = XOR 1</li><li><a href="../../techniques/comparison-tables.html">Comparison tables</a> – logical vs arithmetic vs circular shifts</li></ul>
+        <p class="small">These are the best fit for this part of the topic, but you can use any <a href="../../revision-techniques.html">revision technique</a> that works for you.</p></div>
+          <div><h2>Watch and read more</h2><ul><li><a href="https://isaaccomputerscience.org">Isaac Computer Science</a> – free topic notes and practice questions on number representation.</li></ul></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 1.4.1 pages"><a href="floating-point.html"><span class="dir">← Previous</span>Floating point</a><a class="next" href="character-sets.html"><span class="dir">Next →</span>Character sets and binary prefixes</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>

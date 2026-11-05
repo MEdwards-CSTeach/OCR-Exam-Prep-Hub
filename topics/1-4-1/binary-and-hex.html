@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Data types, binary and hexadecimal (1.4.1 (a), (b), (e) and (f)) – OCR A Level CS Revision</title>
+  <meta name="description" content="OCR A Level Computer Science 1.4.1 (a), (b), (e) and (f): Data types, binary and hexadecimal. Revision notes, quiz and exam questions.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html" aria-current="page">Paper 1</a></li>
+          <li><a href="../../paper2.html">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../paper1.html">Paper 1</a> › <a href="index.html">1.4.1 Data types</a> › Data types, binary and hexadecimal</p>
+          <p class="eyebrow">1.4.1 (a), (b), (e) and (f) • Paper 1</p>
+          <h1>Data types, binary and hexadecimal</h1>
+          <hr class="rule">
+          <p class="lead">The primitive data types, and how to represent and convert whole numbers in binary, denary and hexadecimal.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">Key terms</h2><ul style="margin:0"><li>Integer, real, character, string, Boolean</li><li>Bit, nibble, byte</li><li>Binary (base 2)</li><li>Denary (base 10)</li><li>Hexadecimal (base 16)</li></ul></div>
+      </div>
+    </div>
+    <div class="wrap" style="padding-top:1.25rem">
+      <nav class="toc" aria-label="On this page"><ul>
+        <li><a href="#notes">Revision notes</a></li><li><a href="#links">Links and slides</a></li>
+        <li><a href="#quiz">Quick quiz</a></li><li><a href="#exam">Exam questions</a></li><li><a href="#revise">How to revise it</a></li>
+      </ul></nav>
+    </div>
+
+    <section id="notes">
+      <div class="wrap">
+        <h2 class="mt-2">Primitive data types</h2>
+        <div class="table-scroll"><table><thead><tr><th scope="col">Data type</th><th scope="col">Holds</th><th scope="col">Example</th></tr></thead><tbody><tr><th scope="row">Integer</th><td>Whole numbers</td><td>age = 17</td></tr><tr><th scope="row">Real / float</th><td>Numbers with a fractional part</td><td>height = 1.72</td></tr><tr><th scope="row">Character</th><td>A single symbol</td><td>initial = 'M'</td></tr><tr><th scope="row">String</th><td>A sequence of characters</td><td>name = "Ali"</td></tr><tr><th scope="row">Boolean</th><td>True or False</td><td>isMember = True</td></tr></tbody></table></div><p class="mt-1">Choose the data type from what the data <em>is</em> and what you will do with it. A phone number is a <strong>string</strong>: it can start with 0 and you never do arithmetic on it.</p>        <h2 class="mt-2">Binary: base 2</h2>
+        <ul>
+          <li>Computers use binary because circuits are either on (1) or off (0). Each binary digit is a <strong>bit</strong>; 8 bits make a <strong>byte</strong>.</li>
+          <li>Place values double from right to left: 128, 64, 32, 16, 8, 4, 2, 1.</li>
+          <li><strong>Binary → denary:</strong> add up the place values with a 1. <span class="mono">1011 0111</span> = 128 + 32 + 16 + 4 + 2 + 1 = 183.</li>
+          <li><strong>Denary → binary:</strong> work from the left. Can 128 fit? If yes, write 1 and subtract. Repeat. 159 = <span class="mono">1001 1111</span>.</li>
+          <li>n bits give 2<sup>n</sup> values: 0 to 2<sup>n</sup> − 1. 8 bits: 0 to 255.</li>
+        </ul>        <h2 class="mt-2">Hexadecimal: base 16</h2>
+        <ul>
+          <li>Digits 0–9, then A = 10, B = 11, C = 12, D = 13, E = 14, F = 15.</li>
+          <li>16 = 2<sup>4</sup>, so <strong>one hex digit = four bits</strong> (a nibble).</li>
+          <li><strong>Binary → hex:</strong> split into nibbles and convert each.</li>
+          <li><strong>Denary → hex:</strong> divide by 16; the answer is the first digit and the remainder the second. 43 ÷ 16 = 2 r 11 → <strong>2B</strong>.</li>
+          <li><strong>Hex → denary:</strong> place values 256, 16, 1. 3F5 = (256 × 3) + (16 × 15) + 5 = 1013.</li>
+        </ul>
+        <figure class="diagram"><svg viewBox="0 0 830 190" role="img" aria-labelledby="t6ce7e8f3 t6ce7e8f3d"><title id="t6ce7e8f3">Converting binary to hexadecimal in nibbles</title><desc id="t6ce7e8f3d">The byte 1101 1000 is split into two groups of four bits. 1101 is 13, which is D. 1000 is 8. So the byte is D8 in hex, which is 216 in denary.</desc><defs><marker id="aht6ce7e8f3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><text x="190" y="35" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#3D4451"><tspan x="190" dy="0">8</tspan></text><text x="250" y="35" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#3D4451"><tspan x="250" dy="0">4</tspan></text><text x="310" y="35" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#3D4451"><tspan x="310" dy="0">2</tspan></text><text x="370" y="35" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#3D4451"><tspan x="370" dy="0">1</tspan></text><text x="460" y="35" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#3D4451"><tspan x="460" dy="0">8</tspan></text><text x="520" y="35" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#3D4451"><tspan x="520" dy="0">4</tspan></text><text x="580" y="35" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#3D4451"><tspan x="580" dy="0">2</tspan></text><text x="640" y="35" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#3D4451"><tspan x="640" dy="0">1</tspan></text><rect x="160" y="45" width="60" height="52" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="190" y="78" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1A1A2E"><tspan x="190" dy="0">1</tspan></text><rect x="220" y="45" width="60" height="52" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="250" y="78" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1A1A2E"><tspan x="250" dy="0">1</tspan></text><rect x="280" y="45" width="60" height="52" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="310" y="78" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1A1A2E"><tspan x="310" dy="0">0</tspan></text><rect x="340" y="45" width="60" height="52" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="370" y="78" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1A1A2E"><tspan x="370" dy="0">1</tspan></text><rect x="430" y="45" width="60" height="52" fill="#FFF4E0" stroke="#0B6E75" stroke-width="2"/><text x="460" y="78" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1A1A2E"><tspan x="460" dy="0">1</tspan></text><rect x="490" y="45" width="60" height="52" fill="#FFF4E0" stroke="#0B6E75" stroke-width="2"/><text x="520" y="78" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1A1A2E"><tspan x="520" dy="0">0</tspan></text><rect x="550" y="45" width="60" height="52" fill="#FFF4E0" stroke="#0B6E75" stroke-width="2"/><text x="580" y="78" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1A1A2E"><tspan x="580" dy="0">0</tspan></text><rect x="610" y="45" width="60" height="52" fill="#FFF4E0" stroke="#0B6E75" stroke-width="2"/><text x="640" y="78" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1A1A2E"><tspan x="640" dy="0">0</tspan></text><text x="280" y="131" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#0B6E75"><tspan x="280" dy="0">8 + 4 + 1 = 13 = D</tspan></text><text x="550" y="131" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#B25C00"><tspan x="550" dy="0">8 = 8</tspan></text><text x="415" y="176" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="415" dy="0">1101 1000 = D8 in hex = 216 in denary</tspan></text></svg><figcaption>Each group of four bits becomes one hex digit.</figcaption></figure>
+        <div class="callout"><p><strong>Why hex?</strong> Easier for people to read and remember than long binary; quicker to type; fewer copying errors; converts easily to and from binary. Used for colour codes (#364DB2 = red 36, green 4D, blue B2), MAC addresses, memory addresses and machine code.</p></div>
+        <div class="callout callout-amber mt-1"><p><strong>Watch out for:</strong></p><ul><li>Saying hex is used because computers understand it – computers only use binary. Hex is for <em>people</em>.</li><li>Dropping leading zeros when a set number of bits is asked for: 5 in 8 bits is 0000 0101.</li><li>Confusing B (11) and D (13) – write the hex table down at the start of the exam.</li><li>No working: conversions often have a method mark.</li></ul></div>
+      </div>
+    </section>
+
+    <section id="links" class="section-alt">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>Links to other topics</h2><ul class="link-list"><li><strong>1.4.1 Character sets</strong> – characters are stored as binary codes.</li><li><strong>1.1.1 Processor performance</strong> – address bus width: 2<sup>n</sup> addresses.</li><li><strong>1.3.3 Networks</strong> – MAC addresses are written in hex.</li><li><strong>1.3.4 Web technologies</strong> – CSS colours use hex codes.</li><li><strong>1.2.4 Assembly language</strong> – machine code is often shown in hex.</li></ul></div>
+          <div><h2>Lesson slides</h2>
+            <p>Go back over the lesson for the full worked examples and tasks.</p>
+            <p><a class="btn" href="../../slides/1-4-1/binary-and-hex.pptx">Download the lesson slides</a></p>
+            <p class="small">1.4.1A1 Binary and hex – including place value tables, hex conversions and hex colour codes.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <div class="wrap">
+        <h2>Check your understanding</h2>
+        <p>Answer, then press <strong>Check my answers</strong>. Each question explains the answer so you can fix any mistakes.</p>
+        <div class="quiz-block">
+          <h3>Quick quiz – marked for you</h3>
+          <div class="q" data-answer=""><p class="q-text">1. Convert the binary 1011 0111 to denary. <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 1" data-answer="183" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>128 + 32 + 16 + 4 + 2 + 1 = 183.</p></div></div><div class="q" data-answer=""><p class="q-text">2. Convert 159 to 8-bit binary. <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 2" data-answer="10011111" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>159 − 128 = 31 → 31 = 16 + 8 + 4 + 2 + 1. So 1001 1111.</p></div></div><div class="q" data-answer=""><p class="q-text">3. Convert 47 to hexadecimal. <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 3" data-answer="2F|0x2F" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>47 ÷ 16 = 2 remainder 15. 15 is F, so 2F.</p></div></div><div class="q" data-answer=""><p class="q-text">4. Convert the hex A3 to denary. <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 4" data-answer="163" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>A = 10: (16 × 10) + 3 = 163.</p></div></div><div class="q" data-answer=""><p class="q-text">5. Convert the binary 1101 1000 to hex. <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 5" data-answer="D8|0xD8" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>Split into nibbles: 1101 = 13 = D, 1000 = 8. So D8.</p></div></div><div class="q" data-answer="c"><p class="q-text">6. A program stores whether a door is locked. Which data type? <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q6" value="a"> <span>Integer</span></label><label><input type="radio" name="q6" value="b"> <span>String</span></label><label><input type="radio" name="q6" value="c"> <span>Boolean</span></label><label><input type="radio" name="q6" value="d"> <span>Real</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Locked or not locked has only two values: True or False, so Boolean.</p></div></div><div class="q" data-answer="b"><p class="q-text">7. Why is hexadecimal used? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q7" value="a"> <span>Computers process hex faster</span></label><label><input type="radio" name="q7" value="b"> <span>It is easier for people to read and less error-prone than binary</span></label><label><input type="radio" name="q7" value="c"> <span>It uses less memory</span></label><label><input type="radio" name="q7" value="d"> <span>It stores negative numbers</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Hex is a shorthand for binary for humans. The computer still stores binary.</p></div></div>
+          <button type="button" class="btn quiz-check">Check my answers</button>
+          <button type="button" class="btn btn-ghost quiz-reset">Start again</button>
+          <p class="quiz-score mt-1" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="exam" class="section-alt">
+      <div class="wrap">
+        <h2>Exam-style questions – mark them yourself</h2>
+        <p>Write your answer, then open <strong>Mark your answer</strong>. Tick the mark points you hit, read the model answer and use the tips to improve. See the <a href="exam-tips.html">1.4.1 exam tips</a> for more help.</p>
+<article class="exam-q">
+          <header><span class="tag">AO1</span><span class="marks">[2 marks]</span></header>
+          <p>Give <strong>two</strong> reasons why hexadecimal is often used instead of binary.</p>
+          <label for="es1t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es1t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es1"><li><label><input type="checkbox"> <span>Easier for people to read / remember (1)</span></label></li><li><label><input type="checkbox"> <span>Quicker to write / fewer errors when copying / converts easily to binary (1)</span></label></li></ul>
+            <p id="es1" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> Hexadecimal is easier for people to read and remember than long strings of binary, and there is less chance of making a mistake when copying it, because one hex digit replaces four bits.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Don’t say computers “use” hex – it is for humans.</li><li>Give two different reasons, not the same one twice.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[2 marks]</span></header>
+          <p>Convert the denary number 237 into (i) 8-bit binary and (ii) hexadecimal. Show your working.</p>
+          <label for="es2t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es2t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es2"><li><label><input type="checkbox"> <span>1110 1101 (1)</span></label></li><li><label><input type="checkbox"> <span>ED (1)</span></label></li></ul>
+            <p id="es2" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> 237 − 128 = 109, − 64 = 45, − 32 = 13, − 8 = 5, − 4 = 1, − 1 = 0, so 1110 1101. Split into nibbles: 1110 = 14 = E, 1101 = 13 = D, so ED.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Use the binary answer to get the hex – split it into nibbles.</li><li>Check: E × 16 + D = 224 + 13 = 237.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[4 marks]</span></header>
+          <p>A membership record stores a name, an age in years, a height in metres and whether the person has paid. State a suitable data type for each field.</p>
+          <label for="es3t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es3t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es3"><li><label><input type="checkbox"> <span>Name: string (1)</span></label></li><li><label><input type="checkbox"> <span>Age: integer (1)</span></label></li><li><label><input type="checkbox"> <span>Height: real / float (1)</span></label></li><li><label><input type="checkbox"> <span>Paid: Boolean (1)</span></label></li></ul>
+            <p id="es3" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> Name – string; age – integer; height – real; paid – Boolean.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Think about what the data is: whole number, decimal, true/false, or text.</li><li>“Number” is not a data type – say integer or real.</li></ul></div>
+          </div></details>
+        </article>
+      </div>
+    </section>
+
+    <section id="revise">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>How to revise this</h2><ul><li><a href="../../techniques/worked-examples.html">Worked examples</a> – conversions: study one, finish one, then do one alone</li><li><a href="../../techniques/flashcards.html">Flashcards</a> – hex digits A–F and powers of 2</li><li><a href="../../techniques/spaced-practice.html">Spaced practice</a> – five conversions a day, mixed</li></ul>
+        <p class="small">These are the best fit for this part of the topic, but you can use any <a href="../../revision-techniques.html">revision technique</a> that works for you.</p></div>
+          <div><h2>Watch and read more</h2><ul><li><a href="https://isaaccomputerscience.org">Isaac Computer Science</a> – free topic notes and practice questions on number representation.</li><li><a href="https://www.youtube.com/@Computerphile">Computerphile (YouTube)</a> – search “floating point” or “Unicode” for short explanations.</li></ul></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 1.4.1 pages"><a href="index.html"><span class="dir">← Back to</span>1.4.1 overview</a><a class="next" href="negative-numbers.html"><span class="dir">Next →</span>Negative numbers</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>

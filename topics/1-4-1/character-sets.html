@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Character sets and binary prefixes (1.4.1 (j)) – OCR A Level CS Revision</title>
+  <meta name="description" content="OCR A Level Computer Science 1.4.1 (j): Character sets and binary prefixes. Revision notes, quiz and exam questions.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html" aria-current="page">Paper 1</a></li>
+          <li><a href="../../paper2.html">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../paper1.html">Paper 1</a> › <a href="index.html">1.4.1 Data types</a> › Character sets and binary prefixes</p>
+          <p class="eyebrow">1.4.1 (j) • Paper 1</p>
+          <h1>Character sets and binary prefixes</h1>
+          <hr class="rule">
+          <p class="lead">How ASCII and Unicode represent text, and the decimal and binary prefixes for sizes.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">Key terms</h2><ul style="margin:0"><li>Character set</li><li>ASCII (7-bit), extended ASCII</li><li>Unicode</li><li>Control codes</li><li>kB vs KiB</li></ul></div>
+      </div>
+    </div>
+    <div class="wrap" style="padding-top:1.25rem">
+      <nav class="toc" aria-label="On this page"><ul>
+        <li><a href="#notes">Revision notes</a></li><li><a href="#links">Links and slides</a></li>
+        <li><a href="#quiz">Quick quiz</a></li><li><a href="#exam">Exam questions</a></li><li><a href="#revise">How to revise it</a></li>
+      </ul></nav>
+    </div>
+
+    <section id="notes">
+      <div class="wrap">
+        <h2 class="mt-2">Binary prefixes</h2>
+        <div class="table-scroll"><table><thead><tr><th scope="col">Decimal</th><th scope="col">Bytes</th><th scope="col">Binary</th><th scope="col">Bytes</th></tr></thead><tbody><tr><th scope="row">kilobyte (kB)</th><td>10³ = 1,000</td><td>kibibyte (KiB)</td><td>2¹⁰ = 1,024</td></tr><tr><th scope="row">megabyte (MB)</th><td>10⁶</td><td>mebibyte (MiB)</td><td>2²⁰ = 1,048,576</td></tr><tr><th scope="row">gigabyte (GB)</th><td>10⁹</td><td>gibibyte (GiB)</td><td>2³⁰</td></tr><tr><th scope="row">terabyte (TB)</th><td>10¹²</td><td>tebibyte (TiB)</td><td>2⁴⁰</td></tr></tbody></table></div>
+        <p class="mt-1">The “i” means a binary prefix. A 1 TB drive shows as 931 “GB” in Windows because 10¹² ÷ 2³⁰ = 931.3 – Windows divides by binary prefixes but still writes GB.</p>        <h2 class="mt-2">Character sets</h2>
+        <ul>
+          <li>A <strong>character set</strong> is an agreed table giving each character a unique binary code, so text means the same on every computer.</li>
+          <li>n bits give 2<sup>n</sup> characters.</li>
+        </ul>
+        <div class="grid grid-2">
+          <div class="card"><h3>ASCII</h3><ul>
+            <li><strong>7 bits: 128 characters</strong> – English letters, digits, punctuation.</li>
+            <li>Codes 0–31 are control codes (Enter = 13, Esc = 27). Space = 32.</li>
+            <li>'0' = 48, 'A' = 65, 'a' = 97. Cases are exactly <strong>32</strong> apart – one bit.</li>
+            <li>Extended ASCII: 8 bits, 256 characters (©, é, £…).</li></ul></div>
+          <div class="card"><h3>Unicode</h3><ul>
+            <li>Represents characters from <strong>every language</strong>, plus maths symbols and emoji.</li>
+            <li>Uses 16 or 32 bits per character (variable length).</li>
+            <li>The first 128 codes are the same as ASCII.</li>
+            <li>✗ More bits per character, so files take more storage and longer to send.</li></ul></div>
+        </div>        <h2 class="mt-2">Characters are not numbers</h2>
+        <ul>
+          <li>The <em>character</em> '5' is code 53 = <span class="mono">0011 0101</span>. The <em>integer</em> 5 is <span class="mono">0000 0101</span>.</li>
+          <li>So <span class="mono">"9" + "3"</span> gives "93" (joining strings), but 9 + 3 gives 12.</li>
+          <li>Strings sort by character code: "Zebra" &lt; "apple" because 'Z' (90) &lt; 'a' (97); and "10" &lt; "9" because '1' (49) &lt; '9' (57).</li>
+          <li>Masks change case: AND <span class="mono">1101 1111</span> → uppercase; OR <span class="mono">0010 0000</span> → lowercase; XOR <span class="mono">0010 0000</span> → swap.</li>
+        </ul>
+        <div class="callout callout-amber mt-1"><p><strong>Watch out for:</strong></p><ul><li>Writing 1 KiB = 1,000 bytes – it is 1,024.</li><li>Saying 7-bit ASCII has 256 characters – it has 128 (8-bit extended ASCII has 256).</li><li>Storing the character '9' as 1001 – it is 0011 1001 (57).</li><li>Saying Unicode replaced ASCII completely – the first 128 Unicode codes <em>are</em> ASCII.</li></ul></div>
+      </div>
+    </section>
+
+    <section id="links" class="section-alt">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>Links to other topics</h2><ul class="link-list"><li><strong>1.4.1 Binary and hex</strong> – codes are binary numbers.</li><li><strong>1.4.1 Bitwise and masks</strong> – a mask changes a letter’s case.</li><li><strong>1.5.2 Layout, colour paradigms and character sets</strong> – Unicode supports every language: an ethical and cultural issue.</li><li><strong>1.1.3 Storage</strong> – file sizes and binary prefixes.</li><li><strong>2.3.1 Algorithms</strong> – sorting strings compares character codes.</li></ul></div>
+          <div><h2>Lesson slides</h2>
+            <p>Go back over the lesson for the full worked examples and tasks.</p>
+            <p><a class="btn" href="../../slides/1-4-1/character-sets.pptx">Download the lesson slides</a></p>
+            <p class="small">1.4.1D Character sets – binary prefixes, Decode race, Spot the pattern and One bit, whole alphabet.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <div class="wrap">
+        <h2>Check your understanding</h2>
+        <p>Answer, then press <strong>Check my answers</strong>. Each question explains the answer so you can fix any mistakes.</p>
+        <div class="quiz-block">
+          <h3>Quick quiz – marked for you</h3>
+          <div class="q" data-answer=""><p class="q-text">1. 'A' is 65. What is the ASCII code for 'M'? <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 1" data-answer="77" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>M is the 13th letter: 65 + 12 = 77.</p></div></div><div class="q" data-answer=""><p class="q-text">2. '5' has the ASCII code 53. Give the 8-bit binary for the <em>character</em> '5'. <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 2" data-answer="00110101" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>53 = 32 + 16 + 4 + 1 = 0011 0101. (The integer 5 would be 0000 0101.)</p></div></div><div class="q" data-answer=""><p class="q-text">3. How many bytes are in 4 KiB? <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 3" data-answer="4096|4,096" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>1 KiB = 1,024 bytes, so 4 × 1,024 = 4,096.</p></div></div><div class="q" data-answer=""><p class="q-text">4. How many different characters can 7-bit ASCII represent? <span class="tag tag-soft">AO1</span></p><input type="text" aria-label="Answer to question 4" data-answer="128" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>2<sup>7</sup> = 128.</p></div></div><div class="q" data-answer="b"><p class="q-text">5. Why is "Zebra" < "apple" True when comparing strings? <span class="tag tag-soft">AO3</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q37" value="a"> <span>Z comes after a in the alphabet</span></label><label><input type="radio" name="q37" value="b"> <span>'Z' has code 90 and 'a' has code 97, so Z is smaller</span></label><label><input type="radio" name="q37" value="c"> <span>Shorter strings come first</span></label><label><input type="radio" name="q37" value="d"> <span>It is a bug</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Strings are compared by character code, and every uppercase letter (65–90) comes before every lowercase letter (97–122).</p></div></div><div class="q" data-answer="b"><p class="q-text">6. Which mask turns any ASCII letter into uppercase? <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q38" value="a"> <span>OR 0010 0000</span></label><label><input type="radio" name="q38" value="b"> <span>AND 1101 1111</span></label><label><input type="radio" name="q38" value="c"> <span>XOR 1111 1111</span></label><label><input type="radio" name="q38" value="d"> <span>AND 0000 1111</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Uppercase letters have the 32 bit set to 0. AND with 0 in that position clears it; 1s elsewhere keep the rest.</p></div></div>
+          <button type="button" class="btn quiz-check">Check my answers</button>
+          <button type="button" class="btn btn-ghost quiz-reset">Start again</button>
+          <p class="quiz-score mt-1" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="exam" class="section-alt">
+      <div class="wrap">
+        <h2>Exam-style questions – mark them yourself</h2>
+        <p>Write your answer, then open <strong>Mark your answer</strong>. Tick the mark points you hit, read the model answer and use the tips to improve. See the <a href="exam-tips.html">1.4.1 exam tips</a> for more help.</p>
+<article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[2 marks]</span></header>
+          <p>The character '5' has the ASCII code 53. Give the 8-bit binary for the character '5' and for the integer 5.</p>
+          <label for="es17t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es17t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es17"><li><label><input type="checkbox"> <span>Character '5': 0011 0101 (1)</span></label></li><li><label><input type="checkbox"> <span>Integer 5: 0000 0101 (1)</span></label></li></ul>
+            <p id="es17" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> The character '5' is 0011 0101 (53). The integer 5 is 0000 0101.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Don’t mix them up – a digit character is stored as its code, not its value.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO1</span><span class="marks">[3 marks]</span></header>
+          <p>Explain why Unicode was introduced, and give one disadvantage of Unicode compared with ASCII.</p>
+          <label for="es18t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es18t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es18"><li><label><input type="checkbox"> <span>ASCII can only represent 128 / 256 characters, mainly English (1)</span></label></li><li><label><input type="checkbox"> <span>Unicode can represent characters from all languages / symbols / emoji, with one standard code for each (1)</span></label></li><li><label><input type="checkbox"> <span>Disadvantage: more bits per character, so files take more storage / take longer to transmit (1)</span></label></li></ul>
+            <p id="es18" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> ASCII can only represent 128 characters (256 in extended ASCII), which is mostly the English alphabet. Unicode was introduced so that characters from every language, as well as symbols and emoji, each have one standard code. However, Unicode uses more bits per character, so text files take up more storage and take longer to send.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Explain the limit of ASCII before the benefit of Unicode.</li><li>Make the disadvantage specific: more bits → more storage.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[2 marks]</span></header>
+          <p>A new 1 TB hard drive is shown as about 931 GB by an operating system. Explain why.</p>
+          <label for="es19t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es19t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es19"><li><label><input type="checkbox"> <span>The manufacturer uses decimal prefixes: 1 TB = 10¹² bytes (1)</span></label></li><li><label><input type="checkbox"> <span>The OS divides by 2³⁰ (a GiB): 10¹² ÷ 2³⁰ ≈ 931 (1)</span></label></li></ul>
+            <p id="es19" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> The manufacturer measures 1 TB as 10¹² bytes. The operating system divides by binary units of 2³⁰ bytes (gibibytes) but still labels them GB, and 10¹² ÷ 2³⁰ ≈ 931.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Show the calculation.</li><li>Name both kinds of prefix: decimal (GB) and binary (GiB).</li></ul></div>
+          </div></details>
+        </article>
+      </div>
+    </section>
+
+    <section id="revise">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>How to revise this</h2><ul><li><a href="../../techniques/flashcards.html">Flashcards</a> – prefixes and key ASCII codes (32, 48, 65, 97)</li><li><a href="../../techniques/comparison-tables.html">Comparison tables</a> – ASCII vs Unicode</li><li><a href="../../techniques/teach-it.html">Teach it</a> – why '9' + '3' isn’t 12</li></ul>
+        <p class="small">These are the best fit for this part of the topic, but you can use any <a href="../../revision-techniques.html">revision technique</a> that works for you.</p></div>
+          <div><h2>Watch and read more</h2><ul><li><a href="https://www.asciitable.com">ASCII table</a> – every ASCII code in denary, hex and binary.</li><li><a href="https://home.unicode.org">Unicode Consortium</a> – the organisation behind Unicode.</li><li><a href="https://isaaccomputerscience.org">Isaac Computer Science</a> – free topic notes and practice questions on number representation.</li></ul></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 1.4.1 pages"><a href="bitwise-and-masks.html"><span class="dir">← Previous</span>Bitwise manipulation and masks</a><a class="next" href="exam-tips.html"><span class="dir">Next →</span>1.4.1 exam tips</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>

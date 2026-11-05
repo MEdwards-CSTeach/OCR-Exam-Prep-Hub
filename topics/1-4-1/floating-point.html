@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Floating point (1.4.1 (g) and (h)) – OCR A Level CS Revision</title>
+  <meta name="description" content="OCR A Level Computer Science 1.4.1 (g) and (h): Floating point. Revision notes, quiz and exam questions.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html" aria-current="page">Paper 1</a></li>
+          <li><a href="../../paper2.html">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../paper1.html">Paper 1</a> › <a href="index.html">1.4.1 Data types</a> › Floating point</p>
+          <p class="eyebrow">1.4.1 (g) and (h) • Paper 1</p>
+          <h1>Floating point</h1>
+          <hr class="rule">
+          <p class="lead">Representing real numbers with a mantissa and exponent, normalising them, and adding and subtracting them.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">Key terms</h2><ul style="margin:0"><li>Mantissa, exponent</li><li>Normalisation</li><li>Precision vs range</li><li>Negative mantissa</li><li>Negative exponent</li></ul></div>
+      </div>
+    </div>
+    <div class="wrap" style="padding-top:1.25rem">
+      <nav class="toc" aria-label="On this page"><ul>
+        <li><a href="#notes">Revision notes</a></li><li><a href="#links">Links and slides</a></li>
+        <li><a href="#quiz">Quick quiz</a></li><li><a href="#exam">Exam questions</a></li><li><a href="#revise">How to revise it</a></li>
+      </ul></nav>
+    </div>
+
+    <section id="notes">
+      <div class="wrap">
+        <h2 class="mt-2">How floating point works</h2>
+        <p>Like standard form (75,000 = 0.75 × 10<sup>5</sup>): a <strong>mantissa</strong> holds the digits and an <strong>exponent</strong> says where the point goes.</p>
+        <div class="callout"><p><strong>In these examples:</strong> an 8-bit mantissa and a 4-bit exponent, both in two’s complement. The mantissa’s first bit is the sign, with the binary point straight after it.</p></div>
+        <figure class="diagram"><svg viewBox="0 0 800 180" role="img" aria-labelledby="tba34b447 tba34b447d"><title id="tba34b447">A floating point number with an 8-bit mantissa and a 4-bit exponent</title><desc id="tba34b447d">The mantissa 0.1011010 has its sign bit first and the binary point after it. The exponent 0011 is 3. Moving the point 3 places right gives 101.1010, which is 5.625.</desc><defs><marker id="ahtba34b447" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><rect x="40" y="40" width="448" height="56" fill="none"/><rect x="40" y="50" width="56" height="52" fill="#FFF4E0" stroke="#0B6E75" stroke-width="2"/><text x="68" y="83" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1A1A2E"><tspan x="68" dy="0">0</tspan></text><rect x="96" y="50" width="56" height="52" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="124" y="83" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1A1A2E"><tspan x="124" dy="0">1</tspan></text><rect x="152" y="50" width="56" height="52" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="180" y="83" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1A1A2E"><tspan x="180" dy="0">0</tspan></text><rect x="208" y="50" width="56" height="52" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="236" y="83" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1A1A2E"><tspan x="236" dy="0">1</tspan></text><rect x="264" y="50" width="56" height="52" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="292" y="83" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1A1A2E"><tspan x="292" dy="0">1</tspan></text><rect x="320" y="50" width="56" height="52" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="348" y="83" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1A1A2E"><tspan x="348" dy="0">0</tspan></text><rect x="376" y="50" width="56" height="52" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="404" y="83" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1A1A2E"><tspan x="404" dy="0">1</tspan></text><rect x="432" y="50" width="56" height="52" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="460" y="83" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1A1A2E"><tspan x="460" dy="0">0</tspan></text><rect x="530" y="50" width="56" height="52" fill="#EEF3F6" stroke="#0B6E75" stroke-width="2"/><text x="558" y="83" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1A1A2E"><tspan x="558" dy="0">0</tspan></text><rect x="586" y="50" width="56" height="52" fill="#EEF3F6" stroke="#0B6E75" stroke-width="2"/><text x="614" y="83" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1A1A2E"><tspan x="614" dy="0">0</tspan></text><rect x="642" y="50" width="56" height="52" fill="#EEF3F6" stroke="#0B6E75" stroke-width="2"/><text x="670" y="83" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1A1A2E"><tspan x="670" dy="0">1</tspan></text><rect x="698" y="50" width="56" height="52" fill="#EEF3F6" stroke="#0B6E75" stroke-width="2"/><text x="726" y="83" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1A1A2E"><tspan x="726" dy="0">1</tspan></text><circle cx="96" cy="108" r="7" fill="#B25C00"/><text x="68" y="37" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="bold" fill="#B25C00"><tspan x="68" dy="0">sign</tspan></text><text x="264" y="37" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#0B6E75"><tspan x="264" dy="0">mantissa (8 bits, two’s complement)</tspan></text><text x="642" y="37" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#1A1A2E"><tspan x="642" dy="0">exponent (4 bits)</tspan></text><text x="96" y="132" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="bold" fill="#B25C00"><tspan x="96" dy="0">point</tspan></text><text x="400" y="166" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#1A1A2E"><tspan x="400" dy="0">0.1011010 × 2³  →  move the point 3 places right  →  101.1010  =  5.625</tspan></text></svg><figcaption>Positive exponent: move the point right. Negative exponent: move it left.</figcaption></figure>        <h2 class="mt-2">Floating point → denary</h2>
+        <div class="grid grid-3">
+          <div class="card"><h3>Positive</h3><p><span class="mono">0.1101100 0100</span><br>Exponent 0100 = 4: move the point 4 right → 01101.100 = <strong>13.5</strong></p></div>
+          <div class="card"><h3>Negative mantissa</h3><p><span class="mono">1.0010100 0011</span><br>Exponent 3: move 3 right → 1001.0100. As two’s complement: −8 + 1 + 0.25 = <strong>−6.75</strong></p></div>
+          <div class="card"><h3>Negative exponent</h3><p><span class="mono">0.1100000 1110</span><br>Exponent 1110 = −2: move the point 2 <em>left</em> → 0.0011 = <strong>0.1875</strong></p></div>
+        </div>        <h2 class="mt-2">Normalisation</h2>
+        <ul>
+          <li>Gives the <strong>most precision</strong> for the bits available, and one unique way to write each number.</li>
+          <li>A normalised <strong>positive</strong> number starts <strong><span class="mono">0.1</span></strong>; a normalised <strong>negative</strong> number starts <strong><span class="mono">1.0</span></strong>.</li>
+          <li>To normalise: shift the mantissa left until it starts 0.1 or 1.0, filling with 0s on the right. <strong>Subtract</strong> the number of places from the exponent.</li>
+        </ul>
+        <div class="table-scroll"><table><thead><tr><th scope="col">Before</th><th scope="col">Shift</th><th scope="col">After</th></tr></thead><tbody><tr><th scope="row"><span class="mono">0.0011010 0100</span></th><td>left 2, exponent 4 − 2 = 2</td><td><span class="mono">0.1101000 0010</span></td></tr><tr><th scope="row"><span class="mono">1.1100011 0011</span></th><td>left 2, exponent 3 − 2 = 1</td><td><span class="mono">1.0001100 0001</span></td></tr></tbody></table></div>
+        <h3 class="mt-1">Denary → normalised floating point</h3>
+        <p>17.25 → fixed point <span class="mono">10001.01</span> → move the point 5 left → <span class="mono">0.1000101 0101</span>. For a negative number, find the two’s complement of the fixed point value first: −17.75 → <span class="mono">1.0111001 0101</span>.</p>        <h2 class="mt-2">Adding and subtracting</h2>
+        <ol class="steps">
+          <li>Convert both numbers to <strong>fixed point</strong> (this lines up the exponents).</li>
+          <li>Add. To subtract, add the two’s complement of the second number.</li>
+          <li>Convert the result back to <strong>normalised</strong> floating point.</li>
+        </ol>
+        <p>Example: <span class="mono">0.1100000 0001</span> (1.5) + <span class="mono">0.1111100 0011</span> (7.75) = 1001.0100 (9.25) = <span class="mono">0.1001010 0100</span>.</p>
+        <div class="callout"><p><strong>Mantissa vs exponent:</strong> more bits in the mantissa = more <strong>precision</strong>; more bits in the exponent = more <strong>range</strong>. With a fixed total, increasing one reduces the other.</p></div>
+        <div class="callout callout-amber mt-1"><p><strong>Watch out for:</strong></p><ul><li>Moving the point the wrong way for a negative exponent.</li><li>Adjusting the exponent the wrong way when normalising: shift the mantissa left → subtract from the exponent.</li><li>Forgetting a negative mantissa is two’s complement.</li><li>Adding mantissas directly without first matching the exponents.</li></ul></div>
+      </div>
+    </section>
+
+    <section id="links" class="section-alt">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>Links to other topics</h2><ul class="link-list"><li><strong>1.4.1 Negative numbers</strong> – mantissa and exponent use two’s complement.</li><li><strong>1.4.1 Fixed point</strong> – used when adding and subtracting floating point numbers.</li><li><strong>1.4.1 Data types</strong> – the real / float data type is stored in floating point.</li><li><strong>Beyond the spec</strong> – why 0.1 + 0.2 isn’t exactly 0.3 in most languages.</li></ul></div>
+          <div><h2>Lesson slides</h2>
+            <p>Go back over the lesson for the full worked examples and tasks.</p>
+            <p><a class="btn" href="../../slides/1-4-1/floating-point.pptx">Download the lesson slides</a></p>
+            <p class="small">1.4.1B Floating point – conversions, normalisation, and adding and subtracting, with worksheet tasks.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <div class="wrap">
+        <h2>Check your understanding</h2>
+        <p>Answer, then press <strong>Check my answers</strong>. Each question explains the answer so you can fix any mistakes.</p>
+        <div class="quiz-block">
+          <h3>Quick quiz – marked for you</h3>
+          <div class="q" data-answer=""><p class="q-text">1. Convert 0.1011010 0011 (8-bit mantissa, 4-bit exponent) to denary. <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 1" data-answer="5.625" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>Exponent 3: 101.1010 = 4 + 1 + 0.5 + 0.125 = 5.625.</p></div></div><div class="q" data-answer=""><p class="q-text">2. Convert 0.1100000 1110 to denary. <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 2" data-answer="0.1875" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>Exponent 1110 = −2: move the point 2 left → 0.0011 = 0.125 + 0.0625 = 0.1875.</p></div></div><div class="q" data-answer=""><p class="q-text">3. Convert 1.0010100 0011 to denary. <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 3" data-answer="-6.75" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>Exponent 3 → 1001.0100. With −8 as the first place value: −8 + 1 + 0.25 = −6.75.</p></div></div><div class="q" data-answer=""><p class="q-text">4. Normalise 0.0011010 0100. Give mantissa then exponent, e.g. 0.1000000 0001 <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 4" data-answer="0.1101000 0010" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>Shift left 2 to get 0.1101000, so subtract 2 from the exponent: 4 − 2 = 2 = 0010.</p></div></div><div class="q" data-answer=""><p class="q-text">5. Write 17.25 as a normalised floating point number (8-bit mantissa, 4-bit exponent). <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 5" data-answer="0.1000101 0101" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>17.25 = 10001.01. Move the point 5 left: 0.1000101, exponent 5 = 0101.</p></div></div><div class="q" data-answer="b"><p class="q-text">6. Increasing the number of bits in the exponent (with the same total bits)… <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q25" value="a"> <span>increases precision</span></label><label><input type="radio" name="q25" value="b"> <span>increases the range</span></label><label><input type="radio" name="q25" value="c"> <span>makes all numbers negative</span></label><label><input type="radio" name="q25" value="d"> <span>has no effect</span></label></div><div class="explain" hidden><p><span class="verdict"></span>A bigger exponent can move the point further, so larger and smaller numbers can be stored – but fewer mantissa bits means less precision.</p></div></div>
+          <button type="button" class="btn quiz-check">Check my answers</button>
+          <button type="button" class="btn btn-ghost quiz-reset">Start again</button>
+          <p class="quiz-score mt-1" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="exam" class="section-alt">
+      <div class="wrap">
+        <h2>Exam-style questions – mark them yourself</h2>
+        <p>Write your answer, then open <strong>Mark your answer</strong>. Tick the mark points you hit, read the model answer and use the tips to improve. See the <a href="exam-tips.html">1.4.1 exam tips</a> for more help.</p>
+<article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[3 marks]</span></header>
+          <p>Convert −17.75 into a normalised floating point number with an 8-bit mantissa and a 4-bit exponent, both in two’s complement. Show your working.</p>
+          <label for="es10t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es10t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es10"><li><label><input type="checkbox"> <span>Fixed point positive value 010001.11 (1)</span></label></li><li><label><input type="checkbox"> <span>Two’s complement 101110.01 (1)</span></label></li><li><label><input type="checkbox"> <span>Normalised: 1.0111001 0101 (1)</span></label></li></ul>
+            <p id="es10" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> 17.75 = 010001.11. Two’s complement: flip to 101110.00, add 1 → 101110.01. Move the point 5 places left to get a mantissa of 1.0111001 and an exponent of 5 = 0101.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Find the two’s complement <em>before</em> normalising.</li><li>Check: a normalised negative mantissa starts 1.0.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[3 marks]</span></header>
+          <p>Normalise the floating point number 1.1100011 0011 and explain why floating point numbers are normalised.</p>
+          <label for="es11t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es11t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es11"><li><label><input type="checkbox"> <span>1.0001100 (1)</span></label></li><li><label><input type="checkbox"> <span>0001 (1)</span></label></li><li><label><input type="checkbox"> <span>Normalising gives the maximum precision for the bits available / one unique representation (1)</span></label></li></ul>
+            <p id="es11" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> Shift the mantissa left 2 places so it starts 1.0: 1.0001100. Subtract 2 from the exponent: 3 − 2 = 1 = 0001. Normalising gives the most precision possible for the number of bits, and ensures each number has only one representation.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>A negative mantissa starts 1.0 when normalised.</li><li>Explain the purpose: precision and a unique form.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO3</span><span class="marks">[4 marks]</span></header>
+          <p>Add the floating point numbers A = 0.1100000 0001 and B = 0.1111100 0011. Give the answer as a normalised floating point number and show your working.</p>
+          <label for="es12t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es12t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es12"><li><label><input type="checkbox"> <span>A = 1.1 in fixed point (1)</span></label></li><li><label><input type="checkbox"> <span>B = 111.11 in fixed point (1)</span></label></li><li><label><input type="checkbox"> <span>Sum = 1001.01 (1)</span></label></li><li><label><input type="checkbox"> <span>Normalised: 0.1001010 0100 (1)</span></label></li></ul>
+            <p id="es12" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> A = 0.1100000 × 2¹ = 1.1 (1.5). B = 0.1111100 × 2³ = 111.11 (7.75). A + B = 1001.01 (9.25). Moving the point 4 places left gives a mantissa of 0.1001010 and an exponent of 4 = 0100.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Convert to fixed point first – you can’t add mantissas with different exponents.</li><li>Check by converting each number to denary: 1.5 + 7.75 = 9.25.</li></ul></div>
+          </div></details>
+        </article>
+      </div>
+    </section>
+
+    <section id="revise">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>How to revise this</h2><ul><li><a href="../../techniques/worked-examples.html">Worked examples</a> – the best technique here: the page has step-by-step examples to fade</li><li><a href="../../techniques/flowcharts.html">Flowcharts and process diagrams</a> – draw the steps for converting and normalising</li><li><a href="../../techniques/spaced-practice.html">Spaced practice</a> – a couple of questions every few days</li></ul>
+        <p class="small">These are the best fit for this part of the topic, but you can use any <a href="../../revision-techniques.html">revision technique</a> that works for you.</p></div>
+          <div><h2>Watch and read more</h2><ul><li><a href="https://isaaccomputerscience.org">Isaac Computer Science</a> – free topic notes and practice questions on number representation.</li><li><a href="https://www.youtube.com/@Computerphile">Computerphile (YouTube)</a> – search “floating point” or “Unicode” for short explanations.</li></ul></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 1.4.1 pages"><a href="binary-arithmetic.html"><span class="dir">← Previous</span>Binary arithmetic and fixed point</a><a class="next" href="bitwise-and-masks.html"><span class="dir">Next →</span>Bitwise manipulation and masks</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>

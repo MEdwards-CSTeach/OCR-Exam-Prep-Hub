@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Negative numbers (1.4.1 (c)) – OCR A Level CS Revision</title>
+  <meta name="description" content="OCR A Level Computer Science 1.4.1 (c): Negative numbers. Revision notes, quiz and exam questions.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html" aria-current="page">Paper 1</a></li>
+          <li><a href="../../paper2.html">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../paper1.html">Paper 1</a> › <a href="index.html">1.4.1 Data types</a> › Negative numbers</p>
+          <p class="eyebrow">1.4.1 (c) • Paper 1</p>
+          <h1>Negative numbers</h1>
+          <hr class="rule">
+          <p class="lead">Representing negative whole numbers with sign and magnitude and with two’s complement.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">Key terms</h2><ul style="margin:0"><li>Most significant bit (MSB)</li><li>Sign and magnitude</li><li>Two’s complement</li><li>Range</li><li>Overflow</li></ul></div>
+      </div>
+    </div>
+    <div class="wrap" style="padding-top:1.25rem">
+      <nav class="toc" aria-label="On this page"><ul>
+        <li><a href="#notes">Revision notes</a></li><li><a href="#links">Links and slides</a></li>
+        <li><a href="#quiz">Quick quiz</a></li><li><a href="#exam">Exam questions</a></li><li><a href="#revise">How to revise it</a></li>
+      </ul></nav>
+    </div>
+
+    <section id="notes">
+      <div class="wrap">
+        <h2 class="mt-2">Sign and magnitude</h2>
+        <ul>
+          <li>The most significant bit is the <strong>sign</strong>: 0 = positive, 1 = negative. The other 7 bits are the size.</li>
+          <li>−3 = <span class="mono">1000 0011</span>. Range in 8 bits: −127 to +127.</li>
+          <li>✗ <strong>Arithmetic doesn’t work</strong> normally: <span class="mono">0000 0011</span> (3) + <span class="mono">1000 0011</span> (−3) = <span class="mono">1000 0110</span> = −6, not 0.</li>
+          <li>✗ It also has two zeros: <span class="mono">0000 0000</span> and <span class="mono">1000 0000</span>.</li>
+        </ul>        <h2 class="mt-2">Two’s complement</h2>
+        <figure class="diagram"><svg viewBox="0 0 780 195" role="img" aria-labelledby="t9b1b7968 t9b1b7968d"><title id="t9b1b7968">Reading an 8-bit two&#x27;s complement number</title><desc id="t9b1b7968d">The place values are −128, 64, 32, 16, 8, 4, 2 and 1. The byte 1011 0011 is −128 + 32 + 16 + 2 + 1, which is −77.</desc><defs><marker id="aht9b1b7968" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><text x="145" y="35" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#3D4451"><tspan x="145" dy="0">−128</tspan></text><text x="215" y="35" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#3D4451"><tspan x="215" dy="0">64</tspan></text><text x="285" y="35" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#3D4451"><tspan x="285" dy="0">32</tspan></text><text x="355" y="35" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#3D4451"><tspan x="355" dy="0">16</tspan></text><text x="425" y="35" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#3D4451"><tspan x="425" dy="0">8</tspan></text><text x="495" y="35" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#3D4451"><tspan x="495" dy="0">4</tspan></text><text x="565" y="35" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#3D4451"><tspan x="565" dy="0">2</tspan></text><text x="635" y="35" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#3D4451"><tspan x="635" dy="0">1</tspan></text><rect x="110" y="45" width="70" height="52" fill="#FFF4E0" stroke="#0B6E75" stroke-width="2"/><text x="145" y="78" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1A1A2E"><tspan x="145" dy="0">1</tspan></text><rect x="180" y="45" width="70" height="52" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="215" y="78" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1A1A2E"><tspan x="215" dy="0">0</tspan></text><rect x="250" y="45" width="70" height="52" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="285" y="78" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1A1A2E"><tspan x="285" dy="0">1</tspan></text><rect x="320" y="45" width="70" height="52" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="355" y="78" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1A1A2E"><tspan x="355" dy="0">1</tspan></text><rect x="390" y="45" width="70" height="52" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="425" y="78" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1A1A2E"><tspan x="425" dy="0">0</tspan></text><rect x="460" y="45" width="70" height="52" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="495" y="78" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1A1A2E"><tspan x="495" dy="0">0</tspan></text><rect x="530" y="45" width="70" height="52" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="565" y="78" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1A1A2E"><tspan x="565" dy="0">1</tspan></text><rect x="600" y="45" width="70" height="52" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="635" y="78" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1A1A2E"><tspan x="635" dy="0">1</tspan></text><text x="390" y="137" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="bold" fill="#1A1A2E"><tspan x="390" dy="0">−128 + 32 + 16 + 2 + 1 = −77</tspan></text><text x="110" y="180" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="normal" fill="#3D4451"><tspan x="110" dy="0">The most significant bit is worth −128, so any number starting with 1 is negative.</tspan></text></svg><figcaption>The most significant bit is worth −128 in 8 bits.</figcaption></figure>
+        <div class="grid grid-2">
+          <div><h3>Denary → two’s complement</h3><ol>
+            <li>Write the positive number: 77 = <span class="mono">0100 1101</span></li>
+            <li>Flip every bit: <span class="mono">1011 0010</span></li>
+            <li>Add 1: <strong><span class="mono">1011 0011</span></strong> = −77</li></ol>
+            <p class="small">Check by adding the place values with −128 at the front.</p></div>
+          <div><h3>Range</h3><ul>
+            <li>n bits: −2<sup>n−1</sup> to 2<sup>n−1</sup> − 1.</li>
+            <li>8 bits: <strong>−128</strong> (<span class="mono">1000 0000</span>) to <strong>127</strong> (<span class="mono">0111 1111</span>).</li>
+            <li>Same number of values as unsigned (256) – half are negative.</li>
+            <li>✓ Normal addition works, so <strong>subtraction is done by adding a negative</strong> – no extra circuits.</li></ul></div>
+        </div>
+        <div class="callout callout-amber mt-1"><p><strong>Watch out for:</strong></p><ul><li>Giving sign and magnitude when two’s complement is asked for (and the other way round).</li><li>Forgetting to add 1 after flipping the bits.</li><li>Not using 8 bits: always write all of them, including leading 0s or 1s.</li><li>Saying the range is −127 to 127 for two’s complement – it is −128 to 127.</li></ul></div>
+      </div>
+    </section>
+
+    <section id="links" class="section-alt">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>Links to other topics</h2><ul class="link-list"><li><strong>1.4.1 Binary arithmetic</strong> – subtract by adding the two’s complement.</li><li><strong>1.4.1 Floating point</strong> – the mantissa and exponent are both two’s complement.</li><li><strong>1.4.1 Bitwise</strong> – arithmetic shifts keep the sign bit.</li><li><strong>1.1.1 ALU</strong> – carries out addition for both adding and subtracting.</li></ul></div>
+          <div><h2>Lesson slides</h2>
+            <p>Go back over the lesson for the full worked examples and tasks.</p>
+            <p><a class="btn" href="../../slides/1-4-1/negative-numbers.pptx">Download the lesson slides</a></p>
+            <p class="small">1.4.1A2 Negative numbers – sign and magnitude, two’s complement, range and overflow.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <div class="wrap">
+        <h2>Check your understanding</h2>
+        <p>Answer, then press <strong>Check my answers</strong>. Each question explains the answer so you can fix any mistakes.</p>
+        <div class="quiz-block">
+          <h3>Quick quiz – marked for you</h3>
+          <div class="q" data-answer=""><p class="q-text">1. Write −3 as an 8-bit <strong>sign and magnitude</strong> number. <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 1" data-answer="10000011" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>Sign bit 1 for negative, then 3 in the other 7 bits: 1000 0011.</p></div></div><div class="q" data-answer=""><p class="q-text">2. Write −77 as an 8-bit two’s complement number. <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 2" data-answer="10110011" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>77 = 0100 1101 → flip: 1011 0010 → add 1: 1011 0011.</p></div></div><div class="q" data-answer=""><p class="q-text">3. Write −66 as an 8-bit two’s complement number. <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 3" data-answer="10111110" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>66 = 0100 0010 → flip: 1011 1101 → add 1: 1011 1110.</p></div></div><div class="q" data-answer=""><p class="q-text">4. What denary value is the two’s complement number 1111 1101? <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 4" data-answer="-3" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>−128 + 64 + 32 + 16 + 8 + 4 + 1 = −3.</p></div></div><div class="q" data-answer=""><p class="q-text">5. What is the smallest number an 8-bit two’s complement number can hold? <span class="tag tag-soft">AO1</span></p><input type="text" aria-label="Answer to question 5" data-answer="-128" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>1000 0000 = −128. The range is −128 to 127.</p></div></div><div class="q" data-answer="b"><p class="q-text">6. Why is two’s complement used instead of sign and magnitude? <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q13" value="a"> <span>It uses fewer bits</span></label><label><input type="radio" name="q13" value="b"> <span>Normal binary addition works, so subtraction can be done by adding</span></label><label><input type="radio" name="q13" value="c"> <span>It can store bigger positive numbers</span></label><label><input type="radio" name="q13" value="d"> <span>It has two zeros</span></label></div><div class="explain" hidden><p><span class="verdict"></span>With sign and magnitude, 3 + (−3) gives −6. Two’s complement arithmetic works with the same adder circuits.</p></div></div>
+          <button type="button" class="btn quiz-check">Check my answers</button>
+          <button type="button" class="btn btn-ghost quiz-reset">Start again</button>
+          <p class="quiz-score mt-1" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="exam" class="section-alt">
+      <div class="wrap">
+        <h2>Exam-style questions – mark them yourself</h2>
+        <p>Write your answer, then open <strong>Mark your answer</strong>. Tick the mark points you hit, read the model answer and use the tips to improve. See the <a href="exam-tips.html">1.4.1 exam tips</a> for more help.</p>
+<article class="exam-q">
+          <header><span class="tag">AO1</span><span class="marks">[2 marks]</span></header>
+          <p>Describe how sign and magnitude is used to represent a negative number in binary.</p>
+          <label for="es4t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es4t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es4"><li><label><input type="checkbox"> <span>The most significant bit / first bit is used as the sign (1)</span></label></li><li><label><input type="checkbox"> <span>1 means negative (0 positive) and the remaining bits give the size of the number (1)</span></label></li></ul>
+            <p id="es4" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> The most significant bit shows the sign, where 1 means negative and 0 positive. The rest of the bits store the size (magnitude) of the number as normal binary.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Say which bit and what 1 or 0 means.</li><li>Say what the other bits do.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[2 marks]</span></header>
+          <p>Convert −45 into an 8-bit two’s complement binary number. Show your working.</p>
+          <label for="es5t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es5t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es5"><li><label><input type="checkbox"> <span>Correct working: 45 = 0010 1101, flipped to 1101 0010 (1)</span></label></li><li><label><input type="checkbox"> <span>Answer 1101 0011 (1)</span></label></li></ul>
+            <p id="es5" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> 45 = 0010 1101. Flip the bits: 1101 0010. Add 1: 1101 0011. Check: −128 + 64 + 16 + 2 + 1 = −45.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Show each step – a slip in the last step can still earn the method mark.</li><li>Check your answer by converting it back.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO3</span><span class="marks">[3 marks]</span></header>
+          <p>Explain why two’s complement is normally used to store negative integers rather than sign and magnitude.</p>
+          <label for="es6t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es6t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es6"><li><label><input type="checkbox"> <span>Arithmetic doesn’t work normally in sign and magnitude, e.g. 3 + (−3) gives −6 (1)</span></label></li><li><label><input type="checkbox"> <span>Two’s complement addition works normally / subtraction can be done by adding a negative number (1)</span></label></li><li><label><input type="checkbox"> <span>So no extra processor circuits are needed / sign and magnitude has two zeros (1)</span></label></li></ul>
+            <p id="es6" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> In sign and magnitude, normal binary addition gives the wrong answer – for example 3 + (−3) gives −6. In two’s complement, normal addition works for negative numbers, so subtraction can be done by adding the two’s complement of a number. This means the processor doesn’t need extra circuits for subtraction.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Give an example of sign and magnitude going wrong.</li><li>Link the benefit to the processor: one adder does both jobs.</li></ul></div>
+          </div></details>
+        </article>
+      </div>
+    </section>
+
+    <section id="revise">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>How to revise this</h2><ul><li><a href="../../techniques/worked-examples.html">Worked examples</a> – flip-and-add-1, then check by converting back</li><li><a href="../../techniques/trace-tables.html">Trace tables</a> – track each bit through flip and add 1</li><li><a href="../../techniques/teach-it.html">Teach it</a> – explain why sign and magnitude arithmetic fails</li></ul>
+        <p class="small">These are the best fit for this part of the topic, but you can use any <a href="../../revision-techniques.html">revision technique</a> that works for you.</p></div>
+          <div><h2>Watch and read more</h2><ul><li><a href="https://isaaccomputerscience.org">Isaac Computer Science</a> – free topic notes and practice questions on number representation.</li><li><a href="https://www.youtube.com/@Computerphile">Computerphile (YouTube)</a> – search “floating point” or “Unicode” for short explanations.</li></ul></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 1.4.1 pages"><a href="binary-and-hex.html"><span class="dir">← Previous</span>Data types, binary and hexadecimal</a><a class="next" href="binary-arithmetic.html"><span class="dir">Next →</span>Binary arithmetic and fixed point</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>

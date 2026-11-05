@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>1.4.1 Data Types – OCR A Level CS Revision</title>
+  <meta name="description" content="OCR A Level Computer Science 1.4.1 data types: binary, hex, two&#x27;s complement, floating point, masks and character sets.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html" aria-current="page">Paper 1</a></li>
+          <li><a href="../../paper2.html">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../paper1.html">Paper 1</a> › 1.4.1 Data types</p>
+          <p class="eyebrow">Paper 1 • Topic 1.4.1</p>
+          <h1>1.4.1 Data types</h1>
+          <hr class="rule">
+          <p class="lead">How numbers and text are stored in binary: data types, binary and hex, negative numbers, fractions, floating point, bitwise operations and character sets.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">What the spec says</h2><ol type="a" style="margin:0;font-size:.92rem">
+          <li>Primitive data types</li><li>Positive integers in binary</li><li>Sign and magnitude, two’s complement</li><li>Binary addition and subtraction</li><li>Positive integers in hex</li>
+          <li>Converting binary, hex, denary</li><li>Floating point, normalisation</li><li>Floating point arithmetic</li><li>Bitwise manipulation, masks</li><li>ASCII and Unicode</li></ol></div>
+      </div>
+    </div>
+
+    <section>
+      <div class="wrap">
+        <h2>Revise each part</h2>
+        <div class="grid grid-3"><a class="card" href="binary-and-hex.html"><h4 style="font-size:1.1rem">Data types, binary and hexadecimal</h4><span class="go">Revise this →</span></a><a class="card" href="negative-numbers.html"><h4 style="font-size:1.1rem">Negative numbers</h4><span class="go">Revise this →</span></a><a class="card" href="binary-arithmetic.html"><h4 style="font-size:1.1rem">Binary arithmetic and fixed point</h4><span class="go">Revise this →</span></a><a class="card" href="floating-point.html"><h4 style="font-size:1.1rem">Floating point</h4><span class="go">Revise this →</span></a><a class="card" href="bitwise-and-masks.html"><h4 style="font-size:1.1rem">Bitwise manipulation and masks</h4><span class="go">Revise this →</span></a><a class="card" href="character-sets.html"><h4 style="font-size:1.1rem">Character sets and binary prefixes</h4><span class="go">Revise this →</span></a>
+          <a class="card" href="exam-tips.html" style="background:#FFF4E0;border-color:#B25C00"><h4 style="font-size:1.1rem">1.4.1 exam tips</h4><p>What examiners look for, with weak and good answers.</p><span class="go">Read the exam tips →</span></a>
+        </div>
+        <div class="callout mt-1"><p><strong>Practise the methods:</strong> the <a href="../../techniques/worked-examples.html">worked examples</a> technique page has auto-marked two’s complement and floating point normalisation practice.</p></div>
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="wrap">
+        <h2>Ready-made revision tools</h2>
+        <figure class="diagram"><svg viewBox="0 0 1120 442" role="img" aria-labelledby="t6dc4ae7c t6dc4ae7cd"><title id="t6dc4ae7c">Mind map of 1.4.1 data types</title><desc id="t6dc4ae7cd">Data types: Integer, real; Character, string; Boolean; Choose from the data. Binary and hex: Place values 128 … 1; Hex: 4 bits per digit; Convert both ways; Hex for humans. Negative numbers: Sign and magnitude; Two’s complement; Flip and add 1; Range −128 to 127. Arithmetic: Add with carries; Subtract by adding; Overflow; Fixed point. Floating point: Mantissa, exponent; Normalise: 0.1 / 1.0; Precision vs range; Add via fixed point. Bits and text: Masks: AND, OR, XOR; Shifts: logical, arithmetic; ASCII, Unicode; kB vs KiB</desc><defs><marker id="aht6dc4ae7c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><path d="M660,221.0 C667.5,221.0 667.5,87.0 675,87.0" fill="none" stroke="#0B6E75" stroke-width="5" stroke-linecap="round"/><rect x="675" y="63.0" width="180" height="48" rx="24" fill="#0B6E75"/><text x="765" y="93" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#fff"><tspan x="765" dy="0">Data types</tspan></text><path d="M855,87.0 C869,87.0 864,46.5 878,46.5" fill="none" stroke="#0B6E75" stroke-width="2"/><circle cx="878" cy="46.5" r="3.5" fill="#0B6E75"/><text x="886" y="51.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Integer, real</text><path d="M855,87.0 C869,87.0 864,73.5 878,73.5" fill="none" stroke="#0B6E75" stroke-width="2"/><circle cx="878" cy="73.5" r="3.5" fill="#0B6E75"/><text x="886" y="78.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Character, string</text><path d="M855,87.0 C869,87.0 864,100.5 878,100.5" fill="none" stroke="#0B6E75" stroke-width="2"/><circle cx="878" cy="100.5" r="3.5" fill="#0B6E75"/><text x="886" y="105.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Boolean</text><path d="M855,87.0 C869,87.0 864,127.5 878,127.5" fill="none" stroke="#0B6E75" stroke-width="2"/><circle cx="878" cy="127.5" r="3.5" fill="#0B6E75"/><text x="886" y="132.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Choose from the data</text><path d="M660,221.0 C667.5,221.0 667.5,221.0 675,221.0" fill="none" stroke="#1A1A2E" stroke-width="5" stroke-linecap="round"/><rect x="675" y="197.0" width="180" height="48" rx="24" fill="#1A1A2E"/><text x="765" y="227" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#fff"><tspan x="765" dy="0">Binary and hex</tspan></text><path d="M855,221.0 C869,221.0 864,180.5 878,180.5" fill="none" stroke="#1A1A2E" stroke-width="2"/><circle cx="878" cy="180.5" r="3.5" fill="#1A1A2E"/><text x="886" y="185.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Place values 128 … 1</text><path d="M855,221.0 C869,221.0 864,207.5 878,207.5" fill="none" stroke="#1A1A2E" stroke-width="2"/><circle cx="878" cy="207.5" r="3.5" fill="#1A1A2E"/><text x="886" y="212.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Hex: 4 bits per digit</text><path d="M855,221.0 C869,221.0 864,234.5 878,234.5" fill="none" stroke="#1A1A2E" stroke-width="2"/><circle cx="878" cy="234.5" r="3.5" fill="#1A1A2E"/><text x="886" y="239.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Convert both ways</text><path d="M855,221.0 C869,221.0 864,261.5 878,261.5" fill="none" stroke="#1A1A2E" stroke-width="2"/><circle cx="878" cy="261.5" r="3.5" fill="#1A1A2E"/><text x="886" y="266.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Hex for humans</text><path d="M660,221.0 C667.5,221.0 667.5,355.0 675,355.0" fill="none" stroke="#B25C00" stroke-width="5" stroke-linecap="round"/><rect x="675" y="331.0" width="180" height="48" rx="24" fill="#B25C00"/><text x="765" y="361" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#fff"><tspan x="765" dy="0">Negative numbers</tspan></text><path d="M855,355.0 C869,355.0 864,314.5 878,314.5" fill="none" stroke="#B25C00" stroke-width="2"/><circle cx="878" cy="314.5" r="3.5" fill="#B25C00"/><text x="886" y="319.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Sign and magnitude</text><path d="M855,355.0 C869,355.0 864,341.5 878,341.5" fill="none" stroke="#B25C00" stroke-width="2"/><circle cx="878" cy="341.5" r="3.5" fill="#B25C00"/><text x="886" y="346.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Two’s complement</text><path d="M855,355.0 C869,355.0 864,368.5 878,368.5" fill="none" stroke="#B25C00" stroke-width="2"/><circle cx="878" cy="368.5" r="3.5" fill="#B25C00"/><text x="886" y="373.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Flip and add 1</text><path d="M855,355.0 C869,355.0 864,395.5 878,395.5" fill="none" stroke="#B25C00" stroke-width="2"/><circle cx="878" cy="395.5" r="3.5" fill="#B25C00"/><text x="886" y="400.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Range −128 to 127</text><path d="M460,221.0 C452.5,221.0 452.5,87.0 445,87.0" fill="none" stroke="#2F6B3A" stroke-width="5" stroke-linecap="round"/><rect x="265" y="63.0" width="180" height="48" rx="24" fill="#2F6B3A"/><text x="355" y="93" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#fff"><tspan x="355" dy="0">Arithmetic</tspan></text><path d="M265,87.0 C251,87.0 256,46.5 242,46.5" fill="none" stroke="#2F6B3A" stroke-width="2"/><circle cx="242" cy="46.5" r="3.5" fill="#2F6B3A"/><text x="234" y="51.5" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Add with carries</text><path d="M265,87.0 C251,87.0 256,73.5 242,73.5" fill="none" stroke="#2F6B3A" stroke-width="2"/><circle cx="242" cy="73.5" r="3.5" fill="#2F6B3A"/><text x="234" y="78.5" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Subtract by adding</text><path d="M265,87.0 C251,87.0 256,100.5 242,100.5" fill="none" stroke="#2F6B3A" stroke-width="2"/><circle cx="242" cy="100.5" r="3.5" fill="#2F6B3A"/><text x="234" y="105.5" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Overflow</text><path d="M265,87.0 C251,87.0 256,127.5 242,127.5" fill="none" stroke="#2F6B3A" stroke-width="2"/><circle cx="242" cy="127.5" r="3.5" fill="#2F6B3A"/><text x="234" y="132.5" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Fixed point</text><path d="M460,221.0 C452.5,221.0 452.5,221.0 445,221.0" fill="none" stroke="#3D5A99" stroke-width="5" stroke-linecap="round"/><rect x="265" y="197.0" width="180" height="48" rx="24" fill="#3D5A99"/><text x="355" y="227" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#fff"><tspan x="355" dy="0">Floating point</tspan></text><path d="M265,221.0 C251,221.0 256,180.5 242,180.5" fill="none" stroke="#3D5A99" stroke-width="2"/><circle cx="242" cy="180.5" r="3.5" fill="#3D5A99"/><text x="234" y="185.5" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Mantissa, exponent</text><path d="M265,221.0 C251,221.0 256,207.5 242,207.5" fill="none" stroke="#3D5A99" stroke-width="2"/><circle cx="242" cy="207.5" r="3.5" fill="#3D5A99"/><text x="234" y="212.5" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Normalise: 0.1 / 1.0</text><path d="M265,221.0 C251,221.0 256,234.5 242,234.5" fill="none" stroke="#3D5A99" stroke-width="2"/><circle cx="242" cy="234.5" r="3.5" fill="#3D5A99"/><text x="234" y="239.5" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Precision vs range</text><path d="M265,221.0 C251,221.0 256,261.5 242,261.5" fill="none" stroke="#3D5A99" stroke-width="2"/><circle cx="242" cy="261.5" r="3.5" fill="#3D5A99"/><text x="234" y="266.5" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Add via fixed point</text><path d="M460,221.0 C452.5,221.0 452.5,355.0 445,355.0" fill="none" stroke="#7A3E8C" stroke-width="5" stroke-linecap="round"/><rect x="265" y="331.0" width="180" height="48" rx="24" fill="#7A3E8C"/><text x="355" y="361" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#fff"><tspan x="355" dy="0">Bits and text</tspan></text><path d="M265,355.0 C251,355.0 256,314.5 242,314.5" fill="none" stroke="#7A3E8C" stroke-width="2"/><circle cx="242" cy="314.5" r="3.5" fill="#7A3E8C"/><text x="234" y="319.5" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Masks: AND, OR, XOR</text><path d="M265,355.0 C251,355.0 256,341.5 242,341.5" fill="none" stroke="#7A3E8C" stroke-width="2"/><circle cx="242" cy="341.5" r="3.5" fill="#7A3E8C"/><text x="234" y="346.5" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Shifts: logical, arithmetic</text><path d="M265,355.0 C251,355.0 256,368.5 242,368.5" fill="none" stroke="#7A3E8C" stroke-width="2"/><circle cx="242" cy="368.5" r="3.5" fill="#7A3E8C"/><text x="234" y="373.5" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">ASCII, Unicode</text><path d="M265,355.0 C251,355.0 256,395.5 242,395.5" fill="none" stroke="#7A3E8C" stroke-width="2"/><circle cx="242" cy="395.5" r="3.5" fill="#7A3E8C"/><text x="234" y="400.5" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">kB vs KiB</text><rect x="460" y="183.0" width="200" height="76" rx="14" fill="#1A1A2E"/><text x="560" y="205" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#fff"><tspan x="560" dy="0">1.4.1</tspan><tspan x="560" dy="22">Data</tspan><tspan x="560" dy="22">types</tspan></text></svg><figcaption>A pre-filled mind map of the whole topic. Try redrawing it from memory.</figcaption></figure>
+        <h3 class="mt-2">Key terms flashcards</h3>
+        <div class="deck" aria-label="1.4.1 key terms flashcards">
+            <script type="application/json">[{"q": "Hex digit F", "a": "15 in denary, 1111 in binary."}, {"q": "Why use hex?", "a": "Easier for people to read and remember, quicker to write, fewer errors; converts easily to binary."}, {"q": "Two\u2019s complement of a number", "a": "Write the positive number, flip every bit, add 1."}, {"q": "8-bit two\u2019s complement range", "a": "\u2212128 to 127."}, {"q": "Sign and magnitude problem", "a": "Normal addition doesn\u2019t work (3 + \u22123 = \u22126), and there are two zeros."}, {"q": "Overflow", "a": "The result needs more bits than are available, so it is stored incorrectly."}, {"q": "Fixed point trade-off", "a": "Point moved left: more precision, smaller range. Moved right: bigger range, less precision."}, {"q": "Normalised positive / negative mantissa", "a": "Positive starts 0.1; negative starts 1.0."}, {"q": "More mantissa bits vs more exponent bits", "a": "Mantissa: more precision. Exponent: more range."}, {"q": "Mask to clear / set / toggle", "a": "Clear: AND 0. Set: OR 1. Toggle: XOR 1."}, {"q": "Logical vs arithmetic shift right", "a": "Logical brings in 0. Arithmetic copies the sign bit, keeping the sign."}, {"q": "Circular shift with carry", "a": "The carry goes into the empty end and the bit that falls off goes into the carry: no bits lost."}, {"q": "ASCII", "a": "7 bits, 128 characters (8-bit extended: 256). A = 65, a = 97, '0' = 48."}, {"q": "Unicode", "a": "Every language and symbol; 16 or 32 bits; first 128 codes match ASCII; files are bigger."}, {"q": "1 KiB", "a": "1,024 bytes (2\u00b9\u2070). 1 kB = 1,000 bytes."}]</script>
+            <div class="fc front" aria-live="polite"><div><span class="side">Question</span><span class="txt"></span></div></div>
+            <div class="deck-controls">
+              <button type="button" class="btn" data-act="flip">Show answer</button>
+              <button type="button" class="btn btn-green" data-act="got">✓ I knew it</button>
+              <button type="button" class="btn btn-red" data-act="not">✗ Not yet</button>
+            </div>
+            <div class="deck-controls mt-1">
+              <button type="button" class="btn btn-ghost" data-act="shuffle">Shuffle</button>
+              <button type="button" class="btn btn-ghost" data-act="restart">Restart deck</button>
+            </div>
+            <p class="deck-status"></p>
+          </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>Mixed quiz</h2>
+        <div class="quiz-block">
+          <h3>Mixed quiz – marked for you</h3>
+          <div class="q" data-answer=""><p class="q-text">1. Convert 1100 1010 to hex. <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 1" data-answer="CA|0xCA" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>1100 = 12 = C, 1010 = 10 = A. So CA.</p></div></div><div class="q" data-answer=""><p class="q-text">2. Write −20 in 8-bit two’s complement. <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 2" data-answer="11101100" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>20 = 0001 0100 → flip: 1110 1011 → add 1: 1110 1100.</p></div></div><div class="q" data-answer=""><p class="q-text">3. Convert 0.1101100 0100 (8-bit mantissa, 4-bit exponent) to denary. <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 3" data-answer="13.5" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>Exponent 4: 01101.100 = 8 + 4 + 1 + 0.5 = 13.5.</p></div></div><div class="q" data-answer="c"><p class="q-text">4. Which operator and mask flips every bit of a byte? <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q42" value="a"> <span>AND 1111 1111</span></label><label><input type="radio" name="q42" value="b"> <span>OR 1111 1111</span></label><label><input type="radio" name="q42" value="c"> <span>XOR 1111 1111</span></label><label><input type="radio" name="q42" value="d"> <span>AND 0000 0000</span></label></div><div class="explain" hidden><p><span class="verdict"></span>XOR with 1 toggles each bit.</p></div></div><div class="q" data-answer="c"><p class="q-text">5. Which data type suits a phone number such as 07700 900123? <span class="tag tag-soft">AO3</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q43" value="a"> <span>Integer</span></label><label><input type="radio" name="q43" value="b"> <span>Real</span></label><label><input type="radio" name="q43" value="c"> <span>String</span></label><label><input type="radio" name="q43" value="d"> <span>Boolean</span></label></div><div class="explain" hidden><p><span class="verdict"></span>It starts with 0 and you never do arithmetic on it, so a string.</p></div></div><div class="q" data-answer=""><p class="q-text">6. How many bytes are in 2 KiB? <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 6" data-answer="2048|2,048" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>2 × 1,024 = 2,048.</p></div></div>
+          <button type="button" class="btn quiz-check">Check my answers</button>
+          <button type="button" class="btn btn-ghost quiz-reset">Start again</button>
+          <p class="quiz-score mt-1" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div>
+            <h2>Links to other topics</h2>
+            <ul class="link-list"><li><strong>1.4.3 Boolean algebra</strong> – AND, OR, XOR; half and full adders do binary addition.</li><li><strong>1.1.1 Processor</strong> – the ALU does binary arithmetic and shifts; address bus width is 2<sup>n</sup>.</li><li><strong>1.2.4 Assembly language</strong> – binary, hex and shift instructions.</li><li><strong>1.3.1 Compression and encryption</strong> – XOR encryption; how data is encoded.</li><li><strong>1.5.2 Character sets</strong> – Unicode and accessibility across cultures.</li><li><strong>2.2.1 Programming</strong> – choosing data types for variables.</li></ul>
+          </div>
+          <div>
+            <h2>Lesson slides</h2>
+            <ul><li><a href="../../slides/1-4-1/binary-hex-negatives-fractions-combined.pptx">1.4.1A Binary and hex, negatives and fractions (combined)</a> (PowerPoint)</li><li><a href="../../slides/1-4-1/binary-and-hex.pptx">1.4.1A1 Binary and hex</a> (PowerPoint)</li><li><a href="../../slides/1-4-1/negative-numbers.pptx">1.4.1A2 Negative numbers</a> (PowerPoint)</li><li><a href="../../slides/1-4-1/fractions-and-addition.pptx">1.4.1A3 Fractions and addition</a> (PowerPoint)</li><li><a href="../../slides/1-4-1/floating-point.pptx">1.4.1B Floating point</a> (PowerPoint)</li><li><a href="../../slides/1-4-1/bitwise-and-masks.pptx">1.4.1C Bitwise manipulation and masks</a> (PowerPoint)</li><li><a href="../../slides/1-4-1/character-sets.pptx">1.4.1D Character sets</a> (PowerPoint)</li></ul>
+          </div>
+        </div>
+        <div class="grid grid-2 mt-2">
+          <div><h2>Best revision techniques for 1.4.1</h2>
+            <ul><li><a href="../../techniques/worked-examples.html">Worked examples</a> – the best technique for every calculation here</li><li><a href="../../techniques/spaced-practice.html">Spaced practice</a> – a few mixed conversions every day</li><li><a href="../../techniques/flashcards.html">Flashcards</a> – rules and key facts – use the deck above</li><li><a href="../../techniques/mnemonics.html">Mnemonics</a> – mask rules and normalisation directions</li></ul>
+        <p class="small">These are the best fit for this part of the topic, but you can use any <a href="../../revision-techniques.html">revision technique</a> that works for you.</p></div>
+          <div><h2>Watch and read more</h2>
+            <ul><li><a href="https://isaaccomputerscience.org">Isaac Computer Science</a> – free topic notes and practice questions on number representation.</li><li><a href="https://www.youtube.com/@Computerphile">Computerphile (YouTube)</a> – search “floating point” or “Unicode” for short explanations.</li><li><a href="https://www.asciitable.com">ASCII table</a> – every ASCII code in denary, hex and binary.</li></ul></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>

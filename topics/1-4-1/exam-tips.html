@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>1.4.1 Exam Tips – OCR A Level CS Revision</title>
+  <meta name="description" content="Exam tips for OCR A Level Computer Science 1.4.1 data types, with weak and good answers.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html" aria-current="page">Paper 1</a></li>
+          <li><a href="../../paper2.html">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../paper1.html">Paper 1</a> › <a href="index.html">1.4.1 Data types</a> › Exam tips</p>
+          <p class="eyebrow">1.4.1 Data types • Exam tips</p>
+          <h1>1.4.1 exam tips</h1>
+          <hr class="rule">
+          <p class="lead">What examiners look for in data representation questions, with weak and good answers.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">Why this topic matters</h2><p style="margin:0">1.4.1 questions are mostly <strong>calculations</strong> with right or wrong answers – reliable marks if you practise. There is <strong>no calculator</strong>, so you must be quick by hand.</p></div>
+      </div>
+    </div>
+
+    <section>
+      <div class="wrap">
+        <h2>What the examiner looks for</h2>
+        <div class="grid grid-2">
+          <div class="card"><h3>Rewarded</h3><ul>
+            <li><strong>Working shown</strong> – method marks are often available.</li>
+            <li>The <strong>exact number of bits</strong> asked for, with leading 0s (or 1s).</li>
+            <li>The <strong>right method</strong>: two’s complement vs sign and magnitude; normalised floating point.</li>
+            <li>For masks: <strong>both</strong> the operator and the mask.</li>
+            <li>For explanations: a reason with an example (3 + −3 = −6 in sign and magnitude).</li></ul></div>
+          <div class="card"><h3>Loses marks</h3><ul>
+            <li>A bare answer with a slip and no working.</li>
+            <li>Dropping leading zeros: 101 instead of 0000 0101.</li>
+            <li>Moving the point the wrong way, or adjusting the exponent the wrong way.</li>
+            <li>“Hex is used because computers understand it.”</li>
+            <li>Confusing the character '5' with the integer 5, or KB with KiB.</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="wrap">
+        <h2>Question types and how to approach them</h2>
+        <div class="table-scroll"><table><thead><tr><th scope="col">Type</th><th scope="col">Example</th><th scope="col">How to approach it</th></tr></thead><tbody><tr><th scope="row">Convert</th><td>Convert 237 to hex. [2]</td><td>Go via binary; split into nibbles. Check by converting back.</td></tr><tr><th scope="row">Negative numbers</th><td>Show −45 in two’s complement. [2]</td><td>Positive → flip → add 1. Check with −128 + …</td></tr><tr><th scope="row">Add / subtract</th><td>Show 65 − 43 in two’s complement. [3]</td><td>Show carries. Ignore the final carry. Spot overflow.</td></tr><tr><th scope="row">Floating point → denary</th><td>Convert 1.0010100 0011. [2]</td><td>Exponent first. Move the point. Remember a negative mantissa.</td></tr><tr><th scope="row">Normalise</th><td>Normalise 0.0011010 0100. [2]</td><td>Positive → 0.1, negative → 1.0. Shift left n → exponent − n.</td></tr><tr><th scope="row">Masks and shifts</th><td>Operator and mask to set the two MSBs. [2]</td><td>Clear AND 0, set OR 1, toggle XOR 1. Write all 8 bits.</td></tr><tr><th scope="row">Explain</th><td>Why is Unicode used? [2]</td><td>The limit of the old method, then the benefit of the new one.</td></tr></tbody></table></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>Weak and good answers</h2>
+        <article class="example">
+          <p class="callout"><strong>Question:</strong> Convert −45 into an 8-bit two’s complement binary number. Show your working. [2]</p>
+          <div class="grid grid-2">
+            <div class="card" style="border-color:#A12A2A"><p><span class="tag" style="background:#FDE8E8;color:#A12A2A">Weak answer</span> <span class="small">0 marks</span></p><p>10101101</p></div>
+            <div class="card" style="border-color:#0B6E75"><p><span class="tag">Good answer</span> <span class="small">2 marks</span></p><p>45 = 0010 1101. Flip: 1101 0010. Add 1: 1101 0011. Check: −128 + 64 + 16 + 2 + 1 = −45.</p></div>
+          </div>
+          <div class="mt-1"><p><strong>How to turn the weak answer into a good one:</strong></p><ul><li>The weak answer is sign and magnitude – read which method is asked for.</li><li>Show each step so a slip still earns a method mark.</li><li>Check by converting back.</li></ul></div>
+        </article>
+        <article class="example">
+          <p class="callout"><strong>Question:</strong> Give two reasons why hexadecimal is used. [2]</p>
+          <div class="grid grid-2">
+            <div class="card" style="border-color:#A12A2A"><p><span class="tag" style="background:#FDE8E8;color:#A12A2A">Weak answer</span> <span class="small">0 marks</span></p><p>Computers understand hex better and it is faster.</p></div>
+            <div class="card" style="border-color:#0B6E75"><p><span class="tag">Good answer</span> <span class="small">2 marks</span></p><p>It is easier for people to read and remember than binary, and there is less chance of making errors when copying it.</p></div>
+          </div>
+          <div class="mt-1"><p><strong>How to turn the weak answer into a good one:</strong></p><ul><li>Computers only use binary – hex is for humans.</li><li>“Faster” needs explaining: quicker to <em>type or write</em>, because one digit replaces four bits.</li></ul></div>
+        </article>
+        <article class="example">
+          <p class="callout"><strong>Question:</strong> Normalise the floating point number 0.0011010 0100. [2]</p>
+          <div class="grid grid-2">
+            <div class="card" style="border-color:#A12A2A"><p><span class="tag" style="background:#FDE8E8;color:#A12A2A">Weak answer</span> <span class="small">1 mark</span></p><p>0.1101000 0110</p></div>
+            <div class="card" style="border-color:#0B6E75"><p><span class="tag">Good answer</span> <span class="small">2 marks</span></p><p>Shift the mantissa left 2 places: 0.1101000. Subtract 2 from the exponent: 4 − 2 = 2, so 0010. Answer: 0.1101000 0010.</p></div>
+          </div>
+          <div class="mt-1"><p><strong>How to turn the weak answer into a good one:</strong></p><ul><li>Shifting the mantissa left makes it bigger, so the exponent must go <em>down</em>.</li><li>Check: both forms should give the same denary value (3.25).</li></ul></div>
+        </article>
+        <article class="example">
+          <p class="callout"><strong>Question:</strong> State the operator and mask to clear the four least significant bits of a byte. [2]</p>
+          <div class="grid grid-2">
+            <div class="card" style="border-color:#A12A2A"><p><span class="tag" style="background:#FDE8E8;color:#A12A2A">Weak answer</span> <span class="small">1 mark</span></p><p>Use AND.</p></div>
+            <div class="card" style="border-color:#0B6E75"><p><span class="tag">Good answer</span> <span class="small">2 marks</span></p><p>AND with the mask 1111 0000.</p></div>
+          </div>
+          <div class="mt-1"><p><strong>How to turn the weak answer into a good one:</strong></p><ul><li>Give both the operator and the mask.</li><li>AND with 0 clears; AND with 1 keeps.</li></ul></div>
+        </article>
+        <article class="example">
+          <p class="callout"><strong>Question:</strong> Explain why an arithmetic shift is used to divide a negative two’s complement number by 2. [2]</p>
+          <div class="grid grid-2">
+            <div class="card" style="border-color:#A12A2A"><p><span class="tag" style="background:#FDE8E8;color:#A12A2A">Weak answer</span> <span class="small">0 marks</span></p><p>Because it is arithmetic.</p></div>
+            <div class="card" style="border-color:#0B6E75"><p><span class="tag">Good answer</span> <span class="small">2 marks</span></p><p>The number is negative because its MSB is 1. An arithmetic shift copies the sign bit in on the left, so the result stays negative, whereas a logical shift would bring in a 0 and make it positive.</p></div>
+          </div>
+          <div class="mt-1"><p><strong>How to turn the weak answer into a good one:</strong></p><ul><li>Say what each shift puts into the MSB.</li><li>Link this to keeping the sign.</li></ul></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="wrap">
+        <h2>In the exam room</h2>
+        <ul>
+          <li>At the start, jot down the place values (128 … 1, and ½, ¼, ⅛, 1/16) and the hex digits A–F.</li>
+          <li>Write binary in groups of four (1101 0011) – fewer copying errors.</li>
+          <li>Always check conversions by converting back.</li>
+          <li>Practise little and often – see <a href="../../techniques/worked-examples.html">worked examples</a> and <a href="../../techniques/spaced-practice.html">spaced practice</a>.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 1.4.1 pages"><a href="character-sets.html"><span class="dir">← Previous</span>Character sets and binary prefixes</a><a class="next" href="index.html"><span class="dir">Back to →</span>1.4.1 overview</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>

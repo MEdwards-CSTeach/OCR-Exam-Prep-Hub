@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Binary arithmetic and fixed point (1.4.1 (d)) – OCR A Level CS Revision</title>
+  <meta name="description" content="OCR A Level Computer Science 1.4.1 (d): Binary arithmetic and fixed point. Revision notes, quiz and exam questions.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html" aria-current="page">Paper 1</a></li>
+          <li><a href="../../paper2.html">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../paper1.html">Paper 1</a> › <a href="index.html">1.4.1 Data types</a> › Binary arithmetic and fixed point</p>
+          <p class="eyebrow">1.4.1 (d) • Paper 1</p>
+          <h1>Binary arithmetic and fixed point</h1>
+          <hr class="rule">
+          <p class="lead">Adding and subtracting binary integers, and storing fractions with fixed point binary.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">Key terms</h2><ul style="margin:0"><li>Carry</li><li>Overflow</li><li>Subtraction by adding</li><li>Fixed point</li><li>Binary point</li><li>Range vs precision</li></ul></div>
+      </div>
+    </div>
+    <div class="wrap" style="padding-top:1.25rem">
+      <nav class="toc" aria-label="On this page"><ul>
+        <li><a href="#notes">Revision notes</a></li><li><a href="#links">Links and slides</a></li>
+        <li><a href="#quiz">Quick quiz</a></li><li><a href="#exam">Exam questions</a></li><li><a href="#revise">How to revise it</a></li>
+      </ul></nav>
+    </div>
+
+    <section id="notes">
+      <div class="wrap">
+        <h2 class="mt-2">Binary addition</h2>
+        <div class="grid grid-2">
+          <div><div class="table-scroll"><table><thead><tr><th scope="col">Sum</th><th scope="col">Result</th><th scope="col">Write</th><th scope="col">Carry</th></tr></thead><tbody><tr><th scope="row">0 + 0</th><td>0</td><td>0</td><td>0</td></tr><tr><th scope="row">0 + 1</th><td>1</td><td>1</td><td>0</td></tr><tr><th scope="row">1 + 1</th><td>10</td><td>0</td><td>1</td></tr><tr><th scope="row">1 + 1 + 1</th><td>11</td><td>1</td><td>1</td></tr></tbody></table></div></div>
+          <div><pre class="code"><code>  carry  1 1 1 1 1
+         0 0 1 0 1 1 0 1   (45)
+       + 0 0 0 1 1 0 1 1   (27)
+       = 0 1 0 0 1 0 0 0   (72)</code></pre>
+          <p><strong>Overflow:</strong> if the result needs more bits than are available, it can’t be stored correctly. In 8-bit two’s complement, anything over 127 overflows into the sign bit.</p></div>
+        </div>        <h2 class="mt-2">Subtraction with two’s complement</h2>
+        <p>A − B = A + (−B). Find the two’s complement of B, add, and <strong>ignore the final carry</strong>.</p>
+        <pre class="code"><code>  65  =   0 1 0 0 0 0 0 1
+ −43  = + 1 1 0 1 0 1 0 1
+        1 0 0 0 1 0 1 1 0   → ignore the carry → 0001 0110 = 22</code></pre>        <h2 class="mt-2">Fixed point binary</h2>
+        <figure class="diagram"><svg viewBox="0 0 740 185" role="img" aria-labelledby="t70ba655c t70ba655cd"><title id="t70ba655c">Fixed point binary</title><desc id="t70ba655cd">An 8-bit fixed point number with the binary point between the fourth and fifth bits. Place values 8, 4, 2, 1, a half, a quarter, an eighth and a sixteenth. 0110.1010 is 4 + 2 + 0.5 + 0.125 = 6.625.</desc><defs><marker id="aht70ba655c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><text x="125" y="35" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#3D4451"><tspan x="125" dy="0">8</tspan></text><text x="195" y="35" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#3D4451"><tspan x="195" dy="0">4</tspan></text><text x="265" y="35" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#3D4451"><tspan x="265" dy="0">2</tspan></text><text x="335" y="35" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#3D4451"><tspan x="335" dy="0">1</tspan></text><text x="405" y="35" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#3D4451"><tspan x="405" dy="0">½</tspan></text><text x="475" y="35" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#3D4451"><tspan x="475" dy="0">¼</tspan></text><text x="545" y="35" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#3D4451"><tspan x="545" dy="0">⅛</tspan></text><text x="615" y="35" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#3D4451"><tspan x="615" dy="0">1/16</tspan></text><rect x="90" y="45" width="70" height="52" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="125" y="78" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1A1A2E"><tspan x="125" dy="0">0</tspan></text><rect x="160" y="45" width="70" height="52" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="195" y="78" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1A1A2E"><tspan x="195" dy="0">1</tspan></text><rect x="230" y="45" width="70" height="52" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="265" y="78" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1A1A2E"><tspan x="265" dy="0">1</tspan></text><rect x="300" y="45" width="70" height="52" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="335" y="78" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1A1A2E"><tspan x="335" dy="0">0</tspan></text><rect x="370" y="45" width="70" height="52" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="405" y="78" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1A1A2E"><tspan x="405" dy="0">1</tspan></text><rect x="440" y="45" width="70" height="52" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="475" y="78" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1A1A2E"><tspan x="475" dy="0">0</tspan></text><rect x="510" y="45" width="70" height="52" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="545" y="78" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1A1A2E"><tspan x="545" dy="0">1</tspan></text><rect x="580" y="45" width="70" height="52" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="615" y="78" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="bold" fill="#1A1A2E"><tspan x="615" dy="0">0</tspan></text><circle cx="370" cy="101" r="7" fill="#B25C00"/><text x="370" y="130" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#B25C00"><tspan x="370" dy="0">binary point</tspan></text><text x="370" y="172" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="bold" fill="#1A1A2E"><tspan x="370" dy="0">4 + 2 + 0.5 + 0.125 = 6.625</tspan></text></svg><figcaption>The binary point stays in the same place.</figcaption></figure>
+        <ul>
+          <li>Bits after the binary point are worth ½, ¼, ⅛, 1/16…</li>
+          <li>With 4 bits before and 4 after, the range is 0 to 15.9375.</li>
+          <li><strong>Trade-off:</strong> moving the point left gives more precision but a smaller range; moving it right gives a bigger range but less precision.</li>
+          <li>Some values can’t be stored exactly: 4.6 is stored as 4.625 (a rounding error of 0.025); ⅔ repeats forever in binary.</li>
+        </ul>
+        <div class="callout callout-amber mt-1"><p><strong>Watch out for:</strong></p><ul><li>Forgetting to show the carries in additions.</li><li>Keeping the final carry in two’s complement subtraction – ignore it.</li><li>Not spotting overflow: a positive + positive that gives a 1 in the MSB.</li><li>Mixing up range and precision when the binary point moves.</li></ul></div>
+      </div>
+    </section>
+
+    <section id="links" class="section-alt">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>Links to other topics</h2><ul class="link-list"><li><strong>1.4.1 Negative numbers</strong> – two’s complement is used for subtraction.</li><li><strong>1.4.1 Floating point</strong> – fixed point is used when adding floating point numbers.</li><li><strong>1.4.3 Boolean algebra</strong> – half and full adders do binary addition in hardware.</li><li><strong>1.1.1 ALU</strong> – the ALU carries out binary addition.</li></ul></div>
+          <div><h2>Lesson slides</h2>
+            <p>Go back over the lesson for the full worked examples and tasks.</p>
+            <p><a class="btn" href="../../slides/1-4-1/fractions-and-addition.pptx">Download the lesson slides</a></p>
+            <p class="small">1.4.1A3 Binary fractions and addition – addition rules, fixed point and range vs accuracy.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <div class="wrap">
+        <h2>Check your understanding</h2>
+        <p>Answer, then press <strong>Check my answers</strong>. Each question explains the answer so you can fix any mistakes.</p>
+        <div class="quiz-block">
+          <h3>Quick quiz – marked for you</h3>
+          <div class="q" data-answer=""><p class="q-text">1. Add 0010 1101 and 0001 1011. Give the 8-bit answer. <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 1" data-answer="01001000" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>45 + 27 = 72 = 0100 1000. Watch the carries.</p></div></div><div class="q" data-answer="b"><p class="q-text">2. In 8-bit two’s complement, 0111 1111 + 0000 0001 = 1000 0000. What has happened? <span class="tag tag-soft">AO3</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q15" value="a"> <span>The answer is correct: −128</span></label><label><input type="radio" name="q15" value="b"> <span>Overflow: 128 is too big, so it appears negative</span></label><label><input type="radio" name="q15" value="c"> <span>A carry was ignored</span></label><label><input type="radio" name="q15" value="d"> <span>Nothing</span></label></div><div class="explain" hidden><p><span class="verdict"></span>127 + 1 = 128, which is outside the range −128 to 127. The 1 in the sign bit makes it look like −128.</p></div></div><div class="q" data-answer=""><p class="q-text">3. Work out 50 − 20 using two’s complement. Give the 8-bit result. <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 3" data-answer="00011110" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>−20 = 1110 1100. 0011 0010 + 1110 1100 = 1 0001 1110 → ignore the carry → 0001 1110 = 30.</p></div></div><div class="q" data-answer=""><p class="q-text">4. What is the fixed point number 0110.1010 in denary? <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 4" data-answer="6.625" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>4 + 2 + 0.5 + 0.125 = 6.625.</p></div></div><div class="q" data-answer=""><p class="q-text">5. 8-bit unsigned fixed point, 4 bits before the point and 4 after. What is the largest value? <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 5" data-answer="15.9375" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>1111.1111 = 8 + 4 + 2 + 1 + 0.5 + 0.25 + 0.125 + 0.0625 = 15.9375.</p></div></div><div class="q" data-answer="b"><p class="q-text">6. Moving the binary point one place to the left in a fixed point number… <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q19" value="a"> <span>increases the range</span></label><label><input type="radio" name="q19" value="b"> <span>increases the precision but reduces the range</span></label><label><input type="radio" name="q19" value="c"> <span>has no effect</span></label><label><input type="radio" name="q19" value="d"> <span>makes it negative</span></label></div><div class="explain" hidden><p><span class="verdict"></span>More bits after the point = finer steps (precision), but fewer before it = smaller maximum (range).</p></div></div>
+          <button type="button" class="btn quiz-check">Check my answers</button>
+          <button type="button" class="btn btn-ghost quiz-reset">Start again</button>
+          <p class="quiz-score mt-1" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="exam" class="section-alt">
+      <div class="wrap">
+        <h2>Exam-style questions – mark them yourself</h2>
+        <p>Write your answer, then open <strong>Mark your answer</strong>. Tick the mark points you hit, read the model answer and use the tips to improve. See the <a href="exam-tips.html">1.4.1 exam tips</a> for more help.</p>
+<article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[3 marks]</span></header>
+          <p>Add the 8-bit binary numbers 0110 1100 and 0101 1010, showing your working. Explain what problem occurs if these are two’s complement numbers.</p>
+          <label for="es7t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es7t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es7"><li><label><input type="checkbox"> <span>Correct carries shown (1)</span></label></li><li><label><input type="checkbox"> <span>Answer 1100 0110 (1)</span></label></li><li><label><input type="checkbox"> <span>Overflow: 108 + 90 = 198 is above 127, so the result reads as negative (−58) (1)</span></label></li></ul>
+            <p id="es7" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> 0110 1100 + 0101 1010 = 1100 0110. As unsigned numbers this is 108 + 90 = 198. In two’s complement the largest value is 127, so the result overflows into the sign bit and is read as −58.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Show the carry row.</li><li>Name the problem (overflow) and explain why with the range.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[3 marks]</span></header>
+          <p>Show how 65 − 43 is calculated using 8-bit two’s complement.</p>
+          <label for="es8t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es8t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es8"><li><label><input type="checkbox"> <span>65 = 0100 0001 and 43 = 0010 1011 (1)</span></label></li><li><label><input type="checkbox"> <span>−43 = 1101 0101 (1)</span></label></li><li><label><input type="checkbox"> <span>Sum 0001 0110 (ignoring the carry) = 22 (1)</span></label></li></ul>
+            <p id="es8" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> 65 = 0100 0001. 43 = 0010 1011, so −43 = 1101 0101. Adding gives 1 0001 0110; ignoring the carry out of the 8 bits gives 0001 0110 = 22.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Show the two’s complement of the number being subtracted.</li><li>Say that the final carry is ignored.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO3</span><span class="marks">[2 marks]</span></header>
+          <p>A fixed point system moves its binary point one place to the right. Explain the effect on the numbers it can store.</p>
+          <label for="es9t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es9t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es9"><li><label><input type="checkbox"> <span>Larger range / larger numbers can be stored (1)</span></label></li><li><label><input type="checkbox"> <span>Less precision / fewer bits for the fractional part (1)</span></label></li></ul>
+            <p id="es9" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> More bits are used before the point, so larger numbers can be stored, but fewer bits are left after the point, so fractions are less precise.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Give both effects: range and precision.</li></ul></div>
+          </div></details>
+        </article>
+      </div>
+    </section>
+
+    <section id="revise">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>How to revise this</h2><ul><li><a href="../../techniques/worked-examples.html">Worked examples</a> – addition with carries and subtraction by adding</li><li><a href="../../techniques/trace-tables.html">Trace tables</a> – column-by-column carry tracing</li><li><a href="../../techniques/teach-it.html">Teach it</a> – the range vs precision trade-off</li></ul>
+        <p class="small">These are the best fit for this part of the topic, but you can use any <a href="../../revision-techniques.html">revision technique</a> that works for you.</p></div>
+          <div><h2>Watch and read more</h2><ul><li><a href="https://isaaccomputerscience.org">Isaac Computer Science</a> – free topic notes and practice questions on number representation.</li></ul></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 1.4.1 pages"><a href="negative-numbers.html"><span class="dir">← Previous</span>Negative numbers</a><a class="next" href="floating-point.html"><span class="dir">Next →</span>Floating point</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>
