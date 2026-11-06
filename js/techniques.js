@@ -57,7 +57,7 @@
   });
 
   /* ---------- 2. Self-check answer boxes ---------- */
-  function norm(s) { return String(s).toLowerCase().replace(/[\s,]+/g, "").replace(/[−–]/g, "-"); }
+  function norm(s) { return String(s).toLowerCase().replace(/[\s,]+/g, "").replace(/[−–]/g, "-").replace(/^(-?)0+(?=\.)/, "$1"); }
   document.querySelectorAll(".check-block").forEach(function (block) {
     var btn = block.querySelector(".check-btn");
     var out = block.querySelector(".feedback");

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>1.4.3 Exam Tips – OCR A Level CS Revision</title>
+  <meta name="description" content="Exam tips for OCR A Level Computer Science 1.4.3 Boolean algebra, with weak and good answers.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html" aria-current="page">Paper 1</a></li>
+          <li><a href="../../paper2.html">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../paper1.html">Paper 1</a> › <a href="index.html">1.4.3 Boolean algebra</a> › Exam tips</p>
+          <p class="eyebrow">1.4.3 Boolean algebra • Exam tips</p>
+          <h1>1.4.3 exam tips</h1>
+          <hr class="rule">
+          <p class="lead">What examiners look for in Boolean algebra questions, with weak and good answers.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">Why this topic matters</h2><p style="margin:0">Paper 1 tests Boolean algebra almost every year, and it is mostly <strong>method marks</strong>. Learn the method and show every step.</p></div>
+      </div>
+    </div>
+
+    <section>
+      <div class="wrap">
+        <h2>What the examiner looks for</h2>
+        <div class="grid grid-2">
+          <div class="card"><h3>Rewarded</h3><ul>
+            <li><strong>Naming the law</strong> at each step (Oct 2021).</li>
+            <li><strong>1 mark per correct K-map group</strong> (June 2025).</li>
+            <li><strong>Brackets</strong> where needed (Oct 2021).</li>
+            <li><strong>1 mark per truth table column</strong> (Oct 2021).</li>
+            <li>Any accepted notation: AND, . and ∧ all score.</li></ul></div>
+          <div class="card"><h3>Loses marks</h3><ul>
+            <li>K-map columns 00, 01, 10, 11 – the wrong order.</li>
+            <li>Groups of 3 or 6, or diagonal groups.</li>
+            <li>Missing the wrap-around group.</li>
+            <li>Extra terms: “any additional symbols, max 2 marks”.</li>
+            <li>“When the clock changes” – say rising edge.</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="wrap">
+        <h2>Question types and how to approach them</h2>
+        <div class="table-scroll"><table><thead><tr><th scope="col">Type</th><th scope="col">How to approach it</th></tr></thead><tbody><tr><th scope="row">Write an expression from a description</th><td>One letter per condition; AND for “while” / “and”, OR for “or”; brackets round each condition group.</td></tr><tr><th scope="row">Truth table</th><td>2<sup>n</sup> rows, counted in binary. One column per gate, brackets first.</td></tr><tr><th scope="row">Simplify, naming laws</th><td>One step per line, the law beside it. Stop when nothing else applies. Check with a truth table.</td></tr><tr><th scope="row">Karnaugh map</th><td>Fill the map in Gray code; ring the groups; one term per group; join with ∨.</td></tr><tr><th scope="row">Describe a circuit</th><td>Name the inputs, name the outputs, say when and how the outputs change. For adders: half, full, chain, carry.</td></tr></tbody></table></div>
+        <p class="mt-1"><strong>Count the marks:</strong> 4 marks means 4 separate points or steps.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>Weak and good answers</h2>
+        <article class="example">
+          <p class="callout"><strong>Question:</strong> The circuit is a half adder. Describe how it can be adapted to add together two 4-bit binary numbers. [4] (Oct 2021)</p>
+          <div class="grid grid-2">
+            <div class="card" style="border-color:#A12A2A"><p><span class="tag" style="background:#FDE8E8;color:#A12A2A">Weak answer</span> <span class="small">1 mark</span></p><p>Use four of them joined together so it can add 4 bits.</p></div>
+            <div class="card" style="border-color:#0B6E75"><p><span class="tag">Good answer</span> <span class="small">4 marks</span></p><p>S gives the sum and C the carry. Two half adders joined with an OR gate make a full adder. Four full adders add two 4-bit numbers, with the carry out of each joined to the carry in of the next.</p></div>
+          </div>
+          <div class="mt-1"><p><strong>How to turn the weak answer into a good one:</strong></p><ul><li>Four half adders can’t pass on a carry – you need full adders.</li><li>Four steps, four marks: half adder, full adder, chain of four, carry link.</li></ul></div>
+        </article>
+        <article class="example">
+          <p class="callout"><strong>Question:</strong> Describe the inputs and outputs used by a D-type flip-flop, explaining how the inputs control the outputs. [4] (Nov 2020)</p>
+          <div class="grid grid-2">
+            <div class="card" style="border-color:#A12A2A"><p><span class="tag" style="background:#FDE8E8;color:#A12A2A">Weak answer</span> <span class="small">1 mark</span></p><p>It has an input and an output and it stores data when the clock changes.</p></div>
+            <div class="card" style="border-color:#0B6E75"><p><span class="tag">Good answer</span> <span class="small">4 marks</span></p><p>It has a data input D and a clock input. The outputs are Q and ¬Q. On the rising edge of the clock, Q changes to the value of D. ¬Q is always the opposite of Q.</p></div>
+          </div>
+          <div class="mt-1"><p><strong>How to turn the weak answer into a good one:</strong></p><ul><li>Name the inputs and outputs – “an input” earns nothing.</li><li>Replace “when the clock changes” with “on the rising edge”.</li></ul></div>
+        </article>
+        <article class="example">
+          <p class="callout"><strong>Question:</strong> Simplify ¬(¬A ∨ B) ∨ (A ∧ B), naming the law at each step. [3]</p>
+          <div class="grid grid-2">
+            <div class="card" style="border-color:#A12A2A"><p><span class="tag" style="background:#FDE8E8;color:#A12A2A">Weak answer</span> <span class="small">0–1 mark</span></p><p>= A</p></div>
+            <div class="card" style="border-color:#0B6E75"><p><span class="tag">Good answer</span> <span class="small">3 marks</span></p><p>(¬¬A ∧ ¬B) ∨ (A ∧ B) [De Morgan’s] → (A ∧ ¬B) ∨ (A ∧ B) [double negation] → A ∧ (¬B ∨ B) [distribution] → A [complement, identity].</p></div>
+          </div>
+          <div class="mt-1"><p><strong>How to turn the weak answer into a good one:</strong></p><ul><li>The marks are for the steps and the named laws, not just the answer.</li><li>One law per line keeps the method clear.</li></ul></div>
+        </article>
+        <article class="example">
+          <p class="callout"><strong>Question:</strong> Use a Karnaugh map to simplify Q, where Q is 1 for ABC = 010, 011, 110 and 111. [3]</p>
+          <div class="grid grid-2">
+            <div class="card" style="border-color:#A12A2A"><p><span class="tag" style="background:#FDE8E8;color:#A12A2A">Weak answer</span> <span class="small">1 mark</span></p><p>Columns written 00, 01, 10, 11, and two groups of 2: (¬A ∧ B) ∨ (A ∧ B).</p></div>
+            <div class="card" style="border-color:#0B6E75"><p><span class="tag">Good answer</span> <span class="small">3 marks</span></p><p>Columns in Gray code 00, 01, 11, 10. The four 1s form one group of 4 in which only B stays the same: Q = B.</p></div>
+          </div>
+          <div class="mt-1"><p><strong>How to turn the weak answer into a good one:</strong></p><ul><li>Use Gray code so neighbouring cells really are neighbours.</li><li>Make groups as big as possible – a group of 4 drops two variables.</li></ul></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="wrap">
+        <h2>In the exam room</h2>
+        <ul>
+          <li>Write the five laws and the toolkit rules at the top of the page before you start.</li>
+          <li>Draw K-map axes in Gray code first, then fill them in.</li>
+          <li>Check any simplification with a quick truth table: both sides must match on every row.</li>
+          <li>Practise with <a href="../../techniques/worked-examples.html">worked examples</a>, and learn the laws with <a href="../../techniques/flashcards.html">flashcards</a>.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 1.4.3 pages"><a href="adders-and-flip-flops.html"><span class="dir">← Previous</span>Adders and D-type flip-flops</a><a class="next" href="index.html"><span class="dir">Back to →</span>1.4.3 overview</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>

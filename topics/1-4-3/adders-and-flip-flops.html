@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adders and D-type flip-flops (1.4.3 (e)) – OCR A Level CS Revision</title>
+  <meta name="description" content="OCR A Level Computer Science 1.4.3 (e): Adders and D-type flip-flops. Revision notes, quiz and exam questions.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html" aria-current="page">Paper 1</a></li>
+          <li><a href="../../paper2.html">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../paper1.html">Paper 1</a> › <a href="index.html">1.4.3 Boolean algebra</a> › Adders and D-type flip-flops</p>
+          <p class="eyebrow">1.4.3 (e) • Paper 1</p>
+          <h1>Adders and D-type flip-flops</h1>
+          <hr class="rule">
+          <p class="lead">The logic of half adders, full adders and D-type flip-flops: circuits that add and remember.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">Key terms</h2><ul style="margin:0"><li>Half adder</li><li>Full adder</li><li>Sum, carry in, carry out</li><li>Ripple carry adder</li><li>D-type flip-flop</li><li>Rising edge</li></ul></div>
+      </div>
+    </div>
+    <div class="wrap" style="padding-top:1.25rem">
+      <nav class="toc" aria-label="On this page"><ul>
+        <li><a href="#notes">Revision notes</a></li><li><a href="#links">Links and slides</a></li>
+        <li><a href="#quiz">Quick quiz</a></li><li><a href="#exam">Exam questions</a></li><li><a href="#revise">How to revise it</a></li>
+      </ul></nav>
+    </div>
+
+    <section id="notes">
+      <div class="wrap">
+        <h2 class="mt-2">The half adder</h2>
+        <div class="grid grid-2">
+          <div><ul>
+            <li>Adds <strong>two bits</strong>. 2 inputs (A, B), 2 outputs (S, C).</li>
+            <li><strong>Sum S ≡ A ⊻ B</strong> (XOR). <strong>Carry C ≡ A ∧ B</strong> (AND).</li>
+            <li>“Half” because it has <strong>no carry in</strong>, so it can only add the first column.</li>
+          </ul><div class="table-scroll"><table><thead><tr><th scope="col">A</th><th scope="col">B</th><th scope="col">C</th><th scope="col">S</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>0</td><td>1</td><td>0</td><td>1</td></tr><tr><td>1</td><td>0</td><td>0</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td><td>0</td></tr></tbody></table></div></div>
+          <div><figure class="diagram"><svg viewBox="0 0 620 240" role="img" aria-labelledby="te0de1fa5 te0de1fa5d"><title id="te0de1fa5">A half adder</title><desc id="te0de1fa5d">Inputs A and B both go into an XOR gate, giving the sum S, and into an AND gate, giving the carry C.</desc><defs><marker id="ahte0de1fa5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><text x="38" y="54" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="38" dy="0">A</tspan></text><text x="38" y="202" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="38" dy="0">B</tspan></text><path d="M270,30 Q292.5,62.0 270,94 Q325.8,94 360,62.0 Q325.8,30 270,30 Z" fill="#E3F1EA" stroke="#1A1A2E" stroke-width="2.5"/><path d="M260,30 Q282.5,62.0 260,94" fill="none" stroke="#1A1A2E" stroke-width="2.5"/><path d="M260,150 h45.0 a32.0,32.0 0 0 1 0,64 h-45.0 Z" fill="#E3F1EA" stroke="#1A1A2E" stroke-width="2.5"/><line x1="60" y1="47.92" x2="266" y2="47.92" stroke="#3D4451" stroke-width="2.5"/><polyline points="140,47.92 140,167.92000000000002 260,167.92000000000002" fill="none" stroke="#3D4451" stroke-width="2.5"/><line x1="60" y1="196.07999999999998" x2="260" y2="196.07999999999998" stroke="#3D4451" stroke-width="2.5"/><polyline points="190,196.07999999999998 190,76.08 266,76.08" fill="none" stroke="#3D4451" stroke-width="2.5"/><circle cx="140" cy="47.92" r="4.5" fill="#3D4451"/><circle cx="190" cy="196.07999999999998" r="4.5" fill="#3D4451"/><line x1="360" y1="62.0" x2="410" y2="62.0" stroke="#3D4451" stroke-width="2.5"/><line x1="337.0" y1="182.0" x2="397.0" y2="182.0" stroke="#3D4451" stroke-width="2.5"/><text x="418" y="68" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#0B6E75"><tspan x="418" dy="0">S (sum)</tspan></text><text x="405" y="188" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#B25C00"><tspan x="405" dy="0">C (carry)</tspan></text></svg><figcaption>Sum is XOR, carry is AND.</figcaption></figure></div>
+        </div>        <h2 class="mt-2">The full adder</h2>
+        <figure class="diagram"><svg viewBox="0 0 820 385" role="img" aria-labelledby="t3343f1ec t3343f1ecd"><title id="t3343f1ec">A full adder made from two half adders and an OR gate</title><desc id="t3343f1ecd">Half adder 1 adds A and B, giving P (A XOR B) and carry R (A AND B). Half adder 2 adds P and the carry in, giving the sum S and carry T. An OR gate combines R and T to give the carry out.</desc><defs><marker id="aht3343f1ec" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><rect x="110" y="40" width="150" height="120" rx="10" fill="#EEF3F6" stroke="#1A1A2E" stroke-width="2.5"/><text x="185" y="96" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#1A1A2E"><tspan x="185" dy="0">Half</tspan><tspan x="185" dy="20">adder 1</tspan></text><rect x="390" y="40" width="150" height="120" rx="10" fill="#EEF3F6" stroke="#1A1A2E" stroke-width="2.5"/><text x="465" y="96" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#1A1A2E"><tspan x="465" dy="0">Half</tspan><tspan x="465" dy="20">adder 2</tspan></text><text x="40" y="76" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="40" dy="0">A</tspan></text><polyline points="60,70 110,70" fill="none" stroke="#3D4451" stroke-width="2.5"/><text x="40" y="131" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="40" dy="0">B</tspan></text><polyline points="60,125 110,125" fill="none" stroke="#3D4451" stroke-width="2.5"/><text x="40" y="241" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="40" dy="0">Cin</tspan></text><polyline points="70,235 330,235 330,125 390,125" fill="none" stroke="#3D4451" stroke-width="2.5"/><polyline points="260,70 390,70" fill="none" stroke="#3D4451" stroke-width="2.5"/><text x="325" y="61" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" fill="#0B6E75"><tspan x="325" dy="0">P = A ⊻ B</tspan></text><polyline points="540,70 700,70" fill="none" stroke="#3D4451" stroke-width="2.5"/><text x="712" y="76" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#0B6E75"><tspan x="712" dy="0">S</tspan></text><path d="M610,200 Q630.0,230.0 610,260 Q659.6,260 690,230.0 Q659.6,200 610,200 Z" fill="#E3F1EA" stroke="#1A1A2E" stroke-width="2.5"/><polyline points="540,125 575,125 575,216.8 616,216.8" fill="none" stroke="#3D4451" stroke-width="2.5"/><text x="580" y="117" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" fill="#B25C00"><tspan x="580" dy="0">T = Cin ∧ P</tspan></text><polyline points="260,125 290,125 290,295 595,295 595,243.2 616,243.2" fill="none" stroke="#3D4451" stroke-width="2.5"/><text x="300" y="317" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" fill="#B25C00"><tspan x="300" dy="0">R = A ∧ B</tspan></text><polyline points="690,230.0 720,230.0" fill="none" stroke="#3D4451" stroke-width="2.5"/><text x="728" y="236" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#B25C00"><tspan x="728" dy="0">Cout</tspan></text><text x="420" y="350" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="420" dy="0">S = A ⊻ B ⊻ Cin</tspan></text><text x="420" y="375" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="420" dy="0">Cout = (A ∧ B) ∨ (Cin ∧ (A ⊻ B))</tspan></text></svg><figcaption>Two half adders and an OR gate.</figcaption></figure>
+        <ul>
+          <li>Adds two bits <strong>and a carry in</strong>. 3 inputs (A, B, Cin), 2 outputs (S, Cout).</li>
+          <li>Half adder 1 adds A and B. Half adder 2 adds the carry in. The OR gate gives a carry out if either half adder carried.</li>
+          <li><strong>Ripple carry adder:</strong> chain full adders, joining each carry out to the next carry in. Four full adders add two 4-bit numbers. 1011 + 0110 = 1 0001: the final carry out of 1 means overflow.</li>
+        </ul>        <h2 class="mt-2">The D-type flip-flop</h2>
+        <div class="grid grid-2">
+          <div><figure class="diagram"><svg viewBox="0 0 620 225" role="img" aria-labelledby="t7beb4490 t7beb4490d"><title id="t7beb4490">A D-type flip-flop</title><desc id="t7beb4490d">A box with inputs D (data) and clock, and outputs Q and NOT Q.</desc><defs><marker id="aht7beb4490" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><rect x="200" y="30" width="200" height="170" rx="8" fill="#EEF3F6" stroke="#1A1A2E" stroke-width="2.5"/><text x="300" y="110" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#1A1A2E"><tspan x="300" dy="0">D-type</tspan><tspan x="300" dy="21">flip-flop</tspan></text><line x1="90" y1="70" x2="200" y2="70" stroke="#3D4451" stroke-width="2.5"/><text x="60" y="76" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="60" dy="0">D</tspan></text><text x="225" y="75" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#3D4451"><tspan x="225" dy="0">D</tspan></text><line x1="90" y1="165" x2="200" y2="165" stroke="#3D4451" stroke-width="2.5"/><text x="55" y="170" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="55" dy="0">Clock</tspan></text><path d="M200,152 L216,165 L200,178" fill="none" stroke="#1A1A2E" stroke-width="2.5"/><line x1="400" y1="70" x2="510" y2="70" stroke="#3D4451" stroke-width="2.5"/><text x="540" y="76" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#0B6E75"><tspan x="540" dy="0">Q</tspan></text><text x="378" y="75" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#3D4451"><tspan x="378" dy="0">Q</tspan></text><line x1="400" y1="165" x2="510" y2="165" stroke="#3D4451" stroke-width="2.5"/><text x="545" y="171" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#B25C00"><tspan x="545" dy="0">¬Q</tspan></text><text x="374" y="170" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#3D4451"><tspan x="374" dy="0">¬Q</tspan></text></svg><figcaption>Inputs D and clock; outputs Q and ¬Q.</figcaption></figure></div>
+          <div><ul>
+            <li><strong>Stores 1 bit.</strong> It delays a signal until the clock says go.</li>
+            <li><strong>Inputs:</strong> D (data) and the clock. <strong>Outputs:</strong> Q, and ¬Q, which is always its opposite.</li>
+            <li>On the <strong>rising edge</strong> of the clock (0 → 1), Q becomes D.</li>
+            <li>At all other times Q <strong>holds</strong> its value, even if D changes.</li>
+            <li>Used in registers, memory and counters. 8 flip-flops sharing a clock store a byte.</li>
+          </ul></div>
+        </div>
+        <figure class="diagram"><svg viewBox="0 0 880 330" role="img" aria-labelledby="t083a0d51 t083a0d51d"><title id="t083a0d51">Timing diagram for a D-type flip-flop</title><desc id="t083a0d51d">The clock rises at regular intervals. At each rising edge Q takes the value of D and then holds it. A short pulse on D between two rising edges never reaches Q.</desc><defs><marker id="aht083a0d51" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><line x1="172" y1="20" x2="172" y2="300" stroke="#C9D3D9" stroke-width="2" stroke-dasharray="5 5"/><line x1="296" y1="20" x2="296" y2="300" stroke="#C9D3D9" stroke-width="2" stroke-dasharray="5 5"/><line x1="420" y1="20" x2="420" y2="300" stroke="#C9D3D9" stroke-width="2" stroke-dasharray="5 5"/><line x1="544" y1="20" x2="544" y2="300" stroke="#C9D3D9" stroke-width="2" stroke-dasharray="5 5"/><line x1="668" y1="20" x2="668" y2="300" stroke="#C9D3D9" stroke-width="2" stroke-dasharray="5 5"/><line x1="792" y1="20" x2="792" y2="300" stroke="#C9D3D9" stroke-width="2" stroke-dasharray="5 5"/><text x="55" y="66" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#1A1A2E"><tspan x="55" dy="0">Clock</tspan></text><polyline points="110,80 172,80 172,40 234,40 234,80 296,80 296,40 358,40 358,80 420,80 420,40 482,40 482,80 544,80 544,40 606,40 606,80 668,80 668,40 730,40 730,80 792,80 792,40 854,40" fill="none" stroke="#1A1A2E" stroke-width="3"/><text x="55" y="166" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#1A1A2E"><tspan x="55" dy="0">D</tspan></text><polyline points="110,180 258.79999999999995,180 258.79999999999995,140 513.0,140 513.0,180 568.8,180 568.8,140 593.5999999999999,140 593.5999999999999,180 630.8000000000001,180 630.8000000000001,140 854,140" fill="none" stroke="#B25C00" stroke-width="3"/><text x="55" y="266" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#1A1A2E"><tspan x="55" dy="0">Q</tspan></text><polyline points="110,280 296,280 296,240 544,240 544,280 668,280 668,240 854,240" fill="none" stroke="#0B6E75" stroke-width="3"/><text x="581" y="132" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="bold" fill="#B25C00"><tspan x="581" dy="0">short pulse</tspan></text><text x="581" y="214" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="bold" fill="#B25C00"><tspan x="581" dy="0">ignored</tspan></text><text x="470" y="323" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#1A1A2E"><tspan x="470" dy="0">Dashed lines = rising edges. At each one, Q copies D, then holds.</tspan></text></svg><figcaption>Find each rising edge, read D, copy it to Q, then keep Q flat.</figcaption></figure>
+        <div class="callout callout-amber mt-1"><p><strong>Watch out for:</strong></p><ul><li>“Four half adders” to add 4 bits – half adders can’t pass on a carry.</li><li>Mixing up the gates: sum is XOR, carry is AND.</li><li>Saying Q changes “when the clock changes” – say the rising edge.</li><li>Not naming the inputs and outputs of the flip-flop.</li></ul></div>
+      </div>
+    </section>
+
+    <section id="links" class="section-alt">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>Links to other topics</h2><ul class="link-list"><li><strong>1.1.1 Registers</strong> – registers are built from D-type flip-flops.</li><li><strong>1.1.1 The clock</strong> – the clock pulse triggers each step of the processor.</li><li><strong>1.4.1 Binary addition</strong> – a full adder adds one column, with a carry.</li><li><strong>1.4.1 Overflow</strong> – a carry out of the last full adder is overflow.</li></ul></div>
+          <div><h2>Lesson slides</h2>
+            <p>Go back over the lesson for the full worked examples and tasks.</p>
+            <p><a class="btn" href="../../slides/1-4-3/boolean-algebra.pptx">Download the lesson slides</a></p>
+            <p class="small">1.4.3 Boolean algebra – including Teach a circuit to add, Trace the full adder and the timing diagrams.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <div class="wrap">
+        <h2>Check your understanding</h2>
+        <p>Answer, then press <strong>Check my answers</strong>. Each question explains the answer so you can fix any mistakes.</p>
+        <div class="quiz-block">
+          <h3>Quick quiz – marked for you</h3>
+          <div class="q" data-answer="c"><p class="q-text">1. Which gate gives the sum output of a half adder? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q21" value="a"> <span>AND</span></label><label><input type="radio" name="q21" value="b"> <span>OR</span></label><label><input type="radio" name="q21" value="c"> <span>XOR</span></label><label><input type="radio" name="q21" value="d"> <span>NOT</span></label></div><div class="explain" hidden><p><span class="verdict"></span>1 + 0 and 0 + 1 give sum 1; 1 + 1 gives sum 0 (carry 1). That is XOR.</p></div></div><div class="q" data-answer="a"><p class="q-text">2. Which gate gives the carry output of a half adder? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q22" value="a"> <span>AND</span></label><label><input type="radio" name="q22" value="b"> <span>OR</span></label><label><input type="radio" name="q22" value="c"> <span>XOR</span></label><label><input type="radio" name="q22" value="d"> <span>NAND</span></label></div><div class="explain" hidden><p><span class="verdict"></span>There is only a carry when both bits are 1: AND.</p></div></div><div class="q" data-answer=""><p class="q-text">3. A full adder has A = 1, B = 1, Cin = 1. What is the sum S? <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 3" data-answer="1" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>1 + 1 + 1 = 11 in binary: sum 1, carry out 1.</p></div></div><div class="q" data-answer=""><p class="q-text">4. Four full adders add 1011 + 0110. What is the final carry out? <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 4" data-answer="1" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>1011 + 0110 = 1 0001. The carry out of 1 means the answer needs 5 bits: overflow.</p></div></div><div class="q" data-answer="b"><p class="q-text">5. When does the Q output of a D-type flip-flop change? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q25" value="a"> <span>Whenever D changes</span></label><label><input type="radio" name="q25" value="b"> <span>On the rising edge of the clock, when Q takes the value of D</span></label><label><input type="radio" name="q25" value="c"> <span>When the clock falls</span></label><label><input type="radio" name="q25" value="d"> <span>Never</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Q only changes on the rising edge of the clock. Between edges it holds its value.</p></div></div><div class="q" data-answer="a"><p class="q-text">6. Why can’t a half adder add the second column of two binary numbers? <span class="tag tag-soft">AO3</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q26" value="a"> <span>It has no carry in input, so the carry from the first column would be lost</span></label><label><input type="radio" name="q26" value="b"> <span>It only has an AND gate</span></label><label><input type="radio" name="q26" value="c"> <span>It can only add 0s</span></label><label><input type="radio" name="q26" value="d"> <span>It needs a clock</span></label></div><div class="explain" hidden><p><span class="verdict"></span>The second column must add the carry from the first. A full adder has the extra carry in input.</p></div></div>
+          <button type="button" class="btn quiz-check">Check my answers</button>
+          <button type="button" class="btn btn-ghost quiz-reset">Start again</button>
+          <p class="quiz-score mt-1" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="exam" class="section-alt">
+      <div class="wrap">
+        <h2>Exam-style questions – mark them yourself</h2>
+        <p>Write your answer, then open <strong>Mark your answer</strong>. Tick the mark points you hit, read the model answer and use the tips to improve. See the <a href="exam-tips.html">1.4.3 exam tips</a> for more help.</p>
+<article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[4 marks]</span></header>
+          <p>A circuit is a half adder. Describe how it can be adapted to add together two 4-bit binary numbers. <span class="small">(October 2021)</span></p>
+          <label for="es10t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es10t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es10"><li><label><input type="checkbox"> <span>S gives the sum and C the carry (1)</span></label></li><li><label><input type="checkbox"> <span>Two half adders joined with an OR gate make a full adder (1)</span></label></li><li><label><input type="checkbox"> <span>Four full adders add two 4-bit numbers (1)</span></label></li><li><label><input type="checkbox"> <span>The carry out of each is joined to the carry in of the next (1)</span></label></li></ul>
+            <p id="es10" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> S gives the sum and C the carry. Two half adders joined with an OR gate make a full adder, which also adds a carry in. Four full adders can add two 4-bit numbers, with the carry out of each one joined to the carry in of the next.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Four steps for four marks: half adder → full adder → chain of four → carry link.</li><li>Four half adders on their own can’t pass on a carry.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO1</span><span class="marks">[4 marks]</span></header>
+          <p>Describe the inputs and outputs used by a D-type flip-flop, explaining how the inputs control the outputs. <span class="small">(November 2020)</span></p>
+          <label for="es11t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es11t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es11"><li><label><input type="checkbox"> <span>Inputs: a data input D and a clock (1)</span></label></li><li><label><input type="checkbox"> <span>Outputs: Q and ¬Q (1)</span></label></li><li><label><input type="checkbox"> <span>On the rising edge of the clock, Q takes the value of D (1)</span></label></li><li><label><input type="checkbox"> <span>¬Q is always the opposite of Q / Q holds its value between edges (1)</span></label></li></ul>
+            <p id="es11" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> It has a data input D and a clock input. The outputs are Q and ¬Q. When the clock goes from low to high – the rising edge – Q changes to the value of D, and holds it until the next rising edge. ¬Q is always the opposite of Q.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Name the inputs, name the outputs, then explain when they change.</li><li>“When the clock changes” is too vague – say the rising edge.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[2 marks]</span></header>
+          <p>Explain why a half adder cannot be used to add the second column of two binary numbers.</p>
+          <label for="es12t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es12t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es12"><li><label><input type="checkbox"> <span>It has no carry in input (1)</span></label></li><li><label><input type="checkbox"> <span>So the carry from the first column would be lost (1)</span></label></li></ul>
+            <p id="es12" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> A half adder only has two inputs, A and B, and no carry in, so the carry from the first column would be lost.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Say what is missing and what goes wrong because of it.</li></ul></div>
+          </div></details>
+        </article>
+      </div>
+    </section>
+
+    <section id="revise">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>How to revise this</h2><ul><li><a href="../../techniques/trace-tables.html">Trace tables</a> – trace P, R, T, S and Cout through the full adder</li><li><a href="../../techniques/flowcharts.html">Flowcharts and process diagrams</a> – draw the half adder → full adder → ripple carry chain</li><li><a href="../../techniques/teach-it.html">Teach it</a> – explain the timing diagram out loud</li></ul>
+        <p class="small">These are the best fit for this part of the topic, but you can use any <a href="../../revision-techniques.html">revision technique</a> that works for you.</p></div>
+          <div><h2>Watch and read more</h2><ul><li><a href="https://circuitverse.org">CircuitVerse</a> – a free online logic simulator: build and test gates, adders and flip-flops.</li><li><a href="https://www.nand2tetris.org">Nand2Tetris</a> – build a whole computer starting from NAND gates (beyond the spec).</li><li><a href="https://isaaccomputerscience.org">Isaac Computer Science</a> – free notes and questions on Boolean logic.</li></ul></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 1.4.3 pages"><a href="karnaugh-maps.html"><span class="dir">← Previous</span>Karnaugh maps</a><a class="next" href="exam-tips.html"><span class="dir">Next →</span>1.4.3 exam tips</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>

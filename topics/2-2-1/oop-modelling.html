@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OOP: modelling with classes (2.2.1 (f)) – OCR A Level CS Revision</title>
+  <meta name="description" content="OCR A Level Computer Science 2.2.1 (f): OOP: modelling with classes. Revision notes, quiz and exam questions.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html">Paper 1</a></li>
+          <li><a href="../../paper2.html" aria-current="page">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../paper2.html">Paper 2</a> › <a href="index.html">2.2.1 Programming techniques</a> › OOP: modelling with classes</p>
+          <p class="eyebrow">2.2.1 (f) • Paper 2</p>
+          <h1>OOP: modelling with classes</h1>
+          <hr class="rule">
+          <p class="lead">Choosing classes from a scenario, spotting “is a” and “has a” relationships, and coding your model.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">Key terms</h2><ul style="margin:0"><li>Is a (inheritance)</li><li>Has a (association)</li><li>Candidate classes: nouns</li><li>Methods: verbs</li><li>Class diagram</li></ul></div>
+      </div>
+    </div>
+    <div class="wrap" style="padding-top:1.25rem">
+      <nav class="toc" aria-label="On this page"><ul>
+        <li><a href="#notes">Revision notes</a></li><li><a href="#links">Links and slides</a></li>
+        <li><a href="#quiz">Quick quiz</a></li><li><a href="#exam">Exam questions</a></li><li><a href="#revise">How to revise it</a></li>
+      </ul></nav>
+    </div>
+
+    <section id="notes">
+      <div class="wrap">
+        <h2 class="mt-2">How classes relate</h2>
+        <figure class="diagram"><svg viewBox="0 0 880 390" role="img" aria-labelledby="t411007fa t411007fad"><title id="t411007fa">Is a and has a relationships</title><desc id="t411007fad">Inheritance: Student and Teacher each have an arrow to Person, because each is a Person. Association: Team is joined to Player by a line with a diamond at the Team end, because a team has players.</desc><defs><marker id="aht411007fa" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><text x="200" y="28" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#1A1A2E"><tspan x="200" dy="0">is a: inheritance</tspan></text><text x="620" y="28" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#B25C00"><tspan x="620" dy="0">has a: association</tspan></text><rect x="120" y="40" width="160" height="106" rx="6" fill="#fff" stroke="#1A1A2E" stroke-width="2.5"/><rect x="120" y="40" width="160" height="38" rx="6" fill="#EEF3F6" stroke="#1A1A2E" stroke-width="2.5"/><text x="200" y="65" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#1A1A2E"><tspan x="200" dy="0">Person</tspan></text><line x1="120" y1="112" x2="280" y2="112" stroke="#1A1A2E" stroke-width="2"/><text x="132" y="99" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="normal" fill="#3D4451"><tspan x="132" dy="0">− name</tspan></text><text x="132" y="133" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="normal" fill="#3D4451"><tspan x="132" dy="0">+ getName()</tspan></text><rect x="40" y="220" width="140" height="106" rx="6" fill="#fff" stroke="#0B6E75" stroke-width="2.5"/><rect x="40" y="220" width="140" height="38" rx="6" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2.5"/><text x="110" y="245" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#1A1A2E"><tspan x="110" dy="0">Student</tspan></text><line x1="40" y1="292" x2="180" y2="292" stroke="#0B6E75" stroke-width="2"/><text x="52" y="279" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="normal" fill="#3D4451"><tspan x="52" dy="0">− year</tspan></text><text x="52" y="313" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="normal" fill="#3D4451"><tspan x="52" dy="0">+ describe()</tspan></text><line x1="110" y1="220" x2="173.0" y2="150" stroke="#1A1A2E" stroke-width="2.5" marker-end="url(#aht411007fa)"/><rect x="220" y="220" width="140" height="106" rx="6" fill="#fff" stroke="#0B6E75" stroke-width="2.5"/><rect x="220" y="220" width="140" height="38" rx="6" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2.5"/><text x="290" y="245" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#1A1A2E"><tspan x="290" dy="0">Teacher</tspan></text><line x1="220" y1="292" x2="360" y2="292" stroke="#0B6E75" stroke-width="2"/><text x="232" y="279" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="normal" fill="#3D4451"><tspan x="232" dy="0">− subject</tspan></text><text x="232" y="313" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="normal" fill="#3D4451"><tspan x="232" dy="0">+ describe()</tspan></text><line x1="290" y1="220" x2="227.0" y2="150" stroke="#1A1A2E" stroke-width="2.5" marker-end="url(#aht411007fa)"/><rect x="470" y="80" width="160" height="106" rx="6" fill="#fff" stroke="#B25C00" stroke-width="2.5"/><rect x="470" y="80" width="160" height="38" rx="6" fill="#FFF4E0" stroke="#B25C00" stroke-width="2.5"/><text x="550" y="105" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#1A1A2E"><tspan x="550" dy="0">Team</tspan></text><line x1="470" y1="152" x2="630" y2="152" stroke="#B25C00" stroke-width="2"/><text x="482" y="139" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="normal" fill="#3D4451"><tspan x="482" dy="0">− players</tspan></text><text x="482" y="173" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="normal" fill="#3D4451"><tspan x="482" dy="0">+ addPlayer(p)</tspan></text><rect x="700" y="80" width="150" height="106" rx="6" fill="#fff" stroke="#B25C00" stroke-width="2.5"/><rect x="700" y="80" width="150" height="38" rx="6" fill="#FFF4E0" stroke="#B25C00" stroke-width="2.5"/><text x="775" y="105" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#1A1A2E"><tspan x="775" dy="0">Player</tspan></text><line x1="700" y1="152" x2="850" y2="152" stroke="#B25C00" stroke-width="2"/><text x="712" y="139" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="normal" fill="#3D4451"><tspan x="712" dy="0">− name</tspan></text><text x="712" y="173" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="normal" fill="#3D4451"><tspan x="712" dy="0">+ getName()</tspan></text><line x1="652" y1="133.0" x2="700" y2="133.0" stroke="#B25C00" stroke-width="2.5"/><polygon points="630,133.0 641,125.0 652,133.0 641,141.0" fill="#fff" stroke="#B25C00" stroke-width="2.5"/><text x="660" y="256" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" fill="#3D4451"><tspan x="660" dy="0">A Team has Players: it stores</tspan><tspan x="660" dy="18">Player objects in an attribute</tspan></text><text x="200" y="375" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" fill="#3D4451"><tspan x="200" dy="0">A Student is a Person</tspan></text></svg><figcaption>Say it out loud: if “is a” sounds wrong, it isn’t inheritance.</figcaption></figure>
+        <div class="grid grid-2">
+          <div class="card"><h3>Inheritance: “is a”</h3><p>A Dog is a Pet. A Teacher is a Person. The subclass gets everything the superclass has. In Python: <code>class Dog(Pet):</code></p></div>
+          <div class="card"><h3>Association: “has a” / “uses”</h3><p>A Team has Players. A Driver uses a Car. One object stores another as an attribute. In Python: <code>self.__players = []</code></p></div>
+        </div>
+        <p class="mt-1 small"><strong>Beyond the spec:</strong> aggregation – the parts can exist alone (a playlist’s songs); composition – the parts die with the whole (a house’s rooms).</p>        <h2 class="mt-2">Finding the classes in a scenario</h2>
+        <div class="grid grid-2">
+          <div><ol class="steps">
+            <li><strong>Nouns:</strong> underline them – they are candidate classes.</li>
+            <li><strong>Filter:</strong> is it a thing with data and behaviour, or just a value? Values become attributes.</li>
+            <li><strong>Verbs:</strong> these become methods.</li>
+            <li><strong>Relate:</strong> “is a” → inheritance; “has a” → association.</li>
+          </ol></div>
+          <div class="callout"><p><strong>Worked example:</strong> “A school library lends books and DVDs to members. Every item has a title and a barcode. A member can borrow up to 5 items.”</p>
+            <ul><li>Classes: Library, Item, Book, DVD, Member</li><li>title, barcode → attributes of Item</li><li>lend, borrow → methods</li><li>Book is an Item; DVD is an Item; Library has Items and Members</li></ul></div>
+        </div>        <h2 class="mt-2">Has a, in code</h2>
+        <div class="grid grid-2">
+          <div><pre class="code"><code>class Team:
+    def __init__(self, name):
+        self.__name = name
+        self.__players = []        # has a: Players
+
+    def addPlayer(self, player):
+        self.__players.append(player)
+
+    def listPlayers(self):
+        for p in self.__players:
+            print(p.getName())</code></pre></div>
+          <div><ul>
+            <li>Team is <strong>not</strong> <code>Team(Player)</code> – a team is not a player.</li>
+            <li><code>__players</code> is a list of Player objects: Team <strong>has</strong> Players.</li>
+            <li>Team asks each Player for its name with <code>getName()</code> – it can’t read the private attribute.</li>
+            <li>If each object has its own overridden <code>describe()</code>, a loop over the list shows polymorphism – no if statements needed.</li>
+          </ul></div>
+        </div>
+        <div class="callout callout-amber mt-1"><p><strong>Watch out for:</strong></p><ul><li>Using inheritance for “has a”: a Team should not inherit from Player.</li><li>Making every noun a class – values like title or price are attributes.</li><li>Inheriting in the wrong direction: check “a Square is a Shape”, not the reverse.</li><li>A 12-mark discussion with definitions but no examples from the scenario.</li></ul></div>
+      </div>
+    </section>
+
+    <section id="links" class="section-alt">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>Links to other topics</h2><ul class="link-list"><li><strong>2.2.2 Decomposition</strong> – splitting a problem into classes is decomposition.</li><li><strong>2.1.1 Abstraction</strong> – a class models only the details that matter.</li><li><strong>1.2.3 Software development</strong> – build and test one class per iteration (agile).</li><li><strong>1.4.2 Data structures</strong> – a has-a list of objects is a data structure.</li><li><strong>NEA 3.2.1 and 3.2.2</strong> – decompose your project into classes and justify each one.</li></ul></div>
+          <div><h2>Lesson slides</h2>
+            <p>Go back over the lesson for the full worked examples and tasks.</p>
+            <p><a class="btn" href="../../slides/2-2-1/introduction-to-oop.pptx">Download the lesson slides</a></p>
+            <p class="small">2.2.1G Introduction to OOP – Parts 3 and 4: model the real world, Lab 3, Dungeon battle and exam advice.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <div class="wrap">
+        <h2>Check your understanding</h2>
+        <p>Answer, then press <strong>Check my answers</strong>. Each question explains the answer so you can fix any mistakes.</p>
+        <div class="quiz-block">
+          <h3>Quick quiz – marked for you</h3>
+          <div class="q" data-answer="b"><p class="q-text">1. Car and Engine: which relationship? <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q13" value="a"> <span>Is a</span></label><label><input type="radio" name="q13" value="b"> <span>Has a</span></label><label><input type="radio" name="q13" value="c"> <span>Neither</span></label></div><div class="explain" hidden><p><span class="verdict"></span>A car has an engine. An engine is not a car.</p></div></div><div class="q" data-answer="a"><p class="q-text">2. Square and Shape: which relationship? <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q14" value="a"> <span>Is a</span></label><label><input type="radio" name="q14" value="b"> <span>Has a</span></label><label><input type="radio" name="q14" value="c"> <span>Neither</span></label></div><div class="explain" hidden><p><span class="verdict"></span>A square is a shape, so Square inherits from Shape.</p></div></div><div class="q" data-answer="c"><p class="q-text">3. Student and Teacher: which relationship? <span class="tag tag-soft">AO3</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q15" value="a"> <span>Is a</span></label><label><input type="radio" name="q15" value="b"> <span>Has a</span></label><label><input type="radio" name="q15" value="c"> <span>Neither – both could inherit from Person</span></label></div><div class="explain" hidden><p><span class="verdict"></span>A student isn’t a teacher, and neither contains the other. Both are a Person.</p></div></div><div class="q" data-answer="b"><p class="q-text">4. How do you find candidate classes in a scenario? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q16" value="a"> <span>Underline the verbs</span></label><label><input type="radio" name="q16" value="b"> <span>Underline the nouns, then keep those with data and behaviour</span></label><label><input type="radio" name="q16" value="c"> <span>Count the sentences</span></label><label><input type="radio" name="q16" value="d"> <span>Use every adjective</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Nouns are candidate classes; verbs become methods; simple values become attributes.</p></div></div><div class="q" data-answer="b"><p class="q-text">5. Which Python line makes Dog a subclass of Pet? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q17" value="a"> <span>class Pet(Dog):</span></label><label><input type="radio" name="q17" value="b"> <span>class Dog(Pet):</span></label><label><input type="radio" name="q17" value="c"> <span>class Dog inherits Pet:</span></label><label><input type="radio" name="q17" value="d"> <span>Dog = Pet()</span></label></div><div class="explain" hidden><p><span class="verdict"></span>The superclass goes in the brackets: class Dog(Pet):</p></div></div><div class="q" data-answer="b"><p class="q-text">6. In a library system, “title” is best modelled as… <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q18" value="a"> <span>a class</span></label><label><input type="radio" name="q18" value="b"> <span>an attribute of Item</span></label><label><input type="radio" name="q18" value="c"> <span>a method</span></label><label><input type="radio" name="q18" value="d"> <span>a subclass</span></label></div><div class="explain" hidden><p><span class="verdict"></span>A title is a single value with no behaviour of its own, so it is an attribute.</p></div></div>
+          <button type="button" class="btn quiz-check">Check my answers</button>
+          <button type="button" class="btn btn-ghost quiz-reset">Start again</button>
+          <p class="quiz-score mt-1" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="exam" class="section-alt">
+      <div class="wrap">
+        <h2>Exam-style questions – mark them yourself</h2>
+        <p>Write your answer, then open <strong>Mark your answer</strong>. Tick the mark points you hit, read the model answer and use the tips to improve. See the <a href="exam-tips.html">2.2.1 exam tips</a> for more help.</p>
+<article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[3 marks]</span></header>
+          <p>Premium gym members also have a trainer. Explain how inheritance can be used.</p>
+          <label for="es7t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es7t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es7"><li><label><input type="checkbox"> <span>Create a PremiumMember class that inherits from Member (1)</span></label></li><li><label><input type="checkbox"> <span>It gets name, age, visits and the methods without rewriting them (1)</span></label></li><li><label><input type="checkbox"> <span>Add a private trainer attribute and its get / set methods (1)</span></label></li></ul>
+            <p id="es7" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> Create a subclass PremiumMember that inherits from Member. It takes on name, age, visits and all of Member’s methods without them being written again. It adds a private trainer attribute, with get and set methods.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Name both classes from the scenario.</li><li>Say what is inherited and what is added.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[3 marks]</span></header>
+          <p>Explain how encapsulation can stop a member’s age being set below 16.</p>
+          <label for="es8t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es8t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es8"><li><label><input type="checkbox"> <span>age is private, so it can’t be changed directly from outside the class (1)</span></label></li><li><label><input type="checkbox"> <span>A public setAge method is the only way to change it (1)</span></label></li><li><label><input type="checkbox"> <span>setAge only accepts values of 16 or more (1)</span></label></li></ul>
+            <p id="es8" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> The age attribute is made private, so no code outside the class can change it directly. A public setAge method is the only way to change it, and it only accepts values of 16 or more.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Each mark is one idea, linked to Member and age.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO3</span><span class="marks">[12 marks]</span></header>
+          <p>Discuss the advantages of object-oriented programming over procedural programming when developing computer games. Refer to inheritance, encapsulation and polymorphism. <span class="small">(November 2020)</span></p>
+          <label for="es9t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es9t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es9"><li><label><input type="checkbox"> <span>Accurate definitions of classes / objects (AO1) (1)</span></label></li><li><label><input type="checkbox"> <span>Inheritance defined and applied, e.g. Zombie and Ghost inherit from Enemy (2)</span></label></li><li><label><input type="checkbox"> <span>Encapsulation defined and applied, e.g. private health changed only by takeDamage() (2)</span></label></li><li><label><input type="checkbox"> <span>Polymorphism defined and applied, e.g. each enemy overrides move() (2)</span></label></li><li><label><input type="checkbox"> <span>Benefits compared with procedural: reuse, maintenance, fewer errors (2)</span></label></li><li><label><input type="checkbox"> <span>Drawbacks / balance: more planning, procedural is fine for small tasks (1)</span></label></li><li><label><input type="checkbox"> <span>A justified conclusion for games (2)</span></label></li></ul>
+            <p id="es9" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> Polymorphism means the same method call behaves differently for objects of different classes. In the game, Zombie and Ghost could both override the move() method of Enemy, so the main loop just calls move() on every enemy and each one moves in its own way. So new enemy types can be added without changing the game loop, whereas a procedural version would need another if statement in every movement procedure, which is harder to maintain and more likely to contain errors. <em>(Write one paragraph like this for each pillar, then weigh up the drawbacks and conclude.)</em></p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Each paragraph: point (definition) → game example → so what, compared with procedural.</li><li>Use named classes and methods from the game.</li><li>End with a judgement for this context – games are large systems of interacting things.</li></ul></div>
+          </div></details>
+        </article>
+      </div>
+    </section>
+
+    <section id="revise">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>How to revise this</h2><ul><li><a href="../../techniques/concept-maps.html">Concept maps</a> – draw is-a and has-a links between classes</li><li><a href="../../techniques/extended-answers.html">Planning extended answers</a> – the 12-mark OOP vs procedural question</li><li><a href="../../techniques/worked-examples.html">Worked examples</a> – turn a scenario into classes step by step</li></ul>
+        <p class="small">These are the best fit for this part of the topic, but you can use any <a href="../../revision-techniques.html">revision technique</a> that works for you.</p></div>
+          <div><h2>Watch and read more</h2><ul><li><a href="https://pythontutor.com">Python Tutor</a> – paste a class and watch each object being created, step by step.</li><li><a href="https://docs.python.org/3/tutorial/classes.html">Python tutorial: classes</a> – the official guide to classes, objects and inheritance in Python.</li><li><a href="https://isaaccomputerscience.org">Isaac Computer Science</a> – free notes and questions on object-oriented programming.</li></ul></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 2.2.1 pages"><a href="oop-three-pillars.html"><span class="dir">← Previous</span>OOP: encapsulation, inheritance and polymorphism</a><a class="next" href="exam-tips.html"><span class="dir">Next →</span>2.2.1 exam tips</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>

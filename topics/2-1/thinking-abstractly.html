@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2.1.1 Thinking abstractly (2.1.1 (a)–(d)) – OCR A Level CS Revision</title>
+  <meta name="description" content="OCR A Level Computer Science 2.1.1 (a)–(d): 2.1.1 Thinking abstractly. Revision notes, quiz and exam questions.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html">Paper 1</a></li>
+          <li><a href="../../paper2.html" aria-current="page">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../paper2.html">Paper 2</a> › <a href="index.html">2.1 Elements of computational thinking</a> › 2.1.1 Thinking abstractly</p>
+          <p class="eyebrow">2.1.1 (a)–(d) • Paper 2</p>
+          <h1>2.1.1 Thinking abstractly</h1>
+          <hr class="rule">
+          <p class="lead">Removing detail to build a model: what abstraction is, why we need it, how a model differs from reality, and how to design one.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">Key terms</h2><ul style="margin:0"><li>Abstraction</li><li>Model</li><li>Representational abstraction</li><li>Generalisation</li><li>Procedural / data abstraction</li></ul></div>
+      </div>
+    </div>
+    <div class="wrap" style="padding-top:1.25rem">
+      <nav class="toc" aria-label="On this page"><ul>
+        <li><a href="#notes">Revision notes</a></li><li><a href="#links">Links and slides</a></li>
+        <li><a href="#quiz">Quick quiz</a></li><li><a href="#exam">Exam questions</a></li><li><a href="#revise">How to revise it</a></li>
+      </ul></nav>
+    </div>
+
+    <section id="notes">
+      <div class="wrap">
+        <h2 class="mt-2">What is abstraction?</h2>
+        <p><strong>Abstraction</strong> is removing or hiding unnecessary detail so you can focus on what matters to the problem. The result is a <strong>model</strong>: a simpler version of reality.</p>
+        <figure class="diagram"><svg viewBox="0 0 880 385" role="img" aria-labelledby="t709140c8 t709140c8d"><title id="t709140c8">Abstraction turns reality into a model</title><desc id="t709140c8d">On the left, reality has many details: turns, doors and stairs, wall colours, room numbers, windows and bins, landmarks, exact distances and people. Abstraction removes what the problem does not need. The model on the right keeps only turns, doors and stairs, room numbers and landmarks.</desc><defs><marker id="aht709140c8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><text x="170" y="30" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#1A1A2E"><tspan x="170" dy="0">Reality: the school</tspan></text><text x="730" y="30" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#0B6E75"><tspan x="730" dy="0">Model: a map for Year 7s</tspan></text><rect x="20" y="40" width="300" height="300" rx="10" fill="#EEF3F6" stroke="#3D4451" stroke-width="2"/><text x="40" y="75" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="40" dy="0">Turns, doors and stairs</tspan></text><text x="40" y="114" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="normal" fill="#3D4451"><tspan x="40" dy="0">Wall and poster colours</tspan></text><line x1="36" y1="109" x2="214" y2="109" stroke="#A12A2A" stroke-width="2"/><text x="40" y="153" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="40" dy="0">Room numbers</tspan></text><text x="40" y="192" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="normal" fill="#3D4451"><tspan x="40" dy="0">Windows, bins and plants</tspan></text><line x1="36" y1="187" x2="222" y2="187" stroke="#A12A2A" stroke-width="2"/><text x="40" y="231" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="40" dy="0">Landmarks: hall, library</tspan></text><text x="40" y="270" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="normal" fill="#3D4451"><tspan x="40" dy="0">Exact distances</tspan></text><line x1="36" y1="265" x2="155" y2="265" stroke="#A12A2A" stroke-width="2"/><text x="40" y="309" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="normal" fill="#3D4451"><tspan x="40" dy="0">People in the corridors</tspan></text><line x1="36" y1="304" x2="214" y2="304" stroke="#A12A2A" stroke-width="2"/><rect x="370" y="140" width="210" height="100" rx="50" fill="#0B6E75"/><text x="475" y="177" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#fff"><tspan x="475" dy="0">Abstraction:</tspan><tspan x="475" dy="18">remove what the</tspan><tspan x="475" dy="18">problem doesn’t need</tspan></text><line x1="322" y1="190" x2="366" y2="190" stroke="#3D4451" stroke-width="2.5" marker-end="url(#aht709140c8)"/><line x1="582" y1="190" x2="616" y2="190" stroke="#3D4451" stroke-width="2.5" marker-end="url(#aht709140c8)"/><rect x="620" y="40" width="240" height="300" rx="10" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2.5"/><rect x="645" y="80" width="190" height="52" rx="8" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="740" y="111" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="740" dy="0">Turns, doors, stairs</tspan></text><rect x="645" y="160" width="190" height="52" rx="8" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="740" y="191" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="740" dy="0">Room numbers</tspan></text><rect x="645" y="240" width="190" height="52" rx="8" fill="#fff" stroke="#0B6E75" stroke-width="2"/><text x="740" y="271" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="740" dy="0">Landmarks</tspan></text><text x="440" y="373" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#B25C00"><tspan x="440" dy="0">Keep a detail only if it changes the answer to the problem</tspan></text></svg><figcaption>Every detail you keep must change the answer. If it doesn’t, take it out.</figcaption></figure>
+        <div class="grid grid-2">
+          <div class="card"><h3>The nature of abstraction (a)</h3><ul>
+            <li><strong>Representational:</strong> keep only what you need – a Tube map, a sat nav map.</li>
+            <li><strong>Generalisation:</strong> group things by what they share – all enemies move and take damage.</li>
+            <li><strong>Procedural:</strong> use a subroutine without knowing how it works – <code>print("Hi")</code>.</li>
+            <li><strong>Data abstraction:</strong> use a stack through push and pop, not how it is stored.</li>
+            <li><strong>Layers:</strong> each layer hides the one below – the TCP/IP stack.</li></ul></div>
+          <div class="card"><h3>The need for abstraction (b)</h3><ul>
+            <li>Problems become <strong>less complex</strong> and easier to understand.</li>
+            <li><strong>Less data</strong> to store and process, so it runs faster and uses less memory.</li>
+            <li><strong>Quicker</strong> to design, write and test.</li>
+            <li>People can <strong>use</strong> a tool without knowing how it works.</li></ul></div>
+        </div>        <h2 class="mt-2">Same thing, different problem</h2>
+        <p>What you keep depends on the problem. Here is one train journey modelled three ways:</p>
+        <div class="table-scroll"><table><thead><tr><th scope="col">Detail</th><th scope="col">A: price calculator</th><th scope="col">B: departure board</th><th scope="col">C: driver simulator</th></tr></thead><tbody><tr><th scope="row">Departure time</th><td>✓ peak fares</td><td>✓</td><td></td></tr><tr><th scope="row">Platform number</th><td></td><td>✓</td><td></td></tr><tr><th scope="row">Distance travelled</th><td>✓</td><td></td><td>✓</td></tr><tr><th scope="row">Passenger’s age</th><td>✓ railcards</td><td></td><td></td></tr><tr><th scope="row">Slope of the track</th><td></td><td></td><td>✓</td></tr><tr><th scope="row">Minutes delayed</th><td></td><td>✓</td><td></td></tr><tr><th scope="row">Station names</th><td>✓</td><td>✓</td><td>✓</td></tr><tr><th scope="row">Colour of the seats</th><td></td><td></td><td></td></tr></tbody></table></div>        <h2 class="mt-2">Abstraction vs reality (c)</h2>
+        <div class="table-scroll"><table><thead><tr><th scope="col">Abstraction</th><th scope="col">How it differs from reality</th><th scope="col">So what?</th></tr></thead><tbody><tr><th scope="row">Tube map</th><td>Not to scale: bends straightened, distances changed</td><td>Some stations are closer on foot than they look</td></tr><tr><th scope="row">Sat nav</th><td>Roads as lines; no trees, buildings or roadworks</td><td>The real journey can take longer</td></tr><tr><th scope="row">Weather model</th><td>The atmosphere as a grid of averages</td><td>Forecasts are less accurate further ahead</td></tr><tr><th scope="row">Football game</th><td>Players have ratings, not real fitness or mood</td><td>Results won’t match real matches</td></tr></tbody></table></div><p class="mt-1"><strong>Difference → consequence → effect:</strong> say how the model differs, what that changes, and what it means for the user.</p>        <h2 class="mt-2">Devise an abstract model (d)</h2>
+        <ol class="steps">
+          <li><strong>Problem:</strong> what question must the model answer? <em>How long do students wait with 1, 2 or 3 tills?</em></li>
+          <li><strong>Keep:</strong> details that change the answer. <em>Arrivals per minute, time to serve, number of tills.</em></li>
+          <li><strong>Remove:</strong> everything else. <em>Names, what they eat, tray colour.</em></li>
+          <li><strong>Represent:</strong> how the kept parts are stored. <em>Each till is a queue; time moves in 1-minute steps.</em></li>
+        </ol>
+        <div class="grid grid-2">
+          <div class="card"><h3>Too much detail</h3><p>Slower, uses more memory, harder to build. <em>A sat nav storing every tree.</em></p></div>
+          <div class="card"><h3>Too little detail</h3><p>The model gives wrong answers. <em>A flight simulator with no bad weather.</em></p></div>
+        </div>
+        <div class="callout callout-amber mt-1"><p><strong>Watch out for:</strong></p><ul><li>“It makes it simpler” with no detail from the scenario.</li><li>Mixing up abstraction (taking detail away) and decomposition (breaking the problem down).</li><li>Removing a detail the problem actually needs, such as the weather in a traffic simulation.</li><li>Naming a detail to remove but not saying why it can go.</li></ul></div>
+      </div>
+    </section>
+
+    <section id="links" class="section-alt">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>Links to other topics</h2><ul class="link-list"><li><strong>1.1.1 / 1.2.1 Layers</strong> – hardware hidden by the operating system and APIs.</li><li><strong>1.3.3 Networks</strong> – the TCP/IP stack is a layered abstraction.</li><li><strong>1.4.2 Data structures</strong> – a stack or queue is a data abstraction.</li><li><strong>2.2.2 Computational methods</strong> – abstraction as a problem-solving method.</li><li><strong>2.1.3 Thinking procedurally</strong> – decomposition – don’t mix the two up.</li><li><strong>NEA 3.1</strong> – explain which parts of your problem you abstracted away.</li></ul></div>
+          <div><h2>Lesson slides</h2>
+            <p>Go back over the lesson for the full worked examples and tasks.</p>
+            <p><a class="btn" href="../../slides/2-1/thinking-abstractly.pptx">Download the lesson slides</a></p>
+            <p class="small">2.1.1 Thinking abstractly: school map starter, train journey, canteen tills model and the “too much, too little” showdown.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <div class="wrap">
+        <h2>Check your understanding</h2>
+        <p>Answer, then press <strong>Check my answers</strong>. Each question explains the answer so you can fix any mistakes.</p>
+        <div class="quiz-block">
+          <h3>Quick quiz – marked for you</h3>
+          <div class="q" data-answer="b"><p class="q-text">1. Abstraction is… <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q1" value="a"> <span>breaking a problem into smaller parts</span></label><label><input type="radio" name="q1" value="b"> <span>removing unnecessary detail to focus on what matters</span></label><label><input type="radio" name="q1" value="c"> <span>running tasks at the same time</span></label><label><input type="radio" name="q1" value="d"> <span>storing data in faster memory</span></label></div><div class="explain" hidden><p><span class="verdict"></span>A is decomposition, C is concurrency, D is caching.</p></div></div><div class="q" data-answer="a"><p class="q-text">2. A taxi fare app stores the colour of the taxi and the song playing. This is… <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q2" value="a"> <span>too much detail</span></label><label><input type="radio" name="q2" value="b"> <span>just right</span></label><label><input type="radio" name="q2" value="c"> <span>too little detail</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Colour and song don’t change the fare.</p></div></div><div class="q" data-answer="c"><p class="q-text">3. A flight simulator for training pilots has no bad weather. This is… <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q3" value="a"> <span>too much detail</span></label><label><input type="radio" name="q3" value="b"> <span>just right</span></label><label><input type="radio" name="q3" value="c"> <span>too little detail</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Pilots must practise landing in bad weather, so this detail is needed.</p></div></div><div class="q" data-answer="b"><p class="q-text">4. Which detail should a train <em>departure board</em> keep? <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q4" value="a"> <span>Slope of the track</span></label><label><input type="radio" name="q4" value="b"> <span>Platform number</span></label><label><input type="radio" name="q4" value="c"> <span>Passenger’s age</span></label><label><input type="radio" name="q4" value="d"> <span>Colour of the seats</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Passengers need the platform. The slope matters to a driver simulator; age matters to a price calculator.</p></div></div><div class="q" data-answer="b"><p class="q-text">5. Which is a benefit of abstraction? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q5" value="a"> <span>The model is always exactly like reality</span></label><label><input type="radio" name="q5" value="b"> <span>Less data to store and process</span></label><label><input type="radio" name="q5" value="c"> <span>It removes all bugs</span></label><label><input type="radio" name="q5" value="d"> <span>Tasks run in parallel</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Less data means faster processing and less memory – and quicker to build.</p></div></div><div class="q" data-answer="b"><p class="q-text">6. A disease model assumes everyone meets everyone else equally. Why might its predictions be wrong? <span class="tag tag-soft">AO3</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q6" value="a"> <span>Too much detail slows it down</span></label><label><input type="radio" name="q6" value="b"> <span>Real people mix in groups, so infection spreads differently</span></label><label><input type="radio" name="q6" value="c"> <span>It uses the wrong data type</span></label><label><input type="radio" name="q6" value="d"> <span>It isn’t decomposed</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Too little detail: the difference from reality changes the result.</p></div></div>
+          <button type="button" class="btn quiz-check">Check my answers</button>
+          <button type="button" class="btn btn-ghost quiz-reset">Start again</button>
+          <p class="quiz-score mt-1" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="exam" class="section-alt">
+      <div class="wrap">
+        <h2>Exam-style questions – mark them yourself</h2>
+        <p>Write your answer, then open <strong>Mark your answer</strong>. Tick the mark points you hit, read the model answer and use the tips to improve. See the <a href="exam-tips.html">2.1 exam tips</a> for more help.</p>
+<article class="exam-q">
+          <header><span class="tag">AO1</span><span class="marks">[2 marks]</span></header>
+          <p>A zoo app finds the shortest walking route between enclosures. Describe what is meant by <strong>abstraction</strong>.</p>
+          <label for="es1t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es1t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es1"><li><label><input type="checkbox"> <span>Removing / hiding unnecessary details (1)</span></label></li><li><label><input type="checkbox"> <span>…so the important parts can be focused on / to simplify the problem (1)</span></label></li></ul>
+            <p id="es1" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> Abstraction is removing unnecessary detail from a problem so that you can focus on the parts that matter, such as the paths between enclosures.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Two parts: what you do (remove detail) and why (focus on what matters).</li><li>“Making it simpler” alone is only half.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[4 marks]</span></header>
+          <p>Identify <strong>two</strong> details that could be removed from the zoo route app, and explain why each can be removed.</p>
+          <label for="es2t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es2t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es2"><li><label><input type="checkbox"> <span>Detail 1, e.g. animal names or facts (1)</span></label></li><li><label><input type="checkbox"> <span>Reason: does not change the route (1)</span></label></li><li><label><input type="checkbox"> <span>Detail 2, e.g. colour or decoration of enclosures / café opening hours (1)</span></label></li><li><label><input type="checkbox"> <span>Reason: does not affect the distance walked (1)</span></label></li></ul>
+            <p id="es2" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> The names of the animals can be removed because they do not change which path is shortest. The colours of the enclosures can be removed because they do not affect the walking distance.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>One mark for the detail, one for the reason – every time.</li><li>The reason must say why it doesn’t affect <em>this</em> problem: the route.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO3</span><span class="marks">[3 marks]</span></header>
+          <p>The app treats every path as a straight line. Explain how this abstraction differs from reality and the effect this could have on a visitor.</p>
+          <label for="es3t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es3t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es3"><li><label><input type="checkbox"> <span>Real paths bend, slope or have steps (1)</span></label></li><li><label><input type="checkbox"> <span>…so the real distance / time is longer than calculated (1)</span></label></li><li><label><input type="checkbox"> <span>…so a visitor arrives later than predicted, or meets steps with a pushchair or wheelchair (1)</span></label></li></ul>
+            <p id="es3" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> Real paths bend and have slopes or steps, so the real distance is longer than the app calculates. A visitor might arrive later than the app said, or find steps they can’t use with a pushchair.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Use the chain: difference → consequence → effect on the user.</li><li>Three marks means three linked steps.</li></ul></div>
+          </div></details>
+        </article>
+      </div>
+    </section>
+
+    <section id="revise">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>How to revise this</h2><ul><li><a href="../../techniques/worked-examples.html">Worked examples</a> – practise Problem / Keep / Remove / Represent on new scenarios</li><li><a href="../../techniques/comparison-tables.html">Comparison tables</a> – abstraction vs reality for maps, games and simulations</li><li><a href="../../techniques/flashcards.html">Flashcards</a> – the kinds of abstraction and the benefits</li></ul>
+        <p class="small">These are the best fit for this part of the topic, but you can use any <a href="../../revision-techniques.html">revision technique</a> that works for you.</p></div>
+          <div><h2>Watch and read more</h2><ul><li><a href="https://isaaccomputerscience.org">Isaac Computer Science</a> – free notes and questions on computational thinking.</li><li><a href="https://www.bbc.co.uk/bitesize/guides/zp92mp3/revision/1">BBC Bitesize: computational thinking</a> – a quick refresher on abstraction, decomposition and algorithmic thinking.</li><li><a href="https://www.youtube.com/@craigndave">Craig 'n' Dave (YouTube)</a> – short videos on every OCR A Level spec point – search for 2.1.</li></ul></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 2.1 pages"><a href="index.html"><span class="dir">← Back to</span>2.1 overview</a><a class="next" href="thinking-ahead.html"><span class="dir">Next →</span>2.1.2 Thinking ahead</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>

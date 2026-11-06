@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simplifying with Boolean laws (1.4.3 (c)) – OCR A Level CS Revision</title>
+  <meta name="description" content="OCR A Level Computer Science 1.4.3 (c): Simplifying with Boolean laws. Revision notes, quiz and exam questions.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html" aria-current="page">Paper 1</a></li>
+          <li><a href="../../paper2.html">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../paper1.html">Paper 1</a> › <a href="index.html">1.4.3 Boolean algebra</a> › Simplifying with Boolean laws</p>
+          <p class="eyebrow">1.4.3 (c) • Paper 1</p>
+          <h1>Simplifying with Boolean laws</h1>
+          <hr class="rule">
+          <p class="lead">De Morgan’s laws, distribution, association, commutation and double negation: simplify step by step, naming each law.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">Key terms</h2><ul style="margin:0"><li>De Morgan’s laws</li><li>Distribution</li><li>Association</li><li>Commutation</li><li>Double negation</li><li>Identity, complement</li></ul></div>
+      </div>
+    </div>
+    <div class="wrap" style="padding-top:1.25rem">
+      <nav class="toc" aria-label="On this page"><ul>
+        <li><a href="#notes">Revision notes</a></li><li><a href="#links">Links and slides</a></li>
+        <li><a href="#quiz">Quick quiz</a></li><li><a href="#exam">Exam questions</a></li><li><a href="#revise">How to revise it</a></li>
+      </ul></nav>
+    </div>
+
+    <section id="notes">
+      <div class="wrap">
+        <h2 class="mt-2">The five laws on the specification</h2>
+        <div class="table-scroll"><table><thead><tr><th scope="col">Law</th><th scope="col">AND form</th><th scope="col">OR form</th></tr></thead><tbody><tr><th scope="row">Commutation</th><td>A ∧ B ≡ B ∧ A</td><td>A ∨ B ≡ B ∨ A</td></tr><tr><th scope="row">Association</th><td>(A ∧ B) ∧ C ≡ A ∧ (B ∧ C)</td><td>(A ∨ B) ∨ C ≡ A ∨ (B ∨ C)</td></tr><tr><th scope="row">Distribution</th><td>A ∧ (B ∨ C) ≡ (A ∧ B) ∨ (A ∧ C)</td><td>A ∨ (B ∧ C) ≡ (A ∨ B) ∧ (A ∨ C)</td></tr><tr><th scope="row">Double negation</th><td>¬¬A ≡ A</td><td></td></tr><tr><th scope="row">De Morgan’s</th><td>¬(A ∧ B) ≡ ¬A ∨ ¬B</td><td>¬(A ∨ B) ≡ ¬A ∧ ¬B</td></tr></tbody></table></div><p class="mt-1"><strong>In the exam, name the law at each step.</strong> Naming it earns the marks.</p>        <h2 class="mt-2">De Morgan’s laws</h2>
+        <div class="grid grid-2">
+          <div class="callout"><p><strong>Break the line, change the sign.</strong> Change ∧ to ∨ (or ∨ to ∧) <em>and</em> NOT each part. Never do only one of these.</p></div>
+          <div><p><strong>In code:</strong> <code>not (age &lt; 13 or age &gt; 19)</code> is the same as <code>age &gt;= 13 and age &lt;= 19</code>.</p></div>
+        </div>        <h2 class="mt-2">Your simplifying toolkit</h2>
+        <div class="table-scroll"><table><thead><tr><th scope="col">Rule</th><th scope="col">AND</th><th scope="col">OR</th><th scope="col">Why</th></tr></thead><tbody><tr><th scope="row">Identity</th><td>A ∧ 1 ≡ A</td><td>A ∨ 0 ≡ A</td><td>1 and 0 change nothing here</td></tr><tr><th scope="row">Null</th><td>A ∧ 0 ≡ 0</td><td>A ∨ 1 ≡ 1</td><td>One input decides it</td></tr><tr><th scope="row">Idempotent</th><td>A ∧ A ≡ A</td><td>A ∨ A ≡ A</td><td>Saying it twice adds nothing</td></tr><tr><th scope="row">Complement</th><td>A ∧ ¬A ≡ 0</td><td>A ∨ ¬A ≡ 1</td><td>Can never / always be true</td></tr></tbody></table></div><p class="mt-1"><strong>Complement</strong> is the move that makes terms vanish: look for X and ¬X together. <span class="small">(Beyond the spec: absorption, A ∨ (A ∧ B) ≡ A.)</span></p>        <h2 class="mt-2">Worked examples</h2>
+        <div class="grid grid-2">
+          <div><div class="table-scroll"><table><thead><tr><th scope="col">Step</th><th scope="col">Law</th></tr></thead><tbody><tr><th scope="row">¬(¬A ∧ ¬B)</th><td>start (Oct 2021)</td></tr><tr><th scope="row">¬¬A ∨ ¬¬B</th><td>De Morgan’s</td></tr><tr><th scope="row">A ∨ B</th><td>Double negation</td></tr></tbody></table></div></div>
+          <div><div class="table-scroll"><table><thead><tr><th scope="col">Step</th><th scope="col">Law</th></tr></thead><tbody><tr><th scope="row">¬(A ∧ ¬B) ∧ A</th><td>start</td></tr><tr><th scope="row">(¬A ∨ ¬¬B) ∧ A</th><td>De Morgan’s</td></tr><tr><th scope="row">(¬A ∨ B) ∧ A</th><td>Double negation</td></tr><tr><th scope="row">A ∧ (¬A ∨ B)</th><td>Commutation</td></tr><tr><th scope="row">(A ∧ ¬A) ∨ (A ∧ B)</th><td>Distribution</td></tr><tr><th scope="row">0 ∨ (A ∧ B)</th><td>Complement</td></tr><tr><th scope="row">A ∧ B</th><td>Identity</td></tr></tbody></table></div></div>
+        </div>
+        <p class="mt-1"><strong>Layout:</strong> one step per line, the law beside it. Stop when nothing else applies, then check with a quick truth table.</p>
+        <div class="callout callout-amber mt-1"><p><strong>Watch out for:</strong></p><ul><li>Not naming the law – no law, no method mark, even with the right answer.</li><li>De Morgan’s half done: changing the operator but not negating each part (or the reverse).</li><li>Doing several laws in one line without saying so.</li><li>Leaving extra symbols in the answer: “any additional symbols, max 2 marks”.</li></ul></div>
+      </div>
+    </section>
+
+    <section id="links" class="section-alt">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>Links to other topics</h2><ul class="link-list"><li><strong>1.4.3 Karnaugh maps</strong> – a second way to simplify – use it to check your algebra.</li><li><strong>2.2.1 Programming</strong> – simplifying IF and WHILE conditions, e.g. with De Morgan’s.</li><li><strong>2.1.4 Thinking logically</strong> – the conditions that affect decisions.</li><li><strong>1.4.3 Logic gates</strong> – a simpler expression means fewer gates.</li></ul></div>
+          <div><h2>Lesson slides</h2>
+            <p>Go back over the lesson for the full worked examples and tasks.</p>
+            <p><a class="btn" href="../../slides/1-4-3/boolean-algebra.pptx">Download the lesson slides</a></p>
+            <p class="small">1.4.3 Boolean algebra – including Name that law and Pass the board.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <div class="wrap">
+        <h2>Check your understanding</h2>
+        <p>Answer, then press <strong>Check my answers</strong>. Each question explains the answer so you can fix any mistakes.</p>
+        <div class="quiz-block">
+          <h3>Quick quiz – marked for you</h3>
+          <div class="q" data-answer="b"><p class="q-text">1. Which law is used? ¬(P ∨ Q) ≡ ¬P ∧ ¬Q <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q8" value="a"> <span>Distribution</span></label><label><input type="radio" name="q8" value="b"> <span>De Morgan’s</span></label><label><input type="radio" name="q8" value="c"> <span>Association</span></label><label><input type="radio" name="q8" value="d"> <span>Commutation</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Break the line, change the sign: De Morgan’s.</p></div></div><div class="q" data-answer="a"><p class="q-text">2. Which law is used? X ∧ Y ≡ Y ∧ X <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q9" value="a"> <span>Commutation</span></label><label><input type="radio" name="q9" value="b"> <span>Association</span></label><label><input type="radio" name="q9" value="c"> <span>Double negation</span></label><label><input type="radio" name="q9" value="d"> <span>Distribution</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Commutation: the order doesn’t matter.</p></div></div><div class="q" data-answer="c"><p class="q-text">3. Which law is used? A ∧ (B ∨ C) ≡ (A ∧ B) ∨ (A ∧ C) <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q10" value="a"> <span>Association</span></label><label><input type="radio" name="q10" value="b"> <span>De Morgan’s</span></label><label><input type="radio" name="q10" value="c"> <span>Distribution</span></label><label><input type="radio" name="q10" value="d"> <span>Identity</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Distribution: A is multiplied out across the bracket.</p></div></div><div class="q" data-answer="b"><p class="q-text">4. Simplify ¬(¬A ∨ ¬B). <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q11" value="a"> <span>¬A ∧ ¬B</span></label><label><input type="radio" name="q11" value="b"> <span>A ∧ B</span></label><label><input type="radio" name="q11" value="c"> <span>A ∨ B</span></label><label><input type="radio" name="q11" value="d"> <span>¬A ∨ ¬B</span></label></div><div class="explain" hidden><p><span class="verdict"></span>De Morgan’s gives ¬¬A ∧ ¬¬B; double negation gives A ∧ B.</p></div></div><div class="q" data-answer=""><p class="q-text">5. Simplify (A ∧ B) ∨ (A ∧ ¬B). Give a single letter. <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 5" data-answer="A" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>Distribution: A ∧ (B ∨ ¬B). Complement: A ∧ 1. Identity: A.</p></div></div><div class="q" data-answer="c"><p class="q-text">6. Simplify A ∨ (¬A ∧ B). <span class="tag tag-soft">AO3</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q13" value="a"> <span>A</span></label><label><input type="radio" name="q13" value="b"> <span>B</span></label><label><input type="radio" name="q13" value="c"> <span>A ∨ B</span></label><label><input type="radio" name="q13" value="d"> <span>A ∧ B</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Distribution (OR form): (A ∨ ¬A) ∧ (A ∨ B). Complement: 1 ∧ (A ∨ B). Identity: A ∨ B.</p></div></div><div class="q" data-answer="b"><p class="q-text">7. Which is equivalent to ¬(A ∧ ¬B)? <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q14" value="a"> <span>¬A ∧ B</span></label><label><input type="radio" name="q14" value="b"> <span>¬A ∨ B</span></label><label><input type="radio" name="q14" value="c"> <span>A ∨ ¬B</span></label><label><input type="radio" name="q14" value="d"> <span>A ∧ B</span></label></div><div class="explain" hidden><p><span class="verdict"></span>De Morgan’s: ¬A ∨ ¬¬B. Double negation: ¬A ∨ B.</p></div></div>
+          <button type="button" class="btn quiz-check">Check my answers</button>
+          <button type="button" class="btn btn-ghost quiz-reset">Start again</button>
+          <p class="quiz-score mt-1" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="exam" class="section-alt">
+      <div class="wrap">
+        <h2>Exam-style questions – mark them yourself</h2>
+        <p>Write your answer, then open <strong>Mark your answer</strong>. Tick the mark points you hit, read the model answer and use the tips to improve. See the <a href="exam-tips.html">1.4.3 exam tips</a> for more help.</p>
+<article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[3 marks]</span></header>
+          <p>Simplify <strong>¬(¬A ∨ B) ∨ (A ∧ B)</strong>, naming the law at each step.</p>
+          <label for="es4t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es4t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es4"><li><label><input type="checkbox"> <span>(¬¬A ∧ ¬B) ∨ (A ∧ B) – De Morgan’s (1)</span></label></li><li><label><input type="checkbox"> <span>(A ∧ ¬B) ∨ (A ∧ B) – double negation (1)</span></label></li><li><label><input type="checkbox"> <span>A ∧ (¬B ∨ B) → A ∧ 1 → A – distribution, complement, identity (1)</span></label></li></ul>
+            <p id="es4" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> (¬¬A ∧ ¬B) ∨ (A ∧ B) [De Morgan’s] → (A ∧ ¬B) ∨ (A ∧ B) [double negation] → A ∧ (¬B ∨ B) [distribution] → A ∧ 1 [complement] → A [identity].</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>One step per line with the law beside it.</li><li>No law named means no method mark, even if the answer is right.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[2 marks]</span></header>
+          <p>Simplify <strong>Q ≡ ¬(¬A ∧ ¬B)</strong> so that it contains no negation. <span class="small">(October 2021)</span></p>
+          <label for="es5t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es5t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es5"><li><label><input type="checkbox"> <span>¬¬A ∨ ¬¬B – De Morgan’s (1)</span></label></li><li><label><input type="checkbox"> <span>A ∨ B – double negation (1)</span></label></li></ul>
+            <p id="es5" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> ¬¬A ∨ ¬¬B (De Morgan’s), then A ∨ B (double negation).</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Check the final answer has no ¬ left, as the question asks.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO3</span><span class="marks">[4 marks]</span></header>
+          <p>Simplify <strong>¬(A ∧ ¬B) ∧ A</strong>, naming each law. State which single gate the result represents.</p>
+          <label for="es6t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es6t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es6"><li><label><input type="checkbox"> <span>(¬A ∨ ¬¬B) ∧ A → (¬A ∨ B) ∧ A – De Morgan’s, double negation (1)</span></label></li><li><label><input type="checkbox"> <span>A ∧ (¬A ∨ B) → (A ∧ ¬A) ∨ (A ∧ B) – commutation, distribution (1)</span></label></li><li><label><input type="checkbox"> <span>0 ∨ (A ∧ B) → A ∧ B – complement, identity (1)</span></label></li><li><label><input type="checkbox"> <span>An AND gate (1)</span></label></li></ul>
+            <p id="es6" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> (¬A ∨ ¬¬B) ∧ A [De Morgan’s] → (¬A ∨ B) ∧ A [double negation] → A ∧ (¬A ∨ B) [commutation] → (A ∧ ¬A) ∨ (A ∧ B) [distribution] → 0 ∨ (A ∧ B) [complement] → A ∧ B [identity]. This is an AND gate.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Apply one law at a time and rewrite the whole line.</li><li>Look for X ∧ ¬X – complement makes the term vanish.</li></ul></div>
+          </div></details>
+        </article>
+      </div>
+    </section>
+
+    <section id="revise">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>How to revise this</h2><ul><li><a href="../../techniques/flashcards.html">Flashcards</a> – each law in both forms</li><li><a href="../../techniques/worked-examples.html">Worked examples</a> – simplify one step at a time, naming the law</li><li><a href="../../techniques/mnemonics.html">Mnemonics</a> – De Morgan’s: “break the line, change the sign”</li></ul>
+        <p class="small">These are the best fit for this part of the topic, but you can use any <a href="../../revision-techniques.html">revision technique</a> that works for you.</p></div>
+          <div><h2>Watch and read more</h2><ul><li><a href="https://isaaccomputerscience.org">Isaac Computer Science</a> – free notes and questions on Boolean logic.</li><li><a href="https://circuitverse.org">CircuitVerse</a> – a free online logic simulator: build and test gates, adders and flip-flops.</li></ul></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 1.4.3 pages"><a href="logic-gates.html"><span class="dir">← Previous</span>Logic gates, expressions and truth tables</a><a class="next" href="karnaugh-maps.html"><span class="dir">Next →</span>Karnaugh maps</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>

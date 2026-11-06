@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OOP: encapsulation, inheritance and polymorphism (2.2.1 (f)) – OCR A Level CS Revision</title>
+  <meta name="description" content="OCR A Level Computer Science 2.2.1 (f): OOP: encapsulation, inheritance and polymorphism. Revision notes, quiz and exam questions.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html">Paper 1</a></li>
+          <li><a href="../../paper2.html" aria-current="page">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../paper2.html">Paper 2</a> › <a href="index.html">2.2.1 Programming techniques</a> › OOP: encapsulation, inheritance and polymorphism</p>
+          <p class="eyebrow">2.2.1 (f) • Paper 2</p>
+          <h1>OOP: encapsulation, inheritance and polymorphism</h1>
+          <hr class="rule">
+          <p class="lead">The three pillars of OOP: encapsulation, inheritance and polymorphism, in OCR pseudocode and Python.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">Key terms</h2><ul style="margin:0"><li>Encapsulation</li><li>private, public</li><li>get and set methods</li><li>Inheritance, superclass, subclass</li><li>super.new</li><li>Polymorphism, overriding</li></ul></div>
+      </div>
+    </div>
+    <div class="wrap" style="padding-top:1.25rem">
+      <nav class="toc" aria-label="On this page"><ul>
+        <li><a href="#notes">Revision notes</a></li><li><a href="#links">Links and slides</a></li>
+        <li><a href="#quiz">Quick quiz</a></li><li><a href="#exam">Exam questions</a></li><li><a href="#revise">How to revise it</a></li>
+      </ul></nav>
+    </div>
+
+    <section id="notes">
+      <div class="wrap">
+        <h2 class="mt-2">Encapsulation</h2>
+        <p><strong>Encapsulation</strong> bundles an object’s attributes and methods together and hides the attributes, so they can only be changed through the object’s own methods.</p>
+        <div class="grid grid-2">
+          <div><div class="table-scroll"><table><thead><tr><th scope="col">Keyword</th><th scope="col">Meaning</th></tr></thead><tbody><tr><th scope="row">private</th><td>Only code inside the class can use it. Attributes are usually private.</td></tr><tr><th scope="row">public</th><td>Any code can use it. Methods are usually public.</td></tr><tr><th scope="row">get / set</th><td>Public methods that read (get) or change (set) a private attribute. A set method can <strong>validate</strong>.</td></tr></tbody></table></div>
+          <p class="mt-1"><strong>Why?</strong> Data can’t be changed by accident or set to an invalid value.</p></div>
+          <div><pre class="code"><code>class ItemForSale
+    private price
+    private discount
+    public function getDiscount()
+        return discount
+    endfunction
+    public procedure setDiscount(newD)
+        if newD &gt;= 0 AND newD &lt;= 50 then
+            discount = newD
+        endif
+    endprocedure
+endclass</code></pre><p class="small">November 2020: three steps – make it private, add a set method, validate inside it.</p></div>
+        </div>        <h2 class="mt-2">Inheritance</h2>
+        <p><strong>Inheritance</strong> lets a <strong>subclass</strong> take on all the attributes and methods of its <strong>superclass</strong>, and add or change its own. Write shared code once in the superclass.</p>
+        <figure class="diagram"><svg viewBox="0 0 820 395" role="img" aria-labelledby="tcc048557 tcc048557d"><title id="tcc048557">Inheritance: office and house inherit from building</title><desc id="tcc048557d">building is the superclass with numberFloors, width, height and getWidth. office and house are subclasses with arrows to building. office adds numDesks and getDesks; house adds bedrooms and getBedrooms.</desc><defs><marker id="ahtcc048557" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><rect x="300" y="20" width="220" height="128" rx="6" fill="#fff" stroke="#1A1A2E" stroke-width="2.5"/><rect x="300" y="20" width="220" height="38" rx="6" fill="#EEF3F6" stroke="#1A1A2E" stroke-width="2.5"/><text x="410" y="45" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#1A1A2E"><tspan x="410" dy="0">building</tspan></text><line x1="300" y1="114" x2="520" y2="114" stroke="#1A1A2E" stroke-width="2"/><text x="312" y="79" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="normal" fill="#3D4451"><tspan x="312" dy="0">− numberFloors</tspan></text><text x="312" y="101" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="normal" fill="#3D4451"><tspan x="312" dy="0">− width, height</tspan></text><text x="312" y="135" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="normal" fill="#3D4451"><tspan x="312" dy="0">+ getWidth()</tspan></text><rect x="110" y="230" width="220" height="106" rx="6" fill="#fff" stroke="#0B6E75" stroke-width="2.5"/><rect x="110" y="230" width="220" height="38" rx="6" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2.5"/><text x="220" y="255" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#1A1A2E"><tspan x="220" dy="0">office</tspan></text><line x1="110" y1="302" x2="330" y2="302" stroke="#0B6E75" stroke-width="2"/><text x="122" y="289" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="normal" fill="#3D4451"><tspan x="122" dy="0">− numDesks</tspan></text><text x="122" y="323" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="normal" fill="#3D4451"><tspan x="122" dy="0">+ getDesks()</tspan></text><line x1="220" y1="230" x2="362.5" y2="152" stroke="#1A1A2E" stroke-width="2.5" marker-end="url(#ahtcc048557)"/><rect x="490" y="230" width="220" height="106" rx="6" fill="#fff" stroke="#0B6E75" stroke-width="2.5"/><rect x="490" y="230" width="220" height="38" rx="6" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2.5"/><text x="600" y="255" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#1A1A2E"><tspan x="600" dy="0">house</tspan></text><line x1="490" y1="302" x2="710" y2="302" stroke="#0B6E75" stroke-width="2"/><text x="502" y="289" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="normal" fill="#3D4451"><tspan x="502" dy="0">− bedrooms</tspan></text><text x="502" y="323" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="normal" fill="#3D4451"><tspan x="502" dy="0">+ getBedrooms()</tspan></text><line x1="600" y1="230" x2="457.5" y2="152" stroke="#1A1A2E" stroke-width="2.5" marker-end="url(#ahtcc048557)"/><text x="410" y="385" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="410" dy="0">office is a building · house is a building</tspan></text><text x="532" y="57" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#1A1A2E"><tspan x="532" dy="0">superclass</tspan></text><text x="110" y="217" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#0B6E75"><tspan x="110" dy="0">subclass</tspan></text></svg><figcaption>Superclass = parent / base class. Subclass = child / derived class.</figcaption></figure>
+        <div class="grid grid-2">
+          <div><h3>OCR pseudocode (October 2021)</h3><pre class="code"><code>class house inherits building
+    private bedrooms
+    private bathrooms
+    public procedure new(pF, pW, pH, pBd, pBt)
+        super.new(pF, pW, pH)
+        bedrooms = pBd
+        bathrooms = pBt
+    endprocedure
+endclass
+
+houseOne = new house(2, 8, 10, 3, 2)</code></pre></div>
+          <div><h3>Python</h3><pre class="code"><code>class House(Building):
+    def __init__(self, pF, pW, pH, pBd, pBt):
+        super().__init__(pF, pW, pH)
+        self.__bedrooms = pBd
+        self.__bathrooms = pBt</code></pre>
+          <ul><li><code>inherits</code> names the superclass.</li><li><code>super.new</code> runs the superclass constructor to set the inherited attributes.</li>
+          <li>A subclass can’t see the superclass’s private attributes – it uses get methods.</li></ul></div>
+        </div>        <h2 class="mt-2">Polymorphism</h2>
+        <p><strong>Polymorphism</strong> means “many forms”: the same method call behaves differently depending on the class of the object. A subclass <strong>overrides</strong> a method it inherited with its own version.</p>
+        <div class="grid grid-2">
+          <div><pre class="code"><code>class Animal
+    public function speak()
+        return &quot;...&quot;
+    endfunction
+endclass
+class Dog inherits Animal
+    public function speak()
+        return &quot;Woof&quot;
+    endfunction
+endclass
+class Cat inherits Animal
+    public function speak()
+        return &quot;Meow&quot;
+    endfunction
+endclass</code></pre></div>
+          <div><pre class="code"><code>for each a in animals
+    print(a.speak())
+next a</code></pre><p>One loop, a different result for each object. New animal types can be added <strong>without changing the loop</strong> – no if statement for every type.</p>
+          <div class="callout"><p><strong>Which pillar?</strong> “Can only be changed by a method” → encapsulation. “Reuses / takes on from a parent” → inheritance. “Same call, different result” → polymorphism.</p></div></div>
+        </div>
+        <div class="callout callout-amber mt-1"><p><strong>Watch out for:</strong></p><ul><li>Defining inheritance without naming both classes from the scenario.</li><li>Encapsulation answers that miss a step: private, set method, <em>and</em> the validation.</li><li>Forgetting <code>super.new(…)</code> in a subclass constructor, or not using every parameter.</li><li>Confusing overriding (polymorphism) with inheriting a method unchanged.</li></ul></div>
+      </div>
+    </section>
+
+    <section id="links" class="section-alt">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>Links to other topics</h2><ul class="link-list"><li><strong>1.2.4 (e) OOP languages</strong> – inheritance, encapsulation and polymorphism on Paper 1.</li><li><strong>2.1.2 Reusable components</strong> – inheritance means shared code is written once.</li><li><strong>2.2.1 (d) Parameters</strong> – set methods take a parameter; get methods return a value.</li><li><strong>1.5.1 / 1.3.1 Security</strong> – private data protected behind validated methods.</li><li><strong>NEA 3.2.2</strong> – justify validation in your classes.</li></ul></div>
+          <div><h2>Lesson slides</h2>
+            <p>Go back over the lesson for the full worked examples and tasks.</p>
+            <p><a class="btn" href="../../slides/2-2-1/introduction-to-oop.pptx">Download the lesson slides</a></p>
+            <p class="small">2.2.1G Introduction to OOP – Part 2: Spot the problem, Lab 2 and Check-in 3.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <div class="wrap">
+        <h2>Check your understanding</h2>
+        <p>Answer, then press <strong>Check my answers</strong>. Each question explains the answer so you can fix any mistakes.</p>
+        <div class="quiz-block">
+          <h3>Quick quiz – marked for you</h3>
+          <div class="q" data-answer="b"><p class="q-text">1. Teacher and Student both get name and email from Person. Which pillar? <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q7" value="a"> <span>Encapsulation</span></label><label><input type="radio" name="q7" value="b"> <span>Inheritance</span></label><label><input type="radio" name="q7" value="c"> <span>Polymorphism</span></label></div><div class="explain" hidden><p><span class="verdict"></span>The subclasses take on attributes from the superclass Person.</p></div></div><div class="q" data-answer="c"><p class="q-text">2. <code>shape.area()</code> works out a circle and a square differently. Which pillar? <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q8" value="a"> <span>Encapsulation</span></label><label><input type="radio" name="q8" value="b"> <span>Inheritance</span></label><label><input type="radio" name="q8" value="c"> <span>Polymorphism</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Same method call, different behaviour depending on the object’s class.</p></div></div><div class="q" data-answer="a"><p class="q-text">3. <code>setAge()</code> refuses −3. Which pillar? <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q9" value="a"> <span>Encapsulation</span></label><label><input type="radio" name="q9" value="b"> <span>Inheritance</span></label><label><input type="radio" name="q9" value="c"> <span>Polymorphism</span></label></div><div class="explain" hidden><p><span class="verdict"></span>age is private and can only be changed through a set method that validates it.</p></div></div><div class="q" data-answer="b"><p class="q-text">4. What does <code>super.new(pF, pW, pH)</code> do in a subclass constructor? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q10" value="a"> <span>Creates a new superclass</span></label><label><input type="radio" name="q10" value="b"> <span>Calls the superclass constructor to set the inherited attributes</span></label><label><input type="radio" name="q10" value="c"> <span>Makes the attributes public</span></label><label><input type="radio" name="q10" value="d"> <span>Overrides new</span></label></div><div class="explain" hidden><p><span class="verdict"></span>It runs the building constructor so that floors, width and height are set.</p></div></div><div class="q" data-answer="b"><p class="q-text">5. A <code>get</code> method usually… <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q11" value="a"> <span>takes a parameter and changes an attribute</span></label><label><input type="radio" name="q11" value="b"> <span>returns the value of a private attribute and has no parameter</span></label><label><input type="radio" name="q11" value="c"> <span>deletes an object</span></label><label><input type="radio" name="q11" value="d"> <span>is private</span></label></div><div class="explain" hidden><p><span class="verdict"></span>A get method returns a value. A set method takes a parameter and can validate it.</p></div></div><div class="q" data-answer="c"><p class="q-text">6. Dog and Cat both override speak(). <code>for each a in animals: print(a.speak())</code> prints “Woof” then “Meow”. This shows… <span class="tag tag-soft">AO3</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q12" value="a"> <span>encapsulation</span></label><label><input type="radio" name="q12" value="b"> <span>inheritance only</span></label><label><input type="radio" name="q12" value="c"> <span>polymorphism</span></label><label><input type="radio" name="q12" value="d"> <span>a syntax error</span></label></div><div class="explain" hidden><p><span class="verdict"></span>One call, and each object answers in its own way. No if statements needed.</p></div></div>
+          <button type="button" class="btn quiz-check">Check my answers</button>
+          <button type="button" class="btn btn-ghost quiz-reset">Start again</button>
+          <p class="quiz-score mt-1" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="exam" class="section-alt">
+      <div class="wrap">
+        <h2>Exam-style questions – mark them yourself</h2>
+        <p>Write your answer, then open <strong>Mark your answer</strong>. Tick the mark points you hit, read the model answer and use the tips to improve. See the <a href="exam-tips.html">2.2.1 exam tips</a> for more help.</p>
+<article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[3 marks]</span></header>
+          <p>A supermarket program stores items for sale. Discounts above 50 kept being set. Explain how encapsulation could stop this. <span class="small">(November 2020)</span></p>
+          <label for="es4t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es4t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es4"><li><label><input type="checkbox"> <span>Make discount private (1)</span></label></li><li><label><input type="checkbox"> <span>Create a public set method for discount (1)</span></label></li><li><label><input type="checkbox"> <span>The set method only accepts values up to 50 (1)</span></label></li></ul>
+            <p id="es4" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> The discount attribute should be made private, so it can’t be changed directly by other code. A public setDiscount method should be the only way to change it, and it should only accept values from 0 to 50.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Three steps, three marks: private, set method, validation.</li><li>Use the names from the question (discount).</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[2 marks]</span></header>
+          <p>The classes office and house inherit from building. Describe what is meant by inheritance with reference to these classes. <span class="small">(October 2021)</span></p>
+          <label for="es5t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es5t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es5"><li><label><input type="checkbox"> <span>The subclasses office and house take on the attributes and methods (1)</span></label></li><li><label><input type="checkbox"> <span>of the superclass building, e.g. numberFloors and getWidth() (1)</span></label></li></ul>
+            <p id="es5" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> The subclasses office and house take on the attributes and methods of the superclass building, such as numberFloors and getWidth(), and can add their own.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Name the subclasses, name the superclass, say what is inherited.</li><li>“A class gets things from another class” is too vague.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[6 marks]</span></header>
+          <p>Write the class house, which inherits from building. A house has private attributes bedrooms and bathrooms. The constructor takes the number of floors, width and height (for building) and the number of bedrooms and bathrooms.</p>
+          <label for="es6t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es6t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es6"><li><label><input type="checkbox"> <span>class house inherits building (1)</span></label></li><li><label><input type="checkbox"> <span>bedrooms and bathrooms declared private (1)</span></label></li><li><label><input type="checkbox"> <span>A constructor new with all five parameters (1)</span></label></li><li><label><input type="checkbox"> <span>super.new called with the three building parameters (1)</span></label></li><li><label><input type="checkbox"> <span>bedrooms assigned from its parameter (1)</span></label></li><li><label><input type="checkbox"> <span>bathrooms assigned from its parameter (1)</span></label></li></ul>
+            <p id="es6" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> <code>class house inherits building<br>&nbsp;&nbsp;private bedrooms<br>&nbsp;&nbsp;private bathrooms<br>&nbsp;&nbsp;public procedure new(pF, pW, pH, pBd, pBt)<br>&nbsp;&nbsp;&nbsp;&nbsp;super.new(pF, pW, pH)<br>&nbsp;&nbsp;&nbsp;&nbsp;bedrooms = pBd<br>&nbsp;&nbsp;&nbsp;&nbsp;bathrooms = pBt<br>&nbsp;&nbsp;endprocedure<br>endclass</code></p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Every line earns credit: header, attributes, constructor, super.new, each assignment.</li><li>Use every parameter, and give parameters different names from the attributes.</li></ul></div>
+          </div></details>
+        </article>
+      </div>
+    </section>
+
+    <section id="revise">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>How to revise this</h2><ul><li><a href="../../techniques/teach-it.html">Teach it</a> – explain each pillar with your own example</li><li><a href="../../techniques/comparison-tables.html">Comparison tables</a> – the three pillars: what, why, keyword, example</li><li><a href="../../techniques/flashcards.html">Flashcards</a> – scenario on the front, which pillar on the back</li></ul>
+        <p class="small">These are the best fit for this part of the topic, but you can use any <a href="../../revision-techniques.html">revision technique</a> that works for you.</p></div>
+          <div><h2>Watch and read more</h2><ul><li><a href="https://pythontutor.com">Python Tutor</a> – paste a class and watch each object being created, step by step.</li><li><a href="https://docs.python.org/3/tutorial/classes.html">Python tutorial: classes</a> – the official guide to classes, objects and inheritance in Python.</li><li><a href="https://isaaccomputerscience.org">Isaac Computer Science</a> – free notes and questions on object-oriented programming.</li></ul></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 2.2.1 pages"><a href="oop-classes-and-objects.html"><span class="dir">← Previous</span>OOP: classes and objects</a><a class="next" href="oop-modelling.html"><span class="dir">Next →</span>OOP: modelling with classes</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>

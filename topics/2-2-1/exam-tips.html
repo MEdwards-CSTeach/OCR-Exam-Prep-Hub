@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2.2.1 Exam Tips: OOP – OCR A Level CS Revision</title>
+  <meta name="description" content="Exam tips for OOP in OCR A Level Computer Science 2.2.1, with weak and good answers.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html">Paper 1</a></li>
+          <li><a href="../../paper2.html" aria-current="page">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../paper2.html">Paper 2</a> › <a href="index.html">2.2.1 Programming techniques</a> › Exam tips</p>
+          <p class="eyebrow">2.2.1 Programming techniques • Exam tips</p>
+          <h1>2.2.1 exam tips: OOP</h1>
+          <hr class="rule">
+          <p class="lead">What examiners look for in object-oriented programming questions, with weak and good answers.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">Where it comes up</h2><p style="margin:0">OOP is examined on <strong>both papers</strong> (1.2.4 on Paper 1, 2.2.1 on Paper 2): definitions, writing code, and one long discussion question.</p></div>
+      </div>
+    </div>
+
+    <section>
+      <div class="wrap">
+        <h2>How OOP has been examined</h2>
+        <div class="table-scroll"><table><thead><tr><th scope="col">Paper</th><th scope="col">Scenario</th><th scope="col">What it asked</th><th scope="col">Marks</th></tr></thead><tbody><tr><th scope="row">Oct 2021 P1</th><td>Attendance</td><td>State the meaning of object, method, attribute</td><td>3</td></tr><tr><th scope="row">Nov 2020 P1</th><td>Supermarket</td><td>Constructor; encapsulation; inheritance for a new item type</td><td>3–4</td></tr><tr><th scope="row">Oct 2021 P2</th><td>City buildings</td><td>Purpose of a constructor; describe inheritance; write a subclass</td><td>1–6</td></tr><tr><th scope="row">June 2019 P2</th><td>Garden design</td><td>Declare a class and a subclass with private attributes</td><td>up to 6</td></tr><tr><th scope="row">Nov 2020 P1</th><td>Games</td><td>Discuss OOP over procedural: inheritance, encapsulation, polymorphism</td><td>12</td></tr></tbody></table></div>
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="wrap">
+        <h2>What the mark schemes reward</h2>
+        <div class="grid grid-2">
+          <div class="card"><h3>Earns marks</h3><ul>
+            <li>Object “instantiated from a class”.</li>
+            <li>Inheritance naming <strong>both classes</strong> from the scenario.</li>
+            <li>Encapsulation: <strong>private + set method + the validation</strong>.</li>
+            <li>Code: <code>inherits</code>, <code>super.new</code>, every parameter used.</li></ul></div>
+          <div class="card"><h3>Loses marks</h3><ul>
+            <li>Parameters with the same names as attributes: “must use different identifier names” (Nov 2020).</li>
+            <li>Wrong case or spelling of a given identifier.</li>
+            <li>Definitions with no link to the scenario.</li>
+            <li>Mixing up class and object.</li></ul></div>
+        </div>
+        <p class="mt-1"><strong>Define it, then apply it:</strong> name the classes from the question.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>Weak and good answers</h2>
+        <article class="example">
+          <p class="callout"><strong>Question:</strong> The classes office and house inherit from building. Describe what is meant by inheritance with reference to these classes. [2] (Oct 2021)</p>
+          <div class="grid grid-2">
+            <div class="card" style="border-color:#A12A2A"><p><span class="tag" style="background:#FDE8E8;color:#A12A2A">Weak answer</span> <span class="small">1 mark</span></p><p>Inheritance is when a class gets things from another class.</p></div>
+            <div class="card" style="border-color:#0B6E75"><p><span class="tag">Good answer</span> <span class="small">2 marks</span></p><p>The subclasses office and house take on the attributes and methods of the superclass building, such as numberFloors and getWidth().</p></div>
+          </div>
+          <div class="mt-1"><p><strong>How to turn the weak answer into a good one:</strong></p><ul><li>Which things? Say attributes and methods.</li><li>Which classes? Name the subclasses and the superclass from the question.</li></ul></div>
+        </article>
+        <article class="example">
+          <p class="callout"><strong>Question:</strong> Discounts above 50 kept being set. How could encapsulation stop this? [3] (Nov 2020)</p>
+          <div class="grid grid-2">
+            <div class="card" style="border-color:#A12A2A"><p><span class="tag" style="background:#FDE8E8;color:#A12A2A">Weak answer</span> <span class="small">0 marks</span></p><p>Use encapsulation to protect the data.</p></div>
+            <div class="card" style="border-color:#0B6E75"><p><span class="tag">Good answer</span> <span class="small">3 marks</span></p><p>Make discount private. Add a public setDiscount method as the only way to change it. Inside it, only accept values from 0 to 50.</p></div>
+          </div>
+          <div class="mt-1"><p><strong>How to turn the weak answer into a good one:</strong></p><ul><li>Name the term isn’t enough – describe the three steps.</li><li>Use the attribute name from the question.</li></ul></div>
+        </article>
+        <article class="example">
+          <p class="callout"><strong>Question:</strong> Write the constructor for Member. Name and age are passed in; visits starts at 0. [4]</p>
+          <div class="grid grid-2">
+            <div class="card" style="border-color:#A12A2A"><p><span class="tag" style="background:#FDE8E8;color:#A12A2A">Weak answer</span> <span class="small">1 mark</span></p><p>public procedure new(name, age)<br>name = name<br>age = age<br>endprocedure</p></div>
+            <div class="card" style="border-color:#0B6E75"><p><span class="tag">Good answer</span> <span class="small">4 marks</span></p><p>public procedure new(pName, pAge)<br>name = pName<br>age = pAge<br>visits = 0<br>endprocedure</p></div>
+          </div>
+          <div class="mt-1"><p><strong>How to turn the weak answer into a good one:</strong></p><ul><li>Parameters must have different names from the attributes.</li><li>Set every attribute – visits = 0 was missed.</li></ul></div>
+        </article>
+        <article class="example">
+          <p class="callout"><strong>Question:</strong> State the purpose of a constructor. [1] (Oct 2021)</p>
+          <div class="grid grid-2">
+            <div class="card" style="border-color:#A12A2A"><p><span class="tag" style="background:#FDE8E8;color:#A12A2A">Weak answer</span> <span class="small">0 marks</span></p><p>It constructs the class.</p></div>
+            <div class="card" style="border-color:#0B6E75"><p><span class="tag">Good answer</span> <span class="small">1 mark</span></p><p>To create an instance of an object from a class, setting its starting values.</p></div>
+          </div>
+          <div class="mt-1"><p><strong>How to turn the weak answer into a good one:</strong></p><ul><li>A constructor makes an <em>object</em>, not a class.</li><li>Use the exam wording: “create an instance of an object from a class”.</li></ul></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="wrap">
+        <h2>Structuring the 12-mark discussion</h2>
+        <ol class="steps">
+          <li><strong>Know (AO1):</strong> define each pillar accurately, and classes, objects, attributes and methods.</li>
+          <li><strong>Apply (AO2):</strong> use the scenario – an Enemy class, many enemy objects each with its own speed and energy.</li>
+          <li><strong>Evaluate (AO3):</strong> reuse and security vs more planning; procedural is fine for small tasks.</li>
+          <li><strong>Conclude:</strong> a judgement that answers the question, for this context.</li>
+        </ol>
+        <p>Each paragraph: <strong>point, example, so what</strong>. See the model paragraph on the <a href="oop-modelling.html#exam">modelling page</a> and <a href="../../techniques/extended-answers.html">planning extended answers</a>.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 2.2.1 pages"><a href="oop-modelling.html"><span class="dir">← Previous</span>OOP: modelling with classes</a><a class="next" href="index.html"><span class="dir">Back to →</span>2.2.1 overview</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>

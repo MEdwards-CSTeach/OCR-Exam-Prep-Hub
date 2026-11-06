@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2.1.5 Thinking concurrently (2.1.5 (a)–(b)) – OCR A Level CS Revision</title>
+  <meta name="description" content="OCR A Level Computer Science 2.1.5 (a)–(b): 2.1.5 Thinking concurrently. Revision notes, quiz and exam questions.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html">Paper 1</a></li>
+          <li><a href="../../paper2.html" aria-current="page">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../paper2.html">Paper 2</a> › <a href="index.html">2.1 Elements of computational thinking</a> › 2.1.5 Thinking concurrently</p>
+          <p class="eyebrow">2.1.5 (a)–(b) • Paper 2</p>
+          <h1>2.1.5 Thinking concurrently</h1>
+          <hr class="rule">
+          <p class="lead">Doing more than one thing at once: spotting tasks that can run together, and the benefits and trade-offs of concurrent processing.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">Key terms</h2><ul style="margin:0"><li>Concurrent processing</li><li>Parallel processing</li><li>Time slice, thread</li><li>Dependency</li><li>Record locking</li></ul></div>
+      </div>
+    </div>
+    <div class="wrap" style="padding-top:1.25rem">
+      <nav class="toc" aria-label="On this page"><ul>
+        <li><a href="#notes">Revision notes</a></li><li><a href="#links">Links and slides</a></li>
+        <li><a href="#quiz">Quick quiz</a></li><li><a href="#exam">Exam questions</a></li><li><a href="#revise">How to revise it</a></li>
+      </ul></nav>
+    </div>
+
+    <section id="notes">
+      <div class="wrap">
+        <h2 class="mt-2">Concurrent vs parallel</h2>
+        <p><strong>Concurrent processing:</strong> more than one process is in progress at the same time – one starts before another has finished. On one core, each process gets a <strong>time slice</strong> in turn. <strong>Parallel processing:</strong> processes run at the same instant on separate cores.</p>
+        <div class="grid"><figure class="diagram"><svg viewBox="0 0 880 356" role="img" aria-labelledby="tf5130569 tf5130569d"><title id="tf5130569">Concurrent versus parallel processing</title><desc id="tf5130569d">Top: one core gives tasks A, B and C a time slice each in turn, so all three are in progress at once. Bottom: three cores each run one task at the same instant, so the work finishes in about a third of the time.</desc><defs><marker id="ahtf5130569" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><text x="20" y="32" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#1A1A2E"><tspan x="20" dy="0">Concurrent on ONE core: time slices – the tasks take turns</tspan></text><rect x="110" y="44" width="66" height="40" rx="4" fill="#0B6E75"/><text x="143" y="70" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#fff"><tspan x="143" dy="0">A</tspan></text><rect x="180" y="44" width="66" height="40" rx="4" fill="#B25C00"/><text x="213" y="70" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#fff"><tspan x="213" dy="0">B</tspan></text><rect x="250" y="44" width="66" height="40" rx="4" fill="#1A1A2E"/><text x="283" y="70" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#fff"><tspan x="283" dy="0">C</tspan></text><rect x="320" y="44" width="66" height="40" rx="4" fill="#0B6E75"/><text x="353" y="70" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#fff"><tspan x="353" dy="0">A</tspan></text><rect x="390" y="44" width="66" height="40" rx="4" fill="#B25C00"/><text x="423" y="70" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#fff"><tspan x="423" dy="0">B</tspan></text><rect x="460" y="44" width="66" height="40" rx="4" fill="#1A1A2E"/><text x="493" y="70" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#fff"><tspan x="493" dy="0">C</tspan></text><rect x="530" y="44" width="66" height="40" rx="4" fill="#0B6E75"/><text x="563" y="70" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#fff"><tspan x="563" dy="0">A</tspan></text><rect x="600" y="44" width="66" height="40" rx="4" fill="#B25C00"/><text x="633" y="70" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#fff"><tspan x="633" dy="0">B</tspan></text><rect x="670" y="44" width="66" height="40" rx="4" fill="#1A1A2E"/><text x="703" y="70" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#fff"><tspan x="703" dy="0">C</tspan></text><rect x="740" y="44" width="66" height="40" rx="4" fill="#0B6E75"/><text x="773" y="70" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#fff"><tspan x="773" dy="0">A</tspan></text><text x="100" y="69" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" fill="#3D4451"><tspan x="100" dy="0">Core 1</tspan></text><text x="20" y="132" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#1A1A2E"><tspan x="20" dy="0">Parallel on THREE cores: the tasks run at the same instant</tspan></text><text x="100" y="169" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" fill="#3D4451"><tspan x="100" dy="0">Core 1</tspan></text><rect x="110" y="144" width="243" height="40" rx="4" fill="#0B6E75"/><text x="232" y="170" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#fff"><tspan x="232" dy="0">Task A</tspan></text><text x="100" y="217" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" fill="#3D4451"><tspan x="100" dy="0">Core 2</tspan></text><rect x="110" y="192" width="243" height="40" rx="4" fill="#B25C00"/><text x="232" y="218" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#fff"><tspan x="232" dy="0">Task B</tspan></text><text x="100" y="265" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" fill="#3D4451"><tspan x="100" dy="0">Core 3</tspan></text><rect x="110" y="240" width="243" height="40" rx="4" fill="#1A1A2E"/><text x="232" y="266" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#fff"><tspan x="232" dy="0">Task C</tspan></text><line x1="110" y1="306" x2="810" y2="306" stroke="#3D4451" stroke-width="2" marker-end="url(#ahtf5130569)"/><text x="820" y="316" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#3D4451"><tspan x="820" dy="0">time</tspan></text><text x="460" y="345" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#B25C00"><tspan x="460" dy="0">All parallel processing is concurrent. Not all concurrent processing is parallel.</tspan></text></svg><figcaption>A chef with one hob cooks concurrently. Four tills serving four customers is parallel.</figcaption></figure></div>        <h2 class="mt-2">Which parts can run at the same time? (a)</h2>
+        <p>Ask two questions about every task:</p>
+        <ol class="steps"><li><strong>Does it need the result of another task?</strong> Yes: it must wait (a <strong>dependency</strong>). No: it can run at the same time.</li>
+        <li><strong>Does it change data another task uses?</strong> Yes: it can still run, but the data must be <strong>locked</strong>.</li></ol>
+        <div class="grid"><figure class="diagram"><svg viewBox="0 0 880 330" role="img" aria-labelledby="t216adad7 t216adad7d"><title id="t216adad7">Dependencies when loading a game level</title><desc id="t216adad7d">Load map, load textures, load sounds and connect to server are independent so they run at the same time. Start level has an arrow from each, because it needs all four results. A loading bar runs alongside.</desc><defs><marker id="aht216adad7" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><text x="440" y="28" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#1A1A2E"><tspan x="440" dy="0">Loading a game level: which tasks can run at the same time?</tspan></text><rect x="40" y="44" width="220" height="48" rx="8" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="150" y="73" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="150" dy="0">Load map</tspan></text><polyline points="260,68 420,139.0" fill="none" stroke="#3D4451" stroke-width="2.5" marker-end="url(#aht216adad7)"/><rect x="40" y="106" width="220" height="48" rx="8" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="150" y="135" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="150" dy="0">Load textures</tspan></text><polyline points="260,130 420,153.0" fill="none" stroke="#3D4451" stroke-width="2.5" marker-end="url(#aht216adad7)"/><rect x="40" y="168" width="220" height="48" rx="8" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="150" y="197" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="150" dy="0">Load sounds</tspan></text><polyline points="260,192 420,167.0" fill="none" stroke="#3D4451" stroke-width="2.5" marker-end="url(#aht216adad7)"/><rect x="40" y="230" width="220" height="48" rx="8" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="150" y="259" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="150" dy="0">Connect to server</tspan></text><polyline points="260,254 420,181.0" fill="none" stroke="#3D4451" stroke-width="2.5" marker-end="url(#aht216adad7)"/><rect x="424" y="126" width="180" height="70" rx="8" fill="#0B6E75" stroke="#0B6E75" stroke-width="2"/><text x="514" y="167" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#fff"><tspan x="514" dy="0">Start level</tspan></text><text x="150" y="315" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" fill="#0B6E75"><tspan x="150" dy="0">Independent: run at once</tspan></text><text x="514" y="226" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" fill="#B25C00"><tspan x="514" dy="0">Waits for all four:</tspan><tspan x="514" dy="18">it needs their results</tspan></text><rect x="650" y="126" width="200" height="70" rx="8" fill="#FFF4E0" stroke="#B25C00" stroke-width="2"/><text x="750" y="157" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#B25C00"><tspan x="750" dy="0">Loading bar runs</tspan><tspan x="750" dy="19">alongside</tspan></text></svg><figcaption>The four loads are independent. Start level depends on all of them.</figcaption></figure></div>
+        <p><strong>Food delivery app:</strong> take payment first; then send the order, find a driver and email the receipt at the same time; cooking needs the order; the live map needs the driver; collection needs both.</p>        <h2 class="mt-2">Benefits and trade-offs (b)</h2>
+        <div class="grid grid-2">
+          <div class="card"><h3>Benefits</h3><ul><li><strong>Faster:</strong> independent tasks finish sooner</li><li><strong>Responsive:</strong> the screen keeps working during a long task</li><li><strong>Many users:</strong> a server handles lots of requests at once</li><li><strong>Less idle time:</strong> one task runs while another waits for a file or the network</li></ul></div>
+          <div class="card"><h3>Trade-offs</h3><ul><li>Not everything splits: some tasks must wait</li><li>Not n times faster: splitting and combining take time</li><li><strong>Shared data</strong> can be corrupted, so record locking is needed</li><li><strong>Harder</strong> to write, test and debug: bugs depend on timing</li></ul></div>
+        </div>
+        <h3 class="mt-1">When tasks collide</h3>
+        <p>A balance is £100. Task A pays in £50; task B takes out £30. In the order A1 read, B1 read, A2 write, B2 write:</p>
+        <div class="table-scroll"><table><thead><tr><th scope="col">Step</th><th scope="col">Task A</th><th scope="col">Task B</th><th scope="col">Balance</th></tr></thead><tbody><tr><th scope="row">A1</th><td>reads 100</td><td></td><td>100</td></tr><tr><th scope="row">B1</th><td></td><td>reads 100</td><td>100</td></tr><tr><th scope="row">A2</th><td>writes 150</td><td></td><td>150</td></tr><tr><th scope="row">B2</th><td></td><td>writes 70</td><td>70</td></tr></tbody></table></div>
+        <p class="mt-1">It should be £120: A’s £50 is lost. <strong>Record locking</strong> stops a second process changing a record that is in use.</p>
+        <p><strong>Beyond the spec – Amdahl’s law:</strong> a 100 s job with 20 s that can’t be split takes 25 s on 16 cores and never less than 20 s, however many cores you add.</p>
+        <div class="callout callout-amber mt-1"><p><strong>Watch out for:</strong></p><ul><li>“It does two things at once” and nothing more.</li><li>“It is faster” with no context – faster than what, for whom?</li><li>Only giving benefits when the question says “discuss”.</li><li>Claiming 4 cores is always 4 times faster.</li></ul></div>
+      </div>
+    </section>
+
+    <section id="links" class="section-alt">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>Links to other topics</h2><ul class="link-list"><li><strong>1.1.2 Types of processor</strong> – multicore and parallel systems.</li><li><strong>1.1.1 Processor performance</strong> – pipelining.</li><li><strong>1.2.1 Systems software</strong> – scheduling and time slices.</li><li><strong>1.3.2 Databases</strong> – record locking and transaction processing.</li><li><strong>2.1.3 Thinking procedurally</strong> – independent modules can run at once.</li><li><strong>NEA 3.3.2</strong> – test with two users at once.</li></ul></div>
+          <div><h2>Lesson slides</h2>
+            <p>Go back over the lesson for the full worked examples and tasks.</p>
+            <p><a class="btn" href="../../slides/2-1/thinking-concurrently.pptx">Download the lesson slides</a></p>
+            <p class="small">2.1.5 Thinking concurrently: concurrent vs parallel, game loading, food delivery dependencies, the last-seat race, the bank trace and Amdahl’s law.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <div class="wrap">
+        <h2>Check your understanding</h2>
+        <p>Answer, then press <strong>Check my answers</strong>. Each question explains the answer so you can fix any mistakes.</p>
+        <div class="quiz-block">
+          <h3>Quick quiz – marked for you</h3>
+          <div class="q" data-answer="b"><p class="q-text">1. Which is true? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q25" value="a"> <span>All concurrent processing is parallel</span></label><label><input type="radio" name="q25" value="b"> <span>All parallel processing is concurrent</span></label><label><input type="radio" name="q25" value="c"> <span>Concurrent processing needs several cores</span></label><label><input type="radio" name="q25" value="d"> <span>Parallel processing uses time slices on one core</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Parallel is one kind of concurrent. Concurrency on one core uses time slices.</p></div></div><div class="q" data-answer="b"><p class="q-text">2. Which pair of tasks can run at the same time? <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q26" value="a"> <span>Sort a list, then search it</span></label><label><input type="radio" name="q26" value="b"> <span>Fetch two web pages for two different users</span></label><label><input type="radio" name="q26" value="c"> <span>Find a total, then the average</span></label><label><input type="radio" name="q26" value="d"> <span>Read a file, then show it</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Neither page needs the other. The others each need the result of the first step.</p></div></div><div class="q" data-answer="b"><p class="q-text">3. One core runs 3 programs by… <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q27" value="a"> <span>splitting each instruction</span></label><label><input type="radio" name="q27" value="b"> <span>giving each a time slice</span></label><label><input type="radio" name="q27" value="c"> <span>finishing one first</span></label><label><input type="radio" name="q27" value="d"> <span>using the hard drive</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Each program gets a slice of processor time in turn.</p></div></div><div class="q" data-answer="c"><p class="q-text">4. Going from 1 core to 4 cores makes a program… <span class="tag tag-soft">AO3</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q28" value="a"> <span>exactly 4 times faster</span></label><label><input type="radio" name="q28" value="b"> <span>always slower</span></label><label><input type="radio" name="q28" value="c"> <span>up to 4 times faster</span></label><label><input type="radio" name="q28" value="d"> <span>the same speed</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Some parts can’t be split, and the cores must coordinate.</p></div></div><div class="q" data-answer="b"><p class="q-text">5. Two tasks change the same record at once. What can happen? <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q29" value="a"> <span>The CPU overheats</span></label><label><input type="radio" name="q29" value="b"> <span>An update is lost</span></label><label><input type="radio" name="q29" value="c"> <span>Less memory is used</span></label><label><input type="radio" name="q29" value="d"> <span>Nothing</span></label></div><div class="explain" hidden><p><span class="verdict"></span>One overwrites the other, unless the record is locked.</p></div></div><div class="q" data-answer=""><p class="q-text">6. A balance is £100. A reads, B reads, A writes +£50, B writes −£30. What is the final balance in £? <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 6" data-answer="70" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>B wrote 100 − 30 over A’s 150. It should be £120.</p></div></div>
+          <button type="button" class="btn quiz-check">Check my answers</button>
+          <button type="button" class="btn btn-ghost quiz-reset">Start again</button>
+          <p class="quiz-score mt-1" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="exam" class="section-alt">
+      <div class="wrap">
+        <h2>Exam-style questions – mark them yourself</h2>
+        <p>Write your answer, then open <strong>Mark your answer</strong>. Tick the mark points you hit, read the model answer and use the tips to improve. See the <a href="exam-tips.html">2.1 exam tips</a> for more help.</p>
+<article class="exam-q">
+          <header><span class="tag">AO1</span><span class="marks">[2 marks]</span></header>
+          <p>Describe what is meant by the term <strong>concurrent processing</strong>. (October 2021)</p>
+          <label for="es13t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es13t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es13"><li><label><input type="checkbox"> <span>More than one process in progress at the same time / appearing to (1)</span></label></li><li><label><input type="checkbox"> <span>One starts before another finishes / each gets a slice of processor time / several processors, one process each (1)</span></label></li></ul>
+            <p id="es13" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> Concurrent processing is when more than one process is in progress at the same time, with one starting before another has finished. On one processor each gets a slice of processor time in turn.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>“Two things at once” alone is one mark at most – add how it works.</li><li>Mention time slices or multiple processors.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[3 marks]</span></header>
+          <p>An online circus game. Explain why concurrent processing is needed to allow multiple users to log in and interact with game elements at the same time. (October 2021)</p>
+          <label for="es14t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es14t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es14"><li><label><input type="checkbox"> <span>Many users send requests to the server at once (1)</span></label></li><li><label><input type="checkbox"> <span>Each needs a reply in a reasonable time (1)</span></label></li><li><label><input type="checkbox"> <span>The server can handle other requests while one waits, so one user doesn’t slow the rest (1)</span></label></li></ul>
+            <p id="es14" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> Many users will send requests to the server at the same time, and each needs a reply in a reasonable time. With concurrent processing the server can deal with other requests while one is waiting, so one user doesn’t slow down everyone else.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Explain = a point, then why it matters in this scenario.</li><li>Don’t just say “faster” – faster for whom?</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO3</span><span class="marks">[4 marks]</span></header>
+          <p>A streaming app downloads the next part of a film while the current part plays. Explain one benefit and one trade-off of using concurrent processing in this app.</p>
+          <label for="es15t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es15t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es15"><li><label><input type="checkbox"> <span>Benefit: plays while the next part downloads (1)</span></label></li><li><label><input type="checkbox"> <span>…so there is no pause to buffer (1)</span></label></li><li><label><input type="checkbox"> <span>Trade-off: more memory needed to store the next part / harder to keep in step (1)</span></label></li><li><label><input type="checkbox"> <span>…expanded, e.g. less memory for other apps / more complex to program and test (1)</span></label></li></ul>
+            <p id="es15" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> Benefit: the film keeps playing while the next part downloads, so the viewer doesn’t have to wait for it to buffer. Trade-off: the next part must be stored in memory while the current part plays, so the app needs more memory, and it is harder to program because the two tasks must stay in step.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Point + expansion, twice.</li><li>Link both sides to the streaming app.</li></ul></div>
+          </div></details>
+        </article>
+      </div>
+    </section>
+
+    <section id="revise">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>How to revise this</h2><ul><li><a href="../../techniques/comparison-tables.html">Comparison tables</a> – concurrent vs parallel; benefits vs trade-offs</li><li><a href="../../techniques/flowcharts.html">Flowcharts and diagrams</a> – draw dependency charts for everyday tasks</li><li><a href="../../techniques/extended-answers.html">Planning extended answers</a> – the 9-mark “discuss” question</li></ul>
+        <p class="small">These are the best fit for this part of the topic, but you can use any <a href="../../revision-techniques.html">revision technique</a> that works for you.</p></div>
+          <div><h2>Watch and read more</h2><ul><li><a href="https://isaaccomputerscience.org">Isaac Computer Science</a> – free notes and questions on computational thinking.</li><li><a href="https://www.youtube.com/@craigndave">Craig 'n' Dave (YouTube)</a> – short videos on every OCR A Level spec point – search for 2.1.</li><li><a href="https://docs.python.org/3/library/threading.html">Python threading</a> – beyond the spec: run tasks alongside each other in Python.</li></ul></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 2.1 pages"><a href="thinking-logically.html"><span class="dir">← Previous</span>2.1.4 Thinking logically</a><a class="next" href="exam-tips.html"><span class="dir">Next →</span>2.1 exam tips</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>

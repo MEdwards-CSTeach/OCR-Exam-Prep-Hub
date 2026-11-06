@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2.1 Exam Tips: Computational Thinking – OCR A Level CS Revision</title>
+  <meta name="description" content="Exam tips for OCR A Level Computer Science 2.1 computational thinking, with weak and good answers.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html">Paper 1</a></li>
+          <li><a href="../../paper2.html" aria-current="page">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../paper2.html">Paper 2</a> › <a href="index.html">2.1 Elements of computational thinking</a> › Exam tips</p>
+          <p class="eyebrow">2.1 Elements of computational thinking • Exam tips</p>
+          <h1>2.1 exam tips: computational thinking</h1>
+          <hr class="rule">
+          <p class="lead">What examiners look for in abstraction, thinking ahead, decomposition, decisions and concurrency questions – with weak and good answers.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">The golden rule</h2><p style="margin:0">Every 2.1 question is set in a <strong>scenario</strong>. Generic answers score little. Name things from the question in every point.</p></div>
+      </div>
+    </div>
+
+    <section>
+      <div class="wrap">
+        <h2>How 2.1 has been examined (Paper 2)</h2>
+        <div class="table-scroll"><table><thead><tr><th scope="col">Paper</th><th scope="col">Scenario</th><th scope="col">What it asked</th><th scope="col">Marks</th></tr></thead><tbody><tr><th scope="row">June 2024 1(c)</th><td>Board game</td><td>Two logical conditions and how each affects the outcome (2.1.4)</td><td>4</td></tr><tr><th scope="row">2023 2(b)</th><td>Earthquake simulation</td><td>Identify decision points (2.1.4)</td><td>2</td></tr><tr><th scope="row">2022 6(b)</th><td>Card game</td><td>Decisions in checkValid() and the return values (2.1.4)</td><td>3</td></tr><tr><th scope="row">Oct 2021 1(b)</th><td>Circus game</td><td>Define concurrent processing; why it is needed (2.1.5)</td><td>2 + 3</td></tr><tr><th scope="row">Nov 2020 2(b)</th><td>Ticket website</td><td>Discuss concurrent processing: need, benefits, drawbacks (2.1.5)</td><td>9</td></tr><tr><th scope="row">June 2018 6(c)</th><td>100 million items</td><td>Evaluate caching and concurrent processing, then recommend (2.1.2, 2.1.5)</td><td>9</td></tr><tr><th scope="row">June 2017 2(f)</th><td>Food orders</td><td>Discuss how concurrent programming can be applied (2.1.5)</td><td>9</td></tr></tbody></table></div>
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="wrap">
+        <h2>What the examiner looks for</h2>
+        <div class="table-scroll"><table><thead><tr><th scope="col">Topic</th><th scope="col">Earns marks</th><th scope="col">Loses marks</th></tr></thead><tbody><tr><th scope="row">2.1.1 Abstraction</th><td>Two-part definition: remove detail + to focus on what matters. A named detail <em>and</em> a reason for each.</td><td>“It makes it simpler.” Mixing it up with decomposition.</td></tr><tr><th scope="row">2.1.2 Thinking ahead</th><td>Inputs and outputs named from the scenario. Caching: what is stored and why.</td><td>Processes listed as inputs. “It uses the cache.”</td></tr><tr><th scope="row">2.1.3 Procedurally</th><td>Box names from the scenario, one task per box. Sub-procedure with name, parameters and return.</td><td>A flowchart instead of a structure diagram. Boxes called “Process”.</td></tr><tr><th scope="row">2.1.4 Logically</th><td>Condition + linked outcome. The False path: “if neither is true, return false” (2022).</td><td>“It checks the input.” Naming the construct, not the condition.</td></tr><tr><th scope="row">2.1.5 Concurrently</th><td>One starts before another finishes; time slices; locking; x processors is not 1/x of the time.</td><td>“Two things at once.” Only benefits in a “discuss”. No recommendation when asked.</td></tr></tbody></table></div>
+        <div class="grid grid-2 mt-1">
+          <div class="card"><h3>Command words</h3><ul>
+            <li><strong>Identify / State:</strong> name it. One mark each, no explanation.</li>
+            <li><strong>Describe:</strong> say what it is or what happens.</li>
+            <li><strong>Explain:</strong> a point, then <em>why</em> – in the scenario.</li>
+            <li><strong>Discuss / Evaluate:</strong> both sides, then a judgement.</li></ul></div>
+          <div class="card"><h3>Answering a decision question</h3><ol>
+            <li><strong>Check:</strong> the condition, as a yes/no question.</li>
+            <li><strong>If True:</strong> exactly what happens.</li>
+            <li><strong>If False:</strong> what happens instead.</li></ol></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>Weak and good answers</h2>
+        <article class="example">
+          <p class="callout"><strong>Question:</strong> A council is simulating traffic at a new roundabout. Identify two details that could be removed and explain why. [4]</p>
+          <div class="grid grid-2">
+            <div class="card" style="border-color:#A12A2A"><p><span class="tag" style="background:#FDE8E8;color:#A12A2A">Weak answer</span> <span class="small">1 mark</span></p><p>Colours and the weather, because they are not needed.</p></div>
+            <div class="card" style="border-color:#0B6E75"><p><span class="tag">Good answer</span> <span class="small">4 marks</span></p><p>The colour of each car can be removed: it does not change how fast a car gets round. Drivers’ names can be removed: they have no effect on traffic flow.</p></div>
+          </div>
+          <div class="mt-1"><p><strong>How to turn the weak answer into a good one:</strong></p><ul><li>Weather may matter to traffic – only remove details that don’t change the answer.</li><li>Give a reason for <em>each</em> detail, linked to traffic flow.</li></ul></div>
+        </article>
+        <article class="example">
+          <p class="callout"><strong>Question:</strong> An aeroplane simulator is being designed. Describe how caching can be used in the simulator. [2]</p>
+          <div class="grid grid-2">
+            <div class="card" style="border-color:#A12A2A"><p><span class="tag" style="background:#FDE8E8;color:#A12A2A">Weak answer</span> <span class="small">0 marks</span></p><p>Caching makes the simulator faster because it uses the cache.</p></div>
+            <div class="card" style="border-color:#0B6E75"><p><span class="tag">Good answer</span> <span class="small">2 marks</span></p><p>Data that has been used, such as the design of the clouds, is stored in the cache so it can be accessed quickly if it is needed again.</p></div>
+          </div>
+          <div class="mt-1"><p><strong>How to turn the weak answer into a good one:</strong></p><ul><li>Don’t repeat the question. Say <em>what</em> is stored, named from the scenario.</li><li>Then say why: faster access if needed again.</li></ul></div>
+        </article>
+        <article class="example">
+          <p class="callout"><strong>Question:</strong> A gym booking program. Identify two inputs for the program. [2]</p>
+          <div class="grid grid-2">
+            <div class="card" style="border-color:#A12A2A"><p><span class="tag" style="background:#FDE8E8;color:#A12A2A">Weak answer</span> <span class="small">0 marks</span></p><p>The data the member enters and their choice.</p></div>
+            <div class="card" style="border-color:#0B6E75"><p><span class="tag">Good answer</span> <span class="small">2 marks</span></p><p>Membership ID. Date of the class.</p></div>
+          </div>
+          <div class="mt-1"><p><strong>How to turn the weak answer into a good one:</strong></p><ul><li>Name specific data from the scenario.</li><li>Short and specific scores – no explanation needed for “identify”.</li></ul></div>
+        </article>
+        <article class="example">
+          <p class="callout"><strong>Question:</strong> Mabel is writing a game. Explain how decomposition can aid the design of this program. [2]</p>
+          <div class="grid grid-2">
+            <div class="card" style="border-color:#A12A2A"><p><span class="tag" style="background:#FDE8E8;color:#A12A2A">Weak answer</span> <span class="small">0 marks</span></p><p>It makes the program easier.</p></div>
+            <div class="card" style="border-color:#0B6E75"><p><span class="tag">Good answer</span> <span class="small">2 marks</span></p><p>She can split the game into sub-problems such as levels, enemies and lives. Each is simpler to solve and can be tackled independently.</p></div>
+          </div>
+          <div class="mt-1"><p><strong>How to turn the weak answer into a good one:</strong></p><ul><li>Say what decomposition does (split into sub-problems).</li><li>Then why it helps here – easier how?</li></ul></div>
+        </article>
+        <article class="example">
+          <p class="callout"><strong>Question:</strong> Board game: describe two logical conditions and how the result will affect the outcome of the game. [4] (June 2024)</p>
+          <div class="grid grid-2">
+            <div class="card" style="border-color:#A12A2A"><p><span class="tag" style="background:#FDE8E8;color:#A12A2A">Weak answer</span> <span class="small">1 mark</span></p><p>Condition: check the dice. Outcome: they move. Condition: if they win. Outcome: game over.</p></div>
+            <div class="card" style="border-color:#0B6E75"><p><span class="tag">Good answer</span> <span class="small">4 marks</span></p><p>Has the player landed on square 100? If so, they are announced as the winner. Has the timer reached 0? If so, the game is a draw.</p></div>
+          </div>
+          <div class="mt-1"><p><strong>How to turn the weak answer into a good one:</strong></p><ul><li>“Check the dice” is not a True/False question – write the condition as a question.</li><li>“If they win” is too vague: what makes them win?</li></ul></div>
+        </article>
+        <article class="example">
+          <p class="callout"><strong>Question:</strong> Online circus game. Explain why concurrent processing is needed to allow multiple users to log in at the same time. [3] (Oct 2021)</p>
+          <div class="grid grid-2">
+            <div class="card" style="border-color:#A12A2A"><p><span class="tag" style="background:#FDE8E8;color:#A12A2A">Weak answer</span> <span class="small">1 mark</span></p><p>So lots of people can play at the same time and it is faster.</p></div>
+            <div class="card" style="border-color:#0B6E75"><p><span class="tag">Good answer</span> <span class="small">3 marks</span></p><p>Many users will send requests to the server at once, and each needs a reply in a reasonable time. The server can deal with other requests while one waits, so one user doesn’t slow down the rest.</p></div>
+          </div>
+          <div class="mt-1"><p><strong>How to turn the weak answer into a good one:</strong></p><ul><li>Don’t repeat the question back.</li><li>“Faster” than what? Explain the effect on the users.</li></ul></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-alt" id="nine">
+      <div class="wrap">
+        <h2>Structuring a 9-mark “discuss” answer</h2>
+        <ol class="steps">
+          <li><strong>Define (AO1):</strong> what the technique is and how it works – e.g. time slices or several processors.</li>
+          <li><strong>Apply (AO2):</strong> which parts of <em>this</em> system use it, and why.</li>
+          <li><strong>Weigh up (AO3):</strong> benefits and drawbacks, each linked to the scenario.</li>
+          <li><strong>Conclude (AO3):</strong> is it worth it here? Give a reason.</li>
+        </ol>
+        <p>Marks: about AO1 4, AO2 2, AO3 3. The top band (7–9) needs a clear line of reasoning, in context.</p>
+        <div class="callout"><p><strong>Model extract – ticket website (Nov 2020):</strong> “Concurrent processing means several processes are in progress at the same time, with one starting before another has finished. Thousands of customers will log in and buy tickets at once, and each request can be handled by its own thread, so nobody waits in a queue. However, two threads could sell the same seat, so record locking is needed, which makes it harder to write and test. Overall it is essential: without it only one customer could buy at a time.”</p></div>
+        <p class="mt-1">See <a href="../../techniques/extended-answers.html">planning extended answers</a> for a planning grid.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 2.1 pages"><a href="thinking-concurrently.html"><span class="dir">← Previous</span>2.1.5 Thinking concurrently</a><a class="next" href="index.html"><span class="dir">Back to →</span>2.1 overview</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>

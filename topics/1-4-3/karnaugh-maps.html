@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Karnaugh maps (1.4.3 (b)) – OCR A Level CS Revision</title>
+  <meta name="description" content="OCR A Level Computer Science 1.4.3 (b): Karnaugh maps. Revision notes, quiz and exam questions.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html" aria-current="page">Paper 1</a></li>
+          <li><a href="../../paper2.html">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../paper1.html">Paper 1</a> › <a href="index.html">1.4.3 Boolean algebra</a> › Karnaugh maps</p>
+          <p class="eyebrow">1.4.3 (b) • Paper 1</p>
+          <h1>Karnaugh maps</h1>
+          <hr class="rule">
+          <p class="lead">Simplifying expressions with Karnaugh maps: Gray code, grouping rules and reading each group.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">Key terms</h2><ul style="margin:0"><li>Karnaugh map</li><li>Gray code</li><li>Group (1, 2, 4, 8)</li><li>Wrap-around</li><li>Overlapping groups</li></ul></div>
+      </div>
+    </div>
+    <div class="wrap" style="padding-top:1.25rem">
+      <nav class="toc" aria-label="On this page"><ul>
+        <li><a href="#notes">Revision notes</a></li><li><a href="#links">Links and slides</a></li>
+        <li><a href="#quiz">Quick quiz</a></li><li><a href="#exam">Exam questions</a></li><li><a href="#revise">How to revise it</a></li>
+      </ul></nav>
+    </div>
+
+    <section id="notes">
+      <div class="wrap">
+        <h2 class="mt-2">A truth table as a grid</h2>
+        <ul>
+          <li>Each cell is one row of the truth table. Fill in 1s (0s can be left blank).</li>
+          <li>Columns and rows use <strong>Gray code</strong>: <strong>00, 01, 11, 10</strong>. Neighbouring cells differ by one bit only.</li>
+          <li>Never write 00, 01, 10, 11 – the map won’t work.</li>
+          <li>The map wraps round like a globe: left meets right, top meets bottom.</li>
+        </ul>        <h2 class="mt-2">Grouping rules</h2>
+        <div class="grid grid-2">
+          <div class="card"><h3>Draw groups of 1s</h3><ul>
+            <li>Sizes 1, 2, 4 or 8 only</li><li>Rectangles only – no diagonals or L shapes</li><li>As big as possible, as few as possible</li>
+            <li>Groups may overlap and may wrap round the edges</li><li>Every 1 must be in a group</li></ul></div>
+          <div class="card"><h3>Read each group</h3><ul>
+            <li>Keep the variables that stay the same in every cell</li><li>Drop any variable that changes</li><li>0 means NOT: write ¬A</li>
+            <li>Join the groups with ∨</li><li>Bigger group → fewer variables → simpler term</li></ul></div>
+        </div>        <h2 class="mt-2">Worked examples</h2>
+        <div class="grid grid-2">
+          <div><h3>3 variables</h3><div class="table-scroll" style="max-width:26rem"><table class="grid-table kmap"><caption class="small" style="caption-side:bottom;padding-top:.4rem;text-align:left">Teal: ¬A ∧ C. Amber: A ∧ ¬B.</caption>
+            <thead><tr><th scope="col">C \ AB</th><th scope="col">00</th><th scope="col">01</th><th scope="col">11</th><th scope="col">10</th></tr></thead><tbody><tr><th scope="row">0</th><td>0</td><td>0</td><td>0</td><td style="background:#FBD9A8">1</td></tr><tr><th scope="row">1</th><td style="background:#BFE3D4">1</td><td style="background:#BFE3D4">1</td><td>0</td><td style="background:#FBD9A8">1</td></tr></tbody></table></div><p class="small mt-1">(¬A ∧ ¬B ∧ C) ∨ (¬A ∧ B ∧ C) ∨ (A ∧ ¬B ∧ ¬C) ∨ (A ∧ ¬B ∧ C)<br>→ <strong>Q = (¬A ∧ C) ∨ (A ∧ ¬B)</strong></p></div>
+          <div><h3>4 variables (June 2025)</h3><div class="table-scroll" style="max-width:26rem"><table class="grid-table kmap"><caption class="small" style="caption-side:bottom;padding-top:.4rem;text-align:left">Teal (8): ¬C. Amber (4): A ∧ ¬B. Q = ¬C ∨ (A ∧ ¬B).</caption>
+            <thead><tr><th scope="col">CD \ AB</th><th scope="col">00</th><th scope="col">01</th><th scope="col">11</th><th scope="col">10</th></tr></thead><tbody><tr><th scope="row">00</th><td style="background:#BFE3D4">1</td><td style="background:#BFE3D4">1</td><td style="background:#BFE3D4">1</td><td style="background:linear-gradient(135deg,#BFE3D4 50%,#FBD9A8 50%)">1</td></tr><tr><th scope="row">01</th><td style="background:#BFE3D4">1</td><td style="background:#BFE3D4">1</td><td style="background:#BFE3D4">1</td><td style="background:linear-gradient(135deg,#BFE3D4 50%,#FBD9A8 50%)">1</td></tr><tr><th scope="row">11</th><td>0</td><td>0</td><td>0</td><td style="background:#FBD9A8">1</td></tr><tr><th scope="row">10</th><td>0</td><td>0</td><td>0</td><td style="background:#FBD9A8">1</td></tr></tbody></table></div><p class="small mt-1">(¬C ∧ D) ∨ (¬C ∧ ¬D) ∨ (A ∧ C ∧ ¬B). A term without A or B fills a whole row.</p></div>
+        </div>
+        <div class="grid grid-2 mt-1">
+          <div><h3>Corners</h3><div class="table-scroll" style="max-width:26rem"><table class="grid-table kmap"><caption class="small" style="caption-side:bottom;padding-top:.4rem;text-align:left">The four corners are one group: ¬B ∧ ¬D.</caption>
+            <thead><tr><th scope="col">CD \ AB</th><th scope="col">00</th><th scope="col">01</th><th scope="col">11</th><th scope="col">10</th></tr></thead><tbody><tr><th scope="row">00</th><td style="background:#BFE3D4">1</td><td>0</td><td>0</td><td style="background:#BFE3D4">1</td></tr><tr><th scope="row">01</th><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><th scope="row">11</th><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><th scope="row">10</th><td style="background:#BFE3D4">1</td><td>0</td><td>0</td><td style="background:#BFE3D4">1</td></tr></tbody></table></div></div>
+          <div class="callout"><p><strong>Mark scheme pattern:</strong> 1 mark for the map, 1 for each correct group, 1 for the final expression. So show the map and ring the groups even if you can see the answer.</p></div>
+        </div>
+        <div class="callout callout-amber mt-1"><p><strong>Watch out for:</strong></p><ul><li>Columns in the order 00, 01, 10, 11 – use Gray code 00, 01, 11, 10.</li><li>Groups of 3 or 6, or diagonal groups.</li><li>Missing a wrap-around group or the four corners.</li><li>Leaving a 1 out of every group.</li></ul></div>
+      </div>
+    </section>
+
+    <section id="links" class="section-alt">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>Links to other topics</h2><ul class="link-list"><li><strong>1.4.3 Boolean laws</strong> – an algebraic way to get the same answer – use one to check the other.</li><li><strong>1.4.3 Logic gates</strong> – the simplified expression is the smallest circuit.</li><li><strong>1.4.1 Binary</strong> – rows and columns are binary patterns.</li><li><strong>Beyond the spec</strong> – Gray code is used in rotary encoders and sensors.</li></ul></div>
+          <div><h2>Lesson slides</h2>
+            <p>Go back over the lesson for the full worked examples and tasks.</p>
+            <p><a class="btn" href="../../slides/1-4-3/boolean-algebra.pptx">Download the lesson slides</a></p>
+            <p class="small">1.4.3 Boolean algebra – including Map it, group it, simplify it and the four-variable maps.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <div class="wrap">
+        <h2>Check your understanding</h2>
+        <p>Answer, then press <strong>Check my answers</strong>. Each question explains the answer so you can fix any mistakes.</p>
+        <div class="quiz-block">
+          <h3>Quick quiz – marked for you</h3>
+          <div class="q" data-answer="b"><p class="q-text">1. What is the correct order for the AB columns of a Karnaugh map? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q15" value="a"> <span>00, 01, 10, 11</span></label><label><input type="radio" name="q15" value="b"> <span>00, 01, 11, 10</span></label><label><input type="radio" name="q15" value="c"> <span>00, 10, 01, 11</span></label><label><input type="radio" name="q15" value="d"> <span>11, 10, 01, 00</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Gray code: only one bit changes between neighbours.</p></div></div><div class="q" data-answer="c"><p class="q-text">2. Which group is NOT allowed? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q16" value="a"> <span>A group of 2</span></label><label><input type="radio" name="q16" value="b"> <span>A group of 4 that wraps round</span></label><label><input type="radio" name="q16" value="c"> <span>A group of 6</span></label><label><input type="radio" name="q16" value="d"> <span>Two groups that overlap</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Groups must be 1, 2, 4 or 8 cells.</p></div></div><div class="q" data-answer="a"><p class="q-text">3. A group covers AB = 01 and 11, with C = 1. What is its term? <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q17" value="a"> <span>B ∧ C</span></label><label><input type="radio" name="q17" value="b"> <span>A ∧ B ∧ C</span></label><label><input type="radio" name="q17" value="c"> <span>B</span></label><label><input type="radio" name="q17" value="d"> <span>A ∧ C</span></label></div><div class="explain" hidden><p><span class="verdict"></span>A changes (0 and 1), so it drops out. B = 1 and C = 1 stay: B ∧ C.</p></div></div><div class="q" data-answer="b"><p class="q-text">4. Making groups bigger gives… <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q18" value="a"> <span>more terms</span></label><label><input type="radio" name="q18" value="b"> <span>fewer variables in each term</span></label><label><input type="radio" name="q18" value="c"> <span>more gates</span></label><label><input type="radio" name="q18" value="d"> <span>a different truth table</span></label></div><div class="explain" hidden><p><span class="verdict"></span>A bigger group drops more variables, so the circuit is simpler – and the truth table doesn’t change.</p></div></div><div class="q" data-answer=""><p class="q-text">5. Q is 1 when ABC is 010, 011, 110 or 111. Simplify Q to a single letter. <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 5" data-answer="B" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>These four cells form a group of 4 where only B stays the same (B = 1): Q = B.</p></div></div><div class="q" data-answer="b"><p class="q-text">6. On a 4-variable map, the four corner cells are 1 and nothing else. What is Q? <span class="tag tag-soft">AO3</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q20" value="a"> <span>¬A ∧ ¬C</span></label><label><input type="radio" name="q20" value="b"> <span>¬B ∧ ¬D</span></label><label><input type="radio" name="q20" value="c"> <span>B ∧ D</span></label><label><input type="radio" name="q20" value="d"> <span>¬B ∨ ¬D</span></label></div><div class="explain" hidden><p><span class="verdict"></span>The corners wrap round into one group of 4. B = 0 and D = 0 in all four: ¬B ∧ ¬D.</p></div></div>
+          <button type="button" class="btn quiz-check">Check my answers</button>
+          <button type="button" class="btn btn-ghost quiz-reset">Start again</button>
+          <p class="quiz-score mt-1" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="exam" class="section-alt">
+      <div class="wrap">
+        <h2>Exam-style questions – mark them yourself</h2>
+        <p>Write your answer, then open <strong>Mark your answer</strong>. Tick the mark points you hit, read the model answer and use the tips to improve. See the <a href="exam-tips.html">1.4.3 exam tips</a> for more help.</p>
+<article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[3 marks]</span></header>
+          <p>Use a Karnaugh map to simplify <strong>(A ∧ B ∧ ¬C) ∨ (A ∧ B ∧ C) ∨ (¬A ∧ B ∧ C)</strong>.</p>
+          <label for="es7t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es7t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es7"><li><label><input type="checkbox"> <span>Correct map with 1s at ABC = 110, 111, 011 (1)</span></label></li><li><label><input type="checkbox"> <span>Two groups of 2 (1)</span></label></li><li><label><input type="checkbox"> <span>(A ∧ B) ∨ (B ∧ C) (1)</span></label></li></ul>
+            <p id="es7" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> 1s at 110, 111 and 011. Group 110 + 111 → A ∧ B. Group 011 + 111 → B ∧ C. Q = (A ∧ B) ∨ (B ∧ C), which can also be written B ∧ (A ∨ C).</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Overlapping groups are allowed – 111 is in both.</li><li>Show the map and the groups for the method marks.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[4 marks]</span></header>
+          <p>Use a 4-variable Karnaugh map to simplify <strong>(¬A ∧ ¬B ∧ ¬D) ∨ (A ∧ ¬B ∧ ¬D) ∨ (B ∧ C ∧ D)</strong>.</p>
+          <label for="es8t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es8t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es8"><li><label><input type="checkbox"> <span>Correct map (1)</span></label></li><li><label><input type="checkbox"> <span>The four corners grouped: ¬B ∧ ¬D (1)</span></label></li><li><label><input type="checkbox"> <span>The pair grouped: B ∧ C ∧ D (1)</span></label></li><li><label><input type="checkbox"> <span>(¬B ∧ ¬D) ∨ (B ∧ C ∧ D) (1)</span></label></li></ul>
+            <p id="es8" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> The first two terms fill the four corners (B = 0, D = 0), giving ¬B ∧ ¬D. B ∧ C ∧ D is a pair in the CD = 11 row (AB = 01 and 11). Q = (¬B ∧ ¬D) ∨ (B ∧ C ∧ D).</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Remember the corners are neighbours.</li><li>1 mark per group – ring them clearly.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[5 marks]</span></header>
+          <p>Group this map and write the simplified expression for Q. <span class="small">(June 2018)</span></p><div class="table-scroll" style="max-width:26rem"><table class="grid-table kmap"><caption class="small" style="caption-side:bottom;padding-top:.4rem;text-align:left">Rows are CD, columns are AB.</caption>
+            <thead><tr><th scope="col">CD \ AB</th><th scope="col">00</th><th scope="col">01</th><th scope="col">11</th><th scope="col">10</th></tr></thead><tbody><tr><th scope="row">00</th><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><th scope="row">01</th><td>0</td><td>0</td><td>1</td><td>1</td></tr><tr><th scope="row">11</th><td>0</td><td>0</td><td>0</td><td>1</td></tr><tr><th scope="row">10</th><td>0</td><td>0</td><td>0</td><td>1</td></tr></tbody></table></div>
+          <label for="es9t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es9t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es9"><li><label><input type="checkbox"> <span>Group of 4: CD = 00 row → ¬C ∧ ¬D (1)</span></label></li><li><label><input type="checkbox"> <span>Group of 4: AB = 10 column → A ∧ ¬B (1)</span></label></li><li><label><input type="checkbox"> <span>Group of 4: AB = 11 and 10, CD = 00 and 01 → A ∧ ¬C (1)</span></label></li><li><label><input type="checkbox"> <span>All three terms joined with ∨ (1)</span></label></li><li><label><input type="checkbox"> <span>No extra terms (1)</span></label></li></ul>
+            <p id="es9" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> Q = (¬C ∧ ¬D) ∨ (A ∧ ¬B) ∨ (A ∧ ¬C). Three groups of 4, which overlap.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Look for the biggest groups first, then mop up any 1s left.</li><li>Overlapping is fine – it often gives bigger groups.</li></ul></div>
+          </div></details>
+        </article>
+      </div>
+    </section>
+
+    <section id="revise">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>How to revise this</h2><ul><li><a href="../../techniques/worked-examples.html">Worked examples</a> – map, group, read – one step at a time</li><li><a href="../../techniques/trace-tables.html">Trace tables</a> – check your answer with a truth table</li><li><a href="../../techniques/spaced-practice.html">Spaced practice</a> – a map or two every few days</li></ul>
+        <p class="small">These are the best fit for this part of the topic, but you can use any <a href="../../revision-techniques.html">revision technique</a> that works for you.</p></div>
+          <div><h2>Watch and read more</h2><ul><li><a href="https://isaaccomputerscience.org">Isaac Computer Science</a> – free notes and questions on Boolean logic.</li><li><a href="https://circuitverse.org">CircuitVerse</a> – a free online logic simulator: build and test gates, adders and flip-flops.</li></ul></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 1.4.3 pages"><a href="boolean-laws.html"><span class="dir">← Previous</span>Simplifying with Boolean laws</a><a class="next" href="adders-and-flip-flops.html"><span class="dir">Next →</span>Adders and D-type flip-flops</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Logic gates, expressions and truth tables (1.4.3 (a) and (d)) – OCR A Level CS Revision</title>
+  <meta name="description" content="OCR A Level Computer Science 1.4.3 (a) and (d): Logic gates, expressions and truth tables. Revision notes, quiz and exam questions.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html" aria-current="page">Paper 1</a></li>
+          <li><a href="../../paper2.html">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../paper1.html">Paper 1</a> › <a href="index.html">1.4.3 Boolean algebra</a> › Logic gates, expressions and truth tables</p>
+          <p class="eyebrow">1.4.3 (a) and (d) • Paper 1</p>
+          <h1>Logic gates, expressions and truth tables</h1>
+          <hr class="rule">
+          <p class="lead">The six logic gates, exam notation, and turning a description, expression, circuit or truth table into any of the others.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">Key terms</h2><ul style="margin:0"><li>AND ∧, OR ∨, NOT ¬, XOR ⊻</li><li>NAND, NOR</li><li>Truth table</li><li>Logic gate diagram</li><li>Equivalence ≡</li></ul></div>
+      </div>
+    </div>
+    <div class="wrap" style="padding-top:1.25rem">
+      <nav class="toc" aria-label="On this page"><ul>
+        <li><a href="#notes">Revision notes</a></li><li><a href="#links">Links and slides</a></li>
+        <li><a href="#quiz">Quick quiz</a></li><li><a href="#exam">Exam questions</a></li><li><a href="#revise">How to revise it</a></li>
+      </ul></nav>
+    </div>
+
+    <section id="notes">
+      <div class="wrap">
+        <h2 class="mt-2">Exam notation</h2>
+        <div class="table-scroll"><table><thead><tr><th scope="col">Operation</th><th scope="col">Exam symbol</th><th scope="col">Example</th><th scope="col">Also accepted</th></tr></thead><tbody><tr><th scope="row">AND (conjunction)</th><td>∧</td><td>A ∧ B</td><td>A AND B, A.B</td></tr><tr><th scope="row">OR (disjunction)</th><td>∨</td><td>A ∨ B</td><td>A OR B, A + B</td></tr><tr><th scope="row">NOT (negation)</th><td>¬</td><td>¬A</td><td>NOT A, ~A, a bar over A</td></tr><tr><th scope="row">XOR (exclusive OR)</th><td>⊻</td><td>A ⊻ B</td><td>A XOR B, A ⊕ B</td></tr><tr><th scope="row">Equivalence</th><td>≡</td><td>Q ≡ A ∧ B</td><td>Q = A ∧ B</td></tr></tbody></table></div><p class="mt-1"><strong>Memory hook:</strong> ∧ looks like an A without its bar – A for AND. Brackets are worked out first.</p>        <h2 class="mt-2">The six gates</h2>
+        <figure class="diagram"><svg viewBox="0 0 920 320" role="img" aria-labelledby="t56ec67ce t56ec67ced"><title id="t56ec67ce">The six logic gates</title><desc id="t56ec67ced">AND: 1 only if both inputs are 1. OR: 1 if at least one is 1. NOT: flips the input. NAND: the opposite of AND. NOR: the opposite of OR. XOR: 1 if the inputs differ.</desc><defs><marker id="aht56ec67ce" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><path d="M110,50 h40.0 a28.0,28.0 0 0 1 0,56 h-40.0 Z" fill="#E3F1EA" stroke="#1A1A2E" stroke-width="2.5"/><line x1="70" y1="65.68" x2="110" y2="65.68" stroke="#3D4451" stroke-width="2.5"/><line x1="70" y1="90.32" x2="110" y2="90.32" stroke="#3D4451" stroke-width="2.5"/><line x1="178.0" y1="78.0" x2="213.0" y2="78.0" stroke="#3D4451" stroke-width="2.5"/><text x="150" y="38" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#1A1A2E"><tspan x="150" dy="0">AND</tspan></text><text x="150" y="138" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#0B6E75"><tspan x="150" dy="0">A ∧ B</tspan></text><text x="150" y="159" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#3D4451"><tspan x="150" dy="0">1 only if both are 1</tspan></text><path d="M410,50 Q430.0,78.0 410,106 Q459.6,106 490,78.0 Q459.6,50 410,50 Z" fill="#E3F1EA" stroke="#1A1A2E" stroke-width="2.5"/><line x1="376" y1="65.68" x2="416" y2="65.68" stroke="#3D4451" stroke-width="2.5"/><line x1="376" y1="90.32" x2="416" y2="90.32" stroke="#3D4451" stroke-width="2.5"/><line x1="490" y1="78.0" x2="525" y2="78.0" stroke="#3D4451" stroke-width="2.5"/><text x="450" y="38" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#1A1A2E"><tspan x="450" dy="0">OR</tspan></text><text x="450" y="138" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#0B6E75"><tspan x="450" dy="0">A ∨ B</tspan></text><text x="450" y="159" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#3D4451"><tspan x="450" dy="0">1 if at least one is 1</tspan></text><path d="M710,54 L759.6,78.0 L710,102 Z" fill="#E3F1EA" stroke="#1A1A2E" stroke-width="2.5"/><circle cx="765.6" cy="78.0" r="6" fill="#fff" stroke="#1A1A2E" stroke-width="2.5"/><line x1="670" y1="78.0" x2="710" y2="78.0" stroke="#3D4451" stroke-width="2.5"/><line x1="771.6" y1="78.0" x2="806.6" y2="78.0" stroke="#3D4451" stroke-width="2.5"/><text x="750" y="38" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#1A1A2E"><tspan x="750" dy="0">NOT</tspan></text><text x="750" y="138" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#0B6E75"><tspan x="750" dy="0">¬A</tspan></text><text x="750" y="159" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#3D4451"><tspan x="750" dy="0">flips the input</tspan></text><path d="M110,200 h40.0 a28.0,28.0 0 0 1 0,56 h-40.0 Z" fill="#E3F1EA" stroke="#1A1A2E" stroke-width="2.5"/><circle cx="184.0" cy="228.0" r="6" fill="#fff" stroke="#1A1A2E" stroke-width="2.5"/><line x1="70" y1="215.68" x2="110" y2="215.68" stroke="#3D4451" stroke-width="2.5"/><line x1="70" y1="240.32" x2="110" y2="240.32" stroke="#3D4451" stroke-width="2.5"/><line x1="190.0" y1="228.0" x2="225.0" y2="228.0" stroke="#3D4451" stroke-width="2.5"/><text x="150" y="188" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#1A1A2E"><tspan x="150" dy="0">NAND</tspan></text><text x="150" y="288" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#0B6E75"><tspan x="150" dy="0">¬(A ∧ B)</tspan></text><text x="150" y="309" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#3D4451"><tspan x="150" dy="0">opposite of AND</tspan></text><path d="M410,200 Q430.0,228.0 410,256 Q459.6,256 490,228.0 Q459.6,200 410,200 Z" fill="#E3F1EA" stroke="#1A1A2E" stroke-width="2.5"/><circle cx="496" cy="228.0" r="6" fill="#fff" stroke="#1A1A2E" stroke-width="2.5"/><line x1="376" y1="215.68" x2="416" y2="215.68" stroke="#3D4451" stroke-width="2.5"/><line x1="376" y1="240.32" x2="416" y2="240.32" stroke="#3D4451" stroke-width="2.5"/><line x1="502" y1="228.0" x2="537" y2="228.0" stroke="#3D4451" stroke-width="2.5"/><text x="450" y="188" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#1A1A2E"><tspan x="450" dy="0">NOR</tspan></text><text x="450" y="288" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#0B6E75"><tspan x="450" dy="0">¬(A ∨ B)</tspan></text><text x="450" y="309" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#3D4451"><tspan x="450" dy="0">opposite of OR</tspan></text><path d="M720,200 Q740.0,228.0 720,256 Q769.6,256 800,228.0 Q769.6,200 720,200 Z" fill="#E3F1EA" stroke="#1A1A2E" stroke-width="2.5"/><path d="M710,200 Q730.0,228.0 710,256" fill="none" stroke="#1A1A2E" stroke-width="2.5"/><line x1="676" y1="215.68" x2="716" y2="215.68" stroke="#3D4451" stroke-width="2.5"/><line x1="676" y1="240.32" x2="716" y2="240.32" stroke="#3D4451" stroke-width="2.5"/><line x1="800" y1="228.0" x2="835" y2="228.0" stroke="#3D4451" stroke-width="2.5"/><text x="750" y="188" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#1A1A2E"><tspan x="750" dy="0">XOR</tspan></text><text x="750" y="288" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#0B6E75"><tspan x="750" dy="0">A ⊻ B</tspan></text><text x="750" y="309" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="normal" fill="#3D4451"><tspan x="750" dy="0">1 if the inputs differ</tspan></text></svg><figcaption>Learn the symbol, the expression and when each gate outputs 1.</figcaption></figure><div class="table-scroll"><table><thead><tr><th scope="col">A</th><th scope="col">B</th><th scope="col">AND</th><th scope="col">OR</th><th scope="col">NAND</th><th scope="col">NOR</th><th scope="col">XOR</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr><tr><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr><tr><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr><tr><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr></tbody></table></div>        <h2 class="mt-2">Expression → circuit → truth table</h2>
+        <figure class="diagram"><svg viewBox="0 0 800 300" role="img" aria-labelledby="t15344000 t15344000d"><title id="t15344000">Logic circuit for Q = (A ∨ ¬B) ∧ C</title><desc id="t15344000d">B goes through a NOT gate. A and NOT B go into an OR gate. The OR output and C go into an AND gate, which gives Q.</desc><defs><marker id="aht15344000" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><text x="38" y="74" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="38" dy="0">A</tspan></text><text x="38" y="136" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="38" dy="0">B</tspan></text><text x="38" y="236" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="38" dy="0">C</tspan></text><path d="M160,106 L203.4,130.0 L160,154 Z" fill="#E3F1EA" stroke="#1A1A2E" stroke-width="2.5"/><circle cx="209.4" cy="130.0" r="6" fill="#fff" stroke="#1A1A2E" stroke-width="2.5"/><path d="M330,50 Q352.5,82.0 330,114 Q385.8,114 420,82.0 Q385.8,50 330,50 Z" fill="#E3F1EA" stroke="#1A1A2E" stroke-width="2.5"/><path d="M540,120 h45.0 a36.0,36.0 0 0 1 0,72 h-45.0 Z" fill="#E3F1EA" stroke="#1A1A2E" stroke-width="2.5"/><line x1="60" y1="68" x2="336" y2="67.92" stroke="#3D4451" stroke-width="2.5"/><line x1="60" y1="130" x2="160" y2="130.0" stroke="#3D4451" stroke-width="2.5"/><polyline points="215.4,130.0 275.7,130.0 275.7,96.08 336,96.08" fill="none" stroke="#3D4451" stroke-width="2.5"/><polyline points="420,82.0 480.0,82.0 480.0,140.16 540,140.16" fill="none" stroke="#3D4451" stroke-width="2.5"/><polyline points="60,230 300.0,230 300.0,171.84 540,171.84" fill="none" stroke="#3D4451" stroke-width="2.5"/><line x1="621.0" y1="156.0" x2="681.0" y2="156.0" stroke="#3D4451" stroke-width="2.5"/><text x="699" y="162" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#1A1A2E"><tspan x="699" dy="0">Q</tspan></text><text x="195" y="190" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#0B6E75"><tspan x="195" dy="0">¬B</tspan></text><text x="380" y="145" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#0B6E75"><tspan x="380" dy="0">A ∨ ¬B</tspan></text><text x="400" y="292" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="bold" fill="#1A1A2E"><tspan x="400" dy="0">Q = (A ∨ ¬B) ∧ C</tspan></text></svg><figcaption>One gate per operator. The last gate is the operator outside all the brackets.</figcaption></figure>
+        <div class="grid grid-2">
+          <div><ol class="steps">
+            <li><strong>Count the rows:</strong> n inputs → 2<sup>n</sup> rows. 3 inputs = 8 rows.</li>
+            <li><strong>Count up in binary</strong> from 000 to 111.</li>
+            <li><strong>One column per gate</strong>, brackets first. Intermediate columns stop silly mistakes.</li>
+          </ol></div>
+          <div><div class="table-scroll"><table><thead><tr><th scope="col">A</th><th scope="col">B</th><th scope="col">C</th><th scope="col">¬B</th><th scope="col">A ∨ ¬B</th><th scope="col">Q</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr><tr><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td></tr><tr><td>0</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr><tr><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr><tr><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>1</td></tr><tr><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr><tr><td>1</td><td>1</td><td>1</td><td>0</td><td>1</td><td>1</td></tr></tbody></table></div></div>
+        </div>        <h2 class="mt-2">Defining problems with Boolean logic</h2>
+        <p>Turn each condition into a letter, then join them with the right operators. <strong>“An alarm sounds (Q) if the door is opened (D) while the alarm is set (S), or the panic button is pressed (P)”</strong> → <strong>Q ≡ (D ∧ S) ∨ P</strong>. Brackets matter: D ∧ (S ∨ P) means something different.</p>
+        <div class="callout"><p><strong>Why simplify?</strong> (A ∧ B) ∨ (A ∧ ¬B) gives the same truth table as just A. Fewer gates means a <strong>cheaper</strong>, <strong>smaller</strong> chip that uses <strong>less power</strong>, makes <strong>less heat</strong> and is <strong>faster</strong> (each gate adds a tiny delay).</p></div>
+        <div class="callout callout-amber mt-1"><p><strong>Watch out for:</strong></p><ul><li>Missing out rows: 3 inputs always need 8 rows, counted in binary.</li><li>Forgetting the bubble: a bubble on the output makes NAND or NOR.</li><li>Brackets in the wrong place when writing an expression from words.</li><li>Mixing up OR (1 if at least one) and XOR (1 if they differ).</li></ul></div>
+      </div>
+    </section>
+
+    <section id="links" class="section-alt">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>Links to other topics</h2><ul class="link-list"><li><strong>1.4.1 Bitwise and masks</strong> – AND, OR and XOR applied to whole bytes.</li><li><strong>1.1.1 The ALU</strong> – carries out logic operations using gates.</li><li><strong>2.1.4 Thinking logically</strong> – decisions and conditions in algorithms.</li><li><strong>2.2.1 Programming</strong> – Boolean conditions in IF and WHILE statements.</li><li><strong>NEA 3.2.3</strong> – a truth table gives one test for every combination of conditions.</li></ul></div>
+          <div><h2>Lesson slides</h2>
+            <p>Go back over the lesson for the full worked examples and tasks.</p>
+            <p><a class="btn" href="../../slides/1-4-3/boolean-algebra.pptx">Download the lesson slides</a></p>
+            <p class="small">1.4.3 Boolean algebra – including Rusty gates, Diagram detective and the worked truth tables.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <div class="wrap">
+        <h2>Check your understanding</h2>
+        <p>Answer, then press <strong>Check my answers</strong>. Each question explains the answer so you can fix any mistakes.</p>
+        <div class="quiz-block">
+          <h3>Quick quiz – marked for you</h3>
+          <div class="q" data-answer="c"><p class="q-text">1. Which gate outputs 1 only when its two inputs are different? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q1" value="a"> <span>AND</span></label><label><input type="radio" name="q1" value="b"> <span>OR</span></label><label><input type="radio" name="q1" value="c"> <span>XOR</span></label><label><input type="radio" name="q1" value="d"> <span>NAND</span></label></div><div class="explain" hidden><p><span class="verdict"></span>XOR (exclusive OR) is 1 for 01 and 10, and 0 when the inputs match.</p></div></div><div class="q" data-answer=""><p class="q-text">2. What does a NAND gate output when both inputs are 1? <span class="tag tag-soft">AO1</span></p><input type="text" aria-label="Answer to question 2" data-answer="0" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>NAND is the opposite of AND. AND gives 1, so NAND gives 0.</p></div></div><div class="q" data-answer=""><p class="q-text">3. How many rows does a truth table with 3 inputs need? <span class="tag tag-soft">AO1</span></p><input type="text" aria-label="Answer to question 3" data-answer="8" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>2³ = 8 rows, from 000 to 111.</p></div></div><div class="q" data-answer=""><p class="q-text">4. For Q = (A ∨ ¬B) ∧ C, what is Q when A = 0, B = 1, C = 1? <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 4" data-answer="0" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>¬B = 0, so A ∨ ¬B = 0 ∨ 0 = 0. Then 0 ∧ 1 = 0.</p></div></div><div class="q" data-answer=""><p class="q-text">5. For Q = ¬(A ∨ B) ∧ C, what is Q when A = 0, B = 0, C = 1? <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 5" data-answer="1" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>A ∨ B = 0, so ¬(A ∨ B) = 1. Then 1 ∧ 1 = 1.</p></div></div><div class="q" data-answer="b"><p class="q-text">6. An alarm sounds (Q) if the door is opened (D) while the alarm is set (S), or the panic button (P) is pressed. Which expression? <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q6" value="a"> <span>Q ≡ D ∧ (S ∨ P)</span></label><label><input type="radio" name="q6" value="b"> <span>Q ≡ (D ∧ S) ∨ P</span></label><label><input type="radio" name="q6" value="c"> <span>Q ≡ (D ∨ S) ∧ P</span></label><label><input type="radio" name="q6" value="d"> <span>Q ≡ D ∨ S ∨ P</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Door AND set must both be true, OR the panic button on its own. The brackets go round D ∧ S.</p></div></div><div class="q" data-answer="c"><p class="q-text">7. (A ∨ B) ∧ ¬(A ∧ B) behaves like which single gate? <span class="tag tag-soft">AO3</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q7" value="a"> <span>AND</span></label><label><input type="radio" name="q7" value="b"> <span>OR</span></label><label><input type="radio" name="q7" value="c"> <span>XOR</span></label><label><input type="radio" name="q7" value="d"> <span>NOR</span></label></div><div class="explain" hidden><p><span class="verdict"></span>It is 1 when at least one input is 1 but not both – exactly XOR.</p></div></div>
+          <button type="button" class="btn quiz-check">Check my answers</button>
+          <button type="button" class="btn btn-ghost quiz-reset">Start again</button>
+          <p class="quiz-score mt-1" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="exam" class="section-alt">
+      <div class="wrap">
+        <h2>Exam-style questions – mark them yourself</h2>
+        <p>Write your answer, then open <strong>Mark your answer</strong>. Tick the mark points you hit, read the model answer and use the tips to improve. See the <a href="exam-tips.html">1.4.3 exam tips</a> for more help.</p>
+<article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[4 marks]</span></header>
+          <p>Complete the output column of the truth table for <strong>Q = (A ∧ B) ∨ ¬C</strong>. List Q for the rows ABC = 000, 001, 010, 011, 100, 101, 110, 111.</p>
+          <label for="es1t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es1t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es1"><li><label><input type="checkbox"> <span>Rows 000 and 001: 1, 0 (1)</span></label></li><li><label><input type="checkbox"> <span>Rows 010 and 011: 1, 0 (1)</span></label></li><li><label><input type="checkbox"> <span>Rows 100 and 101: 1, 0 (1)</span></label></li><li><label><input type="checkbox"> <span>Rows 110 and 111: 1, 1 (1)</span></label></li></ul>
+            <p id="es1" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> Q = 1, 0, 1, 0, 1, 0, 1, 1. Work out A ∧ B and ¬C in their own columns first, then OR them.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Add intermediate columns for A ∧ B and ¬C – they make mistakes far less likely.</li><li>Check you have 8 rows counted in binary.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[2 marks]</span></header>
+          <p>An alarm sounds (Q) if the door is opened (D) while the alarm is set (S), or the panic button is pressed (P). Write a Boolean expression for Q.</p>
+          <label for="es2t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es2t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es2"><li><label><input type="checkbox"> <span>D ∧ S (1)</span></label></li><li><label><input type="checkbox"> <span>∨ P, with brackets in the right place (1)</span></label></li></ul>
+            <p id="es2" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> Q ≡ (D ∧ S) ∨ P</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Any accepted notation scores: AND, OR, . and + are all fine.</li><li>Brackets matter: D ∧ (S ∨ P) would mean something different.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO3</span><span class="marks">[3 marks]</span></header>
+          <p>A chip maker can build a circuit as (A ∧ B) ∨ (A ∧ ¬B) or as just A. Explain why the simpler version is better.</p>
+          <label for="es3t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es3t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es3"><li><label><input type="checkbox"> <span>Both give the same truth table / output (1)</span></label></li><li><label><input type="checkbox"> <span>Fewer gates: cheaper / smaller chip (1)</span></label></li><li><label><input type="checkbox"> <span>Less power and heat, or faster because each gate adds a delay (1)</span></label></li></ul>
+            <p id="es3" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> Both circuits give exactly the same output for every input, but the simplified one needs no gates at all. Fewer gates make the chip cheaper and smaller, use less power and produce less heat, and make it faster because every gate adds a small delay.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Say first that the outputs are identical – that is why simplifying is allowed.</li><li>Give specific benefits, not just “better”.</li></ul></div>
+          </div></details>
+        </article>
+      </div>
+    </section>
+
+    <section id="revise">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>How to revise this</h2><ul><li><a href="../../techniques/flashcards.html">Flashcards</a> – gate symbol on the front, expression and truth table on the back</li><li><a href="../../techniques/trace-tables.html">Trace tables</a> – truth tables with an intermediate column per gate</li><li><a href="../../techniques/worked-examples.html">Worked examples</a> – expression → circuit → truth table</li></ul>
+        <p class="small">These are the best fit for this part of the topic, but you can use any <a href="../../revision-techniques.html">revision technique</a> that works for you.</p></div>
+          <div><h2>Watch and read more</h2><ul><li><a href="https://circuitverse.org">CircuitVerse</a> – a free online logic simulator: build and test gates, adders and flip-flops.</li><li><a href="https://isaaccomputerscience.org">Isaac Computer Science</a> – free notes and questions on Boolean logic.</li></ul></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 1.4.3 pages"><a href="index.html"><span class="dir">← Back to</span>1.4.3 overview</a><a class="next" href="boolean-laws.html"><span class="dir">Next →</span>Simplifying with Boolean laws</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>

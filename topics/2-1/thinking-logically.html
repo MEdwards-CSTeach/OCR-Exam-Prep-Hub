@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2.1.4 Thinking logically (2.1.4 (a)–(c)) – OCR A Level CS Revision</title>
+  <meta name="description" content="OCR A Level Computer Science 2.1.4 (a)–(c): 2.1.4 Thinking logically. Revision notes, quiz and exam questions.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html">Paper 1</a></li>
+          <li><a href="../../paper2.html" aria-current="page">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../paper2.html">Paper 2</a> › <a href="index.html">2.1 Elements of computational thinking</a> › 2.1.4 Thinking logically</p>
+          <p class="eyebrow">2.1.4 (a)–(c) • Paper 2</p>
+          <h1>2.1.4 Thinking logically</h1>
+          <hr class="rule">
+          <p class="lead">Decisions in programs: where they are, the logical conditions that control them, and how they change the flow.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">Key terms</h2><ul style="margin:0"><li>Decision point</li><li>Selection, iteration</li><li>Logical condition</li><li>AND, OR, NOT</li><li>Trace table</li></ul></div>
+      </div>
+    </div>
+    <div class="wrap" style="padding-top:1.25rem">
+      <nav class="toc" aria-label="On this page"><ul>
+        <li><a href="#notes">Revision notes</a></li><li><a href="#links">Links and slides</a></li>
+        <li><a href="#quiz">Quick quiz</a></li><li><a href="#exam">Exam questions</a></li><li><a href="#revise">How to revise it</a></li>
+      </ul></nav>
+    </div>
+
+    <section id="notes">
+      <div class="wrap">
+        <h2 class="mt-2">Decision points (a)</h2>
+        <p>A <strong>decision point</strong> is where the program checks a condition and chooses what to do next. They appear in <strong>selection</strong> (<code>if</code>, <code>switch</code>) and <strong>iteration</strong> (<code>while</code>, <code>for</code>, <code>until</code>).</p>
+        <div class="grid grid-2">
+          <div><pre class="code"><code>01 tries = 0
+02 pw = input(&quot;Password: &quot;)
+03 while pw != stored AND tries &lt; 2
+04     tries = tries + 1
+05     pw = input(&quot;Try again: &quot;)
+06 endwhile
+07 if pw == stored then
+08     print(&quot;Welcome&quot;)
+09 else
+10     print(&quot;Account locked&quot;)
+11 endif</code></pre></div>
+          <div><p><strong>Line 03 (loop):</strong> is the password wrong AND have fewer than 2 retries been used? True: lines 04–05, then check again. False: jump to line 07.</p>
+          <p><strong>Line 07 (selection):</strong> does the password match? True: “Welcome”. False: “Account locked”.</p>
+          <p class="small">Describe every decision as: <strong>where</strong>, <strong>what is checked</strong>, what happens if <strong>True</strong> and if <strong>False</strong>.</p></div>
+        </div>        <h2 class="mt-2">Logical conditions (b)</h2>
+        <div class="table-scroll"><table><thead><tr><th scope="col">Words</th><th scope="col">Condition</th></tr></thead><tbody><tr><th scope="row">at least 120</th><td>height &gt;= 120</td></tr><tr><th scope="row">more than / over £50</th><td>total &gt; 50</td></tr><tr><th scope="row">from 0 to 100 inclusive</th><td>mark &gt;= 0 AND mark &lt;= 100</td></tr><tr><th scope="row">either reason is enough</th><td>OR</td></tr><tr><th scope="row">both must be true</th><td>AND</td></tr><tr><th scope="row">is equal to (comparison)</th><td>== (= is assignment)</td></tr></tbody></table></div>
+        <ul class="mt-1"><li><strong>Precedence:</strong> NOT, then AND, then OR. Use brackets: <code>height &gt;= 120 OR (height &gt;= 105 AND withAdult)</code>.</li>
+        <li><strong>De Morgan:</strong> <code>NOT (a &gt; 5 AND b &gt; 5)</code> is <code>a &lt;= 5 OR b &lt;= 5</code> (links to 1.4.3).</li>
+        <li>Test boundaries: for 13–19, test 15 (normal), 13 and 19 (boundary), 12 and 20 (just outside), “abc” (erroneous).</li></ul>        <h2 class="mt-2">How decisions affect flow (c)</h2>
+        <div class="grid"><figure class="diagram"><svg viewBox="0 0 840 326" role="img" aria-labelledby="t034364dc t034364dcd"><title id="t034364dc">How decisions change the flow of a program</title><desc id="t034364dcd">Selection: if answer equals correct is True, add 1 to score; if False, skip; both paths join at the next line. Iteration: while the password is wrong and tries is less than 2, ask again and go back to the condition; when False, leave the loop.</desc><defs><marker id="aht034364dc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><text x="200" y="28" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#1A1A2E"><tspan x="200" dy="0">Selection: choose a path</tspan></text><text x="640" y="28" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#1A1A2E"><tspan x="640" dy="0">Iteration: go back round</tspan></text><polygon points="200,46 310,96 200,146 90,96" fill="#EEF3F6" stroke="#1A1A2E" stroke-width="2"/><text x="200" y="92" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" fill="#1A1A2E"><tspan x="200" dy="0">answer ==</tspan><tspan x="200" dy="18">correct?</tspan></text><polyline points="90,96 60,96 60,176" fill="none" stroke="#3D4451" stroke-width="2.5" marker-end="url(#aht034364dc)"/><text x="72" y="89" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#0B6E75"><tspan x="72" dy="0">True</tspan></text><rect x="10" y="180" width="120" height="50" rx="8" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="70" y="210" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="70" dy="0">score + 1</tspan></text><polyline points="310,96 340,96 340,176" fill="none" stroke="#3D4451" stroke-width="2.5" marker-end="url(#aht034364dc)"/><text x="328" y="89" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#B25C00"><tspan x="328" dy="0">False</tspan></text><rect x="280" y="180" width="120" height="50" rx="8" fill="#FFF4E0" stroke="#B25C00" stroke-width="2"/><text x="340" y="210" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#B25C00"><tspan x="340" dy="0">skip</tspan></text><polyline points="70,230 70,262 196,262" fill="none" stroke="#3D4451" stroke-width="2.5" marker-end="url(#aht034364dc)"/><polyline points="340,230 340,262 204,262" fill="none" stroke="#3D4451" stroke-width="2.5" marker-end="url(#aht034364dc)"/><rect x="140" y="266" width="120" height="44" rx="8" fill="#fff" stroke="#3D4451" stroke-width="2"/><text x="200" y="293" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" fill="#3D4451"><tspan x="200" dy="0">next line</tspan></text><polygon points="640,46 760,96 640,146 520,96" fill="#EEF3F6" stroke="#1A1A2E" stroke-width="2"/><text x="640" y="92" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" fill="#1A1A2E"><tspan x="640" dy="0">pw wrong AND</tspan><tspan x="640" dy="18">tries &lt; 2?</tspan></text><line x1="640" y1="146" x2="640" y2="176" stroke="#3D4451" stroke-width="2.5" marker-end="url(#aht034364dc)"/><text x="652" y="169" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#0B6E75"><tspan x="652" dy="0">True</tspan></text><rect x="560" y="180" width="160" height="50" rx="8" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="640" y="210" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="640" dy="0">ask again</tspan></text><polyline points="560,205 490,205 490,96 516,96" fill="none" stroke="#3D4451" stroke-width="2.5" marker-end="url(#aht034364dc)"/><polyline points="760,96 800,96 800,288 726,288" fill="none" stroke="#3D4451" stroke-width="2.5" marker-end="url(#aht034364dc)"/><text x="790" y="89" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#B25C00"><tspan x="790" dy="0">False</tspan></text><rect x="580" y="266" width="142" height="44" rx="8" fill="#fff" stroke="#3D4451" stroke-width="2"/><text x="651" y="293" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" fill="#3D4451"><tspan x="651" dy="0">leave the loop</tspan></text></svg><figcaption>Selection picks one path. Iteration sends the flow back to check again.</figcaption></figure></div>
+        <p><strong>Trace tables</strong> show the effect: one column per variable, a new row each pass, output in its own column. Never skip a pass of the loop.</p>
+        <pre class="code"><code>n = 5
+for count = 1 to n
+    a = n - count
+    b = 3 * a + count
+next count
+print(b)</code></pre><div class="table-scroll"><table><thead><tr><th scope="col">count</th><th scope="col">a</th><th scope="col">b</th><th scope="col">output</th></tr></thead><tbody><tr><th scope="row">1</th><td>4</td><td>13</td><td></td></tr><tr><th scope="row">2</th><td>3</td><td>11</td><td></td></tr><tr><th scope="row">3</th><td>2</td><td>9</td><td></td></tr><tr><th scope="row">4</th><td>1</td><td>7</td><td></td></tr><tr><th scope="row">5</th><td>0</td><td>5</td><td>5</td></tr></tbody></table></div>
+        <div class="callout callout-amber mt-1"><p><strong>Watch out for:</strong></p><ul><li>Describing only what happens when the condition is True – the False path earns marks too.</li><li>Naming the construct (“an IF statement”) instead of what it checks.</li><li>&gt; vs &gt;=: “at least” and “over” are different.</li><li>Using OR where both must be true, so the condition is always True.</li></ul></div>
+      </div>
+    </section>
+
+    <section id="links" class="section-alt">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>Links to other topics</h2><ul class="link-list"><li><strong>1.4.3 Boolean algebra</strong> – AND, OR, NOT and De Morgan’s laws.</li><li><strong>2.2.1 Programming techniques</strong> – selection and iteration constructs.</li><li><strong>2.3.1 Algorithms</strong> – trace tables for searching and sorting.</li><li><strong>1.2.3 Software development</strong> – testing with normal, boundary and erroneous data.</li><li><strong>2.1.3 Thinking procedurally</strong> – a hierarchy chart hides the decisions – a flowchart shows them.</li><li><strong>NEA 3.3</strong> – boundary test data in your testing.</li></ul></div>
+          <div><h2>Lesson slides</h2>
+            <p>Go back over the lesson for the full worked examples and tasks.</p>
+            <p><a class="btn" href="../../slides/2-1/thinking-logically.pptx">Download the lesson slides</a></p>
+            <p class="small">2.1.4 Thinking logically: Thunder Loop ride rule, quiz and password decisions, trace race, “Which condition?” rounds and test data.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <div class="wrap">
+        <h2>Check your understanding</h2>
+        <p>Answer, then press <strong>Check my answers</strong>. Each question explains the answer so you can fix any mistakes.</p>
+        <div class="quiz-block">
+          <h3>Quick quiz – marked for you</h3>
+          <div class="q" data-answer="b"><p class="q-text">1. A ride needs riders to be <em>at least</em> 120 cm. Which condition? <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q19" value="a"> <span>height &gt; 120</span></label><label><input type="radio" name="q19" value="b"> <span>height &gt;= 120</span></label><label><input type="radio" name="q19" value="c"> <span>height &lt; 120</span></label><label><input type="radio" name="q19" value="d"> <span>height == 120</span></label></div><div class="explain" hidden><p><span class="verdict"></span>“At least” includes 120, so &gt;=.</p></div></div><div class="q" data-answer="b"><p class="q-text">2. Free delivery for orders over £50, or for anyone who is a member. <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q20" value="a"> <span>total &gt; 50 AND member</span></label><label><input type="radio" name="q20" value="b"> <span>total &gt; 50 OR member</span></label><label><input type="radio" name="q20" value="c"> <span>total &gt;= 50 OR member</span></label><label><input type="radio" name="q20" value="d"> <span>NOT member</span></label></div><div class="explain" hidden><p><span class="verdict"></span>“Over” means &gt;, and either reason is enough, so OR.</p></div></div><div class="q" data-answer="c"><p class="q-text">3. A valid mark is from 0 to 100 inclusive. <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q21" value="a"> <span>mark &gt; 0 AND mark &lt; 100</span></label><label><input type="radio" name="q21" value="b"> <span>mark &gt;= 0 OR mark &lt;= 100</span></label><label><input type="radio" name="q21" value="c"> <span>mark &gt;= 0 AND mark &lt;= 100</span></label><label><input type="radio" name="q21" value="d"> <span>mark &gt; 0 OR mark &lt; 100</span></label></div><div class="explain" hidden><p><span class="verdict"></span>B is always True – it would accept 250.</p></div></div><div class="q" data-answer="b"><p class="q-text">4. Which is the same as NOT (a &gt; 5 AND b &gt; 5)? <span class="tag tag-soft">AO3</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q22" value="a"> <span>a &lt;= 5 AND b &lt;= 5</span></label><label><input type="radio" name="q22" value="b"> <span>a &lt;= 5 OR b &lt;= 5</span></label><label><input type="radio" name="q22" value="c"> <span>a &lt; 5 OR b &lt; 5</span></label><label><input type="radio" name="q22" value="d"> <span>a &gt; 5 OR b &gt; 5</span></label></div><div class="explain" hidden><p><span class="verdict"></span>De Morgan: NOT (P AND Q) = NOT P OR NOT Q, and NOT (a &gt; 5) is a &lt;= 5.</p></div></div><div class="q" data-answer=""><p class="q-text">5. In the trace table above (n = 5), what is the value of b when count = 3? <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 5" data-answer="9" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>a = 5 − 3 = 2, so b = 3 × 2 + 3 = 9.</p></div></div><div class="q" data-answer="a"><p class="q-text">6. Keep asking until the guess is correct or 3 guesses have been used: <code>while ___</code> <span class="tag tag-soft">AO3</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q24" value="a"> <span>guess != answer AND tries &lt; 3</span></label><label><input type="radio" name="q24" value="b"> <span>guess != answer OR tries &lt; 3</span></label><label><input type="radio" name="q24" value="c"> <span>guess == answer AND tries &lt; 3</span></label><label><input type="radio" name="q24" value="d"> <span>guess != answer AND tries &lt;= 3</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Keep looping only while BOTH are true. B keeps going after 3 wrong guesses; D allows a fourth.</p></div></div>
+          <button type="button" class="btn quiz-check">Check my answers</button>
+          <button type="button" class="btn btn-ghost quiz-reset">Start again</button>
+          <p class="quiz-score mt-1" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="exam" class="section-alt">
+      <div class="wrap">
+        <h2>Exam-style questions – mark them yourself</h2>
+        <p>Write your answer, then open <strong>Mark your answer</strong>. Tick the mark points you hit, read the model answer and use the tips to improve. See the <a href="exam-tips.html">2.1 exam tips</a> for more help.</p>
+<article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[4 marks]</span></header>
+          <p>A board game: logical conditions are checked once a player has rolled the dice. Describe <strong>two</strong> different logical conditions and how the result will affect the outcome of the game. (June 2024)</p>
+          <label for="es10t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es10t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es10"><li><label><input type="checkbox"> <span>Condition 1, e.g. has the player landed on square 100? (1)</span></label></li><li><label><input type="checkbox"> <span>Outcome linked to it, e.g. the player is announced as the winner (1)</span></label></li><li><label><input type="checkbox"> <span>Condition 2, e.g. has the timer reached 0? (1)</span></label></li><li><label><input type="checkbox"> <span>Outcome linked to it, e.g. the game is a draw (1)</span></label></li></ul>
+            <p id="es10" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> Has the player landed on square 100? If so, they are announced as the winner. Has the timer reached 0? If so, the game is declared a draw.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Each condition must be a yes/no question – “check the dice” isn’t.</li><li>The outcome must follow from that condition: “1 mark for condition and 1 mark for outcome”.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[4 marks]</span></header>
+          <p>Trace this program for the inputs 4, −2, 6, −1. State the output.</p><pre class="code"><code>01 total = 0
+02 count = 0
+03 num = int(input(&quot;Number: &quot;))
+04 while num != -1
+05     if num &gt; 0 then
+06         total = total + num
+07         count = count + 1
+08     endif
+09     num = int(input(&quot;Number: &quot;))
+10 endwhile
+11 print(total / count)</code></pre>
+          <label for="es11t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es11t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es11"><li><label><input type="checkbox"> <span>total column correct: 0, 4, 10 (1)</span></label></li><li><label><input type="checkbox"> <span>count column correct: 0, 1, 2 (1)</span></label></li><li><label><input type="checkbox"> <span>num column: 4, −2, 6, −1 (1)</span></label></li><li><label><input type="checkbox"> <span>Output 5 (accept 5.0) (1)</span></label></li></ul>
+            <p id="es11" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> num 4 → total 4, count 1. num −2 → skipped. num 6 → total 10, count 2. num −1 → loop ends. Output: 10 / 2 = 5.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>One row per pass – most lost marks come from a missed row.</li><li>−2 still goes into num, even though it isn’t added.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO3</span><span class="marks">[3 marks]</span></header>
+          <p>For the same program, which inputs make line 11 crash? Explain a fix.</p>
+          <label for="es12t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es12t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es12"><li><label><input type="checkbox"> <span>First input −1, or no positive numbers entered (1)</span></label></li><li><label><input type="checkbox"> <span>count is 0, so it divides by zero (1)</span></label></li><li><label><input type="checkbox"> <span>Fix: only divide if count &gt; 0, otherwise output a message (1)</span></label></li></ul>
+            <p id="es12" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> If the first input is −1 (or no positive numbers are entered), count is still 0, so line 11 divides by zero and crashes. Add <code>if count &gt; 0 then</code> before the division and otherwise print “No numbers”.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Name the input, the reason and the fix – three marks, three parts.</li><li>Write the fix as a condition, not just “add validation”.</li></ul></div>
+          </div></details>
+        </article>
+      </div>
+    </section>
+
+    <section id="revise">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>How to revise this</h2><ul><li><a href="../../techniques/trace-tables.html">Trace tables</a> – trace loops and selection by hand</li><li><a href="../../techniques/flowcharts.html">Flowcharts</a> – turn code into a flowchart to see each decision</li><li><a href="../../techniques/worked-examples.html">Worked examples</a> – turn words into conditions</li></ul>
+        <p class="small">These are the best fit for this part of the topic, but you can use any <a href="../../revision-techniques.html">revision technique</a> that works for you.</p></div>
+          <div><h2>Watch and read more</h2><ul><li><a href="https://pythontutor.com">Python Tutor</a> – step through code line by line to see each decision being made.</li><li><a href="https://isaaccomputerscience.org">Isaac Computer Science</a> – free notes and questions on computational thinking.</li><li><a href="https://www.youtube.com/@craigndave">Craig 'n' Dave (YouTube)</a> – short videos on every OCR A Level spec point – search for 2.1.</li></ul></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 2.1 pages"><a href="thinking-procedurally.html"><span class="dir">← Previous</span>2.1.3 Thinking procedurally</a><a class="next" href="thinking-concurrently.html"><span class="dir">Next →</span>2.1.5 Thinking concurrently</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>

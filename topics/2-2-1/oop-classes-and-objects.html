@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OOP: classes and objects (2.2.1 (f)) – OCR A Level CS Revision</title>
+  <meta name="description" content="OCR A Level Computer Science 2.2.1 (f): OOP: classes and objects. Revision notes, quiz and exam questions.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html">Paper 1</a></li>
+          <li><a href="../../paper2.html" aria-current="page">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../paper2.html">Paper 2</a> › <a href="index.html">2.2.1 Programming techniques</a> › OOP: classes and objects</p>
+          <p class="eyebrow">2.2.1 (f) • Paper 2</p>
+          <h1>OOP: classes and objects</h1>
+          <hr class="rule">
+          <p class="lead">Thinking in objects: how OOP differs from procedural code, and how to write a class, a constructor and objects.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">Key terms</h2><ul style="margin:0"><li>Class, object</li><li>Attribute, method</li><li>Constructor (new)</li><li>Instantiation</li><li>Procedural vs OOP</li></ul></div>
+      </div>
+    </div>
+    <div class="wrap" style="padding-top:1.25rem">
+      <nav class="toc" aria-label="On this page"><ul>
+        <li><a href="#notes">Revision notes</a></li><li><a href="#links">Links and slides</a></li>
+        <li><a href="#quiz">Quick quiz</a></li><li><a href="#exam">Exam questions</a></li><li><a href="#revise">How to revise it</a></li>
+      </ul></nav>
+    </div>
+
+    <section id="notes">
+      <div class="wrap">
+        <h2 class="mt-2">Two ways to organise a program</h2>
+        <div class="grid grid-2">
+          <div class="card"><h3>Procedural</h3><p>A sequence of steps in procedures and functions. Data is kept separately and passed in.</p>
+<pre class="code"><code>health = 100
+procedure takeHit(health, dmg)
+    return health - dmg
+endprocedure
+health = takeHit(health, 10)</code></pre></div>
+          <div class="card"><h3>Object-oriented</h3><p>A set of objects. Each holds its own data and the methods that act on it.</p>
+<pre class="code"><code>class Enemy
+    private health
+    public procedure takeHit(dmg)
+        health = health - dmg
+    endprocedure
+endclass
+orc.takeHit(10)</code></pre></div>
+        </div>
+        <div class="table-scroll"><table><thead><tr><th scope="col"></th><th scope="col">Procedural</th><th scope="col">Object-oriented</th></tr></thead><tbody><tr><th scope="row">Built from</th><td>Procedures and functions</td><td>Classes and objects</td></tr><tr><th scope="row">Data</th><td>Separate from the code, often global or passed in</td><td>Inside each object, usually private</td></tr><tr><th scope="row">Reuse</th><td>Call a subroutine again</td><td>Inherit from a class, make many objects</td></tr><tr><th scope="row">Suits</th><td>Short tasks with clear steps</td><td>Large systems of interacting things: games, GUIs, simulations</td></tr></tbody></table></div>
+        <p class="mt-1"><strong>Procedural asks:</strong> what steps? <strong>OOP asks:</strong> what things, and what can each one do? The dot in <code>object.method()</code> is the giveaway.</p>        <h2 class="mt-2">Classes, objects, attributes and methods</h2>
+        <figure class="diagram"><svg viewBox="0 0 820 265" role="img" aria-labelledby="tf6694c36 tf6694c36d"><title id="tf6694c36">A class and two objects made from it</title><desc id="tf6694c36d">The class Pet has private attributes name and hunger and public methods new and feed. Two objects are instantiated from it: rex with hunger 40 and luna with hunger 75.</desc><defs><marker id="ahtf6694c36" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><text x="150" y="27" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#0B6E75"><tspan x="150" dy="0">Class: the template</tspan></text><rect x="50" y="35" width="200" height="150" rx="6" fill="#fff" stroke="#0B6E75" stroke-width="2.5"/><rect x="50" y="35" width="200" height="38" rx="6" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2.5"/><text x="150" y="60" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#1A1A2E"><tspan x="150" dy="0">Pet</tspan></text><line x1="50" y1="129" x2="250" y2="129" stroke="#0B6E75" stroke-width="2"/><text x="62" y="94" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="normal" fill="#3D4451"><tspan x="62" dy="0">− name</tspan></text><text x="62" y="116" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="normal" fill="#3D4451"><tspan x="62" dy="0">− hunger</tspan></text><text x="62" y="150" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="normal" fill="#3D4451"><tspan x="62" dy="0">+ new(givenName)</tspan></text><text x="62" y="172" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="normal" fill="#3D4451"><tspan x="62" dy="0">+ feed()</tspan></text><rect x="450" y="50" width="330" height="70" rx="10" fill="#FFF4E0" stroke="#B25C00" stroke-width="2"/><text x="615" y="77" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#B25C00"><tspan x="615" dy="0">Object: rex</tspan></text><text x="615" y="103" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" fill="#1A1A2E"><tspan x="615" dy="0">name = &quot;Rex&quot;, hunger = 40</tspan></text><line x1="254" y1="110" x2="444" y2="85" stroke="#3D4451" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#ahtf6694c36)"/><rect x="450" y="150" width="330" height="70" rx="10" fill="#FFF4E0" stroke="#B25C00" stroke-width="2"/><text x="615" y="177" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#B25C00"><tspan x="615" dy="0">Object: luna</tspan></text><text x="615" y="203" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" fill="#1A1A2E"><tspan x="615" dy="0">name = &quot;Luna&quot;, hunger = 75</tspan></text><line x1="254" y1="110" x2="444" y2="185" stroke="#3D4451" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#ahtf6694c36)"/><text x="345" y="77" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" fill="#3D4451"><tspan x="345" dy="0">instantiate</tspan></text><text x="615" y="250" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#1A1A2E"><tspan x="615" dy="0">One class, many objects – each with its own values</tspan></text></svg><figcaption>Cookie cutter = class. Each cookie = object. Same shape, different icing.</figcaption></figure>
+        <div class="table-scroll"><table><thead><tr><th scope="col">Term</th><th scope="col">Meaning</th><th scope="col">Example</th></tr></thead><tbody><tr><th scope="row">Class</th><td>A template or blueprint that defines the attributes and methods its objects will have</td><td>Pet</td></tr><tr><th scope="row">Object</th><td>An instance of a class, with its own value for each attribute</td><td>rex, luna</td></tr><tr><th scope="row">Attribute</th><td>A variable belonging to an object that holds its data (its state)</td><td>name, hunger</td></tr><tr><th scope="row">Method</th><td>A procedure or function in a class: an action the object can perform</td><td>feed()</td></tr><tr><th scope="row">Constructor</th><td>The method <code>new</code> that runs when an object is created and sets its starting values</td><td>new(givenName)</td></tr><tr><th scope="row">Instantiation</th><td>Making an object from a class</td><td>rex = new Pet("Rex")</td></tr></tbody></table></div><p class="mt-1"><strong>Quick test:</strong> a noun or adjective is probably an attribute; a verb is probably a method.</p>        <h2 class="mt-2">Writing a class</h2>
+        <div class="grid grid-2">
+          <div><h3>OCR pseudocode</h3><pre class="code"><code>class Pet
+    private name
+    private hunger
+    public procedure new(givenName)
+        name = givenName
+        hunger = 50
+    endprocedure
+    public procedure feed()
+        hunger = hunger - 20
+    endprocedure
+endclass
+
+rex = new Pet(&quot;Rex&quot;)
+rex.feed()</code></pre></div>
+          <div><h3>Python</h3><pre class="code"><code>class Pet:
+    def __init__(self, givenName):
+        self.__name = givenName
+        self.__hunger = 50
+
+    def feed(self):
+        self.__hunger = self.__hunger - 20
+
+rex = Pet(&quot;Rex&quot;)
+rex.feed()</code></pre>
+          <div class="table-scroll"><table><thead><tr><th scope="col">Pseudocode</th><th scope="col">Python</th></tr></thead><tbody><tr><td>new</td><td>__init__</td></tr><tr><td>(this object)</td><td>self</td></tr><tr><td>private name</td><td>self.__name</td></tr><tr><td>new Pet("Rex")</td><td>Pet("Rex")</td></tr></tbody></table></div></div>
+        </div>
+        <p class="mt-1"><strong>Exam wording:</strong> the constructor <em>creates an instance of an object from a class</em>. In the exam, pseudocode or Python are both fine.</p>
+        <div class="callout callout-amber mt-1"><p><strong>Watch out for:</strong></p><ul><li>Mixing up class (the template) and object (one instance).</li><li>Constructor parameters with the same names as the attributes – the mark scheme wants different identifiers (Nov 2020).</li><li>Calling an attribute a method, or the other way round.</li><li>Definitions with no link to the scenario in the question.</li></ul></div>
+      </div>
+    </section>
+
+    <section id="links" class="section-alt">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>Links to other topics</h2><ul class="link-list"><li><strong>1.2.4 (e) Object-oriented languages</strong> – the same OOP ideas on Paper 1.</li><li><strong>2.2.1 (d) Modularity</strong> – methods are procedures and functions inside a class.</li><li><strong>2.1.2 Reusable components</strong> – classes are reusable program components.</li><li><strong>1.4.2 Data structures</strong> – a linked list node or a stack can be written as a class.</li><li><strong>NEA 3.2.2</strong> – identify the key classes in your design and justify them.</li></ul></div>
+          <div><h2>Lesson slides</h2>
+            <p>Go back over the lesson for the full worked examples and tasks.</p>
+            <p><a class="btn" href="../../slides/2-2-1/introduction-to-oop.pptx">Download the lesson slides</a></p>
+            <p class="small">2.2.1G Introduction to OOP – Part 1: 50 enemies, Pet class and Lab 1.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <div class="wrap">
+        <h2>Check your understanding</h2>
+        <p>Answer, then press <strong>Check my answers</strong>. Each question explains the answer so you can fix any mistakes.</p>
+        <div class="quiz-block">
+          <h3>Quick quiz – marked for you</h3>
+          <div class="q" data-answer="b"><p class="q-text">1. An object is… <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q1" value="a"> <span>a template</span></label><label><input type="radio" name="q1" value="b"> <span>an instance of a class</span></label><label><input type="radio" name="q1" value="c"> <span>a method</span></label><label><input type="radio" name="q1" value="d"> <span>a data type</span></label></div><div class="explain" hidden><p><span class="verdict"></span>The class is the template; an object is one instance made from it, with its own attribute values.</p></div></div><div class="q" data-answer="c"><p class="q-text">2. In <code>car.drive(30)</code>, what is <code>drive</code>? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q2" value="a"> <span>An attribute</span></label><label><input type="radio" name="q2" value="b"> <span>A class</span></label><label><input type="radio" name="q2" value="c"> <span>A method</span></label><label><input type="radio" name="q2" value="d"> <span>A parameter</span></label></div><div class="explain" hidden><p><span class="verdict"></span>drive is a method called on the object car. 30 is the parameter.</p></div></div><div class="q" data-answer="b"><p class="q-text">3. What does a constructor do? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q3" value="a"> <span>Deletes an object</span></label><label><input type="radio" name="q3" value="b"> <span>Sets up a new object with its starting values</span></label><label><input type="radio" name="q3" value="c"> <span>Copies a class</span></label><label><input type="radio" name="q3" value="d"> <span>Makes an attribute private</span></label></div><div class="explain" hidden><p><span class="verdict"></span>The constructor (new in OCR pseudocode, __init__ in Python) creates an instance of an object from a class.</p></div></div><div class="q" data-answer="b"><p class="q-text">4. <code>player.jump()</code> is an example of… <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q4" value="a"> <span>procedural code</span></label><label><input type="radio" name="q4" value="b"> <span>object-oriented code</span></label></div><div class="explain" hidden><p><span class="verdict"></span>A method called on an object – the dot is the giveaway.</p></div></div><div class="q" data-answer=""><p class="q-text">5. Pet sets hunger = 50 in its constructor, and feed() takes 20 off. After <code>rex = new Pet("Rex")</code>, <code>rex.feed()</code>, <code>rex.feed()</code>, what is rex’s hunger? <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 5" data-answer="10" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>50 − 20 − 20 = 10. Each object keeps its own hunger.</p></div></div><div class="q" data-answer="b"><p class="q-text">6. Which is best written procedurally? <span class="tag tag-soft">AO3</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q6" value="a"> <span>A game with 50 kinds of enemy</span></label><label><input type="radio" name="q6" value="b"> <span>A 20-line script that renames files in a folder</span></label><label><input type="radio" name="q6" value="c"> <span>A GUI with many windows</span></label><label><input type="radio" name="q6" value="d"> <span>A traffic simulation</span></label></div><div class="explain" hidden><p><span class="verdict"></span>A short task with clear steps doesn’t need classes. OOP suits large systems of interacting things.</p></div></div>
+          <button type="button" class="btn quiz-check">Check my answers</button>
+          <button type="button" class="btn btn-ghost quiz-reset">Start again</button>
+          <p class="quiz-score mt-1" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="exam" class="section-alt">
+      <div class="wrap">
+        <h2>Exam-style questions – mark them yourself</h2>
+        <p>Write your answer, then open <strong>Mark your answer</strong>. Tick the mark points you hit, read the model answer and use the tips to improve. See the <a href="exam-tips.html">2.2.1 exam tips</a> for more help.</p>
+<article class="exam-q">
+          <header><span class="tag">AO1</span><span class="marks">[2 marks]</span></header>
+          <p>A gym app uses OOP. State what is meant by a <strong>class</strong> and an <strong>object</strong>.</p>
+          <label for="es1t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es1t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es1"><li><label><input type="checkbox"> <span>Class: a template that defines the attributes and methods (1)</span></label></li><li><label><input type="checkbox"> <span>Object: an instance of a class with its own attribute values (1)</span></label></li></ul>
+            <p id="es1" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> A class is a template that defines the attributes and methods its objects will have, such as Member. An object is an instance of a class with its own values, such as one particular gym member.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Use “template” and “instance” – the exam keywords.</li><li>Link to the scenario: Member and a particular member.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[4 marks]</span></header>
+          <p>Each Member has a name, an age and a number of visits. All attributes are private. Write the constructor for Member. Name and age are passed in; visits starts at 0.</p>
+          <label for="es2t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es2t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es2"><li><label><input type="checkbox"> <span>Constructor called new is defined (1)</span></label></li><li><label><input type="checkbox"> <span>Both parameters, with names different from the attributes (1)</span></label></li><li><label><input type="checkbox"> <span>Parameters assigned to name and age (1)</span></label></li><li><label><input type="checkbox"> <span>visits set to 0 (1)</span></label></li></ul>
+            <p id="es2" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> <code>public procedure new(pName, pAge)<br>&nbsp;&nbsp;name = pName<br>&nbsp;&nbsp;age = pAge<br>&nbsp;&nbsp;visits = 0<br>endprocedure</code></p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Use different names for parameters and attributes (pName, not name).</li><li>Don’t forget the attribute that has a fixed start value (visits = 0).</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO1</span><span class="marks">[3 marks]</span></header>
+          <p>State the meaning of the terms <strong>object</strong>, <strong>method</strong> and <strong>attribute</strong>.</p>
+          <label for="es3t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es3t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es3"><li><label><input type="checkbox"> <span>Object: an instance of a class (1)</span></label></li><li><label><input type="checkbox"> <span>Method: a subroutine / action an object can perform (1)</span></label></li><li><label><input type="checkbox"> <span>Attribute: a variable / piece of data belonging to an object (1)</span></label></li></ul>
+            <p id="es3" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> An object is an instance of a class. A method is a procedure or function in a class – an action the object can perform. An attribute is a variable belonging to an object that stores its data.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>One clear sentence per term.</li><li>If the question has a scenario, add an example from it.</li></ul></div>
+          </div></details>
+        </article>
+      </div>
+    </section>
+
+    <section id="revise">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>How to revise this</h2><ul><li><a href="../../techniques/flashcards.html">Flashcards</a> – class, object, attribute, method, constructor, instantiation</li><li><a href="../../techniques/teach-it.html">Teach it</a> – explain class vs object with your own example</li><li><a href="../../techniques/comparison-tables.html">Comparison tables</a> – procedural vs OOP</li></ul>
+        <p class="small">These are the best fit for this part of the topic, but you can use any <a href="../../revision-techniques.html">revision technique</a> that works for you.</p></div>
+          <div><h2>Watch and read more</h2><ul><li><a href="https://pythontutor.com">Python Tutor</a> – paste a class and watch each object being created, step by step.</li><li><a href="https://docs.python.org/3/tutorial/classes.html">Python tutorial: classes</a> – the official guide to classes, objects and inheritance in Python.</li><li><a href="https://isaaccomputerscience.org">Isaac Computer Science</a> – free notes and questions on object-oriented programming.</li></ul></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 2.2.1 pages"><a href="index.html"><span class="dir">← Back to</span>2.2.1 overview</a><a class="next" href="oop-three-pillars.html"><span class="dir">Next →</span>OOP: encapsulation, inheritance and polymorphism</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>

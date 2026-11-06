@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>1.4.3 Boolean Algebra – OCR A Level CS Revision</title>
+  <meta name="description" content="OCR A Level Computer Science 1.4.3 Boolean algebra: logic gates, laws, Karnaugh maps, adders and flip-flops.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html" aria-current="page">Paper 1</a></li>
+          <li><a href="../../paper2.html">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../paper1.html">Paper 1</a> › 1.4.3 Boolean algebra</p>
+          <p class="eyebrow">Paper 1 • Topic 1.4.3</p>
+          <h1>1.4.3 Boolean algebra</h1>
+          <hr class="rule">
+          <p class="lead">The maths of true and false: logic gates, simplifying with laws and Karnaugh maps, and the circuits that add and remember.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">What the spec says</h2><ol type="a" style="margin:0;font-size:.95rem">
+          <li>Define problems using Boolean logic</li><li>Simplify using Karnaugh maps</li><li>De Morgan’s, distribution, association, commutation, double negation</li>
+          <li>Logic gate diagrams and truth tables</li><li>D-type flip-flops, half and full adders</li></ol></div>
+      </div>
+    </div>
+
+    <section>
+      <div class="wrap">
+        <h2>Revise each part</h2>
+        <p>Work through them in this order – it matches the lesson: gates first, then the laws, then Karnaugh maps, then adders and flip-flops.</p>
+        <div class="grid grid-2"><a class="card" href="logic-gates.html"><h4 style="font-size:1.1rem">Logic gates, expressions and truth tables</h4><span class="go">Revise this →</span></a><a class="card" href="boolean-laws.html"><h4 style="font-size:1.1rem">Simplifying with Boolean laws</h4><span class="go">Revise this →</span></a><a class="card" href="karnaugh-maps.html"><h4 style="font-size:1.1rem">Karnaugh maps</h4><span class="go">Revise this →</span></a><a class="card" href="adders-and-flip-flops.html"><h4 style="font-size:1.1rem">Adders and D-type flip-flops</h4><span class="go">Revise this →</span></a></div>
+        <div class="grid grid-2 mt-1"><a class="card" href="exam-tips.html" style="background:#FFF4E0;border-color:#B25C00"><h4 style="font-size:1.1rem">1.4.3 exam tips</h4><p>What examiners look for, with weak and good answers.</p><span class="go">Read the exam tips →</span></a></div>
+        <h2 class="mt-2">Exam notation</h2>
+        <div class="table-scroll"><table><thead><tr><th scope="col">Operation</th><th scope="col">Exam symbol</th><th scope="col">Example</th><th scope="col">Also accepted</th></tr></thead><tbody><tr><th scope="row">AND (conjunction)</th><td>∧</td><td>A ∧ B</td><td>A AND B, A.B</td></tr><tr><th scope="row">OR (disjunction)</th><td>∨</td><td>A ∨ B</td><td>A OR B, A + B</td></tr><tr><th scope="row">NOT (negation)</th><td>¬</td><td>¬A</td><td>NOT A, ~A, a bar over A</td></tr><tr><th scope="row">XOR (exclusive OR)</th><td>⊻</td><td>A ⊻ B</td><td>A XOR B, A ⊕ B</td></tr><tr><th scope="row">Equivalence</th><td>≡</td><td>Q ≡ A ∧ B</td><td>Q = A ∧ B</td></tr></tbody></table></div>
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="wrap">
+        <h2>Ready-made revision tools</h2>
+        <figure class="diagram"><svg viewBox="0 0 1120 442" role="img" aria-labelledby="tb2e5dd30 tb2e5dd30d"><title id="tb2e5dd30">Mind map of 1.4.3 Boolean algebra</title><desc id="tb2e5dd30d">Gates: AND, OR, NOT; NAND, NOR, XOR; Exam notation ∧ ∨ ¬ ⊻; Truth tables: 2ⁿ rows. Expressions: From a description; Brackets matter; Diagram ↔ expression; Fewer gates is better. Laws: De Morgan’s; Distribution; Association, commutation; Double negation. Karnaugh maps: Gray code: 00 01 11 10; Groups of 1, 2, 4, 8; Wrap round, overlap; Keep what stays the same. Adders: Half: S = XOR, C = AND; Full: 2 halves + OR; Ripple carry chain; Final carry = overflow. D-type flip-flop: Stores 1 bit; Inputs D and clock; Outputs Q and ¬Q; Changes on rising edge</desc><defs><marker id="ahtb2e5dd30" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><path d="M660,221.0 C667.5,221.0 667.5,87.0 675,87.0" fill="none" stroke="#0B6E75" stroke-width="5" stroke-linecap="round"/><rect x="675" y="63.0" width="180" height="48" rx="24" fill="#0B6E75"/><text x="765" y="93" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#fff"><tspan x="765" dy="0">Gates</tspan></text><path d="M855,87.0 C869,87.0 864,46.5 878,46.5" fill="none" stroke="#0B6E75" stroke-width="2"/><circle cx="878" cy="46.5" r="3.5" fill="#0B6E75"/><text x="886" y="51.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">AND, OR, NOT</text><path d="M855,87.0 C869,87.0 864,73.5 878,73.5" fill="none" stroke="#0B6E75" stroke-width="2"/><circle cx="878" cy="73.5" r="3.5" fill="#0B6E75"/><text x="886" y="78.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">NAND, NOR, XOR</text><path d="M855,87.0 C869,87.0 864,100.5 878,100.5" fill="none" stroke="#0B6E75" stroke-width="2"/><circle cx="878" cy="100.5" r="3.5" fill="#0B6E75"/><text x="886" y="105.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Exam notation ∧ ∨ ¬ ⊻</text><path d="M855,87.0 C869,87.0 864,127.5 878,127.5" fill="none" stroke="#0B6E75" stroke-width="2"/><circle cx="878" cy="127.5" r="3.5" fill="#0B6E75"/><text x="886" y="132.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Truth tables: 2ⁿ rows</text><path d="M660,221.0 C667.5,221.0 667.5,221.0 675,221.0" fill="none" stroke="#1A1A2E" stroke-width="5" stroke-linecap="round"/><rect x="675" y="197.0" width="180" height="48" rx="24" fill="#1A1A2E"/><text x="765" y="227" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#fff"><tspan x="765" dy="0">Expressions</tspan></text><path d="M855,221.0 C869,221.0 864,180.5 878,180.5" fill="none" stroke="#1A1A2E" stroke-width="2"/><circle cx="878" cy="180.5" r="3.5" fill="#1A1A2E"/><text x="886" y="185.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">From a description</text><path d="M855,221.0 C869,221.0 864,207.5 878,207.5" fill="none" stroke="#1A1A2E" stroke-width="2"/><circle cx="878" cy="207.5" r="3.5" fill="#1A1A2E"/><text x="886" y="212.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Brackets matter</text><path d="M855,221.0 C869,221.0 864,234.5 878,234.5" fill="none" stroke="#1A1A2E" stroke-width="2"/><circle cx="878" cy="234.5" r="3.5" fill="#1A1A2E"/><text x="886" y="239.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Diagram ↔ expression</text><path d="M855,221.0 C869,221.0 864,261.5 878,261.5" fill="none" stroke="#1A1A2E" stroke-width="2"/><circle cx="878" cy="261.5" r="3.5" fill="#1A1A2E"/><text x="886" y="266.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Fewer gates is better</text><path d="M660,221.0 C667.5,221.0 667.5,355.0 675,355.0" fill="none" stroke="#B25C00" stroke-width="5" stroke-linecap="round"/><rect x="675" y="331.0" width="180" height="48" rx="24" fill="#B25C00"/><text x="765" y="361" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#fff"><tspan x="765" dy="0">Laws</tspan></text><path d="M855,355.0 C869,355.0 864,314.5 878,314.5" fill="none" stroke="#B25C00" stroke-width="2"/><circle cx="878" cy="314.5" r="3.5" fill="#B25C00"/><text x="886" y="319.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">De Morgan’s</text><path d="M855,355.0 C869,355.0 864,341.5 878,341.5" fill="none" stroke="#B25C00" stroke-width="2"/><circle cx="878" cy="341.5" r="3.5" fill="#B25C00"/><text x="886" y="346.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Distribution</text><path d="M855,355.0 C869,355.0 864,368.5 878,368.5" fill="none" stroke="#B25C00" stroke-width="2"/><circle cx="878" cy="368.5" r="3.5" fill="#B25C00"/><text x="886" y="373.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Association, commutation</text><path d="M855,355.0 C869,355.0 864,395.5 878,395.5" fill="none" stroke="#B25C00" stroke-width="2"/><circle cx="878" cy="395.5" r="3.5" fill="#B25C00"/><text x="886" y="400.5" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Double negation</text><path d="M460,221.0 C452.5,221.0 452.5,87.0 445,87.0" fill="none" stroke="#2F6B3A" stroke-width="5" stroke-linecap="round"/><rect x="265" y="63.0" width="180" height="48" rx="24" fill="#2F6B3A"/><text x="355" y="93" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#fff"><tspan x="355" dy="0">Karnaugh maps</tspan></text><path d="M265,87.0 C251,87.0 256,46.5 242,46.5" fill="none" stroke="#2F6B3A" stroke-width="2"/><circle cx="242" cy="46.5" r="3.5" fill="#2F6B3A"/><text x="234" y="51.5" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Gray code: 00 01 11 10</text><path d="M265,87.0 C251,87.0 256,73.5 242,73.5" fill="none" stroke="#2F6B3A" stroke-width="2"/><circle cx="242" cy="73.5" r="3.5" fill="#2F6B3A"/><text x="234" y="78.5" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Groups of 1, 2, 4, 8</text><path d="M265,87.0 C251,87.0 256,100.5 242,100.5" fill="none" stroke="#2F6B3A" stroke-width="2"/><circle cx="242" cy="100.5" r="3.5" fill="#2F6B3A"/><text x="234" y="105.5" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Wrap round, overlap</text><path d="M265,87.0 C251,87.0 256,127.5 242,127.5" fill="none" stroke="#2F6B3A" stroke-width="2"/><circle cx="242" cy="127.5" r="3.5" fill="#2F6B3A"/><text x="234" y="132.5" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Keep what stays the same</text><path d="M460,221.0 C452.5,221.0 452.5,221.0 445,221.0" fill="none" stroke="#3D5A99" stroke-width="5" stroke-linecap="round"/><rect x="265" y="197.0" width="180" height="48" rx="24" fill="#3D5A99"/><text x="355" y="227" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#fff"><tspan x="355" dy="0">Adders</tspan></text><path d="M265,221.0 C251,221.0 256,180.5 242,180.5" fill="none" stroke="#3D5A99" stroke-width="2"/><circle cx="242" cy="180.5" r="3.5" fill="#3D5A99"/><text x="234" y="185.5" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Half: S = XOR, C = AND</text><path d="M265,221.0 C251,221.0 256,207.5 242,207.5" fill="none" stroke="#3D5A99" stroke-width="2"/><circle cx="242" cy="207.5" r="3.5" fill="#3D5A99"/><text x="234" y="212.5" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Full: 2 halves + OR</text><path d="M265,221.0 C251,221.0 256,234.5 242,234.5" fill="none" stroke="#3D5A99" stroke-width="2"/><circle cx="242" cy="234.5" r="3.5" fill="#3D5A99"/><text x="234" y="239.5" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Ripple carry chain</text><path d="M265,221.0 C251,221.0 256,261.5 242,261.5" fill="none" stroke="#3D5A99" stroke-width="2"/><circle cx="242" cy="261.5" r="3.5" fill="#3D5A99"/><text x="234" y="266.5" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Final carry = overflow</text><path d="M460,221.0 C452.5,221.0 452.5,355.0 445,355.0" fill="none" stroke="#7A3E8C" stroke-width="5" stroke-linecap="round"/><rect x="265" y="331.0" width="180" height="48" rx="24" fill="#7A3E8C"/><text x="355" y="361" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#fff"><tspan x="355" dy="0">D-type flip-flop</tspan></text><path d="M265,355.0 C251,355.0 256,314.5 242,314.5" fill="none" stroke="#7A3E8C" stroke-width="2"/><circle cx="242" cy="314.5" r="3.5" fill="#7A3E8C"/><text x="234" y="319.5" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Stores 1 bit</text><path d="M265,355.0 C251,355.0 256,341.5 242,341.5" fill="none" stroke="#7A3E8C" stroke-width="2"/><circle cx="242" cy="341.5" r="3.5" fill="#7A3E8C"/><text x="234" y="346.5" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Inputs D and clock</text><path d="M265,355.0 C251,355.0 256,368.5 242,368.5" fill="none" stroke="#7A3E8C" stroke-width="2"/><circle cx="242" cy="368.5" r="3.5" fill="#7A3E8C"/><text x="234" y="373.5" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Outputs Q and ¬Q</text><path d="M265,355.0 C251,355.0 256,395.5 242,395.5" fill="none" stroke="#7A3E8C" stroke-width="2"/><circle cx="242" cy="395.5" r="3.5" fill="#7A3E8C"/><text x="234" y="400.5" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="15" fill="#3D4451">Changes on rising edge</text><rect x="460" y="183.0" width="200" height="76" rx="14" fill="#1A1A2E"/><text x="560" y="205" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="bold" fill="#fff"><tspan x="560" dy="0">1.4.3</tspan><tspan x="560" dy="22">Boolean</tspan><tspan x="560" dy="22">algebra</tspan></text></svg><figcaption>A pre-filled mind map of the whole topic. Try redrawing it from memory.</figcaption></figure>
+        <h3 class="mt-2">Key terms and laws flashcards</h3>
+        <div class="deck" aria-label="1.4.3 key terms flashcards">
+            <script type="application/json">[{"q": "\u2227, \u2228, \u00ac, \u22bb", "a": "AND, OR, NOT, XOR."}, {"q": "XOR", "a": "1 only when the inputs are different."}, {"q": "NAND", "a": "The opposite of AND: 0 only when both inputs are 1."}, {"q": "De Morgan\u2019s laws", "a": "\u00ac(A \u2227 B) \u2261 \u00acA \u2228 \u00acB and \u00ac(A \u2228 B) \u2261 \u00acA \u2227 \u00acB. Break the line, change the sign."}, {"q": "Distribution", "a": "A \u2227 (B \u2228 C) \u2261 (A \u2227 B) \u2228 (A \u2227 C); A \u2228 (B \u2227 C) \u2261 (A \u2228 B) \u2227 (A \u2228 C)."}, {"q": "Association", "a": "Brackets can move: (A \u2227 B) \u2227 C \u2261 A \u2227 (B \u2227 C)."}, {"q": "Commutation", "a": "Order doesn\u2019t matter: A \u2227 B \u2261 B \u2227 A."}, {"q": "Double negation", "a": "\u00ac\u00acA \u2261 A."}, {"q": "Complement", "a": "A \u2227 \u00acA \u2261 0 and A \u2228 \u00acA \u2261 1."}, {"q": "K-map column order", "a": "Gray code: 00, 01, 11, 10."}, {"q": "K-map group sizes", "a": "1, 2, 4 or 8 \u2013 rectangles, may wrap round and overlap."}, {"q": "Half adder", "a": "Adds 2 bits. Sum = A \u22bb B, carry = A \u2227 B. No carry in."}, {"q": "Full adder", "a": "Adds 2 bits and a carry in. Two half adders and an OR gate."}, {"q": "D-type flip-flop", "a": "Stores 1 bit. On the rising edge of the clock, Q takes the value of D."}]</script>
+            <div class="fc front" aria-live="polite"><div><span class="side">Question</span><span class="txt"></span></div></div>
+            <div class="deck-controls">
+              <button type="button" class="btn" data-act="flip">Show answer</button>
+              <button type="button" class="btn btn-green" data-act="got">✓ I knew it</button>
+              <button type="button" class="btn btn-red" data-act="not">✗ Not yet</button>
+            </div>
+            <div class="deck-controls mt-1">
+              <button type="button" class="btn btn-ghost" data-act="shuffle">Shuffle</button>
+              <button type="button" class="btn btn-ghost" data-act="restart">Restart deck</button>
+            </div>
+            <p class="deck-status"></p>
+          </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2>Mixed quiz</h2>
+        <div class="quiz-block">
+          <h3>Mixed quiz – marked for you</h3>
+          <div class="q" data-answer="b"><p class="q-text">1. Which expression is a NOR gate? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q27" value="a"> <span>¬(A ∧ B)</span></label><label><input type="radio" name="q27" value="b"> <span>¬(A ∨ B)</span></label><label><input type="radio" name="q27" value="c"> <span>A ⊻ B</span></label><label><input type="radio" name="q27" value="d"> <span>¬A ∨ ¬B</span></label></div><div class="explain" hidden><p><span class="verdict"></span>NOR is NOT OR: ¬(A ∨ B).</p></div></div><div class="q" data-answer="b"><p class="q-text">2. ¬(A ∧ B) is equivalent to… <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q28" value="a"> <span>¬A ∧ ¬B</span></label><label><input type="radio" name="q28" value="b"> <span>¬A ∨ ¬B</span></label><label><input type="radio" name="q28" value="c"> <span>A ∨ B</span></label><label><input type="radio" name="q28" value="d"> <span>A ∧ B</span></label></div><div class="explain" hidden><p><span class="verdict"></span>De Morgan’s: break the line, change the sign.</p></div></div><div class="q" data-answer=""><p class="q-text">3. How many rows are in a truth table with 4 inputs? <span class="tag tag-soft">AO1</span></p><input type="text" aria-label="Answer to question 3" data-answer="16" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>2⁴ = 16.</p></div></div><div class="q" data-answer="b"><p class="q-text">4. Which K-map group size is allowed? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q30" value="a"> <span>3</span></label><label><input type="radio" name="q30" value="b"> <span>4</span></label><label><input type="radio" name="q30" value="c"> <span>6</span></label><label><input type="radio" name="q30" value="d"> <span>5</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Only 1, 2, 4 or 8.</p></div></div><div class="q" data-answer="a"><p class="q-text">5. A full adder is made from… <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q31" value="a"> <span>two half adders and an OR gate</span></label><label><input type="radio" name="q31" value="b"> <span>two AND gates</span></label><label><input type="radio" name="q31" value="c"> <span>four half adders</span></label><label><input type="radio" name="q31" value="d"> <span>a flip-flop and an XOR gate</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Half adder 1 adds A and B, half adder 2 adds the carry in, and an OR gate combines the carries.</p></div></div><div class="q" data-answer="b"><p class="q-text">6. What does a D-type flip-flop store? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q32" value="a"> <span>1 byte</span></label><label><input type="radio" name="q32" value="b"> <span>1 bit</span></label><label><input type="radio" name="q32" value="c"> <span>A carry</span></label><label><input type="radio" name="q32" value="d"> <span>A truth table</span></label></div><div class="explain" hidden><p><span class="verdict"></span>One bit. Eight of them sharing a clock make a byte-sized register.</p></div></div>
+          <button type="button" class="btn quiz-check">Check my answers</button>
+          <button type="button" class="btn btn-ghost quiz-reset">Start again</button>
+          <p class="quiz-score mt-1" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-alt">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div>
+            <h2>Links to other topics</h2>
+            <ul class="link-list"><li><strong>1.4.1 Bitwise and masks</strong> – AND, OR and XOR on whole bytes.</li><li><strong>1.4.1 Binary addition</strong> – what half and full adders do in hardware.</li><li><strong>1.1.1 Processor</strong> – the ALU uses gates; registers are flip-flops; the clock drives them.</li><li><strong>2.1.4 Thinking logically</strong> – the conditions that control decisions.</li><li><strong>2.2.1 Programming</strong> – simplifying IF and WHILE conditions.</li><li><strong>NEA</strong> – simplified conditions in your algorithms, and truth tables as test plans.</li></ul>
+          </div>
+          <div>
+            <h2>Lesson slides</h2>
+            <p><a class="btn" href="../../slides/1-4-3/boolean-algebra.pptx">Download the 1.4.3 lesson slides</a></p>
+            <h2 class="mt-2">Best revision techniques for 1.4.3</h2>
+            <ul><li><a href="../../techniques/worked-examples.html">Worked examples</a> – simplifying and K-maps, one step at a time</li><li><a href="../../techniques/flashcards.html">Flashcards</a> – the laws and gates – use the deck above</li><li><a href="../../techniques/trace-tables.html">Trace tables</a> – truth tables and the full adder</li></ul>
+        <p class="small">These are the best fit for this part of the topic, but you can use any <a href="../../revision-techniques.html">revision technique</a> that works for you.</p>
+          </div>
+        </div>
+        <h2 class="mt-2">Watch and read more</h2>
+        <ul><li><a href="https://circuitverse.org">CircuitVerse</a> – a free online logic simulator: build and test gates, adders and flip-flops.</li><li><a href="https://www.nand2tetris.org">Nand2Tetris</a> – build a whole computer starting from NAND gates (beyond the spec).</li><li><a href="https://isaaccomputerscience.org">Isaac Computer Science</a> – free notes and questions on Boolean logic.</li></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>

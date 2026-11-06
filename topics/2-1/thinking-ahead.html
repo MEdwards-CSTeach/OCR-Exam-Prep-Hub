@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2.1.2 Thinking ahead (2.1.2 (a)–(d)) – OCR A Level CS Revision</title>
+  <meta name="description" content="OCR A Level Computer Science 2.1.2 (a)–(d): 2.1.2 Thinking ahead. Revision notes, quiz and exam questions.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html">Paper 1</a></li>
+          <li><a href="../../paper2.html" aria-current="page">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../paper2.html">Paper 2</a> › <a href="index.html">2.1 Elements of computational thinking</a> › 2.1.2 Thinking ahead</p>
+          <p class="eyebrow">2.1.2 (a)–(d) • Paper 2</p>
+          <h1>2.1.2 Thinking ahead</h1>
+          <hr class="rule">
+          <p class="lead">Planning before you code: inputs and outputs, preconditions, caching and reusable program components.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">Key terms</h2><ul style="margin:0"><li>Input, output</li><li>Precondition</li><li>Caching, cache hit / miss</li><li>Stale data</li><li>Reusable component, library</li></ul></div>
+      </div>
+    </div>
+    <div class="wrap" style="padding-top:1.25rem">
+      <nav class="toc" aria-label="On this page"><ul>
+        <li><a href="#notes">Revision notes</a></li><li><a href="#links">Links and slides</a></li>
+        <li><a href="#quiz">Quick quiz</a></li><li><a href="#exam">Exam questions</a></li><li><a href="#revise">How to revise it</a></li>
+      </ul></nav>
+    </div>
+
+    <section id="notes">
+      <div class="wrap">
+        <h2 class="mt-2">Inputs, outputs and preconditions (a, b)</h2>
+        <figure class="diagram"><svg viewBox="0 0 880 240" role="img" aria-labelledby="t3eee5eaf t3eee5eafd"><title id="t3eee5eaf">Thinking ahead: inputs, preconditions, process and outputs</title><desc id="t3eee5eafd">Inputs flow into a check that the preconditions are true, then into the process (the subroutine), which produces outputs. Example: film, time and number of tickets go in; the list must be sorted; findSeats runs; seat numbers and the cost come out.</desc><defs><marker id="aht3eee5eaf" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><rect x="20" y="70" width="176" height="110" rx="8" fill="#FFF4E0" stroke="#B25C00" stroke-width="2"/><text x="108" y="120" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#B25C00"><tspan x="108" dy="0">Inputs</tspan><tspan x="108" dy="21">data in</tspan></text><polygon points="300,60 380,125 300,190 220,125" fill="#EEF3F6" stroke="#1A1A2E" stroke-width="2"/><text x="300" y="113" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="13.5" font-weight="bold" fill="#1A1A2E"><tspan x="300" dy="0">Pre-</tspan><tspan x="300" dy="17">conditions</tspan><tspan x="300" dy="17">true?</tspan></text><rect x="420" y="70" width="200" height="110" rx="8" fill="#0B6E75" stroke="#0B6E75" stroke-width="2"/><text x="520" y="120" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#fff"><tspan x="520" dy="0">Process</tspan><tspan x="520" dy="21">the subroutine</tspan></text><rect x="660" y="70" width="200" height="110" rx="8" fill="#FFF4E0" stroke="#B25C00" stroke-width="2"/><text x="760" y="120" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#B25C00"><tspan x="760" dy="0">Outputs</tspan><tspan x="760" dy="21">data or action out</tspan></text><line x1="196" y1="125" x2="216" y2="125" stroke="#3D4451" stroke-width="2.5" marker-end="url(#aht3eee5eaf)"/><line x1="382" y1="125" x2="416" y2="125" stroke="#3D4451" stroke-width="2.5" marker-end="url(#aht3eee5eaf)"/><line x1="620" y1="125" x2="656" y2="125" stroke="#3D4451" stroke-width="2.5" marker-end="url(#aht3eee5eaf)"/><text x="108" y="220" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" fill="#3D4451"><tspan x="108" dy="0">Film, time, tickets</tspan></text><text x="300" y="220" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" fill="#3D4451"><tspan x="300" dy="0">e.g. list is sorted</tspan></text><text x="520" y="220" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" fill="#3D4451"><tspan x="520" dy="0">findSeats()</tspan></text><text x="760" y="220" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="normal" fill="#3D4451"><tspan x="760" dy="0">Seat numbers, cost</tspan></text><text x="440" y="36" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#1A1A2E"><tspan x="440" dy="0">Think ahead: decide all of these before writing any code</tspan></text></svg><figcaption>Inputs and outputs are data, not processes. A precondition must be true before the subroutine runs.</figcaption></figure>
+        <div class="grid grid-2">
+          <div><h3>Inputs and outputs</h3><ul>
+            <li><strong>Input:</strong> data the solution must receive – <em>membership ID, date of the class</em>.</li>
+            <li><strong>Output:</strong> data or an action it produces – <em>seat numbers, an emailed ticket, “Not enough seats”</em>.</li>
+            <li>Look for <strong>hidden inputs</strong>: a car park charge needs the entry and exit times from the clock.</li>
+            <li>Use the scenario’s words, not “the information”.</li></ul></div>
+          <div><h3>Preconditions</h3><div class="table-scroll"><table><thead><tr><th scope="col">Subroutine</th><th scope="col">Precondition</th></tr></thead><tbody><tr><th scope="row">binarySearch(list, item)</th><td>the list is sorted</td></tr><tr><th scope="row">findMax(list)</th><td>at least one item</td></tr><tr><th scope="row">divide(a, b)</th><td>b ≠ 0</td></tr><tr><th scope="row">pop()</th><td>the stack is not empty</td></tr><tr><th scope="row">getItem(index)</th><td>0 ≤ index &lt; length</td></tr><tr><th scope="row">dijkstra(graph)</th><td>no negative weights</td></tr></tbody></table></div></div>
+        </div>
+        <p class="mt-1"><strong>Why specify preconditions?</strong> The subroutine can be <strong>reused</strong> safely without reading its code; the programmer knows which <strong>checks</strong> to make before calling it, so there are no unnecessary checks; shorter code is <strong>easier to debug</strong>.</p>        <h2 class="mt-2">Caching (c)</h2>
+        <p><strong>Caching</strong> is the temporary storage of data that has been used, in a location that is faster to access, in case it is needed again. It is thinking ahead: the system predicts what you will need.</p>
+        <div class="grid"><figure class="diagram"><svg viewBox="0 0 680 368" role="img" aria-labelledby="td84d3885 td84d3885d"><title id="td84d3885">How a cache works</title><desc id="td84d3885d">Data is requested. Is it in the cache? Yes: a cache hit returns the copy quickly. No: a cache miss fetches the data from the slower source, stores a copy in the cache, then returns it.</desc><defs><marker id="ahtd84d3885" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><rect x="40" y="20" width="220" height="52" rx="26" fill="#EEF3F6" stroke="#1A1A2E" stroke-width="2"/><text x="150" y="52" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#1A1A2E"><tspan x="150" dy="0">Data requested</tspan></text><line x1="150" y1="72" x2="150" y2="104" stroke="#3D4451" stroke-width="2.5" marker-end="url(#ahtd84d3885)"/><polygon points="150,108 260,158 150,208 40,158" fill="#EEF3F6" stroke="#1A1A2E" stroke-width="2"/><text x="150" y="163" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="150" dy="0">In the cache?</tspan></text><polyline points="260,158 340,158" fill="none" stroke="#3D4451" stroke-width="2.5" marker-end="url(#ahtd84d3885)"/><text x="298" y="151" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#0B6E75"><tspan x="298" dy="0">Yes</tspan></text><rect x="344" y="124" width="300" height="68" rx="8" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="494" y="154" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="494" dy="0">Cache HIT</tspan><tspan x="494" dy="19">return the copy quickly</tspan></text><line x1="150" y1="208" x2="150" y2="248" stroke="#3D4451" stroke-width="2.5" marker-end="url(#ahtd84d3885)"/><text x="168" y="235" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#B25C00"><tspan x="168" dy="0">No</tspan></text><rect x="40" y="252" width="262" height="68" rx="8" fill="#FFF4E0" stroke="#B25C00" stroke-width="2"/><text x="171" y="282" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#B25C00"><tspan x="171" dy="0">Cache MISS</tspan><tspan x="171" dy="19">fetch from the slower source</tspan></text><polyline points="302,286 344,286" fill="none" stroke="#3D4451" stroke-width="2.5" marker-end="url(#ahtd84d3885)"/><rect x="348" y="252" width="296" height="68" rx="8" fill="#FFF4E0" stroke="#B25C00" stroke-width="2"/><text x="496" y="282" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#B25C00"><tspan x="496" dy="0">Store a copy in the cache,</tspan><tspan x="496" dy="19">then return it</tspan></text><text x="340" y="357" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#3D4451"><tspan x="340" dy="0">A hit saves time. A miss is slightly slower, as the cache is checked first.</tspan></text></svg><figcaption>Like a librarian keeping a popular book behind the desk instead of in the basement.</figcaption></figure></div>
+        <div class="grid grid-2">
+          <div class="card"><h3>Benefits</h3><ul><li>Faster access to data used again</li><li>Less bandwidth used, which saves cost</li><li>Less load on servers</li></ul></div>
+          <div class="card"><h3>Drawbacks</h3><ul><li><strong>Stale data:</strong> the copy may be out of date</li><li>A miss is slower, as the cache is checked first</li><li>Uses extra memory</li><li>Complex to decide what to keep</li></ul></div>
+        </div>
+        <p class="mt-1"><strong>Where?</strong> CPU cache (1.1.1), browser cache (1.3.4), DNS cache (1.3.3), proxy servers and CDNs. <strong>Memoisation</strong> caches function results: a recursive fib(40) makes 331,160,281 calls; with a cache it makes 79.</p>        <h2 class="mt-2">Reusable program components (d)</h2>
+        <p>A <strong>reusable component</strong> is code written and tested once that can be used many times: <strong>subroutines</strong>, <strong>classes</strong> and <strong>libraries</strong>.</p>
+        <div class="grid grid-2">
+          <div class="card"><h3>Benefits</h3><ul><li>Saves the programmer time: written once, used many times</li><li>Already tested, so fewer errors</li><li>Fix a bug in one place</li><li>Work can be shared between programmers</li></ul></div>
+          <div class="card"><h3>Drawbacks</h3><ul><li>Take longer to design so they work in every case</li><li>Must be fully documented</li><li>A change to a shared library can break programs that use it</li></ul></div>
+        </div>
+        <div class="grid grid-2 mt-1">
+          <div><h3>Hard to reuse</h3><pre class="code"><code>price = 50
+def addVAT():
+    global price
+    price = price * 1.2
+    print(&quot;Total: £&quot; + str(price))</code></pre><p class="small">Global variable, fixed VAT rate, prints instead of returning, no documentation.</p></div>
+          <div><h3>Reusable</h3><pre class="code"><code>def addVAT(price, rate):
+    # Returns price with VAT added
+    # Precondition: price &gt;= 0
+    return price * (1 + rate)
+
+total = addVAT(50, 0.2)</code></pre><p class="small">Parameters in, return value out, documented.</p></div>
+        </div>
+        <div class="callout callout-amber mt-1"><p><strong>Watch out for:</strong></p><ul><li>Listing processes (“calculate the cost”) as inputs or outputs – they must be data.</li><li>Vague inputs like “the user’s details” – name them from the scenario.</li><li>Caching answers that say “it uses the cache” but not <em>what</em> is stored.</li><li>Saying reusable code saves “time” without saying whose: the programmer’s.</li></ul></div>
+      </div>
+    </section>
+
+    <section id="links" class="section-alt">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>Links to other topics</h2><ul class="link-list"><li><strong>1.1.1 Processor performance</strong> – cache memory in the CPU.</li><li><strong>1.3.3 Networks</strong> – DNS caching and proxy servers.</li><li><strong>1.3.4 Web technologies</strong> – the browser cache.</li><li><strong>2.2.1 Programming techniques</strong> – subroutines, parameters and classes as reusable components.</li><li><strong>2.3.1 Algorithms</strong> – binary search needs sorted data – a precondition.</li><li><strong>1.2.1 Systems software</strong> – libraries and DLLs.</li></ul></div>
+          <div><h2>Lesson slides</h2>
+            <p>Go back over the lesson for the full worked examples and tasks.</p>
+            <p><a class="btn" href="../../slides/2-1/thinking-ahead.pptx">Download the lesson slides</a></p>
+            <p class="small">2.1.2 Thinking ahead: vending machine starter, car park example, preconditions bug hunt, addVAT rewrite, “Cache it or not?” and cinema exam questions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <div class="wrap">
+        <h2>Check your understanding</h2>
+        <p>Answer, then press <strong>Check my answers</strong>. Each question explains the answer so you can fix any mistakes.</p>
+        <div class="quiz-block">
+          <h3>Quick quiz – marked for you</h3>
+          <div class="q" data-answer="b"><p class="q-text">1. Which is an <strong>input</strong> to a thermostat program? <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q7" value="a"> <span>Switching the heating on</span></label><label><input type="radio" name="q7" value="b"> <span>The current room temperature</span></label><label><input type="radio" name="q7" value="c"> <span>Deciding if it is cold</span></label><label><input type="radio" name="q7" value="d"> <span>The boiler</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Switching on is an output (a result). The temperature is data going in.</p></div></div><div class="q" data-answer="b"><p class="q-text">2. What is the precondition for a binary search? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q8" value="a"> <span>The list is empty</span></label><label><input type="radio" name="q8" value="b"> <span>The list is sorted</span></label><label><input type="radio" name="q8" value="c"> <span>The list has an even number of items</span></label><label><input type="radio" name="q8" value="d"> <span>The item is in the list</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Binary search halves a sorted list. On unsorted data it gives wrong results.</p></div></div><div class="q" data-answer="b"><p class="q-text">3. findMax(list) starts with <code>max = list[0]</code>. Which precondition is needed? <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q9" value="a"> <span>The list is sorted</span></label><label><input type="radio" name="q9" value="b"> <span>The list has at least one item</span></label><label><input type="radio" name="q9" value="c"> <span>All items are positive</span></label><label><input type="radio" name="q9" value="d"> <span>The list has no duplicates</span></label></div><div class="explain" hidden><p><span class="verdict"></span>An empty list has no item at index 0, so the program crashes.</p></div></div><div class="q" data-answer="b"><p class="q-text">4. Should a live football score be cached? <span class="tag tag-soft">AO3</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q10" value="a"> <span>Yes – it is used on every page</span></label><label><input type="radio" name="q10" value="b"> <span>No – it changes often, so a cached copy would be stale</span></label><label><input type="radio" name="q10" value="c"> <span>Yes – it saves a DNS lookup</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Data that changes often or must be current (scores, bank balances) shouldn’t be cached for long.</p></div></div><div class="q" data-answer="b"><p class="q-text">5. A cache miss means… <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q11" value="a"> <span>the data was found in the cache</span></label><label><input type="radio" name="q11" value="b"> <span>the data was not in the cache, so it is fetched from the slower source</span></label><label><input type="radio" name="q11" value="c"> <span>the cache is full</span></label><label><input type="radio" name="q11" value="d"> <span>the data is stale</span></label></div><div class="explain" hidden><p><span class="verdict"></span>A hit finds it; a miss fetches it and usually stores a copy.</p></div></div><div class="q" data-answer="b"><p class="q-text">6. Which is a <strong>drawback</strong> of reusable components? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q12" value="a"> <span>They are already tested</span></label><label><input type="radio" name="q12" value="b"> <span>They take longer to design so they work in every case</span></label><label><input type="radio" name="q12" value="c"> <span>They save programmer time</span></label><label><input type="radio" name="q12" value="d"> <span>Bugs are fixed in one place</span></label></div><div class="explain" hidden><p><span class="verdict"></span>The others are benefits.</p></div></div>
+          <button type="button" class="btn quiz-check">Check my answers</button>
+          <button type="button" class="btn btn-ghost quiz-reset">Start again</button>
+          <p class="quiz-score mt-1" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="exam" class="section-alt">
+      <div class="wrap">
+        <h2>Exam-style questions – mark them yourself</h2>
+        <p>Write your answer, then open <strong>Mark your answer</strong>. Tick the mark points you hit, read the model answer and use the tips to improve. See the <a href="exam-tips.html">2.1 exam tips</a> for more help.</p>
+<article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[4 marks]</span></header>
+          <p>A cinema booking program: customers enter the film, showing time and number of tickets. If seats are free it shows the seat numbers and cost and emails a ticket; if not, it shows “Not enough seats”. Identify <strong>two</strong> inputs and <strong>two</strong> outputs.</p>
+          <label for="es4t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es4t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es4"><li><label><input type="checkbox"> <span>Input: film (1)</span></label></li><li><label><input type="checkbox"> <span>Input: showing time / number of tickets (1)</span></label></li><li><label><input type="checkbox"> <span>Output: seat numbers / cost (1)</span></label></li><li><label><input type="checkbox"> <span>Output: emailed ticket / “Not enough seats” (1)</span></label></li></ul>
+            <p id="es4" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> Inputs: the film and the number of tickets. Outputs: the seat numbers and the emailed ticket.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Copy the scenario’s words exactly.</li><li>Outputs are data or actions, not processes like “checks the seats”.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO1</span><span class="marks">[3 marks]</span></header>
+          <p>Explain why the programmer should create reusable components for the cinema program.</p>
+          <label for="es5t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es5t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es5"><li><label><input type="checkbox"> <span>Written once, used many times: saves programming time (1)</span></label></li><li><label><input type="checkbox"> <span>Already tested, so fewer errors (1)</span></label></li><li><label><input type="checkbox"> <span>Easier to maintain / fix in one place (1)</span></label></li><li><label><input type="checkbox"> <span>Can be reused in other programs (1)</span></label></li></ul>
+            <p id="es5" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> A component such as calculateCost is written once and used many times, which saves the programmer time. It has already been tested, so there are fewer errors, and if a bug is found it only needs fixing in one place.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>One mark per point, so make three separate points.</li><li>Name a component from the scenario to show application.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO3</span><span class="marks">[4 marks]</span></header>
+          <p>(a) Describe how caching could be used in the cinema program. [2] (b) Explain one drawback of caching here. [2]</p>
+          <label for="es6t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es6t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es6"><li><label><input type="checkbox"> <span>(a) Data that has been used, e.g. film listings or seat plans (1)</span></label></li><li><label><input type="checkbox"> <span>(a) …is stored in the cache for faster access if needed again (1)</span></label></li><li><label><input type="checkbox"> <span>(b) Cached seat availability may be stale / out of date (1)</span></label></li><li><label><input type="checkbox"> <span>(b) …so a customer could be offered a seat that is already booked (1)</span></label></li></ul>
+            <p id="es6" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> (a) Data that has been used, such as the film listings, is stored in the cache so it can be accessed quickly when the next customer asks for it. (b) The cached seat plan could be out of date, so a customer might be offered a seat someone else has just booked.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Say <em>what</em> is stored – named from the scenario – and <em>why</em>.</li><li>Drawback: what goes wrong, then what it means for the user.</li></ul></div>
+          </div></details>
+        </article>
+      </div>
+    </section>
+
+    <section id="revise">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>How to revise this</h2><ul><li><a href="../../techniques/worked-examples.html">Worked examples</a> – list inputs, outputs and preconditions for new scenarios</li><li><a href="../../techniques/comparison-tables.html">Comparison tables</a> – benefits vs drawbacks of caching and reuse</li><li><a href="../../techniques/flowcharts.html">Flowcharts</a> – draw the cache hit / miss process from memory</li></ul>
+        <p class="small">These are the best fit for this part of the topic, but you can use any <a href="../../revision-techniques.html">revision technique</a> that works for you.</p></div>
+          <div><h2>Watch and read more</h2><ul><li><a href="https://isaaccomputerscience.org">Isaac Computer Science</a> – free notes and questions on computational thinking.</li><li><a href="https://www.youtube.com/@craigndave">Craig 'n' Dave (YouTube)</a> – short videos on every OCR A Level spec point – search for 2.1.</li><li><a href="https://docs.python.org/3/library/functools.html#functools.lru_cache">Python functools.lru_cache</a> – beyond the spec: one line of code that caches a function’s results.</li></ul></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 2.1 pages"><a href="thinking-abstractly.html"><span class="dir">← Previous</span>2.1.1 Thinking abstractly</a><a class="next" href="thinking-procedurally.html"><span class="dir">Next →</span>2.1.3 Thinking procedurally</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>

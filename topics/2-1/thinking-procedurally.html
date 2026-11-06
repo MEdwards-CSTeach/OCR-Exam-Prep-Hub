@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>2.1.3 Thinking procedurally (2.1.3 (a)–(d)) – OCR A Level CS Revision</title>
+  <meta name="description" content="OCR A Level Computer Science 2.1.3 (a)–(d): 2.1.3 Thinking procedurally. Revision notes, quiz and exam questions.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html">Paper 1</a></li>
+          <li><a href="../../paper2.html" aria-current="page">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../paper2.html">Paper 2</a> › <a href="index.html">2.1 Elements of computational thinking</a> › 2.1.3 Thinking procedurally</p>
+          <p class="eyebrow">2.1.3 (a)–(d) • Paper 2</p>
+          <h1>2.1.3 Thinking procedurally</h1>
+          <hr class="rule">
+          <p class="lead">Breaking a problem down: problem and solution components, hierarchy charts, the order of steps and the sub-procedures you need.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">Key terms</h2><ul style="margin:0"><li>Decomposition</li><li>Hierarchy / structure chart</li><li>Sub-procedure</li><li>Procedure, function</li><li>Parameter</li></ul></div>
+      </div>
+    </div>
+    <div class="wrap" style="padding-top:1.25rem">
+      <nav class="toc" aria-label="On this page"><ul>
+        <li><a href="#notes">Revision notes</a></li><li><a href="#links">Links and slides</a></li>
+        <li><a href="#quiz">Quick quiz</a></li><li><a href="#exam">Exam questions</a></li><li><a href="#revise">How to revise it</a></li>
+      </ul></nav>
+    </div>
+
+    <section id="notes">
+      <div class="wrap">
+        <h2 class="mt-2">Decomposition</h2>
+        <p><strong>Decomposition</strong> is breaking a problem into smaller sub-problems until each one is a single task that can be solved.</p>
+        <div class="grid grid-2">
+          <div class="card"><h3>Components of the problem (a)</h3><p><strong>What</strong> must happen or what the user needs.</p><ul><li>The game ends when the snake hits a wall</li><li>The snake grows when it eats</li><li>Players can see their high score</li></ul></div>
+          <div class="card"><h3>Components of the solution (b)</h3><p><strong>How</strong> it will be done in code.</p><ul><li><code>saveScore(name, score)</code> – a subroutine</li><li>A list of positions – a data structure</li><li><code>gameOver</code> – a Boolean variable</li></ul></div>
+        </div>        <h2 class="mt-2">Hierarchy (structure) charts</h2>
+        <div class="grid"><figure class="diagram"><svg viewBox="0 0 1000 290" role="img" aria-labelledby="tb79e2525 tb79e2525d"><title id="tb79e2525">Hierarchy chart for the Snake game</title><desc id="tb79e2525d">Snake splits into Set up (draw grid, place food), Play (get key, move snake, check crash, draw screen) and Game over (show score, save score).</desc><defs><marker id="ahtb79e2525" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><rect x="390.0" y="16" width="220" height="50" rx="8" fill="#0B6E75" stroke="#0B6E75" stroke-width="2"/><text x="500" y="47" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="17" font-weight="bold" fill="#fff"><tspan x="500" dy="0">Snake</tspan></text><line x1="500.0" y1="66" x2="500.0" y2="86" stroke="#3D4451" stroke-width="2"/><line x1="500.0" y1="86" x2="125.0" y2="86" stroke="#3D4451" stroke-width="2"/><line x1="125.0" y1="86" x2="125.0" y2="104" stroke="#3D4451" stroke-width="2"/><rect x="25.0" y="104" width="200" height="46" rx="8" fill="#1A1A2E" stroke="#1A1A2E" stroke-width="2"/><text x="125" y="132" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15.5" font-weight="bold" fill="#fff"><tspan x="125" dy="0">Set up</tspan></text><line x1="125.0" y1="150" x2="125.0" y2="166" stroke="#3D4451" stroke-width="2"/><line x1="125.0" y1="166" x2="62.5" y2="166" stroke="#3D4451" stroke-width="2"/><line x1="62.5" y1="166" x2="62.5" y2="182" stroke="#3D4451" stroke-width="2"/><rect x="5.0" y="182" width="115.0" height="56" rx="8" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="62" y="215" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#1A1A2E"><tspan x="62" dy="0">Draw grid</tspan></text><line x1="125.0" y1="150" x2="125.0" y2="166" stroke="#3D4451" stroke-width="2"/><line x1="125.0" y1="166" x2="187.5" y2="166" stroke="#3D4451" stroke-width="2"/><line x1="187.5" y1="166" x2="187.5" y2="182" stroke="#3D4451" stroke-width="2"/><rect x="130.0" y="182" width="115.0" height="56" rx="8" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="188" y="215" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#1A1A2E"><tspan x="188" dy="0">Place food</tspan></text><line x1="500.0" y1="66" x2="500.0" y2="86" stroke="#3D4451" stroke-width="2"/><line x1="500.0" y1="86" x2="500.0" y2="86" stroke="#3D4451" stroke-width="2"/><line x1="500.0" y1="86" x2="500.0" y2="104" stroke="#3D4451" stroke-width="2"/><rect x="400.0" y="104" width="200" height="46" rx="8" fill="#1A1A2E" stroke="#1A1A2E" stroke-width="2"/><text x="500" y="132" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15.5" font-weight="bold" fill="#fff"><tspan x="500" dy="0">Play</tspan></text><line x1="500.0" y1="150" x2="500.0" y2="166" stroke="#3D4451" stroke-width="2"/><line x1="500.0" y1="166" x2="312.5" y2="166" stroke="#3D4451" stroke-width="2"/><line x1="312.5" y1="166" x2="312.5" y2="182" stroke="#3D4451" stroke-width="2"/><rect x="255.0" y="182" width="115.0" height="56" rx="8" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="312" y="215" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#1A1A2E"><tspan x="312" dy="0">Get key</tspan></text><line x1="500.0" y1="150" x2="500.0" y2="166" stroke="#3D4451" stroke-width="2"/><line x1="500.0" y1="166" x2="437.5" y2="166" stroke="#3D4451" stroke-width="2"/><line x1="437.5" y1="166" x2="437.5" y2="182" stroke="#3D4451" stroke-width="2"/><rect x="380.0" y="182" width="115.0" height="56" rx="8" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="438" y="215" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#1A1A2E"><tspan x="438" dy="0">Move snake</tspan></text><line x1="500.0" y1="150" x2="500.0" y2="166" stroke="#3D4451" stroke-width="2"/><line x1="500.0" y1="166" x2="562.5" y2="166" stroke="#3D4451" stroke-width="2"/><line x1="562.5" y1="166" x2="562.5" y2="182" stroke="#3D4451" stroke-width="2"/><rect x="505.0" y="182" width="115.0" height="56" rx="8" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="562" y="215" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#1A1A2E"><tspan x="562" dy="0">Check crash</tspan></text><line x1="500.0" y1="150" x2="500.0" y2="166" stroke="#3D4451" stroke-width="2"/><line x1="500.0" y1="166" x2="687.5" y2="166" stroke="#3D4451" stroke-width="2"/><line x1="687.5" y1="166" x2="687.5" y2="182" stroke="#3D4451" stroke-width="2"/><rect x="630.0" y="182" width="115.0" height="56" rx="8" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="688" y="215" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#1A1A2E"><tspan x="688" dy="0">Draw screen</tspan></text><line x1="500.0" y1="66" x2="500.0" y2="86" stroke="#3D4451" stroke-width="2"/><line x1="500.0" y1="86" x2="875.0" y2="86" stroke="#3D4451" stroke-width="2"/><line x1="875.0" y1="86" x2="875.0" y2="104" stroke="#3D4451" stroke-width="2"/><rect x="775.0" y="104" width="200" height="46" rx="8" fill="#1A1A2E" stroke="#1A1A2E" stroke-width="2"/><text x="875" y="132" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15.5" font-weight="bold" fill="#fff"><tspan x="875" dy="0">Game over</tspan></text><line x1="875.0" y1="150" x2="875.0" y2="166" stroke="#3D4451" stroke-width="2"/><line x1="875.0" y1="166" x2="812.5" y2="166" stroke="#3D4451" stroke-width="2"/><line x1="812.5" y1="166" x2="812.5" y2="182" stroke="#3D4451" stroke-width="2"/><rect x="755.0" y="182" width="115.0" height="56" rx="8" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="812" y="215" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#1A1A2E"><tspan x="812" dy="0">Show score</tspan></text><line x1="875.0" y1="150" x2="875.0" y2="166" stroke="#3D4451" stroke-width="2"/><line x1="875.0" y1="166" x2="937.5" y2="166" stroke="#3D4451" stroke-width="2"/><line x1="937.5" y1="166" x2="937.5" y2="182" stroke="#3D4451" stroke-width="2"/><rect x="880.0" y="182" width="115.0" height="56" rx="8" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="938" y="215" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="bold" fill="#1A1A2E"><tspan x="938" dy="0">Save score</tspan></text><text x="500" y="275" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" fill="#B25C00"><tspan x="500" dy="0">Read left to right for the order. A hierarchy chart shows no decisions or loops: Play repeats, but the chart doesn’t show it.</tspan></text></svg><figcaption>Each bottom box is one task. Use names from the scenario, never “Process” or “Task 1”.</figcaption></figure></div>
+        <ul><li>The top box is the whole problem; each level down splits it further.</li>
+        <li>It shows <strong>structure only</strong>: no decisions and no loops. For those, draw a flowchart.</li>
+        <li>Different charts can all be correct, as long as every bottom box is one task.</li></ul>        <h2 class="mt-2">Order of steps (c) and sub-procedures (d)</h2>
+        <div class="grid grid-2">
+          <div><h3>Order matters when one step needs another’s result</h3><p>Wordle turn: <strong>get guess → check valid → compare letters → show colours</strong>. You can’t colour letters before comparing them. Steps that don’t depend on each other, such as updating a turn counter, can move.</p></div>
+          <div><h3>From bottom box to sub-procedure</h3><div class="table-scroll"><table><thead><tr><th scope="col">Bottom box</th><th scope="col">Sub-procedure</th><th scope="col">Returns</th></tr></thead><tbody><tr><th scope="row">Place food</th><td>placeFood(grid, snake)</td><td>a free position</td></tr><tr><th scope="row">Get key</th><td>getKey()</td><td>a direction</td></tr><tr><th scope="row">Check crash</th><td>checkCrash(snake, gridSize)</td><td>Boolean</td></tr><tr><th scope="row">Draw screen</th><td>drawScreen(grid, snake, food)</td><td>nothing (procedure)</td></tr></tbody></table></div></div>
+        </div>
+        <h3 class="mt-1">Why decompose?</h3>
+        <ul><li>Each part is <strong>small and manageable</strong>, so easier to solve.</li><li>Modules can be <strong>tested separately</strong>, so errors are easier to find.</li>
+        <li>A <strong>team</strong> can work on different modules at the same time, so it is finished sooner.</li><li>Modules can be <strong>reused</strong> and are easier to <strong>maintain</strong>.</li></ul>
+        <div class="callout callout-amber mt-1"><p><strong>Watch out for:</strong></p><ul><li>Drawing a flowchart (with decisions) when asked for a structure diagram.</li><li>Vague boxes like “Process” or “Do it”.</li><li>Mixing up decomposition (breaking down) and abstraction (taking detail away).</li><li>Benefits with no link to the scenario: say <em>who</em> benefits and how.</li></ul></div>
+      </div>
+    </section>
+
+    <section id="links" class="section-alt">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>Links to other topics</h2><ul class="link-list"><li><strong>2.1.1 Thinking abstractly</strong> – the other half of computational thinking.</li><li><strong>2.2.1 Programming techniques</strong> – modularity: procedures, functions and parameters.</li><li><strong>2.2.2 Computational methods</strong> – decomposition and divide and conquer.</li><li><strong>1.2.3 Software development</strong> – teams build modules in parallel.</li><li><strong>2.1.5 Thinking concurrently</strong> – independent modules may run at the same time.</li><li><strong>NEA 3.2.1</strong> – decompose your problem with a hierarchy chart.</li></ul></div>
+          <div><h2>Lesson slides</h2>
+            <p>Go back over the lesson for the full worked examples and tasks.</p>
+            <p><a class="btn" href="../../slides/2-1/thinking-procedurally.pptx">Download the lesson slides</a></p>
+            <p class="small">2.1.3 Thinking procedurally: Snake decomposition, problem vs solution components, four charts to draw, Wordle ordering and chart detective.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <div class="wrap">
+        <h2>Check your understanding</h2>
+        <p>Answer, then press <strong>Check my answers</strong>. Each question explains the answer so you can fix any mistakes.</p>
+        <div class="quiz-block">
+          <h3>Quick quiz – marked for you</h3>
+          <div class="q" data-answer="b"><p class="q-text">1. Decomposition is… <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q13" value="a"> <span>removing unnecessary detail</span></label><label><input type="radio" name="q13" value="b"> <span>breaking a problem into smaller sub-problems</span></label><label><input type="radio" name="q13" value="c"> <span>storing data for reuse</span></label><label><input type="radio" name="q13" value="d"> <span>testing every module</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Removing detail is abstraction.</p></div></div><div class="q" data-answer="b"><p class="q-text">2. A hierarchy chart shows… <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q14" value="a"> <span>the decisions in a program</span></label><label><input type="radio" name="q14" value="b"> <span>how a problem is split into parts</span></label><label><input type="radio" name="q14" value="c"> <span>the loops in a program</span></label><label><input type="radio" name="q14" value="d"> <span>the values of variables</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Structure only – no decisions or loops.</p></div></div><div class="q" data-answer="b"><p class="q-text">3. “A Boolean variable gameOver” is a component of the… <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q15" value="a"> <span>problem</span></label><label><input type="radio" name="q15" value="b"> <span>solution</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Variables, lists and subroutines are how it is solved – solution components.</p></div></div><div class="q" data-answer="a"><p class="q-text">4. “The snake grows when it eats” is a component of the… <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q16" value="a"> <span>problem</span></label><label><input type="radio" name="q16" value="b"> <span>solution</span></label></div><div class="explain" hidden><p><span class="verdict"></span>It says what must happen, not how.</p></div></div><div class="q" data-answer="b"><p class="q-text">5. Which is a benefit of decomposition for a team? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q17" value="a"> <span>The program uses less memory</span></label><label><input type="radio" name="q17" value="b"> <span>Programmers can work on different modules at the same time</span></label><label><input type="radio" name="q17" value="c"> <span>No testing is needed</span></label><label><input type="radio" name="q17" value="d"> <span>It removes detail</span></label></div><div class="explain" hidden><p><span class="verdict"></span>So the program is finished sooner.</p></div></div><div class="q" data-answer="b"><p class="q-text">6. In Wordle, which step must come straight after “get guess”? <span class="tag tag-soft">AO3</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q18" value="a"> <span>Show colours</span></label><label><input type="radio" name="q18" value="b"> <span>Check the guess is a valid word</span></label><label><input type="radio" name="q18" value="c"> <span>Update stats</span></label><label><input type="radio" name="q18" value="d"> <span>Compare letters</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Only valid guesses are compared, so checking must come before comparing.</p></div></div>
+          <button type="button" class="btn quiz-check">Check my answers</button>
+          <button type="button" class="btn btn-ghost quiz-reset">Start again</button>
+          <p class="quiz-score mt-1" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="exam" class="section-alt">
+      <div class="wrap">
+        <h2>Exam-style questions – mark them yourself</h2>
+        <p>Write your answer, then open <strong>Mark your answer</strong>. Tick the mark points you hit, read the model answer and use the tips to improve. See the <a href="exam-tips.html">2.1 exam tips</a> for more help.</p>
+<article class="exam-q">
+          <header><span class="tag">AO1</span><span class="marks">[2 marks]</span></header>
+          <p>Mabel is writing a game. Explain how decomposition can aid the design of this program.</p>
+          <label for="es7t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es7t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es7"><li><label><input type="checkbox"> <span>Split the game into sub-problems, e.g. levels, enemies, lives (1)</span></label></li><li><label><input type="checkbox"> <span>Each is simpler to solve / can be tackled independently / by different people (1)</span></label></li></ul>
+            <p id="es7" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> Mabel can split the game into sub-problems such as levels, enemies and lives. Each is simpler to solve and can be designed and tested on its own.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Say what decomposition does, then why it helps here.</li><li>“It makes it easier” scores nothing without saying how.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[4 marks]</span></header>
+          <p>A school canteen app: students log in with an ID and PIN, choose a meal from the menu and pay. Draw a structure diagram for the app with at least two levels below the top box.</p>
+          <label for="es8t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es8t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es8"><li><label><input type="checkbox"> <span>Top box: Canteen app (1)</span></label></li><li><label><input type="checkbox"> <span>Level 1 boxes, e.g. Log in, Order, Pay (1)</span></label></li><li><label><input type="checkbox"> <span>Level 2 boxes below them, e.g. Enter ID, Check PIN, Show menu, Pick meal (1)</span></label></li><li><label><input type="checkbox"> <span>Each box is one task, named from the scenario (1)</span></label></li></ul>
+            <p id="es8" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> Canteen app → Log in (Enter ID, Check PIN), Order (Show menu, Pick meal), Pay (Take payment, Show receipt).</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Use the scenario’s words in every box.</li><li>No diamonds or loops – this is not a flowchart.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[3 marks]</span></header>
+          <p>Identify a sub-procedure needed to place a meal order. Give its name, its parameters and what it returns.</p>
+          <label for="es9t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es9t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es9"><li><label><input type="checkbox"> <span>Sensible name, e.g. placeOrder (1)</span></label></li><li><label><input type="checkbox"> <span>Parameters, e.g. studentID, mealID (1)</span></label></li><li><label><input type="checkbox"> <span>Return value, e.g. Boolean: true if the order was placed (1)</span></label></li></ul>
+            <p id="es9" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> placeOrder(studentID, mealID) returns a Boolean: true if the order was placed.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Give all three parts – name, parameters and return value.</li><li>Don’t repeat a sub-procedure the question already gave you.</li></ul></div>
+          </div></details>
+        </article>
+      </div>
+    </section>
+
+    <section id="revise">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>How to revise this</h2><ul><li><a href="../../techniques/flowcharts.html">Flowcharts and diagrams</a> – draw hierarchy charts for apps you use</li><li><a href="../../techniques/teach-it.html">Teach it</a> – explain decomposition vs abstraction</li><li><a href="../../techniques/worked-examples.html">Worked examples</a> – turn bottom boxes into sub-procedures</li></ul>
+        <p class="small">These are the best fit for this part of the topic, but you can use any <a href="../../revision-techniques.html">revision technique</a> that works for you.</p></div>
+          <div><h2>Watch and read more</h2><ul><li><a href="https://isaaccomputerscience.org">Isaac Computer Science</a> – free notes and questions on computational thinking.</li><li><a href="https://www.bbc.co.uk/bitesize/guides/zp92mp3/revision/1">BBC Bitesize: computational thinking</a> – a quick refresher on abstraction, decomposition and algorithmic thinking.</li><li><a href="https://www.youtube.com/@craigndave">Craig 'n' Dave (YouTube)</a> – short videos on every OCR A Level spec point – search for 2.1.</li></ul></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 2.1 pages"><a href="thinking-ahead.html"><span class="dir">← Previous</span>2.1.2 Thinking ahead</a><a class="next" href="thinking-logically.html"><span class="dir">Next →</span>2.1.4 Thinking logically</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>
