@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>2.2.1 Exam Tips: OOP – OCR A Level CS Revision</title>
-  <meta name="description" content="Exam tips for OOP in OCR A Level Computer Science 2.2.1, with weak and good answers.">
+  <title>2.2.1 Exam Tips: Recursion and OOP – OCR A Level CS Revision</title>
+  <meta name="description" content="Exam tips for recursion and OOP in OCR A Level Computer Science 2.2.1, with weak and good answers.">
   <link rel="stylesheet" href="../../css/style.css">
 </head>
 <body>
@@ -31,9 +31,9 @@
         <div>
           <p class="breadcrumb"><a href="../../paper2.html">Paper 2</a> › <a href="index.html">2.2.1 Programming techniques</a> › Exam tips</p>
           <p class="eyebrow">2.2.1 Programming techniques • Exam tips</p>
-          <h1>2.2.1 exam tips: OOP</h1>
+          <h1>2.2.1 exam tips: recursion and OOP</h1>
           <hr class="rule">
-          <p class="lead">What examiners look for in object-oriented programming questions, with weak and good answers.</p>
+          <p class="lead">What examiners look for in object-oriented programming and recursion questions, with weak and good answers. <a href="#recursion-tips">Jump to recursion</a>.</p>
         </div>
         <div class="card"><h2 style="font-size:1.1rem">Where it comes up</h2><p style="margin:0">OOP is examined on <strong>both papers</strong> (1.2.4 on Paper 1, 2.2.1 on Paper 2): definitions, writing code, and one long discussion question.</p></div>
       </div>
@@ -116,6 +116,52 @@
       </div>
     </section>
 
+
+    <section class="section-alt" id="recursion-tips">
+      <div class="wrap">
+        <h2>Recursion: what the mark schemes reward</h2>
+        <div class="table-scroll"><table><thead><tr><th scope="col">Paper</th><th scope="col">What it asked</th><th scope="col">Marks</th></tr></thead><tbody><tr><th scope="row">June 2022 P2</th><td>Line of the recursive call; trace calculate(5); the call that returns 55; two features of recursion</td><td>1–5</td></tr><tr><th scope="row">June 2019 P2</th><td>Rewrite GCD using iteration</td><td>4</td></tr><tr><th scope="row">June 2018 P2</th><td>Trace generate(7), showing each step</td><td>6</td></tr><tr><th scope="row">Nov 2020 P2</th><td>Compare recursion and iteration; trace a recursive binary search</td><td>4</td></tr></tbody></table></div>
+        <div class="grid grid-2 mt-1">
+          <div class="card"><h3>Earns marks</h3><ul>
+            <li>Two features: <strong>calls itself</strong> + <strong>base case</strong>.</li>
+            <li>Every call and every return shown in a trace.</li>
+            <li>Comparisons in pairs: recursion… <strong>whereas</strong> iteration…</li>
+            <li>Memory: new variables on the stack for each call.</li>
+            <li>Rewrites that keep the header, use a loop and return correctly.</li></ul></div>
+          <div class="card"><h3>Loses marks</h3><ul>
+            <li>Giving the base case value as the final answer.</li>
+            <li>15 DIV 2 = 7.5 (it is 7).</li>
+            <li>Only one side of a comparison.</li>
+            <li>“Recursion is faster” – it is usually slower.</li>
+            <li>“It loops” – recursion calls itself.</li></ul></div>
+        </div>
+        <h2 class="mt-2">Recursion: weak and good answers</h2>
+        <article class="example">
+          <p class="callout"><strong>Question:</strong> Compare two differences between recursion and iteration. [4] (Nov 2020)</p>
+          <div class="grid grid-2">
+            <div class="card" style="border-color:#A12A2A"><p><span class="tag" style="background:#FDE8E8;color:#A12A2A">Weak answer</span> <span class="small">1 mark</span></p><p>Recursion loops back to itself. It uses more memory.</p></div>
+            <div class="card" style="border-color:#0B6E75"><p><span class="tag">Good answer</span> <span class="small">4 marks</span></p><p>Recursion uses more memory, because every call adds new variables to the stack, whereas iteration reuses the same variables. Recursion can run out of stack space, whereas iteration cannot.</p></div>
+          </div>
+          <div class="mt-1"><p><strong>How to turn the weak answer into a good one:</strong></p><ul><li>Give both sides of each difference with “whereas”.</li><li>Say <em>why</em> it uses more memory: a new stack frame per call.</li></ul></div>
+        </article>
+        <article class="example">
+          <p class="callout"><strong>Question:</strong> State two features of any recursive algorithm. [2] (June 2022)</p>
+          <div class="grid grid-2">
+            <div class="card" style="border-color:#A12A2A"><p><span class="tag" style="background:#FDE8E8;color:#A12A2A">Weak answer</span> <span class="small">0 marks</span></p><p>It repeats until it is done.</p></div>
+            <div class="card" style="border-color:#0B6E75"><p><span class="tag">Good answer</span> <span class="small">2 marks</span></p><p>It calls itself. It has a base case that stops the recursion.</p></div>
+          </div>
+          <div class="mt-1"><p><strong>How to turn the weak answer into a good one:</strong></p><ul><li>“Repeats” describes a loop. Recursion <em>calls itself</em>.</li><li>The second feature is the base case – the stopping condition.</li></ul></div>
+        </article>
+        <article class="example">
+          <p class="callout"><strong>Question:</strong> Trace calculate(5) and give the final return value. [5] (June 2022)</p>
+          <div class="grid grid-2">
+            <div class="card" style="border-color:#A12A2A"><p><span class="tag" style="background:#FDE8E8;color:#A12A2A">Weak answer</span> <span class="small">1 mark</span></p><p>15</p></div>
+            <div class="card" style="border-color:#0B6E75"><p><span class="tag">Good answer</span> <span class="small">5 marks</span></p><p>calculate(5) 5 → 15; calculate(4) 4 → 10; calculate(3) 3 → 6; calculate(2) 2 → 3; calculate(1) 1 → 1. Final value 15.</p></div>
+          </div>
+          <div class="mt-1"><p><strong>How to turn the weak answer into a good one:</strong></p><ul><li>The marks are for the working: one row per call.</li><li>Fill in the returns from the bottom up, then give the top value.</li></ul></div>
+        </article>
+      </div>
+    </section>
     <section>
       <div class="wrap"><nav class="pager" aria-label="Other 2.2.1 pages"><a href="oop-modelling.html"><span class="dir">← Previous</span>OOP: modelling with classes</a><a class="next" href="index.html"><span class="dir">Back to →</span>2.2.1 overview</a></nav></div>
     </section>

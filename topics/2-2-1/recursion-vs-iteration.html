@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recursion vs iteration (2.2.1 (b)) – OCR A Level CS Revision</title>
+  <meta name="description" content="OCR A Level Computer Science 2.2.1 (b): Recursion vs iteration. Revision notes, quiz and exam questions.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html">Paper 1</a></li>
+          <li><a href="../../paper2.html" aria-current="page">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../paper2.html">Paper 2</a> › <a href="index.html">2.2.1 Programming techniques</a> › Recursion vs iteration</p>
+          <p class="eyebrow">2.2.1 (b) • Paper 2</p>
+          <h1>Recursion vs iteration</h1>
+          <hr class="rule">
+          <p class="lead">When recursion is the right tool, how it compares with iteration, and how to rewrite a recursive function as a loop.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">Key terms</h2><ul style="margin:0"><li>Recursion vs iteration</li><li>Self-similar problems</li><li>Divide and conquer</li><li>Backtracking</li><li>Converting to a loop</li></ul></div>
+      </div>
+    </div>
+    <div class="wrap" style="padding-top:1.25rem">
+      <nav class="toc" aria-label="On this page"><ul>
+        <li><a href="#notes">Revision notes</a></li><li><a href="#links">Links and slides</a></li>
+        <li><a href="#quiz">Quick quiz</a></li><li><a href="#exam">Exam questions</a></li><li><a href="#revise">How to revise it</a></li>
+      </ul></nav>
+    </div>
+
+    <section id="notes">
+      <div class="wrap">
+        <h2 class="mt-2">So why use recursion?</h2>
+        <p>For factorial, a loop is just as easy. Recursion earns its place when a problem is made of <strong>smaller copies of itself</strong>.</p>
+        <div class="grid grid-3">
+          <div class="card"><h3>Nested data</h3><p>Folders in folders, family trees, HTML tags inside tags. <strong>Depth unknown.</strong></p></div>
+          <div class="card"><h3>Divide and conquer</h3><p>Binary search, merge sort, quick sort: split in half and solve each half the same way (2.3.1).</p></div>
+          <div class="card"><h3>Branching and backtracking</h3><p>Mazes, sudoku, game AI that looks ahead, flood fill, fractals.</p></div>
+        </div>
+        <p class="mt-1"><strong>Rule of thumb:</strong> if you would need an unknown number of nested loops, think recursion.</p>        <h2 class="mt-2">Recursion compared with iteration</h2>
+        <div class="table-scroll"><table><thead><tr><th scope="col"></th><th scope="col">Recursion</th><th scope="col">Iteration</th></tr></thead><tbody><tr><th scope="row">How</th><td>The function calls itself</td><td>A loop repeats code</td></tr><tr><th scope="row">Memory</th><td>Each call adds a stack frame: new variables each time</td><td>Reuses the same variables</td></tr><tr><th scope="row">Risk</th><td>Can run out of stack space: stack overflow</td><td>Cannot run out of stack space</td></tr><tr><th scope="row">Speed</th><td>Often slower: pushing and popping frames takes time</td><td>Often faster</td></tr><tr><th scope="row">Code</th><td>Shorter and more elegant for self-similar problems</td><td>Longer and harder to follow for those problems</td></tr><tr><th scope="row">Tracing</th><td>Harder to trace and debug</td><td>Easier to trace</td></tr></tbody></table></div><p class="mt-1"><strong>Compare</strong> = a point about recursion + the matching point about iteration. Use “<strong>whereas</strong>”. The big test: adding 1 to 5000 recursively overflows Python’s stack; the loop gives 12502500.</p>        <h2 class="mt-2">Same job, both ways: folder size</h2>
+        <div class="grid grid-2">
+          <div><h3>Recursive</h3><pre class="code"><code>def folder_size(folder):
+    total = 0
+    for item in folder:
+        if type(item) == list:
+            total = total + folder_size(item)
+        else:
+            total = total + item
+    return total</code></pre><p class="small">A sub-folder is the same problem, smaller. Works for any depth.</p></div>
+          <div><h3>Iterative</h3><pre class="code"><code>def folder_size_iterative(folder):
+    total = 0
+    to_visit = [folder]
+    while len(to_visit) &gt; 0:
+        current = to_visit.pop()
+        for item in current:
+            if type(item) == list:
+                to_visit.append(item)
+            else:
+                total = total + item
+    return total</code></pre><p class="small">Needs its own stack. Recursion is a stack the computer manages for you.</p></div>
+        </div>
+        <p><code>photos = [12, 5, [3, 8, [20]], 7]</code> gives 12 + 5 + (3 + 8 + 20) + 7 = 55 both ways.</p>        <h2 class="mt-2">Rewriting recursion as a loop (June 2019)</h2>
+        <div class="grid grid-2">
+          <div><h3>Recursive</h3><pre class="code"><code>function GCD(num1, num2)
+    if num2 == 0 then
+        return num1
+    else
+        return GCD(num2, num1 MOD num2)
+    endif
+endfunction</code></pre></div>
+          <div><h3>Iterative</h3><pre class="code"><code>function newGCD(num1, num2)
+    while num2 != 0
+        temp = num2
+        num2 = num1 MOD num2
+        num1 = temp
+    endwhile
+    return num1
+endfunction</code></pre></div>
+        </div>
+        <ol class="steps"><li>Keep the same function header.</li><li>The <strong>base case</strong> becomes the loop’s <strong>stopping condition</strong>.</li>
+        <li>The recursive call’s new values become <strong>variable updates</strong>.</li><li><strong>Return</strong> after the loop.</li></ol>        <h2 class="mt-2">Practise in Python</h2>
+        <div class="callout"><p><strong>Download the coding tasks:</strong> <a href="../../slides/2-2-1/recursion_practical.py" download>recursion_practical.py</a>. Open it in PyCharm, write code where it says <code>YOUR CODE HERE</code>, run it and type the task code. The file checks every answer for you.</p>
+        <ul><li><strong>1, 1b:</strong> watch factorial wind and unwind, then break it on purpose.</li><li><strong>2:</strong> sum_to, power, reverse, digit_sum.</li>
+        <li><strong>3:</strong> the school network drive – count_files, find_file, deepest.</li><li><strong>4:</strong> rewrite them using loops, then the 1-to-5000 test.</li>
+        <li><strong>e1–e5:</strong> recursive binary search, flood fill, Towers of Hanoi, a turtle tree, anagrams.</li></ul></div>
+        <p class="small mt-1">Common bugs: <code>if len(word) == 1</code> overflows on "" (use <code>&lt;= 1</code>); returning a sub-folder’s answer straight away stops later folders being searched. Test the base case, a deep item and an item in the last branch.</p>
+        <div class="callout callout-amber mt-1"><p><strong>Watch out for:</strong></p><ul><li>Only one side of a comparison – say what recursion does <em>whereas</em> iteration…</li><li>“Recursion is faster” – it is usually slower.</li><li>Rewrites with no loop, no return, or a changed function header.</li><li>Forcing recursion onto flat data such as averaging 30 scores.</li></ul></div>
+      </div>
+    </section>
+
+    <section id="links" class="section-alt">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>Links to other topics</h2><ul class="link-list"><li><strong>2.3.1 Algorithms</strong> – recursive binary search, merge sort, quick sort and tree traversals.</li><li><strong>1.4.2 Data structures</strong> – using your own stack to replace recursion; trees are recursive.</li><li><strong>2.1.4 Thinking logically</strong> – the base case is a decision point.</li><li><strong>2.2.2 Computational methods</strong> – backtracking and divide and conquer.</li><li><strong>NEA 3.2.3</strong> – test data: the base case, a deep case and invalid input.</li></ul></div>
+          <div><h2>Lesson slides</h2>
+            <p>Go back over the lesson for the full worked examples and tasks.</p>
+            <p><a class="btn" href="../../slides/2-2-1/recursion.pptx">Download the lesson slides</a></p>
+            <p class="small">2.2.1 Recursion part 2: why bother, folder size both ways, the GCD rewrite, “Recursion or iteration?” and the coding extensions.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <div class="wrap">
+        <h2>Check your understanding</h2>
+        <p>Answer, then press <strong>Check my answers</strong>. Each question explains the answer so you can fix any mistakes.</p>
+        <div class="quiz-block">
+          <h3>Quick quiz – marked for you</h3>
+          <div class="q" data-answer="a"><p class="q-text">1. Find every photo on a USB stick with many folders inside folders. <span class="tag tag-soft">AO3</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q7" value="a"> <span>Recursion</span></label><label><input type="radio" name="q7" value="b"> <span>Iteration</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Nested data, depth unknown.</p></div></div><div class="q" data-answer="b"><p class="q-text">2. Work out the average of 30 test scores. <span class="tag tag-soft">AO3</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q8" value="a"> <span>Recursion</span></label><label><input type="radio" name="q8" value="b"> <span>Iteration</span></label></div><div class="explain" hidden><p><span class="verdict"></span>A known number of items at one level.</p></div></div><div class="q" data-answer="a"><p class="q-text">3. Find a way through a maze. <span class="tag tag-soft">AO3</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q9" value="a"> <span>Recursion</span></label><label><input type="radio" name="q9" value="b"> <span>Iteration</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Try a path, back up if it fails: backtracking.</p></div></div><div class="q" data-answer="b"><p class="q-text">4. Why does adding 1 to 5000 recursively fail in Python? <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q10" value="a"> <span>The answer is too big</span></label><label><input type="radio" name="q10" value="b"> <span>5000 frames are pushed onto a stack that allows about 1000: stack overflow</span></label><label><input type="radio" name="q10" value="c"> <span>Python can’t add</span></label><label><input type="radio" name="q10" value="d"> <span>The loop never stops</span></label></div><div class="explain" hidden><p><span class="verdict"></span>The loop version uses one frame and reuses its variables.</p></div></div><div class="q" data-answer="b"><p class="q-text">5. Which statement is true? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q11" value="a"> <span>Recursion is usually faster than iteration</span></label><label><input type="radio" name="q11" value="b"> <span>Iteration reuses the same variables, whereas recursion makes new ones for every call</span></label><label><input type="radio" name="q11" value="c"> <span>Iteration can cause a stack overflow</span></label><label><input type="radio" name="q11" value="d"> <span>Recursion never needs a stopping condition</span></label></div><div class="explain" hidden><p><span class="verdict"></span>Each recursive call adds a frame with its own variables.</p></div></div><div class="q" data-answer=""><p class="q-text">6. Towers of Hanoi needs 2<sup>n</sup> − 1 moves. How many moves for 10 discs? <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 6" data-answer="1023" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>2<sup>10</sup> − 1 = 1023. Two recursive calls per disc double the moves each time.</p></div></div>
+          <button type="button" class="btn quiz-check">Check my answers</button>
+          <button type="button" class="btn btn-ghost quiz-reset">Start again</button>
+          <p class="quiz-score mt-1" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="exam" class="section-alt">
+      <div class="wrap">
+        <h2>Exam-style questions – mark them yourself</h2>
+        <p>Write your answer, then open <strong>Mark your answer</strong>. Tick the mark points you hit, read the model answer and use the tips to improve. See the <a href="exam-tips.html">2.2.1 exam tips</a> for more help.</p>
+<article class="exam-q">
+          <header><span class="tag">AO1</span><span class="marks">[4 marks]</span></header>
+          <p>Compare two differences between recursion and iteration. (November 2020)</p>
+          <label for="es4t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es4t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es4"><li><label><input type="checkbox"> <span>Recursion uses more memory: each call adds new variables / a frame to the stack (1)</span></label></li><li><label><input type="checkbox"> <span>…whereas iteration reuses the same variables (1)</span></label></li><li><label><input type="checkbox"> <span>Recursion can run out of stack space / stack overflow (1)</span></label></li><li><label><input type="checkbox"> <span>…whereas iteration cannot (1)</span></label></li></ul>
+            <p id="es4" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> Recursion uses more memory because every call adds new variables to the stack, whereas iteration reuses the same variables. Recursion can run out of stack space, whereas iteration cannot.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Every point needs its matching opposite: “recursion… whereas iteration…”.</li><li>“Recursion loops back to itself” is wrong – it calls itself.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[4 marks]</span></header>
+          <p>Rewrite <code>calculate()</code> using iteration.</p><pre class="code"><code>function calculate(number)
+    if number == 1 then
+        return number
+    else
+        return number + calculate(number - 1)
+    endif
+endfunction</code></pre>
+          <label for="es5t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es5t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es5"><li><label><input type="checkbox"> <span>Function header kept (1)</span></label></li><li><label><input type="checkbox"> <span>A loop that runs for every value 1 to number (1)</span></label></li><li><label><input type="checkbox"> <span>Total updated correctly each time (1)</span></label></li><li><label><input type="checkbox"> <span>Total returned after the loop (1)</span></label></li></ul>
+            <p id="es5" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> <code>function calculate(number)<br>&nbsp;&nbsp;total = 0<br>&nbsp;&nbsp;for i = 1 to number<br>&nbsp;&nbsp;&nbsp;&nbsp;total = total + i<br>&nbsp;&nbsp;next i<br>&nbsp;&nbsp;return total<br>endfunction</code></p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Keep the header – the question is about the same function.</li><li>The return goes after the loop, not inside it.</li><li>Test it with a small value such as 3 (should give 6).</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO3</span><span class="marks">[4 marks]</span></header>
+          <p>A program finds every file on a school network drive, where folders can contain folders to any depth. Evaluate whether recursion or iteration is more suitable.</p>
+          <label for="es6t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es6t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es6"><li><label><input type="checkbox"> <span>Recursion suits it: each folder is the same problem, smaller / depth unknown (1)</span></label></li><li><label><input type="checkbox"> <span>Recursive code is shorter and easier to write for nested data; a loop needs its own stack (1)</span></label></li><li><label><input type="checkbox"> <span>But each call adds a stack frame, so very deep folders could overflow / it uses more memory (1)</span></label></li><li><label><input type="checkbox"> <span>Justified conclusion, e.g. recursion, because real folder depth is small enough (1)</span></label></li></ul>
+            <p id="es6" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> Recursion suits this because each folder is a smaller copy of the same problem and the depth is unknown, so a fixed set of loops wouldn’t work. The recursive code is short, whereas an iterative version must manage its own stack. However, every call adds a stack frame, so an extremely deep folder structure could cause a stack overflow. Overall recursion is more suitable, because real folder structures are rarely deep enough to fill the stack.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Evaluate = both sides + a judgement for <em>this</em> scenario.</li><li>Link each point to folders, not just general facts.</li></ul></div>
+          </div></details>
+        </article>
+      </div>
+    </section>
+
+    <section id="revise">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>How to revise this</h2><ul><li><a href="../../techniques/comparison-tables.html">Comparison tables</a> – recursion vs iteration, with “whereas”</li><li><a href="../../techniques/worked-examples.html">Worked examples</a> – convert recursion to a loop with the four-step recipe</li><li><a href="../../techniques/teach-it.html">Teach it</a> – explain why recursion suits nested data</li></ul>
+        <p class="small">These are the best fit for this part of the topic, but you can use any <a href="../../revision-techniques.html">revision technique</a> that works for you.</p></div>
+          <div><h2>Watch and read more</h2><ul><li><a href="https://pythontutor.com">Python Tutor</a> – paste factorial and watch each frame pushed onto and popped off the stack.</li><li><a href="https://visualgo.net/en/recursion">VisuAlgo: recursion tree</a> – type in a recursive function and watch the calls grow and return.</li><li><a href="https://isaaccomputerscience.org">Isaac Computer Science</a> – free notes and questions on recursion.</li><li><a href="https://www.youtube.com/@craigndave">Craig 'n' Dave (YouTube)</a> – short videos for every OCR spec point – search for 2.2.1 recursion.</li></ul></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 2.2.1 pages"><a href="recursion.html"><span class="dir">← Previous</span>Recursion: how it works</a><a class="next" href="oop-classes-and-objects.html"><span class="dir">Next →</span>OOP: classes and objects</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>

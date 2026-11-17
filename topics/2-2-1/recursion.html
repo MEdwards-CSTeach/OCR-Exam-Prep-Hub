@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Recursion: how it works (2.2.1 (b)) – OCR A Level CS Revision</title>
+  <meta name="description" content="OCR A Level Computer Science 2.2.1 (b): Recursion: how it works. Revision notes, quiz and exam questions.">
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../../index.html"><span class="brand-mark" aria-hidden="true">CS</span> OCR A Level CS Revision</a>
+      <nav class="main-nav" aria-label="Main">
+        <ul>
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../course-content.html">Course content</a></li>
+          <li><a href="../../paper1.html">Paper 1</a></li>
+          <li><a href="../../paper2.html" aria-current="page">Paper 2</a></li>
+          <li><a href="../../revision-techniques.html">Revision techniques</a></li>
+          <li><a href="../../improve-your-grade.html">Exam tips</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="banner">
+      <div class="wrap">
+        <div>
+          <p class="breadcrumb"><a href="../../paper2.html">Paper 2</a> › <a href="index.html">2.2.1 Programming techniques</a> › Recursion: how it works</p>
+          <p class="eyebrow">2.2.1 (b) • Paper 2</p>
+          <h1>Recursion: how it works</h1>
+          <hr class="rule">
+          <p class="lead">A subroutine that calls itself: base case and general case, winding and unwinding, the call stack and how to trace it.</p>
+        </div>
+        <div class="card"><h2 style="font-size:1.1rem">Key terms</h2><ul style="margin:0"><li>Recursion</li><li>Base case, general case</li><li>Winding, unwinding</li><li>Call stack, stack frame</li><li>Stack overflow</li></ul></div>
+      </div>
+    </div>
+    <div class="wrap" style="padding-top:1.25rem">
+      <nav class="toc" aria-label="On this page"><ul>
+        <li><a href="#notes">Revision notes</a></li><li><a href="#links">Links and slides</a></li>
+        <li><a href="#quiz">Quick quiz</a></li><li><a href="#exam">Exam questions</a></li><li><a href="#revise">How to revise it</a></li>
+      </ul></nav>
+    </div>
+
+    <section id="notes">
+      <div class="wrap">
+        <h2 class="mt-2">What is recursion?</h2>
+        <p><strong>Recursion</strong> is when a subroutine calls itself. The problem is solved by solving a smaller version of the same problem, until the problem is so small the answer is obvious.</p>
+        <div class="grid grid-3">
+          <div class="card"><h3>1. Base case</h3><p>The stopping condition. Returns an answer <strong>without</strong> calling itself.</p></div>
+          <div class="card"><h3>2. General case</h3><p>Also called the recursive case. Calls itself with a <strong>smaller</strong> problem.</p></div>
+          <div class="card"><h3>3. Moves to the base case</h3><p>Each call must get closer to the base case, or it never stops.</p></div>
+        </div>
+        <div class="grid grid-2 mt-1">
+          <div><h3>OCR pseudocode</h3><pre class="code"><code>function factorial(n)
+    if n == 1 then
+        return 1                      // base case
+    else
+        return n * factorial(n - 1)   // general case
+    endif
+endfunction</code></pre></div>
+          <div><h3>Python</h3><pre class="code"><code>def factorial(n):
+    if n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)</code></pre><p class="small">4! = 4 × 3!, so a factorial is made of a smaller factorial. <code>n - 1</code> moves towards 1.</p></div>
+        </div>        <h2 class="mt-2">Winding and unwinding</h2>
+        <div class="grid"><figure class="diagram"><svg viewBox="0 0 890 370" role="img" aria-labelledby="t4b25c6a3 t4b25c6a3d"><title id="t4b25c6a3">Winding and unwinding: factorial(4)</title><desc id="t4b25c6a3d">Winding: factorial(4) calls factorial(3), which calls factorial(2), which calls factorial(1), the base case. Unwinding: factorial(1) returns 1, factorial(2) returns 2, factorial(3) returns 6, factorial(4) returns 24.</desc><defs><marker id="aht4b25c6a3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><text x="170" y="28" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#0B6E75"><tspan x="170" dy="0">WINDING: calls go down</tspan></text><text x="700" y="28" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#B25C00"><tspan x="700" dy="0">UNWINDING: returns come back up</tspan></text><rect x="30" y="40" width="290" height="54" rx="8" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="175" y="63" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="175" dy="0">factorial(4)</tspan><tspan x="175" dy="19">4 × factorial(3)</tspan></text><rect x="560" y="40" width="270" height="54" rx="8" fill="#FFF4E0" stroke="#B25C00" stroke-width="2"/><text x="695" y="72" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#B25C00"><tspan x="695" dy="0">returns 4 × 6 = 24</tspan></text><line x1="322" y1="67" x2="556" y2="67" stroke="#C9D3D9" stroke-width="2" stroke-dasharray="5 5"/><polyline points="70,94 70,116 88,116" fill="none" stroke="#0B6E75" stroke-width="2.5" marker-end="url(#aht4b25c6a3)"/><polyline points="840,141 860,141 860,67 834,67" fill="none" stroke="#B25C00" stroke-width="2.5" marker-end="url(#aht4b25c6a3)"/><rect x="90" y="114" width="290" height="54" rx="8" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="235" y="137" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="235" dy="0">factorial(3)</tspan><tspan x="235" dy="19">3 × factorial(2)</tspan></text><rect x="560" y="114" width="270" height="54" rx="8" fill="#FFF4E0" stroke="#B25C00" stroke-width="2"/><text x="695" y="146" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#B25C00"><tspan x="695" dy="0">returns 3 × 2 = 6</tspan></text><line x1="382" y1="141" x2="556" y2="141" stroke="#C9D3D9" stroke-width="2" stroke-dasharray="5 5"/><polyline points="130,168 130,190 148,190" fill="none" stroke="#0B6E75" stroke-width="2.5" marker-end="url(#aht4b25c6a3)"/><polyline points="840,215 860,215 860,141 834,141" fill="none" stroke="#B25C00" stroke-width="2.5" marker-end="url(#aht4b25c6a3)"/><rect x="150" y="188" width="290" height="54" rx="8" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="295" y="211" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="295" dy="0">factorial(2)</tspan><tspan x="295" dy="19">2 × factorial(1)</tspan></text><rect x="560" y="188" width="270" height="54" rx="8" fill="#FFF4E0" stroke="#B25C00" stroke-width="2"/><text x="695" y="220" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#B25C00"><tspan x="695" dy="0">returns 2 × 1 = 2</tspan></text><line x1="442" y1="215" x2="556" y2="215" stroke="#C9D3D9" stroke-width="2" stroke-dasharray="5 5"/><polyline points="190,242 190,264 208,264" fill="none" stroke="#0B6E75" stroke-width="2.5" marker-end="url(#aht4b25c6a3)"/><polyline points="840,289 860,289 860,215 834,215" fill="none" stroke="#B25C00" stroke-width="2.5" marker-end="url(#aht4b25c6a3)"/><rect x="210" y="262" width="290" height="54" rx="8" fill="#1A1A2E" stroke="#1A1A2E" stroke-width="2"/><text x="355" y="285" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#fff"><tspan x="355" dy="0">factorial(1)</tspan><tspan x="355" dy="19">base case</tspan></text><rect x="560" y="262" width="270" height="54" rx="8" fill="#FFF4E0" stroke="#B25C00" stroke-width="2"/><text x="695" y="294" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#B25C00"><tspan x="695" dy="0">returns 1</tspan></text><line x1="502" y1="289" x2="556" y2="289" stroke="#C9D3D9" stroke-width="2" stroke-dasharray="5 5"/><text x="440" y="357" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="440" dy="0">The final answer is what the FIRST call returns: 24 – not the 1 from the base case.</tspan></text></svg><figcaption>Each call waits for the one below it. The answers are passed back up, bottom first.</figcaption></figure></div>        <h2 class="mt-2">The call stack</h2>
+        <div class="grid"><figure class="diagram"><svg viewBox="0 0 760 300" role="img" aria-labelledby="t15d2079f t15d2079fd"><title id="t15d2079f">The call stack for factorial(4)</title><desc id="t15d2079fd">Four stack frames, bottom to top: factorial(4), factorial(3) and factorial(2) are waiting; factorial(1) is on top and returns 1. The last call made is the first to finish. Each frame holds parameters, local variables and a return address.</desc><defs><marker id="aht15d2079f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3D4451"/></marker></defs><text x="220" y="28" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#1A1A2E"><tspan x="220" dy="0">The call stack during factorial(4)</tspan></text><rect x="60" y="40" width="320" height="52" rx="8" fill="#0B6E75" stroke="#0B6E75" stroke-width="2"/><text x="220" y="71" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#fff"><tspan x="220" dy="0">factorial(1): n = 1 – returns 1</tspan></text><rect x="60" y="102" width="320" height="52" rx="8" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="220" y="133" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="220" dy="0">factorial(2): n = 2 – waiting</tspan></text><rect x="60" y="164" width="320" height="52" rx="8" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="220" y="195" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="220" dy="0">factorial(3): n = 3 – waiting</tspan></text><rect x="60" y="226" width="320" height="52" rx="8" fill="#E3F1EA" stroke="#0B6E75" stroke-width="2"/><text x="220" y="257" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="bold" fill="#1A1A2E"><tspan x="220" dy="0">factorial(4): n = 4 – waiting</tspan></text><polyline points="50,32 50,288 390,288 390,32" fill="none" stroke="#3D4451" stroke-width="3"/><line x1="540" y1="60" x2="386" y2="66" stroke="#0B6E75" stroke-width="2.5" marker-end="url(#aht15d2079f)"/><text x="548" y="39" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="bold" fill="#0B6E75"><tspan x="548" dy="0">Top of stack:</tspan><tspan x="548" dy="18">the last call made</tspan><tspan x="548" dy="18">is the first to finish</tspan></text><text x="420" y="187" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="14.5" font-weight="normal" fill="#3D4451"><tspan x="420" dy="0">Each frame holds the parameters,</tspan><tspan x="420" dy="18">local variables and return address.</tspan><tspan x="420" dy="18">Too many frames: stack overflow.</tspan></text></svg><figcaption>Last in, first out – like any stack (1.4.2).</figcaption></figure></div>
+        <div><ul>
+            <li>Every call <strong>pushes</strong> a <strong>stack frame</strong>: its parameters, local variables and the return address.</li>
+            <li>Each call has its <strong>own copy</strong> of <code>n</code>.</li>
+            <li>When a call returns, its frame is <strong>popped</strong> off the top.</li>
+            <li>The stack has limited space. Too many calls fill it: <strong>stack overflow</strong> (Python allows about 1000).</li>
+            <li>No base case, or one that is never reached (e.g. <code>factorial(0)</code>), means the calls never stop.</li></ul>
+          <p class="callout"><strong>Exam point:</strong> each recursive call stores its state on the stack, whereas iteration reuses the same variables.</p></div>        <h2 class="mt-2">Writing and tracing a recursive function</h2>
+        <div class="grid grid-2">
+          <div><h3>Three steps to write one</h3><ol class="steps">
+            <li><strong>Base case first:</strong> the smallest input you can answer straight away.</li>
+            <li><strong>General case:</strong> trust the function to work on a smaller input. How do you use that answer?</li>
+            <li><strong>Check:</strong> does every call get closer to the base case? Test 0, 1 and "".</li></ol>
+            <pre class="code"><code>def list_total(numbers):
+    if len(numbers) == 0:
+        return 0
+    else:
+        return numbers[0] + list_total(numbers[1:])</code></pre>
+            <p class="small">list_total([4, 7, 2]) = 4 + 7 + 2 + 0 = 13</p></div>
+          <div><h3>Four steps to trace one</h3><ol>
+            <li>Going down: write each call and what it is waiting for.</li><li>Stop at the base case.</li>
+            <li>Going up: fill in each return, bottom row first.</li><li>The answer is the <strong>top</strong> row.</li></ol>
+            <div class="table-scroll"><table><thead><tr><th scope="col">Call</th><th scope="col">Waiting for</th><th scope="col">Returns</th></tr></thead><tbody><tr><th scope="row">power(2, 3)</th><td>2 × power(2, 2)</td><td>2 × 4 = <strong>8</strong></td></tr><tr><th scope="row">power(2, 2)</th><td>2 × power(2, 1)</td><td>2 × 2 = 4</td></tr><tr><th scope="row">power(2, 1)</th><td>2 × power(2, 0)</td><td>2 × 1 = 2</td></tr><tr><th scope="row">power(2, 0)</th><td>base case</td><td>1</td></tr></tbody></table></div></div>
+        </div>
+        <h3 class="mt-1">Full-mark trace: June 2018 (watch the DIV)</h3>
+        <div class="grid grid-2">
+          <div><pre class="code"><code>function generate(num1 : byval)
+    if num1 &gt; 10 then
+        return 10
+    else
+        return num1 + (generate(num1 + 1) DIV 2)
+    endif
+endfunction</code></pre></div>
+          <div><div class="table-scroll"><table><thead><tr><th scope="col">Call</th><th scope="col">Returns</th></tr></thead><tbody><tr><th scope="row">generate(11)</th><td>base case: 10</td></tr><tr><th scope="row">generate(10)</th><td>10 + 10 DIV 2 = 15</td></tr><tr><th scope="row">generate(9)</th><td>9 + 15 DIV 2 = 9 + 7 = 16</td></tr><tr><th scope="row">generate(8)</th><td>8 + 16 DIV 2 = 16</td></tr><tr><th scope="row">generate(7)</th><td>7 + 16 DIV 2 = <strong>15</strong></td></tr></tbody></table></div>
+          <p class="small">15 DIV 2 = 7. Using 7.5 breaks every line after it.</p></div>
+        </div>
+        <div class="callout callout-amber mt-1"><p><strong>Watch out for:</strong></p><ul><li>Giving the base case value (1) as the final answer – the answer is what the <em>first</em> call returns.</li><li>Forgetting DIV is whole-number division: 15 DIV 2 = 7.</li><li>Describing recursion as “it loops” – it calls itself.</li><li>A base case of <code>== 1</code> that is skipped by an input of 0, so the stack overflows.</li></ul></div>
+      </div>
+    </section>
+
+    <section id="links" class="section-alt">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>Links to other topics</h2><ul class="link-list"><li><strong>1.4.2 Data structures</strong> – the call stack is a stack: last in, first out.</li><li><strong>2.3.1 Algorithms</strong> – binary search, merge sort, quick sort and tree traversals can be recursive.</li><li><strong>1.2.1 Systems software</strong> – the stack and memory management.</li><li><strong>2.1.2 Thinking ahead</strong> – memoisation caches recursive results.</li><li><strong>2.2.2 Computational methods</strong> – divide and conquer and backtracking.</li><li><strong>NEA 3.2.2</strong> – justify where recursion suits your solution.</li></ul></div>
+          <div><h2>Lesson slides</h2>
+            <p>Go back over the lesson for the full worked examples and tasks.</p>
+            <p><a class="btn" href="../../slides/2-2-1/recursion.pptx">Download the lesson slides</a></p>
+            <p class="small">2.2.1 Recursion: count-the-files starter, factorial winding and unwinding, the call stack and past-paper traces.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quiz">
+      <div class="wrap">
+        <h2>Check your understanding</h2>
+        <p>Answer, then press <strong>Check my answers</strong>. Each question explains the answer so you can fix any mistakes.</p>
+        <div class="quiz-block">
+          <h3>Quick quiz – marked for you</h3>
+          <div class="q" data-answer="b"><p class="q-text">1. What does the base case do? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q1" value="a"> <span>Calls the function with a smaller value</span></label><label><input type="radio" name="q1" value="b"> <span>Returns a value without making another call</span></label><label><input type="radio" name="q1" value="c"> <span>Pushes a frame onto the stack</span></label><label><input type="radio" name="q1" value="d"> <span>Repeats the code in a loop</span></label></div><div class="explain" hidden><p><span class="verdict"></span>The base case is the stopping condition.</p></div></div><div class="q" data-answer="b"><p class="q-text">2. While factorial(2) is running, what is factorial(3) doing? <span class="tag tag-soft">AO1</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q2" value="a"> <span>It has finished</span></label><label><input type="radio" name="q2" value="b"> <span>Its frame is paused on the stack, waiting for factorial(2)’s answer</span></label><label><input type="radio" name="q2" value="c"> <span>It has been deleted</span></label><label><input type="radio" name="q2" value="d"> <span>It is running at the same time</span></label></div><div class="explain" hidden><p><span class="verdict"></span>It waits on the stack until the call below it returns.</p></div></div><div class="q" data-answer="c"><p class="q-text">3. Which call finishes first in factorial(4)? <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q3" value="a"> <span>factorial(4)</span></label><label><input type="radio" name="q3" value="b"> <span>factorial(3)</span></label><label><input type="radio" name="q3" value="c"> <span>factorial(1)</span></label><label><input type="radio" name="q3" value="d"> <span>They all finish together</span></label></div><div class="explain" hidden><p><span class="verdict"></span>The last call made is the first to finish: last in, first out.</p></div></div><div class="q" data-answer="a"><p class="q-text">4. What happens if the base case is removed? <span class="tag tag-soft">AO2</span></p><div class="opts" role="radiogroup"><label><input type="radio" name="q4" value="a"> <span>Calls keep being pushed until the stack is full: stack overflow</span></label><label><input type="radio" name="q4" value="b"> <span>It returns 0</span></label><label><input type="radio" name="q4" value="c"> <span>It runs as a loop instead</span></label><label><input type="radio" name="q4" value="d"> <span>It runs faster</span></label></div><div class="explain" hidden><p><span class="verdict"></span>The calls never stop, so the call stack runs out of space.</p></div></div><div class="q" data-answer=""><p class="q-text">5. <code>calculate(n)</code> returns n if n == 1, otherwise n + calculate(n − 1). What does calculate(5) return? <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 5" data-answer="15" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>5 + 4 + 3 + 2 + 1 = 15 (June 2022).</p></div></div><div class="q" data-answer=""><p class="q-text">6. Using the generate function above, what does generate(9) return? <span class="tag tag-soft">AO2</span></p><input type="text" aria-label="Answer to question 6" data-answer="16" autocomplete="off"><div class="explain" hidden><p><span class="verdict"></span>generate(10) returns 15, and 15 DIV 2 = 7, so 9 + 7 = 16.</p></div></div>
+          <button type="button" class="btn quiz-check">Check my answers</button>
+          <button type="button" class="btn btn-ghost quiz-reset">Start again</button>
+          <p class="quiz-score mt-1" aria-live="polite"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="exam" class="section-alt">
+      <div class="wrap">
+        <h2>Exam-style questions – mark them yourself</h2>
+        <p>Write your answer, then open <strong>Mark your answer</strong>. Tick the mark points you hit, read the model answer and use the tips to improve. See the <a href="exam-tips.html">2.2.1 exam tips</a> for more help.</p>
+<article class="exam-q">
+          <header><span class="tag">AO1</span><span class="marks">[2 marks]</span></header>
+          <p>State two features of any recursive algorithm. (June 2022)</p>
+          <label for="es1t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es1t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es1"><li><label><input type="checkbox"> <span>It calls itself (1)</span></label></li><li><label><input type="checkbox"> <span>It has a base case / stopping condition that ends the recursion (1)</span></label></li></ul>
+            <p id="es1" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> It calls itself, and it has a base case that stops the recursion.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>“It repeats until it is done” describes a loop – 0 marks.</li><li>Name both features: calls itself + base case.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO2</span><span class="marks">[5 marks]</span></header>
+          <p>Trace <code>calculate(5)</code> and give the final return value. Use a table with the columns function call, number and return. (June 2022)</p><pre class="code"><code>1. function calculate(number : byVal)
+2.     if number == 1 then
+3.         return number
+4.     else
+5.         return number + calculate(number - 1)
+6.     endif
+7. endfunction</code></pre>
+          <label for="es2t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es2t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es2"><li><label><input type="checkbox"> <span>calculate(5): number 5, returns 15 (1)</span></label></li><li><label><input type="checkbox"> <span>calculate(4): number 4, returns 10 (1)</span></label></li><li><label><input type="checkbox"> <span>calculate(3): number 3, returns 6 (1)</span></label></li><li><label><input type="checkbox"> <span>calculate(2): number 2, returns 3 (1)</span></label></li><li><label><input type="checkbox"> <span>calculate(1): number 1, returns 1 (1)</span></label></li></ul>
+            <p id="es2" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> calculate(5) → 5 + calculate(4) → 4 + calculate(3) → 3 + calculate(2) → 2 + calculate(1) = 1. Unwinding: 1, 3, 6, 10, <strong>15</strong>.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>The working earns the marks: writing only “15” scores 1 out of 5.</li><li>One row per call, then fill in the returns from the bottom up.</li></ul></div>
+          </div></details>
+        </article><article class="exam-q">
+          <header><span class="tag">AO3</span><span class="marks">[2 marks]</span></header>
+          <p>Explain what would happen if <code>calculate(0)</code> were called, and how it could be prevented.</p>
+          <label for="es3t" class="small"><strong>Your answer</strong> (not saved)</label>
+          <textarea id="es3t"></textarea>
+          <details class="reveal"><summary>Mark your answer</summary><div>
+            <p>Tick each mark point your answer includes.</p>
+            <ul class="checklist" data-mode="marks" data-score="es3"><li><label><input type="checkbox"> <span>0, −1, −2… never equal 1, so the base case is never reached / the calls never stop (1)</span></label></li><li><label><input type="checkbox"> <span>The call stack fills up: stack overflow / the program crashes; fix with <code>number &lt;= 1</code> or a precondition number ≥ 1 (1)</span></label></li></ul>
+            <p id="es3" class="callout" aria-live="polite"></p>
+            <div class="callout"><p><strong>Model answer:</strong> The values 0, −1, −2 and so on never equal 1, so the base case is never reached and the function keeps calling itself until the call stack runs out of space – a stack overflow. Changing the base case to <code>if number &lt;= 1</code> would stop it.</p></div>
+            <div class="callout callout-amber mt-1"><p><strong>How to improve a weak answer:</strong></p><ul><li>Explain = what happens + the consequence. “It crashes” alone is only half.</li><li>Suggest a precise fix, not just “add validation”.</li></ul></div>
+          </div></details>
+        </article>
+      </div>
+    </section>
+
+    <section id="revise">
+      <div class="wrap">
+        <div class="grid grid-2">
+          <div><h2>How to revise this</h2><ul><li><a href="../../techniques/trace-tables.html">Trace tables</a> – trace recursive calls down and the returns back up</li><li><a href="../../techniques/flowcharts.html">Flowcharts and diagrams</a> – draw the winding and unwinding staircase</li><li><a href="../../techniques/flashcards.html">Flashcards</a> – base case, general case, stack frame, stack overflow</li></ul>
+        <p class="small">These are the best fit for this part of the topic, but you can use any <a href="../../revision-techniques.html">revision technique</a> that works for you.</p></div>
+          <div><h2>Watch and read more</h2><ul><li><a href="https://pythontutor.com">Python Tutor</a> – paste factorial and watch each frame pushed onto and popped off the stack.</li><li><a href="https://visualgo.net/en/recursion">VisuAlgo: recursion tree</a> – type in a recursive function and watch the calls grow and return.</li><li><a href="https://isaaccomputerscience.org">Isaac Computer Science</a> – free notes and questions on recursion.</li><li><a href="https://www.youtube.com/@craigndave">Craig 'n' Dave (YouTube)</a> – short videos for every OCR spec point – search for 2.2.1 recursion.</li></ul></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap"><nav class="pager" aria-label="Other 2.2.1 pages"><a href="index.html"><span class="dir">← Back to</span>2.2.1 overview</a><a class="next" href="recursion-vs-iteration.html"><span class="dir">Next →</span>Recursion vs iteration</a></nav></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Based on the OCR A Level Computer Science specification (H446). Read the full specification on the
+        <a href="https://www.ocr.org.uk/qualifications/as-and-a-level/computer-science-h046-h446-from-2015/">OCR website</a>.</p>
+      <p>This is a revision site for students. It is not produced or endorsed by OCR.</p>
+    </div>
+  </footer>
+  <script src="../../js/techniques.js"></script>
+</body>
+</html>
